@@ -1,0 +1,74 @@
+{{ 'our-story-letter.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  #section-{{section.id}} {
+    --color-text: {{ section.settings.text_color }};
+    --color-bg: {{section.settings.bg_color}};
+  }
+{% endstyle %}
+
+<div class="our-story-letter-section" id="section-{{ section.id }}">
+  <div class="page-width">
+    <div class="letter-content">
+      <h2 class="letter-heading">
+        {{ section.settings.title }}
+      </h2>
+      <div class="letter-text">
+        {{ section.settings.text }}
+      </div>
+      {% if section.settings.sign != blank %}
+        <div class="letter-sign">
+          {%- render 'image-element',
+            img: section.settings.sign,
+            widths: '182',
+            sizeVariable: '182',
+            fallback: '182',
+            alt:section.settings.title
+          -%}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Our Story Letter",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default":"The Smell Good Club"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default":"<p>Lorem ipsum dolor sit amet consectetur. Odio consequat tincidunt dignissim condimentum maecenas cursus odio eu in.</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "sign",
+        "label": "Signature"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Section Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#101820"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Our Story Letter"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,21 @@
+{{ 'okendo-reviews.css' | asset_url | stylesheet_tag: preload: true }}
+
+<div class="page-width page-content">
+
+  {%- render 'breadcrumbs' -%}
+
+	<div class="grid okendo-reviews-section">
+    <div class="grid__item medium-up--push-one-eighth">
+
+      <header class="section-header">
+        <h1 class="section-header__title">{{ page.title }}</h1>
+      </header>
+
+      <div class="">
+        {% if shop.metafields.okendo.WidgetPreRenderBodyStyleTags != blank %}{{ shop.metafields.okendo.WidgetPreRenderBodyStyleTags }}{% endif %}<div data-oke-widget></div>
+      </div>
+
+    </div>
+  </div>
+
+</div

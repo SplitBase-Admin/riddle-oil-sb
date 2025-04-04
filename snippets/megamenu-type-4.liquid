@@ -1,0 +1,27 @@
+{{ 'megamenu-type-4.css' | asset_url | stylesheet_tag }}
+
+<div class="megamenu__type--4">
+  <div class="megamenu__inner">
+    {% for i in (1..5) %}
+      {% assign block_image = "image_" | append: i %}
+      {% assign block_heading = "link_text_" | append: i %}
+      {% assign block_link = "link_url_" | append: i %}
+
+      <a href="{{ block.settings[block_link] }}" class="block__items">
+        <div class="image__wrapper">
+          {% if block.settings[block_image] %}
+            {{ block.settings[block_image] | image_url: width: original | image_tag }}
+          {% endif %}
+        </div>
+        {% if block.settings[block_link] != blank %}
+          <div class="title link__text">{{ block.settings[block_heading] }} 
+            <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.990234 7.5L16.9902 7.5L0.990234 7.5ZM16.9902 7.5L10.9902 13.5L16.9902 7.5ZM16.9902 7.5L10.9902 1.5L16.9902 7.5Z" fill="#101820"/>
+              <path d="M0.990234 7.5L16.9902 7.5M16.9902 7.5L10.9902 13.5M16.9902 7.5L10.9902 1.5" stroke="#101820" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+</div>

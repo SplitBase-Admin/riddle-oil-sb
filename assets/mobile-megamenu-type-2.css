@@ -1,0 +1,117 @@
+.mobile-megamenu__type--two {
+  border-bottom: 1px solid #101820;
+  padding-bottom: 24px;
+}
+
+.mobile-megamenu__type--two .header {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  padding: 24px 0;
+}
+
+.mobile-megamenu__type--two .step_item {
+  display: flex;
+  gap: 14px;
+}
+
+.mobile-megamenu__type--two .step_image {
+  width: 84px;
+  height: 84px;
+  position: relative;
+  overflow: visible;
+}
+
+.mobile-megamenu__type--two .step_image img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.mobile-megamenu__type--two .step_title {
+  border-radius: 50%;
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  font-size: 14px;
+  font-weight: 400;
+  background: #D9CBBF;
+  line-height: 19.6px;
+  border: 1px solid #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: -4px;
+  z-index: 99999;
+  bottom: -20px;
+}
+
+.mobile-megamenu__type--two .step_heading {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19.6px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.mobile-megamenu__type--two .step_content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mobile-megamenu__type--two .block__items {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+  padding-top: 12px;
+  padding-bottom: 36px;
+}
+
+.megamenu__two--wrapper {
+  margin-left: -9px;
+  padding-left: 9px;
+}
+
+.mobile-megamenu__type--two .step_url {
+  margin: 12px 0 0;
+}
+
+.mobile-megamenu__type--two .block__items:before {
+  content: "";
+  background: #d9cbbf;
+  width: 2px;
+  height: 75%;
+  position: absolute;
+  top: 12px;
+  left: 23px;
+}
+
+.mobile-megamenu__type--two .product__image {
+  display: block;
+  flex: 0 1 100px;
+}
+
+.mobile-megamenu__type--two .product__block {
+  background: #fff;
+  margin: 0;
+  gap: 20px;
+}
+
+.mobile-megamenu__type--two .product__content {
+  flex: 1;
+}
+
+.mobile-megamenu__type--two .product_link {
+  margin: 14px 0 0;
+}
+
+.mobile-megamenu__type--two .step_text {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18.2px;
+  color: #101820B8;
+}

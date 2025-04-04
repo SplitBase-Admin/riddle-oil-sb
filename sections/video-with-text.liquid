@@ -1,0 +1,257 @@
+{{ 'video-with-text.css' | asset_url | stylesheet_tag: preload: true }}
+
+{% liquid
+  assign button_text = section.settings.button_label
+  assign button_link = section.settings.button_link
+  assign button_style = section.settings.button_style
+  assign overlay_opacity = section.settings.background_opacity | divided_by: 100.0
+%}
+
+{% assign formatted_heading = section.settings.title
+  | replace: '{', "<span class='stylized'>"
+  | replace: '}', '</span>'
+%}
+
+{%- style -%}
+  #section-{{ section.id }} {
+    --color-text: {{ section.settings.text_color }};
+    --color-bg : {{ section.settings.bg_color | color_modify: 'alpha', overlay_opacity }};
+    --color-button-text: {{ section.settings.button_text_color }};
+    --color-button-bg: {{ section.settings.button_color }};
+    
+    --desktop-section-height : {{ section.settings.height }}px;
+    --mobile-section-height : {{ section.settings.mobile_height }}px;
+  }
+{%- endstyle -%}
+
+
+<div id="section-{{ section.id }}" class="video-with-text video-parent-section hero--{{ section.id }} hero--{{ section.settings.section_height }} hero--mobile--{{ section.settings.mobile_height }}" 
+  data-section-type="video-section"
+  data-section-id="{{ section.id }}"
+  >
+  <div class="video-with-text-inner">
+    <div class="video-text-video-wrapper">
+      <div class="hero__media hero__media--{{ section.id }}">
+        <div class="hero__media-container">
+          {%- if section.settings.video_url contains 'youtube.com/watch' -%}
+            {%- assign video_id = section.settings.video_url | split: 'v=' -%}
+            {%- assign video_id = video_id[1] | split: '&' | first -%}
+            <div
+              id="YouTubeVideo-{{ section.id }}"
+              class="video-div"
+              data-type="youtube"
+              data-video-id="{{ video_id }}"></div>
+          {%- endif -%}
+    
+          {%- if section.settings.video_url contains 'youtu.be/' -%}
+            {%- assign video_id = section.settings.video_url | split: '.be/' -%}
+            {%- assign video_id = video_id[1] | split: '&' | first -%}
+            <div
+              id="YouTubeVideo-{{ section.id }}"
+              class="video-div"
+              data-type="youtube"
+              data-video-id="{{ video_id }}"></div>
+          {%- endif -%}
+    
+          {%- if section.settings.video_url contains 'vimeo.com' -%}
+            {%- assign video_id = section.settings.video_url | split: '.com/' -%}
+            {%- assign video_id = video_id[1] | split: '/' | first -%}
+            <div
+              id="Vimeo-{{ section.id }}"
+              class="video-div"
+              data-type="vimeo"
+              data-video-id="{{ video_id }}"></div>
+          {%- endif -%}
+    
+          {%- if section.settings.video_url contains '.mp4' or section.settings.video_url contains '.MP4' or section.settings.video_url contains '.mov' -%}
+            <video
+              id="Mp4Video-{{ section.id }}"
+              class="video-div"
+              data-type="mp4"
+              src="{{ section.settings.video_url }}"
+              loop muted playsinline autoplay></video>
+          {%- endif -%}
+    
+        </div>
+      </div>
+    </div>
+    <div class="video-text-video-content">
+      {%- if section.settings.caption != blank -%}
+        <p class="sh2">{{ section.settings.caption }}</p>
+      {%- endif -%}
+
+      {%- if formatted_heading != blank -%}
+        <h2 class="video-text-title">{{ formatted_heading }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.subtitle != blank -%}
+        <h4 class="video-text-subtitle">{{ section.settings.subtitle }}</h4>
+      {%- endif -%}
+
+      {%- if button_text != blank -%}
+       <a href="{{ button_link }}" class="btn btn--solid-border {{ button_style }}" aria-label="{{ button_text }}">
+          <span>{{ button_text }}</span>
+          {% render 'button-arrow' %}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Video With Text",
+  "class": "index-section--hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption",
+      "default": "LIMITED TIME OFFER"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "20% OFF"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Pheromone Oils and Bundles"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video url",
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+    },
+    {
+      "type": "select",
+      "id": "section_height",
+      "label": "t:sections.hero-video.settings.section_height.label",
+      "default": "650px",
+      "options": [
+        {
+          "label": "480px",
+          "value": "480px"
+        },
+        {
+          "label": "t:sections.hero-video.settings.section_height.options.550px.label",
+          "value": "550px"
+        },
+        {
+          "label": "t:sections.hero-video.settings.section_height.options.650px.label",
+          "value": "650px"
+        },
+        {
+          "label": "t:sections.hero-video.settings.section_height.options.750px.label",
+          "value": "750px"
+        },
+        {
+          "label": "t:sections.hero-video.settings.section_height.options.100vh.label",
+          "value": "100vh"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_height",
+      "label": "t:sections.hero-video.settings.mobile_height.label",
+      "default": "auto",
+      "options": [
+        {
+          "label": "t:sections.hero-video.settings.mobile_height.options.auto.label",
+          "value": "auto"
+        },
+        {
+          "label": "t:sections.hero-video.settings.mobile_height.options.250px.label",
+          "value": "250px"
+        },
+        {
+          "label": "t:sections.hero-video.settings.mobile_height.options.300px.label",
+          "value": "300px"
+        },
+        {
+          "label": "t:sections.hero-video.settings.mobile_height.options.400px.label",
+          "value": "400px"
+        },
+        {
+          "label": "t:sections.hero-video.settings.mobile_height.options.500px.label",
+          "value": "500px"
+        },
+        {
+          "label": "t:sections.hero-video.settings.mobile_height.options.100vh.label",
+          "value": "100vh"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "default": "btn--primary",
+      "options": [
+        { "label": "Primary", "value": "btn--primary" },
+        { "label": "Secondary", "value": "btn--secondary" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#101820"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#F2EADF"
+    },
+    {
+      "type": "range",
+      "id": "background_opacity",
+      "label": "Background Opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#101820"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video With Text"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

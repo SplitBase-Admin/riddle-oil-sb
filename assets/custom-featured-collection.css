@@ -1,0 +1,221 @@
+.new-featured-collection {
+  overflow-x: hidden;
+}
+
+.custom-featured-collection .section-header {
+  margin-bottom: 40px;
+}
+
+.promo-block-inner {
+  position: relative;
+  height: 100%;
+}
+
+.promo-block-inner .promo-block--link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9;
+}
+
+.promo-block-content {
+  position: absolute;
+  bottom: 22px;
+  left: 16px;
+  z-index: 1;
+  width: calc(100% - 32px);
+}
+
+.promo-block-image img {
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.promo-block-content h5 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19.6px;
+  letter-spacing: 0.24em;
+  color: #ffffff;
+  border-top: 1px solid #D9D9D9;
+  padding-top: 12px;
+}
+
+.custom-featured-collection .btn--primary {
+  background-color: var(--color-button-bg);
+  color: var(--color-button-text);
+}
+
+.custom-featured-collection .btn--secondary {
+  color: var(--color-button-text);
+}
+
+.custom-featured-collection-container .swiper-wrapper {
+  margin: 0;
+}
+
+.new-featured-collection {
+  padding: 36px 0 72px;
+}
+
+.custom-featured-collection .swiper-pagination {
+  display: none;
+}
+
+.promo-block-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  display: block;  
+  background: var(--overlay-background);
+  background: var(--overlay-background-gradient, var(--overlay-background));
+  opacity: var(--overlay-opacity);
+  z-index: 1;
+  border-radius: 12px;
+}
+
+.custom-featured-slider-arrows .swiper-button-prev,
+.custom-featured-slider-arrows .swiper-button-next {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: #101820;
+  border-radius: 50%;
+  margin: 0;
+  left: unset;
+  right: unset;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.custom-featured-slider-arrows .swiper-button-prev:hover,
+.custom-featured-slider-arrows .swiper-button-next:hover {
+  background: rgba(16,24,32,0.72);
+}
+
+.custom-featured-slider-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 8px;
+  /* margin: -110px 0 68px; */
+  margin: -43px 0 68px;
+}
+
+.custom-featured-collection-container .swiper {
+  overflow: visible;
+}
+
+/* .custom-featured-collection-container .swiper {
+  overflow: hidden;
+}
+ */
+.custom-featured-collection .swiper-button-next svg,
+.custom-featured-collection .swiper-button-prev svg {
+  fill: #ffffff;
+  width: 20px;
+}
+
+.custom-featured-collection .swiper-button-next:after,
+.custom-featured-collection .swiper-button-prev:after {
+  display: none;
+}
+
+.custom-featured-collection .swiper-button-next svg path {
+  fill: transparent;
+  stroke: #ffffff;
+}
+
+.custom-featured-collection-container .swiper-wrapper:hover {
+  z-index: 11;
+}
+
+@media screen and (min-width: 1921px) {
+
+  .custom-featured-collection-container .swiper,
+  .custom-featured-collection-container  {
+    overflow: hidden;
+  }
+
+  
+
+}
+  
+@media screen and (max-width: 1439px) {
+  
+  .custom-featured-collection-container {
+    padding-left: 32px;
+  }
+  
+}
+
+@media screen and (max-width: 767px) {
+
+  .new-featured-collection {
+    padding: 40px 0;
+  }
+
+  .custom-featured-collection-container {
+    padding-left: 16px;
+  }
+
+  .custom-featured-collection .swiper-pagination {
+    padding: 32px 0;
+    bottom: unset;
+    position: relative;
+    display: block;
+    line-height: 1;
+  }
+
+  .custom-featured-collection .swiper-pagination-bullet {
+    border: 1px solid #101820 ;
+    background-color: transparent;
+    opacity: 1;
+  }
+
+  .custom-featured-collection .swiper-pagination-bullet-active {
+    background-color: #101820;
+  }
+
+  .promo-block-mobile {
+    padding: 0 16px;
+    position: relative;
+  }
+
+  .promo-block-content {
+    bottom: 16px;
+    left: 0;
+    width: 100%;
+    padding: 0 16px;
+    text-align: center;
+  }
+  
+  .promo-block-content h5 {
+    border-top: 0.6px solid #D9D9D9;
+    padding-top: 12px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .custom-featured-slider-arrows {
+    display: none;
+  }
+  
+}
+
+@media screen and (max-width: 479px) {
+  
+  .custom-featured-collection .btn {
+    width: 100%;
+  }
+  
+}
+
+/**** Product Grid CSS ****/

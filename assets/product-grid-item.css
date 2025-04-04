@@ -1,0 +1,42 @@
+ .collection-content .product--label {
+   display: none;
+ }
+
+.product__card--url {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.try__now--wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.try-now-button {
+  border: 1px solid #9FA2A4;
+  outline: 1px solid transparent;
+  padding: 10px 15px;
+  min-height: auto;
+  height: auto;
+  min-width: 72px;
+  color: #101820;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25.2px;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  align-self: self-start;
+  margin: 16px 0;
+}
+
+.grid-product__link.try__now--link {
+  flex: unset;
+} 
+
+.grid-product__meta.try__now--wrapper  {
+  flex: 1;
+} 

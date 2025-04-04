@@ -1,0 +1,178 @@
+{{ 'join-the-club.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign button_text1 = section.settings.button_text1
+  assign button_link1 = section.settings.button_link1
+  assign button_style1 = section.settings.button_style1
+ 
+  assign button_text2 = section.settings.button_text2
+  assign button_link2 = section.settings.button_link2
+  assign button_style2 = section.settings.button_style2
+  
+%}
+{% style %}
+  #section-{{section.id}} {
+    --color-text: {{ section.settings.text_color }};
+    --color-bg: {{section.settings.bg_color}};
+    --PT: {{section.settings.padding_top}}px;
+    --PB: {{section.settings.padding_bottom}}px;
+  }
+{% endstyle %}
+
+<div class="join-the-club" id="section-{{ section.id }}">
+  <div class="page-width">
+    <div class="jtc-wrapper">
+      <div class="jtc-left">
+        <h2>{{ section.settings.title }}</h2>
+        {% if section.settings.image != blank %}
+          <div class="jtc-logo">
+            {%- render 'image-element',
+              img: section.settings.image,
+              widths: '200',
+              sizeVariable: '200px',
+              fallback: '200px',
+              alt:'join the club'
+            -%}
+          </div>
+        {% endif %}
+      </div>
+      <div class="jtc-right">
+        {% if section.settings.text != blank %}
+          <div class="jtc-rte">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+        {% if button_text1 != blank or button_text2 != blank %}
+          <div class="jtc-btns">
+             {%- if button_text1 != blank -%}
+                <div class="jtc-btn--item">
+                   <a href="{{ button_link1 }}" class="btn btn--solid-border {{ button_style1 }}" aria-label="{{ button_text1 }}">
+                    <span>{{ button_text1 }}</span>
+                    {% if section.settings.show_button_arrow %}{% render 'button-arrow' %}{% endif %}
+                  </a>
+                </div>
+             {% endif %}
+             {%- if button_text2 != blank -%}
+                <div class="jtc-btn--item">
+                  <a href="{{ button_link2 }}" class="btn {{ button_style2 }} " aria-label="{{ button_text2 }}">{{ button_text2 }}</a>
+                </div>
+            {% endif %}
+           </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Join The Club",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Logo"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default":"The Smell Good Club"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default":"<p>Become a member of our community to instantly gain access to exclusive offers and receive rewards every time you purchase.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_text1",
+        "label": "Button 1 Text",
+        "default": "Button text 1"
+      },
+      {
+        "type": "url",
+        "id": "button_link1",
+        "label": "Button 1 Link"
+      },
+      {
+        "type": "select",
+        "id": "button_style1",
+        "label": "Button 1 style",
+        "default": "btn--primary",
+        "options": [
+          { "label": "Primary", "value": "btn--primary" },
+          { "label": "Secondary", "value": "btn--secondary" }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "show_button_arrow",
+        "label": "Show Button Arrow",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "button_text2",
+        "label": "Button 2 Text",
+        "default": "Button text 2"
+      },
+      {
+        "type": "url",
+        "id": "button_link2",
+        "label": "Button 2 Link"
+      },
+      {
+        "type": "select",
+        "id": "button_style2",
+        "label": "Button 2 Style",
+        "default": "btn--primary",
+        "options": [
+          { "label": "Primary", "value": "btn--primary" },
+          { "label": "Secondary", "value": "btn--secondary" }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Section Background",
+        "default": "#F2EADF"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#101820"
+      },
+      {
+       "type": "header",
+        "content": "section padding"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 54
+      },
+      {
+       "type": "range",
+        "id": "padding_bottom",
+        "label": "Paading bottom",
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 54
+      }
+    ],
+    "presets": [
+      {
+        "name": "Join The Club"
+      }
+    ]
+  }
+{% endschema %}

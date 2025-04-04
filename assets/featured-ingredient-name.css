@@ -1,0 +1,184 @@
+.featured-ingredient-section {
+  padding: 80px 0;
+}
+
+.featured-ingredient-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 88px;
+}
+
+.featured-ingredient-image {
+  flex: 1;
+  min-width: 568px;
+  border-radius: 800px;
+  overflow: hidden;
+}
+
+.featured-ingredient-content {
+  flex: 2;
+}
+
+.placeholder-callout-block {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.featured-ingredient-content .heading {
+  color: #101820;
+  font-family: "Playfair Display";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.4px;
+  margin: 0 0 20px;
+}
+
+.featured-ingredient-content .rte {
+  color: rgba(16, 24, 32, 0.80);
+  font-family: var(--body-font);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; 
+  margin: 0;
+}
+
+.placeholder-callout-text {    
+  margin-top: 18px;
+  color: rgba(16, 24, 32, 0.80);
+  font-family: var(--body-font);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;margin-top: 18px;
+}
+
+
+.featured-ingredient-section .collapsibles-wrapper {
+  border-bottom: 1px solid #D9CBBF;
+  border-top: 1px solid #D9CBBF;
+}
+
+.featured-ingredient-section .collapsible-trigger  {
+  color: #101820;
+  font-family: var(--body-font);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  opacity: .8;
+  padding: 18px 0;
+  border: none;
+  text-align: left;
+  letter-spacing: normal;
+  text-transform: capitalize;
+}
+
+.featured-ingredient-section .collapsible-trigger .collapsible-trigger__icon {
+  width: auto;
+  height: auto;
+  right: 0;
+}
+
+.featured-ingredient-section .collapsible-trigger .collapsible-trigger__icon svg {
+  margin-right: -5px;
+}
+
+.featured-ingredient-section .collapsible-content__inner {
+  color: rgba(16, 24, 32, 0.80);
+  font-family: var(--body-font);
+  font-size: 14px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; 
+  padding: 0 0 18px !important;
+  border: none !important;
+}
+
+@media (max-width: 1199px) {
+
+  .featured-ingredient-inner {
+    gap: 20px;
+  }
+
+  .featured-ingredient-image {
+    flex: 1;
+    min-width: auto;
+  }
+
+  .featured-ingredient-content {
+    flex: 1;
+  }
+  
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px)  {
+
+  .featured-ingredient-section {
+    padding: 40px 0;
+  }
+  
+  .featured-ingredient-content .heading {
+    font-size: 28px;
+  }
+
+  .featured-ingredient-content .rte {
+    font-size: 14px;
+  }
+
+  .placeholder-callout-image {
+    max-width: 170px;  
+  }
+
+  .placeholder-callout-text {
+    font-size: 14px;
+    margin-top: 14px;
+  }
+
+  .featured-ingredient-section .collapsible-trigger {
+    font-size: 16px;
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+  .featured-ingredient-content .heading {
+    font-size: 28px;
+    line-height: 110%; 
+    letter-spacing: -0.28px;
+    margin: 0 0 20px;
+  }
+  
+  .featured-ingredient-section {
+    padding: 40px 0;
+  }
+
+  .featured-ingredient-inner {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+
+  .featured-ingredient-image {
+    width: 100%;
+  }
+
+  .placeholder-callout-text {
+    margin-top: 6px;
+  }
+
+  .placeholder-callout-block {
+    margin: 32px 0;
+  }
+
+  .featured-ingredient-section .collapsible-content__inner {
+    font-size: 16px !important;
+    line-height: 22.4px;
+  }
+  
+}

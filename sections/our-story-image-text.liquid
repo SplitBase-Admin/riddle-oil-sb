@@ -1,0 +1,44 @@
+{{ 'our-story-image.css' | asset_url | stylesheet_tag }}
+
+<div class="our-story-image-wrapper" id="section-{{ section.id }}">
+  <div class="page-width">
+    <div class="section-content">
+      {% if section.settings.image != blank %}
+        <div class="our-story-image">
+          {%- render 'image-element',
+            img: section.settings.image,
+            widths: '480',
+            alt:section.settings.text
+          -%}
+        </div>
+      {% endif %}
+      <div class="rte text-center">
+        {{ section.settings.text }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Our Story Image Text",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default":"Lorem ipsum dolor sit amet consectetur. Odio consequat tincidunt dignissim condimentum maecenas cursus odio eu in."
+      }
+    ],
+    "presets": [
+      {
+        "name": "Our Story Image Text"
+      }
+    ]
+  }
+{% endschema %}

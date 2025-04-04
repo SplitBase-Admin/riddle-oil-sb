@@ -1,0 +1,210 @@
+{{ 'custom-featured-collection-2.css' | asset_url | stylesheet_tag: preload: true }}
+
+{% liquid
+  assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.0
+%}
+
+{%- assign collection = collections[section.settings.home_featured_products] -%}
+
+{%- style -%}
+  {% if section.settings.section_id != blank %}#{{ section.settings.section_id }}{% else %}#CollectionSection-{{ section.id }}{% endif %} {
+    --color-text: {{ section.settings.text_color }};
+    --color-button-text: {{ section.settings.button_text_color }};
+    --color-button-bg: {{ section.settings.button_color }};
+    
+    --PT: 80px;
+    --PB: 75px;
+
+    --overlay-background: {{ section.settings.color_overlay }};
+
+    {% if section.settings.color_overlay_gradient != blank %}
+      --overlay-background-gradient: {{ section.settings.color_overlay_gradient }};
+    {% endif %}
+    
+    --overlay-opacity: {{ overlay_opacity }};
+    
+    @media screen and (max-width: 767px) {
+      --PT: 40px;
+      --PB: 40px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% else %}CollectionSection-{{ section.id }}{% endif %}"
+  data-section-id="{{ section.id }}"
+  data-section-type="collection-grid"
+  data-context="featured-collection" class="custom-featured-collection-2">
+  <div class="custom-featured-collection-container">
+    <h2 class="section-heading hide-desktop">
+      {{ section.settings.title }}
+    </h2>
+    <div class="collection-section-inner">
+      <div class="promo-block grid__item grid-product">
+        <div class="promo-block-inner">
+          <div class="custom-featured-slider-arrows">
+            <div class="swiper-prev">
+              {%- render 'swiper-arrow-left-white' -%}
+            </div>
+            <div class="swiper-next">
+              {%- render 'swiper-arrow-right-white' -%}
+            </div>
+          </div>
+          <div class="promo-block-overlay">
+          </div>
+          <div class="promo-block-image">
+          {%- if section.settings.promo_image != blank -%}
+            {% assign classes = 'promo-image' %}
+            {%- render 'image-element',
+              img: section.settings.promo_image,
+              img_width: 500,
+              loading: section.settings.lazyload_images,
+              classes: classes,
+            -%}
+          {%- else -%}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+          </div>
+          <div class="promo-block-content">
+  
+            {%- if section.settings.title != blank or section.settings.view_all -%}
+              <div class="section-header{% if section.settings.view_all %}{% unless settings.type_headers_align_text %} section-header--with-link{% endunless %}{% endif %}">
+                {% if section.settings.caption != blank %}
+                  <p class="sh2">{{ section.settings.caption }}</p>
+                {% endif %}
+                
+                <h2 class="section-heading">
+                  {{ section.settings.title }}
+                </h2>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+      <div class="collection-slider-wrapper">
+        <div class="featured-collection-slider swiper">
+          <div class="grid grid--uniform swiper-wrapper">
+              
+              {%- for product in collections[section.settings.home_featured_products].products limit: 10 -%}
+                {%- render 'product-grid-item',
+                  product: product,
+                  collection: collection,
+                  quick_shop_enable: settings.quick_shop_enable,
+                  fallback: fallback,
+                  classes: 'swiper-slide'
+                -%}
+              {%- endfor -%}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let customFeatureCollection;  
+  customFeatureCollection = new Swiper('.custom-featured-collection-2 .featured-collection-slider', {
+    slidesPerView: 2,
+    spaceBetween: 20,
+    loop: false,
+    centeredSlides: false,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.swiper-next',
+      prevEl: '.swiper-prev',
+    },
+    breakpoints: {  
+      '768': {
+        spaceBetween: 32,
+        slidesPerView: "auto",
+      },
+      '1440': {
+        spaceBetween: 48,
+        slidesPerView: "auto",
+      }
+    }
+  });
+
+  // document.addEventListener("DOMContentLoaded", (event) => {
+  //   initSwiper();
+  // });  
+</script>
+
+{% schema %}
+{
+  "name": "Custom Feature Collection",
+  "class": "new-featured-collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section Id"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Section Caption",
+      "default": "SHOP"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.featured-collection.settings.title.label",
+      "default": "Featured collection"
+    },
+    {
+      "type": "collection",
+      "id": "home_featured_products",
+      "label": "t:sections.featured-collection.settings.home_featured_products.label"
+    },
+    {
+      "id": "color_overlay",
+      "type": "color",
+      "label": "Overlay",
+      "default": "#000"
+    },
+    {
+      "id": "color_overlay_gradient",
+      "type": "color_background",
+      "label": "Overlay gradient"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "unit": "%",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Promo Block"
+    },
+    {
+      "type": "image_picker",
+      "id": "promo_image",
+      "label": "Promo Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_promo_image",
+      "label": "Mobile Promo Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Feature Collection"
+    }
+  ],
+  "blocks": [],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

@@ -1,0 +1,170 @@
+{{ 'value-props.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  {% if section.settings.section_id != blank %}
+    #{{ section.settings.section_id }} {
+      --text-color: {{ section.settings.text_color }};
+      --bg-color:{{ section.settings.bg_color }};
+      --PT: {{ section.settings.padding-top }}px;
+      --PB: {{ section.settings.padding-bottom }}px;
+    }
+  {% else %}
+    #{{ section.id }} {
+      --text-color: {{ section.settings.text_color }};
+      --bg-color:{{ section.settings.bg_color }};
+      --PT: {{ section.settings.padding-top }}px;
+      --PB: {{ section.settings.padding-bottom }}px;
+    }
+  {% endif %}
+{% endstyle %}
+
+<div class="value-props-section {% unless section.settings.section_overlaid %}section_not_overlaid{% endunless %}" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% else %}{{ section.id }}{% endif %}">
+  <div class="page-width">
+    <div class="value-props-list hide--mobile">
+        {% for block in section.blocks %}
+          <div class="value-props-item">
+            <div class="value-props-box">
+              {% if block.settings.icon != blank %}
+                <div class="value-props-icon">
+                  {{ block.settings.icon | image_url: width: 32 | image_tag }}
+                </div>
+              {% endif %}
+              <div class="value-props-text">
+                  <h4>{{ block.settings.title }}</h4>  
+              </div>
+            </div>  
+          </div>
+        {% endfor %}
+    </div>
+    <div class="value-props-list swiper marquee-slider">
+      <div class="swiper-wrapper">
+        {% assign repeat_times = 50 %}
+        {% assign dummy_array = (1..repeat_times) | join: ',' | split: ',' %}
+        
+        {% for _ in dummy_array %}
+          {% for block in section.blocks %}
+            <div class="value-props-item swiper-slide">
+              <div class="value-props-box">
+                {% if block.settings.icon != blank %}
+                  <div class="value-props-icon">
+                    {{ block.settings.icon | image_url: width: 32 | image_tag }}
+                  </div>
+                {% endif %}
+                <div class="value-props-text">
+                    <h4>{{ block.settings.title }}</h4>  
+                </div>
+              </div>  
+            </div>
+          {% endfor %}
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>  
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let swiper;
+  
+    const initializeSwiper = () => {
+      if (!swiper) {
+        swiper = new Swiper('.marquee-slider', {
+          slidesPerView: 'auto',
+          loop: true,
+          loopedSlides: 5,
+          speed: 5000,
+          autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+          },
+          on: {
+            setTranslate: (swiper, translate) => {
+              if (swiper.isEnd) swiper.setTranslate(0);
+            },
+          },
+        });
+      }
+    };
+
+      initializeSwiper();
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Value Props",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_id",
+        "label": "Section Id"
+      },
+      {
+        "type": "checkbox",
+        "id": "section_overlaid",
+        "label": "Overlay this to the section above",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#101820"
+      },
+      {
+       "type": "header",
+        "content": "section padding"
+      },
+      {
+        "type": "range",
+        "id": "padding-top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 36
+      },
+      {
+       "type": "range",
+        "id": "padding-bottom",
+        "label": "Paading bottom",
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 36
+      }
+    ],
+    "blocks": [
+      {
+        "name":"Props Item",
+        "type": "text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Value Props"
+      }
+    ]
+  }
+{% endschema %}

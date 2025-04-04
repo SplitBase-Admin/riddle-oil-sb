@@ -1,0 +1,13 @@
+.template--fragrance-oils .grid-meta-container {
+  margin-bottom: 6px;  
+}
+
+.template--fragrance-oils .try-now-button {
+  margin: 2px 0 16px;  
+}
+
+@media (max-width: 767px) {
+    .template--fragrance-oils .collection-grid__wrapper .grid-product__meta {
+        padding: 8px 0 0;
+    }
+}

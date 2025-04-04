@@ -1,0 +1,210 @@
+{{ 'our-story.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign button_text = section.settings.button_text
+  assign button_link = section.settings.button_link
+  assign button_style = section.settings.button_style 
+%}
+
+{% style %}
+  #section-{{section.id}} {
+    --color-text: {{ section.settings.text_color }};
+    --color-bg: {{section.settings.bg_color}};
+    --PT: {{section.settings.padding_top}}px;
+    --PB: {{section.settings.padding_bottom}}px;
+  }
+{% endstyle %}
+<div class="our-story-section" id="section-{{ section.id }}">
+  <div class="page-width">
+    <div class="our-story-wrapper">
+      <div class="our-story-content">
+        <div class="our-story-content-box">
+          {% if section.settings.pre_text != blank %}
+            <div class="our-story-pretext">
+              <p class="sh2">{{ section.settings.pre_text }}</p>
+            </div>
+          {% endif %}
+          {% if section.settings.title != blank %}
+          <div class="our-story-heading">
+            <h2 class="section-heading">
+              {{ section.settings.title }}
+            </h2>
+          </div>
+          {% endif %}
+          {% if section.settings.text != blank %}
+          <div class="our-story-text">
+            {{ section.settings.text }}
+          </div>
+          {% endif %}
+          {% if section.settings.quote != blank %}
+          <div class="our-story-quote">
+            {{ section.settings.quote }}
+          </div>
+          {% endif %}
+          {% if section.settings.sign != blank %}
+            <div class="our-story-sign">
+              {%- render 'image-element',
+                img: section.settings.sign,
+                widths: '182',
+                sizeVariable: '182',
+                fallback: '182',
+                alt:section.settings.title
+              -%}
+            </div>
+          {% endif %}
+          {% if button_text != blank %}
+            <div class="our-story-btns">
+              <a href="{{ button_link }}" class="btn btn--solid-border {{ button_style }}">
+                <span>{{ button_text }}</span>
+                {% render 'button-arrow' %}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="our-story-image">
+        {% if section.settings.image != blank %}
+            <div class="our-story-img hide-mobile">
+              {%- render 'image-element',
+                img: section.settings.image,
+                widths: '600',
+                sizeVariable: '600px',
+                fallback: '600px',
+                alt:section.settings.pre_text
+              -%}
+            </div>
+            {% if section.settings.mobile_image != blank %}
+              <div class="our-story-img hide-desktop">
+                {%- render 'image-element',
+                  img: section.settings.mobile_image,
+                  widths: '600',
+                  sizeVariable: '600px',
+                  fallback: '600px',
+                  alt:section.settings.pre_text
+                -%}
+              </div>
+            {% else %}
+              <div class="our-story-img hide-desktop">
+                {%- render 'image-element',
+                  img: section.settings.image,
+                  widths: '600',
+                  sizeVariable: '600px',
+                  fallback: '600px',
+                  alt:section.settings.pre_text
+                -%}
+              </div>
+            {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Our Story",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "text",
+        "id": "pre_text",
+        "label": "Title",
+        "default":"OUR STORY"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default":"The Smell Good Club"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default":"<p>Lorem ipsum dolor sit amet consectetur. Odio consequat tincidunt dignissim condimentum maecenas cursus odio eu in.</p>"
+      },
+      {
+        "type": "richtext",
+        "id": "quote",
+        "label": "Text",
+        "default":"<p>Lorem ipsum dolor sit amet consectetur. Odio consequat tincidunt dignissim condimentum maecenas cursus odio eu in.</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "sign",
+        "label": "Signature"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "select",
+        "id": "button_style",
+        "label": "Button style",
+        "default": "btn--primary",
+        "options": [
+          { "label": "Primary", "value": "btn--primary" },
+          { "label": "Secondary", "value": "btn--secondary" }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Section Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#101820"
+      },
+      {
+       "type": "header",
+        "content": "section padding"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 54
+      },
+      {
+       "type": "range",
+        "id": "padding_bottom",
+        "label": "Paading bottom",
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 54
+      }
+
+    ],
+    "presets": [
+      {
+        "name": "Our Story"
+      }
+    ]
+  }
+{% endschema %}

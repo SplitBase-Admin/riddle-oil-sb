@@ -1,0 +1,147 @@
+.redeem-for-product-section .yotpo-widget-products-redemption-container {
+  padding: 88px 0;
+}
+
+.redeem-for-product-section .yotpo-redemption-option {
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.redeem-for-product-section .yotpo-redemption-options-list {
+  margin: 48px auto 0;
+  gap: 88px;
+}
+
+.redeem-for-product-section .yotpo-widget-products-redemption .yotpo-login-button {
+  margin-top: 48px;
+}
+
+.redeem-for-product-section .yotpo-redemption-option-details {
+  padding: 16px 17px 0;
+}
+
+.redeem-for-product-section .yotpo-redemption-options-container {
+  max-width: 878px;
+  margin: 0 auto;
+}
+
+.redeem-for-product-section .yotpo-filled-button {
+  width: auto !important;
+  height: auto !important;
+  padding: 8px;
+  min-width: 157px;
+  gap: 10px;
+}
+
+.redeem-for-product-section .yotpo-filled-button .yotpo-action-button-text {
+  font-family: var(--body-font);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  text-transform: capitalize;
+}
+
+.redeem-for-product-section .yotpo-widget-products-redemption .yotpo-headline {
+  line-height: 110%; 
+  letter-spacing: -0.4px;
+}
+
+.redeem-for-product-section .yotpo-filled-button:after {
+  content: "";
+  background: url(/cdn/shop/files/arrow-right-white.svg?v=1741109962);
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.redeem-for-product-section .yotpo-redemption-option-reward {
+  line-height: 140%;
+  padding: 0;
+}
+
+.redeem-for-product-section .yotpo-redemption-option-cost {
+  font-family: var(--body-font) !important;
+  font-weight: 700 !important;
+  line-height: 120%;
+  letter-spacing: 3.84px;
+  text-transform: uppercase;
+  margin: 10px 0 0;
+}
+
+
+@media (max-width: 767px) {
+
+  .redeem-for-product-section .yotpo-widget-products-redemption-container {
+    padding: 32px 0;
+  }
+
+  .redeem-for-product-section .yotpo-widget-products-redemption .yotpo-headline {
+    font-size: 28px !important;
+    letter-spacing: -0.28px;
+  }
+
+  .redeem-for-product-section .yotpo-widget-products-redemption .yotpo-redemption-mobile-carousel .swiper-container {
+    padding: 0;
+  }
+
+  .redeem-for-product-section .swiper-wrapper {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .redeem-for-product-section .yotpo-redemption-options-container {
+    pointer-events: none;
+  }
+
+  .redeem-for-product-section .swiper-pagination {
+    display: none;
+  }
+
+  .yotpo-widget-products-redemption .yotpo-redemption-slider-group-items {
+    margin: 0 !important;
+  }
+
+  .yotpo-widget-products-redemption .yotpo-is-mobile .yotpo-redemption-slider-item.yotpo-carousel-one-per-slide {
+    width: 234px;
+    flex-basis: 234px;
+    padding: 0;
+  }
+
+  .redeem-for-product-section .yotpo-redemption-option-image-container {
+    padding: 0 10px;
+  }
+
+  .redeem-for-product-section .yotpo-redemption-option-details {
+    padding: 16px 0 0;
+  }
+
+  .redeem-for-product-section .yotpo-redemption-option-reward {
+    font-size: 24px !important;
+  }
+
+  .redeem-for-product-section .yotpo-redemption-option-cost {
+    font-size: 16px !important;
+  }
+
+  .redeem-for-product-section .yotpo-redemption-options-list {
+    flex-direction: column;
+    gap: 48px;
+    max-width: 234px;
+    margin: 32px auto 0;
+  }
+
+  .yotpo-widget-products-redemption .yotpo-redemption-item {
+    width: 100% !important;
+  }
+
+}
+
+@media (max-width: 450px) {
+  
+  .yotpo-widget-products-redemption .yotpo-redemption-mobile-carousel {
+    max-width: 234px;
+  }
+
+}

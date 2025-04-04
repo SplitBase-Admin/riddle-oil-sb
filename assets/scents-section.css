@@ -1,0 +1,200 @@
+.scents-main {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.scents-main .scents-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.scents-main .scents-wrap .scents-image {
+  width: 62.3%;
+}
+
+.scents-main .scents-wrap .scents-image img {
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.scents-main .scents-wrap .scents-content {
+  width: 37.7%;
+  padding: 32px 64px;
+  padding-right: var(--offset-left);
+  align-self: center;
+}
+
+.scents-content-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 16px;
+}
+
+.scents-content-list .scents-content-item {
+  width: calc(50% - 8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.scents-content-list .scents-content-item .scents-icon {
+  max-width: 32px;
+}
+
+.scents-content-list .scents-content-item h4 {
+  letter-spacing: 0;
+  font-family: var(--body-font);
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 19.2px;
+  margin: 0px;
+}
+
+.scents-content-list .scents-content-item:before, 
+.scents-content-list .scents-content-item:after {
+  position: absolute;
+  content: "";
+  right: -8px;
+  top: 0;
+  height: auto;
+  width: 1px;
+  background: #000;
+  opacity: 0.2;
+  bottom: 0px;
+}
+
+.scents-content-list .scents-content-item:before {
+  bottom: -16px;
+  left: 10px;
+  top: auto;
+  height: 1px;
+  right: 10px;
+  width: auto;
+}
+
+.scents-content-list .scents-content-item:nth-last-child(2n+1):after,
+.scents-content-list .scents-content-item:nth-last-child(2):before, 
+.scents-content-list .scents-content-item:last-child:before {
+  display: none;
+}
+
+.scents-content-list .scents-content-item:nth-last-child(2):after, 
+.scents-content-list .scents-content-item:last-child:after {
+  bottom: 0;
+}
+
+.scents-content-wrap .scents-content-rte {
+  text-align: center;
+  margin-top: 35px;
+  opacity: 0.8;
+}
+
+.scents-content-wrap .scents-content-btns {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.scents-content-wrap .scents-content-rte p {
+  font-size: 14px;
+  line-height: 19.6px;
+}
+
+.scents-content-wrap .scents-content-rte p:last-child {
+  margin: 0;
+}
+
+@media screen and (max-width: 1439px) {
+  
+  .scents-main .scents-wrap .scents-content {
+    padding: 32px;
+  }
+  
+}
+
+@media screen and (min-width: 1600px) {
+  .scents-main .scents-wrap .scents-image {
+    width: 55%;
+  }
+
+  .scents-main .scents-wrap .scents-content {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  
+  .scents-main .scents-wrap .scents-image {
+    width: 55%;
+  }
+  
+  .scents-main .scents-wrap .scents-content {
+    width: 45%;
+  }
+
+  .scents-content-wrap .scents-content-rte {
+    margin-top: 24px;
+  }
+
+  .scents-content-wrap .scents-content-btns {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  
+  .scents-main .scents-wrap .scents-image, 
+  .scents-main .scents-wrap .scents-content {
+    width: 100%;
+  }
+
+  .scents-main .scents-wrap {
+    flex-direction: column-reverse;
+  }
+
+  .scents-main .scents-wrap .scents-content {
+    padding: 40px 16px;
+  }
+
+  .scents-content-list .scents-content-item {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .scents-content-list .scents-content-item:before {
+    bottom: -16px;
+    left: 0;
+    top: auto;
+    right: 10px;
+    display: block !important;
+  }
+  
+  .scents-content-list .scents-content-item:after,
+  .scents-content-list .scents-content-item:last-child:before {
+    display: none !important;
+  }
+  
+  .scents-content-wrap .scents-content-btns,
+  .scents-content-wrap .scents-content-rte {
+    text-align: left;
+  }
+
+  .scents-content-list .scents-content-item h4 {
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+
+}
+
+@media screen and (max-width: 479px) {
+  
+  .scents-content-wrap .scents-content-btns .btn {
+    width: 100%;
+    max-width: 500px;
+  }
+}

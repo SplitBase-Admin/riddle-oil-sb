@@ -1,0 +1,178 @@
+{{ 'scent-notes.css' | asset_url | stylesheet_tag: preload: true }}
+
+{% assign scent_notes = product.metafields.custom.scent-notes.value %}
+{% assign top_notes = scent_notes.top_notes.value %}
+{% assign heart_notes = scent_notes.heart_notes.value %}
+{% assign base_notes = scent_notes.base_notes.value %}
+
+{% if top_notes != blank or heart_notes != blank or base_notes != blank %}
+
+  <section class="scent-notes-section" id="{{ section.settings.section_id }}">
+  
+    {% if section.settings.left_pattern != blank %}
+      <div class="left-pattern small--hide">{{ section.settings.left_pattern | image_url: width: auto, height: auto | image_tag }}</div>
+    {% endif %}
+  
+    {% if section.settings.right_pattern != blank %}
+      <div class="right-pattern small--hide">{{ section.settings.right_pattern | image_url: width: auto, height: auto | image_tag }}</div>
+    {% endif %}
+    
+    <div class="page-width">
+      <div class="scent-notes-inner">
+  
+        <div class="scent-notes-header medium-up--hide">
+          {% if scent_notes.scent_notes_title != blank  %}
+            <h2 class="heading">{{ scent_notes.scent_notes_title }}</h2>
+          {% elsif section.settings.title != blank %}
+            <h2 class="heading">{{ section.settings.title }}</h2>
+          {% endif %}
+    
+          {% if scent_notes.scent_notes_description != blank %}
+            <div class="description">{{ scent_notes.scent_notes_description }}</div>
+          {% elsif section.settings.text != blank %}
+            <div class="description">{{ section.settings.text }}</div>
+          {% endif %}
+        </div>
+  
+        <div class="scent-notes-image">
+          
+          {% if scent_notes.scent_notes_image %}
+            {{ scent_notes.scent_notes_image | image_url: width: 324, height: 324 | image_tag }}
+          {% elsif product.featured_image %}
+            {{ product.featured_image | image_url: width: 324, height: 324 | image_tag }}
+          {% elsif section.settings.image != blank %}vv
+            {{ section.settings.image | image_url: width: 324, height: 324 | image_tag }}
+          {% else %}
+            {{ 'image' | placeholder_svg_tag }}
+          {% endif %}
+  
+          {% if section.settings.left_pattern_mobile != blank %}
+            <div class="left-pattern medium-up--hide">{{ section.settings.left_pattern_mobile | image_url: width: auto, height: auto | image_tag }}</div>
+          {% else %}
+            <div class="left-pattern medium-up--hide">{{ section.settings.left_pattern | image_url: width: auto, height: auto | image_tag }}</div>
+          {% endif %}
+  
+          {% if section.settings.right_pattern_mobile != blank %}
+            <div class="right-pattern medium-up--hide">{{ section.settings.right_pattern_mobile | image_url: width: auto, height: auto | image_tag }}</div>
+          {% else %}
+            <div class="right-pattern medium-up--hide">{{ section.settings.right_pattern | image_url: width: auto, height: auto | image_tag }}</div>
+          {% endif %}
+  
+        </div>
+  
+        <div class="scent-notes-content">
+          
+          {% if scent_notes.scent_notes_title != blank  %}
+            <h2 class="heading small--hide">{{ scent_notes.scent_notes_title }}</h2>
+          {% elsif section.settings.title != blank %}
+            <h2 class="heading small--hide">{{ section.settings.title }}</h2>
+          {% endif %}
+  
+          {% if scent_notes.scent_notes_description != blank %}
+            <div class="description small--hide">{{ scent_notes.scent_notes_description }}</div>
+          {% elsif section.settings.text != blank %}
+            <div class="description small--hide">{{ section.settings.text }}</div>
+          {% endif %}
+          
+          <div class="ingredient-wrapper">
+  
+            {% if top_notes != blank %}
+              <div class="ingredient-item">
+                <div class="ingredient-heading">top</div>
+                <div class="ingredient-list">
+                  {% for top in top_notes %}
+                    <div class="ingredient-title">{{ top }}</div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+  
+            {% if heart_notes != blank %}
+              <div class="ingredient-item">
+                <div class="ingredient-heading">Heart</div>
+                <div class="ingredient-list">
+                  {% for heart in heart_notes %}
+                    <div class="ingredient-title">{{ heart }}</div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+  
+            {% if base_notes != blank %}
+              <div class="ingredient-item">
+                <div class="ingredient-heading">base</div>
+                <div class="ingredient-list">
+                  {% for base in base_notes %}
+                    <div class="ingredient-title">{{ base }}</div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% else %}
+ 
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Scent Notes",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_id",
+        "label": "Section Id"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Scent Notes"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Different notes have different molecule density</p>"
+      },
+      {
+        "type": "header",
+        "content": "Patterns"
+      },
+      {
+        "type": "image_picker",
+        "id": "left_pattern",
+        "label": "Left Pattern"
+      },
+      {
+        "type": "image_picker",
+        "id": "right_pattern",
+        "label": "Right Pattern"
+      },
+      {
+        "type": "image_picker",
+        "id": "left_pattern_mobile",
+        "label": "Left Pattern Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "right_pattern_mobile",
+        "label": "Right Pattern Mobile"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Scent Notes"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,39 @@
+{%- if linklists[block.settings.menu].links.size > 0 -%}
+
+
+  {% if block.settings.menu_heading %}
+    <h2 class="h4 footer__title {% if block.settings.show_footer_title %}small--hide{% endif %}">
+      {{ block.settings.menu_heading }}
+    </h2>
+  {% else %}
+    <h2 class="h4 footer__title {% if block.settings.show_footer_title %}small--hide{% endif %}">
+      {{ linklists[block.settings.menu].title }}
+    </h2>
+  {% endif %}
+
+
+  {%- if block.settings.show_footer_title -%}
+    <button type="button" class="h4 footer__title collapsible-trigger collapsible-trigger-btn medium-up--hide" aria-controls="Footer-{{ block.id }}">
+      {% if block.settings.menu_heading %}
+        {{ block.settings.menu_heading }}
+      {% else %}
+        {{ linklists[block.settings.menu].title }}
+      {% endif %}
+      {%- render 'collapsible-icons' -%}
+    </button>
+  {%- endif -%}
+  <div
+    {% if block.settings.show_footer_title %}
+      id="Footer-{{ block.id }}" class="collapsible-content collapsible-content--small"
+    {% endif %}>
+    <div class="collapsible-content__inner">
+      <div class="footer__collapsible{% unless block.settings.show_footer_title %} footer_collapsible--disabled{% endunless %}">
+        <ul class="no-bullets site-footer__linklist">
+          {%- for link in linklists[block.settings.menu].links -%}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

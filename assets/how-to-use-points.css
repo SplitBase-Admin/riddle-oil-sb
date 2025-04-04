@@ -1,0 +1,139 @@
+.how-to-use-points-section .yotpo-coupons-redemption-widget-container {
+  padding: 88px 0 !important;
+}
+
+.how-to-use-points-section .yotpo-coupons-redemption-widget .yotpo-headline {
+  line-height: 110%;
+  letter-spacing: -0.4px;
+  margin: 0 0 24px;
+}
+
+.how-to-use-points-section .yotpo-coupons-redemption-widget .yotpo-description {
+  max-width: 636px;
+  line-height: 140%;
+}
+
+.how-to-use-points-section .yotpo-coupons-redemption-widget .yotpo-redemption-options-list {
+  margin-top: 48px;
+}
+
+.how-to-use-points-section .yotpo-coupons-redemption-widget .yotpo-login-button {
+  margin-top: 56px;
+}
+
+.how-to-use-points-section .yotpo-coupons-redemption-widget .yotpo-redemption-option-cost {
+  position: relative;
+  font-family: var(--body-font) !important;
+  line-height: 120%;
+  letter-spacing: 3.84px;
+  text-transform: uppercase;
+  font-weight: 700 !important;
+}
+
+.how-to-use-points-section .yotpo-redemption-option-reward {
+  letter-spacing: -0.48px;
+}
+
+.how-to-use-points-section .yotpo-login-link button .yopto-widget-button-text {
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.how-to-use-points-section .yotpo-login-link button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.how-to-use-points-section .yotpo-login-link button:after {
+  content: '';
+  background: url(https://cdn.shopify.com/s/files/1/0892/0284/files/arrow-right-white.svg?v=1741109962);
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.yotpo-coupons-redemption-widget .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #101820;
+}
+
+.how-to-use-points-section .yotpo-login-link button {
+  border-radius: 2px;
+}
+
+@media (max-width: 767px) {
+  
+  .how-to-use-points-section .yotpo-coupons-redemption-widget-container {
+    padding: 32px 0 !important;
+  }
+
+  .how-to-use-points-section .yotpo-coupons-redemption-widget .yotpo-headline {
+    font-size: 28px !important;
+    letter-spacing: -0.28px;
+  }
+
+  .how-to-use-points-section .yotpo-redemption-option-reward { 
+    font-size: 32px !important;
+    letter-spacing: -0.32px;
+  }
+
+  .yotpo-coupons-redemption-widget .yotpo-coupouns-container.yotpo-is-mobile {
+    width: 100%;
+  }
+  
+  .yotpo-coupons-redemption-widget .swiper-container {
+    padding-bottom: 30px;
+  }
+
+  .how-to-use-points-section .yotpo-coupons-redemption-widget .yotpo-login-button,
+  .how-to-use-points-section .yotpo-coupons-redemption-widget .yotpo-redemption-options-list {
+    margin-top: 32px;
+  }
+
+  .how-to-use-points-section .yotpo-coupons-redemption-widget .yotpo-redemption-options-list {
+    pointer-events: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .how-to-use-points-section .yotpo-coupons-redemption-widget .yotpo-redemption-item {
+    width: 100%;
+    margin: 0;
+  }
+
+  .how-to-use-points-section .swiper-wrapper {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .how-to-use-points-section .yotpo-coupons-redemption-widget .yotpo-redemption-option-container {
+    padding: 0;
+  }
+
+  .how-to-use-points-section .swiper-slide {
+    width: 100% !important
+  }
+
+  .yotpo-coupons-redemption-widget .swiper-pagination {
+    display: none;
+  }
+
+  .how-to-use-points-section .yotpo-coupons-redemption-widget .yotpo-description {
+    font-size: 16px !important;
+  }
+
+}
+
+@media (max-width: 550px) {
+  
+  .how-to-use-points-section .yotpo-login-link,
+  .how-to-use-points-section .yotpo-filled-button,
+  .how-to-use-points-section .yotpo-login-link button {
+    width: 100% !important;
+  }
+
+} 

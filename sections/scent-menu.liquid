@@ -1,0 +1,102 @@
+{{ 'scent-menu.css' | asset_url | stylesheet_tag }}
+
+<section class="scent-menu-section">
+  <div class="page-width">
+    <div class="scent-menu-inner">
+
+
+  
+      <div class="scent-menu-wrapper">
+        {% if section.settings.heading != blank %}
+          <header class="section-header">
+            <h1 class="section-header__title">{{ section.settings.heading }}</h1>
+          </header>
+        {% endif %}
+        <div class="scent-menu-wrap">
+          {% for block in section.blocks %}
+            <div class="scent-menu-items">
+              {% if block.settings.menu_heading != blank %}
+              <div class="scent-menu-heading">
+                <h3>{{ block.settings.menu_heading }}</h3>
+              </div>
+              {% endif %}
+              <div class="scent-item-wrap">
+                <div class="scent-menu-heading">
+                  {% if block.settings.profile != blank %}
+                  <div class="scent-menu-Profile">
+                    <h4>Profile </h4><p>{{ block.settings.profile }}</p>
+                  </div>
+                  {% endif %}
+                  {% if block.settings.notes != blank %}
+                  <div class="scent-menu-Notes">
+                    <h4>Notes</h4><p>{{ block.settings.notes }}</p>
+                  </div>
+                  {% endif %}
+                </div>
+                <a href="{{ block.settings.menu_url }}" class="link">
+                  Shop {{ block.settings.menu_heading }} {% render 'arrow-right' %}
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Scent Menu",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Page Heading",
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Image"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "tab",
+        "name": "Tab",
+        "settings": [
+          {
+            "type": "text",
+            "id": "menu_heading",
+            "label": "Menu Heading",
+          },
+          {
+            "type": "text",
+            "id": "profile",
+            "label": "Profile",
+          },
+          {
+            "type": "text",
+            "id": "notes",
+            "label": "Notes",
+          },
+          {
+            "type": "url",
+            "id": "menu_url",
+            "label": "Menu URL",
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Scent Menu"
+      }
+    ]
+  }
+{% endschema %}

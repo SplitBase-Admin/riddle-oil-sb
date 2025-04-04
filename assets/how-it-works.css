@@ -1,0 +1,114 @@
+.how-it-works-section .yotpo-widget-my-rewards-widget .yotpo-tile-box {
+  padding: 88px 0;
+}
+
+.how-it-works-section .yotpo-reward-steps-title  {
+  margin-bottom: 16px;
+}
+
+.how-it-works-section .yotpo-reward-steps-title .yotpo-inner-text {
+  font-family: var(--body-font) !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 120%;
+  letter-spacing: 3.84px;
+  text-transform: uppercase;
+}
+
+.how-it-works-section .yotpo-widget-my-rewards-widget .yotpo-step-icon svg {
+  display: none;
+}
+
+.how-it-works-section .yotpo-widget-my-rewards-widget .yotpo-step-icon:before {
+  content: '01';
+  color: #101820;
+  text-align: center;
+  font-family: var(--typeHeaderPrimary);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; 
+  letter-spacing: -0.48px;
+}
+
+.how-it-works-section .yotpo-widget-my-rewards-widget .yotpo-info {
+  margin: 0 auto 48px;
+}
+
+.how-it-works-section .yotpo-reward-steps-item-1 .yotpo-step-icon:before {
+  content: '01';
+}
+
+.how-it-works-section .yotpo-reward-steps-item-2 .yotpo-step-icon:before {
+  content: '02';
+}
+
+.how-it-works-section .yotpo-reward-steps-item-3 .yotpo-step-icon:before {
+  content: '03';
+}
+
+.how-it-works-section .yotpo-widget-my-rewards-widget .yotpo-step-icon {
+  height: auto;
+}
+
+.how-it-works-section .yotpo-widget-my-rewards-widget .yotpo-reward-steps-icon {
+  margin-bottom: 10px;
+}
+
+.how-it-works-section .yotpo-widget-my-rewards-widget .yotpo-reward-steps-list {
+  gap: 20px;
+}
+
+.how-it-works-section .yotpo-widget-my-rewards-widget .yotpo-reward-steps-item {
+  padding: 0;
+  flex: 1;
+  width: 100%;
+  min-width: auto;
+}
+
+.how-it-works-section .yotpo-headline .yotpo-inner-text {
+  line-height: 110%; 
+  letter-spacing: -0.4px;
+}
+
+@media (max-width: 850px) {
+
+  .yotpo-widget-my-rewards-widget .yotpo-rewards-guide-tile-wrapper {
+    max-width: 100%;
+  }
+  
+}
+
+@media (max-width: 767px) {
+  
+  .how-it-works-section .yotpo-widget-my-rewards-widget .yotpo-tile-box {
+    padding: 32px 0;
+  }
+
+  .how-it-works-section .yotpo-headline .yotpo-inner-text {
+    font-size: 28px !important;
+    letter-spacing: -0.28px;
+  }
+
+  .how-it-works-section .yotpo-widget-my-rewards-widget .yotpo-reward-steps-item {
+    flex: 0 1 100%;
+  }
+
+  .how-it-works-section .yotpo-reward-steps-title .yotpo-inner-text {
+    font-size: 16px !important;
+  }
+
+  .how-it-works-section .yotpo-widget-my-rewards-widget .yotpo-reward-steps-list {
+    gap: 24px;
+  }
+
+  .how-it-works-section .yotpo-widget-my-rewards-widget .yotpo-info {
+    margin: 0 auto 32px;
+  }
+
+  .how-it-works-section .yotpo-reward-steps-description .yotpo-inner-text {
+    font-size: 16px !important;
+    opacity: 0.8;
+  }
+  
+}

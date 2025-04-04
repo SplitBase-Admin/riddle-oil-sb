@@ -1,0 +1,123 @@
+  {{ 'scents-section.css' | asset_url | stylesheet_tag }}
+
+<div class="scents-main">
+  <div class="scents-wrap">
+    <div class="scents-image">
+      {% if section.settings.desktop_image != blank %}
+        {%- render 'image-element',
+          img: section.settings.desktop_image,
+          img_width: 2000,
+           classes: 'hide-mobile'
+        -%}
+      {% endif %}
+
+      {% if section.settings.mobile_image != blank %}
+        {%- render 'image-element',
+          img: section.settings.mobile_image,
+          img_width: 700,
+          classes: 'hide-desktop'
+        -%}
+      {% else %}
+        {%- render 'image-element',
+          img: section.settings.desktop_image,
+          img_width: 700,
+          classes: 'hide-desktop'
+        -%}
+      {% endif %}
+
+      
+    </div>
+    <div class="scents-content">
+      <div class="scents-content-wrap">
+          <div class="scents-content-list">
+            {%- for block in section.blocks -%}
+              <div class="scents-content-item">
+                {% unless block.settings.icon == blank %}
+                  <div class="scents-icon">
+                    {%- render 'image-element',
+                      img: block.settings.icon,
+                      img_width: 2000
+                    -%}
+                  </div>
+                {% endunless %}
+                
+                {% unless block.settings.title == blank %}
+                  <h4>{{ block.settings.title }}</h4>
+                {% endunless %}
+              </div>
+            {%- endfor -%}
+          </div>
+          {% if section.settings.right_content != blank %}
+            <div class="scents-content-rte">
+              {{ section.settings.right_content }}
+            </div>
+          {% endif %}
+          {% if section.settings.link_text %}
+            <div class="scents-content-btns">
+              <a href="{{ section.settings.link }}" class="btn btn--solid-border btn--primary">
+                <span>{{ section.settings.link_text }}</span>
+                {% render 'button-arrow' %}
+              </a>      
+            </div>
+          {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Scents section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "desktop_image",
+        "label": "Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "richtext",
+        "id": "right_content",
+        "label": "Right Content",
+        "default":"<p>Each purchase earns you points that you can claim to get big savings on all of our products.</p>"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Button URL"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "iconlist",
+        "name": "Icon list",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+          },
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon",
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Scents section"
+      }
+    ]
+  }
+{% endschema %}

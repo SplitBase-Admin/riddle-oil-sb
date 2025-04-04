@@ -1,0 +1,115 @@
+.join-the-club {
+  background: #F2EADF;
+  padding: 80px 0;
+}
+
+.join-the-club .jtc-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.join-the-club .jtc-wrapper .jtc-right {
+  width: 55.65%;
+  margin-left: auto;
+  padding-top: 24px;
+}
+
+.join-the-club .jtc-wrapper .jtc-left {
+  width: calc(44.35% - 32px);
+  position: relative;
+}
+
+.join-the-club .jtc-wrapper .jtc-left .jtc-logo {
+  position: absolute;
+  right: 90px;
+  top: -80px;
+  transform: translateY(-50%);
+  margin-top: -12px;
+  max-width: 132px;
+}
+
+.join-the-club .jtc-wrapper .jtc-left h2 {
+  font-size: 72px;
+  line-height: 79.2px;
+  font-weight: 400;
+  text-transform: none;
+  max-width: 475px;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.join-the-club .jtc-wrapper .jtc-rte p {
+  letter-spacing: 0;
+}
+
+.join-the-club .jtc-wrapper .jtc-rte p:last-child {
+  margin: 0;
+}
+
+.join-the-club .jtc-wrapper .jtc-btns {
+  display: flex;
+  gap: 20px;
+  margin: 40px 0 0;
+}
+
+.join-the-club .jtc-wrapper .jtc-btns a {
+  display: flex;
+}
+
+@media screen and (max-width: 1023px) {
+  .join-the-club .jtc-wrapper .jtc-left h2 {
+    font-size: 42px;
+    line-height: 46.2px;
+  }
+
+  .join-the-club .jtc-wrapper .jtc-left .jtc-logo {
+    right: 0px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  
+  .join-the-club {
+    background: #f2eadf;
+    padding: 40px 0;
+  }
+  
+  .join-the-club .jtc-wrapper .jtc-left,
+  .join-the-club .jtc-wrapper .jtc-right {
+    width: 100%;
+  }
+
+  .join-the-club .jtc-wrapper .jtc-left .jtc-logo {
+    max-width: 116px;
+    right: 0;
+    transform: none;
+    top: -58px;
+  }
+
+  .join-the-club .jtc-wrapper .jtc-btns .btn {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .join-the-club .jtc-wrapper .jtc-left h2 {
+    max-width: 275px;
+  }
+
+  .join-the-club .jtc-wrapper .jtc-right {
+    padding-top: 0;
+  }
+
+  .join-the-club .jtc-wrapper .jtc-right .jtc-rte *{
+    opacity: 0.8;
+  }
+  
+}
+
+@media screen and (max-width: 479px) {
+  
+  .join-the-club .jtc-wrapper .jtc-btns {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}

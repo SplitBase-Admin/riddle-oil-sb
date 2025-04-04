@@ -1,0 +1,129 @@
+.our-story-section {
+  padding-top: var(--PT);
+  padding-bottom: var(--PB);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.our-story-section .our-story-wrapper {
+  display: flex;
+  padding: 32px 0;
+  align-items: center;
+}
+
+.template--new-about .our-story-wrapper {
+  padding: 0;
+}
+
+.our-story-section .our-story-wrapper .our-story-content {
+  width: 57.71%;
+  padding-right: 80px;
+}
+
+.our-story-content-box {
+  max-width: 617px;
+}
+
+.our-story-section .our-story-wrapper .our-story-image {
+  width: 42.29%;
+}
+
+.our-story-content .our-story-pretext {
+  margin: 0 0 8px;
+}
+
+.our-story-content .our-story-heading {
+  margin: 0 0 24px;
+}
+
+.our-story-content .our-story-text {
+  opacity: 0.8;
+}
+
+.our-story-content .our-story-quote {
+  margin: 24px 0 0;
+}
+
+.our-story-content .our-story-sign {
+  margin: 16px 0 0;
+  max-width: 200px;
+}
+
+.our-story-content .our-story-quote p {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 140%;
+  opacity: 0.8;
+}
+
+.our-story-content .our-story-btns {
+  margin-top: 48px;
+}
+
+.our-story-section .our-story-wrapper .our-story-image img {
+  border-radius: 800px;
+}
+
+.our-story-content .our-story-pretext p {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 1199px) {
+  
+  .our-story-section .our-story-wrapper .our-story-content {
+    padding-right: 32px;
+  }
+  
+}
+
+@media screen and (max-width: 1023px) {
+  
+  .our-story-section .our-story-wrapper {
+    padding: 0px;
+  }
+  
+}
+
+@media screen and (max-width: 767px) {
+  
+  .our-story-section .our-story-wrapper {
+    flex-wrap: wrap;
+  }
+  
+  .our-story-section .our-story-wrapper .our-story-image {
+    width: 100%;
+  }
+
+  .our-story-section .our-story-wrapper .our-story-content {
+    padding-right: 0;
+    padding-bottom: 40px;
+    width: 100%;
+  }
+
+  .our-story-section {
+    padding: 40px 0 48px;
+  }
+
+  .our-story-content-box {
+    max-width: 100%;
+  }
+
+  .our-story-content .our-story-btns {
+    margin-top: 40px;
+  }
+
+  .template--new-about .our-story-content .our-story-text {
+    font-size: 14px;
+  }
+
+}
+
+@media screen and (max-width: 479px) {
+  
+  .our-story-content .our-story-btns .btn {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+}

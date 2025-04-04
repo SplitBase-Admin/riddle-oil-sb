@@ -1,0 +1,63 @@
+{{ 'mobile-megamenu-type-2.css' | asset_url | stylesheet_tag }}
+
+<div class="mobile-megamenu__type--two">
+
+  <div class="header">
+    <p class="rte">{{ block.settings.text }}</p>
+  </div>
+  
+  <div class="block__items">
+    {% for i in (1..3) %}
+      {% assign step_image = "step_image_" | append: i %}
+      {% assign step_heading = "step_heading_" | append: i %}
+      {% assign step_text = "step_text_" | append: i %}
+      {% assign step_text_mobile = "step_text_mobile_" | append: i %}
+      {% assign step_link = "step_link_" | append: i %}
+      {% assign step_link_text = "step_link_text_" | append: i %}
+    
+      <a href="{{ block.settings[step_link] }}" class="step_item">
+        <div class="step_image">
+          {% if block.settings[step_image] %}
+            {{ block.settings[step_image] | image_url: width: original | image_tag }}
+          {% endif %}
+          <div class="step_title">0{{ i }}</div>
+        </div>
+        <div class="step_content">
+          <div class="step_heading">{{ block.settings[step_heading] }}</div>
+          {% if block.settings[step_text_mobile] != blank %}
+            <div class="step_text">{{ block.settings[step_text_mobile] }}</div>
+          {% else %}
+            <div class="step_text">{{ block.settings[step_text] }}</div>
+          {% endif %}
+          <div class="step_url link__text">
+            {{ block.settings[step_link_text] }}
+            <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.990234 7.5L16.9902 7.5L0.990234 7.5ZM16.9902 7.5L10.9902 13.5L16.9902 7.5ZM16.9902 7.5L10.9902 1.5L16.9902 7.5Z" fill="#101820"/>
+              <path d="M0.990234 7.5L16.9902 7.5M16.9902 7.5L10.9902 13.5M16.9902 7.5L10.9902 1.5" stroke="#101820" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+                
+  <a href="{{ block.settings.product_link }}" class="product__block">
+    {% if block.settings.product_image != blank %}
+      <div class="product__image">
+        {{ block.settings.product_image | image_url:width: original | image_tag }}
+      </div>
+    {% endif %}
+    <div class="product__content">
+      <div class="product_title">{{ block.settings.product_title }}</div>
+      <div class="product_text">{{ block.settings.product_text }}</div>
+      <div class="product_link link__text">
+        {{ block.settings.product_link_text }}
+        <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.990234 7.5L16.9902 7.5L0.990234 7.5ZM16.9902 7.5L10.9902 13.5L16.9902 7.5ZM16.9902 7.5L10.9902 1.5L16.9902 7.5Z" fill="#101820"/>
+          <path d="M0.990234 7.5L16.9902 7.5M16.9902 7.5L10.9902 13.5M16.9902 7.5L10.9902 1.5" stroke="#101820" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </a>
+            
+</div>

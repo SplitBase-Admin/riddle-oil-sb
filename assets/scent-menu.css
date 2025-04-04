@@ -1,0 +1,234 @@
+header.section-header {
+  margin: 0 0 24px;
+}
+
+.scent-menu-section .page-width{
+  max-width:886px;
+}
+
+.scent-menu-wrapper .section-header__title {
+  color: #101820;
+  font-family: var(--typeHeaderPrimary);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; 
+  letter-spacing: -0.4px;
+  text-align: center;
+  margin-bottom: 50px;  
+}
+
+.scent-menu-Notes{
+  max-width:302px;
+}
+
+.scent-menu-items {
+  border-radius: 8px;
+  width: 100%;
+  padding: 16px;    
+  background: url(https://cdn.shopify.com/s/files/1/0892/0284/files/original-scent.png?v=1741983024) no-repeat top right;
+  background-color: rgba(242, 234, 223, 0.40);  
+  background-size:235px 202px;
+}
+
+.scent-menu-items:nth-of-type(2){
+  background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/desktop-santal.png?v=1741984797);
+}
+
+.scent-menu-items:nth-of-type(3){
+  background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/desktop-muse.png?v=1741984125);
+}
+
+.scent-menu-items:nth-of-type(4){
+  background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/desktop-poppy.png?v=1741984335);
+}
+
+.scent-menu-items:nth-of-type(5){
+  background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/desktop-ex.png?v=1741984559);
+}
+
+.scent-menu-items:nth-of-type(6){
+  background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/desktop-sphinx.png?v=1741984602);
+}
+
+.scent-menu-items:nth-of-type(7){
+  background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/desktop-voyeur.png?v=1741984673);
+}
+
+.scent-menu-inner {
+  display: flex;  
+  gap: 88px;
+  margin: 48px 0;
+}
+
+.scent-menu-heading {
+    display: flex;
+    gap: 68px;
+}
+
+.scent-item-wrap .link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 1 auto;
+  font-family: var(--typeBasePrimary);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  border-bottom: 1px solid transparent;
+  margin-top: 15px;
+}
+
+.scent-menu-items:hover .link {
+  border-bottom: 1px solid #101820;
+}
+
+.scent-item-wrap .link svg {
+  width: 16px;
+}
+
+.scent-menu-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.scent-menu-wrapper,
+.scent-menu-main-img {
+  flex: 1;
+}
+
+.scent-menu-heading h3 {
+  color: #101820;
+  font-family: var(--typeHeaderPrimary);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; 
+  letter-spacing: -0.22px;
+  margin: 0 0 18px;
+  border-bottom: 1px solid #D9CBBF;
+  width: 70%;
+  padding-bottom: 16px;  
+}
+
+.scent-menu-wrap h4,.scent-menu-wrap p {
+  color:  #101820;
+  font-family: 'Heebo';
+  font-style: normal;
+  line-height: 140%;
+  margin: 0;
+  text-transform: capitalize;
+  letter-spacing: normal;
+}
+
+.scent-menu-wrap h4 {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.scent-menu-wrap p {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.scent-menu-Profile {
+  margin-bottom: 12px;
+}
+
+@media screen and (max-width: 1439px) {
+
+  .scent-menu-inner {
+    gap: 40px;
+  }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+  .scent-menu-inner {
+    gap: 20px;
+  }
+
+  .scent-item-wrap .link svg {
+    height: 16px;
+  }
+
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  
+  .scent-item-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+  .scent-menu-heading h3{
+    width:100%;
+  }
+  .scent-menu-heading{
+    display:block;
+  }
+  .scent-item-wrap .link{
+    margin-top:28px;
+  }
+
+  .scent-menu-inner {
+    flex-wrap: wrap;
+    margin: 40px 0 48px;
+    gap: 40px;
+  }
+
+  .scent-menu-wrapper, .scent-menu-main-img {
+    flex: 0 1 100%;
+  }
+
+  .scent-menu-items {
+    padding: 10px;
+    background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/mobile-original.png?v=1741986022);
+    background-position:bottom right;
+    background-size:172px 92px;
+    padding-bottom: 40px;
+  }
+  .scent-menu-items:nth-of-type(2){
+    background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/mobile-santal.png?v=1741986022);
+  }
+  .scent-menu-items:nth-of-type(3){
+    background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/mobile-muse.png?v=1741986022);
+  }
+  .scent-menu-items:nth-of-type(4){
+    background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/mobile-poppy.png?v=1741986021);
+  }
+  .scent-menu-items:nth-of-type(5){
+    background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/mobile-ex.png?v=1741986022);
+  }
+  .scent-menu-items:nth-of-type(6){
+    background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/mobile-sphinx.png?v=1741986022);
+  }
+  .scent-menu-items:nth-of-type(7){
+    background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/mobile-voyeur.png?v=1741986022);
+  }      
+  .scent-item-wrap {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 21px;
+  }
+
+  .scent-menu-main-img img {
+    width: 100%;
+  }
+
+  .scent-menu-wrapper .section-header__title {
+    font-size: 28px;
+    line-height: 120%; 
+    letter-spacing: -0.28px;
+    text-align:left;
+  }
+  
+}

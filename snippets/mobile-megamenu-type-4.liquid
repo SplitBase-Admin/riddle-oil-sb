@@ -1,0 +1,16 @@
+{{ 'mobile-megamenu-type-4.css' | asset_url | stylesheet_tag }}
+
+<div class="mobile-megamenu__type--4">
+  <div class="megamenu__inner">
+    {% for i in (1..5) %}
+      {% assign block_heading = "link_text_" | append: i %}
+      {% assign block_link = "link_url_" | append: i %}
+
+      <div class="block__items">
+        {% if block.settings[block_link] != blank %}
+          <a href="{{ block.settings[block_link] }}" class="title link__text">{{ block.settings[block_heading] }}</a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>

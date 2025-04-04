@@ -1,0 +1,102 @@
+{{ 'collection-banner.css' | asset_url | stylesheet_tag: preload: true }}
+
+<div
+  id="section--{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="collection-header"
+  class="collection-banner-section">
+
+  <div class="collection-banner">
+    <div class="collection-banner-image">
+        <div class="collection-banner__content page-width">
+        <h1 class="section-header__title">
+          {% if section.settings.custom-title != blank %}
+            {{ section.settings.custom-title }}
+          {% else %}
+            {{ collection.title }}
+          {% endif %}
+        </h1>
+        {% if section.settings.custom-description != blank or collection.title  %}
+          <div class="section-header__description">
+            {% if section.settings.custom-description %}
+              {{ section.settings.custom-description }}
+            {% else %}
+              {{ collection.title }}
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="collection-banner-image-inner">
+        {% if section.settings.custom-banner-desktop != blank %}
+          {% assign classes = 'hide-mobile hhhhh' | append: section.id %}
+          {%- render 'image-element',
+            img: section.settings.custom-banner-desktop,
+            img_width: 2400,
+            loading: section.settings.lazyload_images,
+            classes: classes
+          -%}
+        {% endif %}
+        {% if section.settings.custom-banner-mobile != blank %}
+          {% assign classes = 'hide-desktop ' | append: section.id %}
+          {%- render 'image-element',
+            img: section.settings.custom-banner-mobile,
+            img_width: 2400,
+            loading: section.settings.lazyload_images,
+            classes: classes
+          -%}
+        {% else %}
+          {% if section.settings.custom-banner-desktop != blank %}
+            {% assign classes = 'hide-desktop ' | append: section.id %}
+            {%- render 'image-element',
+              img: section.settings.custom-banner-desktop,
+              img_width: 2400,
+              loading: section.settings.lazyload_images,
+              classes: classes
+            -%}
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection Banner",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "collection_image_enable",
+      "label": "t:sections.collection-header.settings.collection_image_enable.label",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "custom-banner-desktop",
+      "label": "Custom Collection Banner Desktop",
+      "info": "Banner will appear if the 'Show collection image' is unchecked"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom-banner-mobile",
+      "label": "Custom Collection Banner Mobile",
+      "info": "Banner will appear if the 'Show collection image' is unchecked"
+    },
+    {
+      "type": "text",
+      "id": "custom-title",
+      "label": "Custom Collection Title"
+    },
+    {
+      "type": "richtext",
+      "id": "custom-description",
+      "label": "Custom Collection Description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Banner"
+    }
+  ]
+}
+{% endschema %}

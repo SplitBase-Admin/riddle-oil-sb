@@ -1,0 +1,64 @@
+{{ 'megamenu-type-2.css' | asset_url | stylesheet_tag }}
+
+<div class="megamenu__type--two">
+  <div class="left__block block__items" style="background:{{ block.settings.bg_color }}">
+   <div class="block__inner">
+    <div class="header">
+      <div class="title h6">{{ block.settings.title }}</div>
+      <p class="rte">{{ block.settings.text }}</p>
+    </div>
+     <a href="{{ block.settings.product_link }}" class="product__block--wrapper">
+      <div class="product__block">
+        {% if block.settings.product_image != blank %}
+          <div class="product__image">
+            {{ block.settings.product_image | image_url:width: original | image_tag }}
+          </div>
+        {% endif %}
+        <div class="product__content">
+          <div class="product_title">{{ block.settings.product_title }}</div>
+          <div class="product_text">{{ block.settings.product_text }}</div>
+          <div class="product_link link__text">
+            {{ block.settings.product_link_text }}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M4 12.5L20 12.5L4 12.5ZM20 12.5L14 18.5L20 12.5ZM20 12.5L14 6.5L20 12.5Z" fill="#101820"/>
+              <path d="M4 12.5L20 12.5M20 12.5L14 18.5M20 12.5L14 6.5" stroke="#101820" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div> 
+    </a>
+   </div>
+  </div>
+  <div class="right__block block__items">
+
+    {% for i in (1..3) %}
+      {% assign step_image = "step_image_" | append: i %}
+      {% assign step_title = "step_title_" | append: i %}
+      {% assign step_heading = "step_heading_" | append: i %}
+      {% assign step_text = "step_text_" | append: i %}
+      {% assign step_link = "step_link_" | append: i %}
+      {% assign step_link_text = "step_link_text_" | append: i %}
+    
+      <div class="step_item">
+        <a href="{{ block.settings[step_link] }}">
+          <div class="step_image">
+            {% if block.settings[step_image] %}
+              {{ block.settings[step_image] | image_url: width: original | image_tag }}
+            {% endif %}
+            <div class="step_title">{{ block.settings[step_title] }}</div>
+          </div>
+          <div class="step_heading">{{ block.settings[step_heading] }}</div>
+          <div class="step_text">{{ block.settings[step_text] }}</div>
+          <div class="step_url link__text">
+            {{ block.settings[step_link_text] }}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M4 12.5L20 12.5L4 12.5ZM20 12.5L14 18.5L20 12.5ZM20 12.5L14 6.5L20 12.5Z" fill="#101820"/>
+              <path d="M4 12.5L20 12.5M20 12.5L14 18.5M20 12.5L14 6.5" stroke="#101820" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+
+  </div>
+</div>

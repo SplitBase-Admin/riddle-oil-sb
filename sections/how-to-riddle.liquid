@@ -1,0 +1,235 @@
+{{ 'how-to-riddle.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'how-to-riddle.js' | asset_url }}" defer></script>
+{% style %}
+  #{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% else %}section-{{ section.id }}{% endif %} {
+    --color-text: {{ section.settings.text_color }};
+    --color-text-rgb: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
+    --color-bg: {{section.settings.bg_color}};
+    --item-bg-color: {{section.settings.item_color.red}}, {{section.settings.item_color.green}}, {{section.settings.item_color.blue}};
+    --PT: {{section.settings.padding_top}}px;
+    --PB: {{section.settings.padding_bottom}}px;
+  }
+{% endstyle %}
+<div class="how-to-riddle" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% else %}section-{{ section.id }}{% endif %}">
+  <div class="page-width">
+    <div class="htr-header">
+      {% if section.settings.pre_text != blank %}
+        <span class="sh2">{{ section.settings.pre_text }}</span>
+      {% endif %}
+      {% if section.settings.title %}
+        <h2 class="section-heading">{{ section.settings.title }}</h2>
+      {% endif %}
+      {{ section.settings.text }}
+    </div> 
+    <div class="htr-wrapper">
+      <div class="htr-content-left">
+          <div class="htr-list">
+          {% for block in section.blocks %}
+            <div class="htr-item {% if forloop.first %} active{% endif %}" data-list-item="{{ forloop.index }}">
+              <a class="block-item-url" href="{{ block.settings.link_url }}"></a>
+              <div class="htr-item-left">
+                <div class="htr-item-icon">
+                  {%- if block.settings.icon != blank -%}
+                    {%- render 'image-element',
+                      img: block.settings.icon,
+                      widths: '540',
+                      sizeVariable: '160px',
+                      fallback: '110px',
+                    -%}
+                  {%- else -%}
+                    {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+                </div>
+                <div class="htr-item-image">
+                  {%- if block.settings.image != blank -%}
+                    {%- render 'image-element',
+                      img: block.settings.image,
+                      widths: '540',
+                      sizeVariable: '160px',
+                      fallback: '110px',
+                    -%}
+                  {%- else -%}
+                    {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+                </div>
+              </div>
+              <div class="htr-item-right">
+                  <div class="htr-item-box">
+                    {% if block.settings.pre_text != blank %}
+                      <span class="sh2 pre-text">{{ block.settings.pre_text }}</span>
+                    {% endif %}
+                    {% if block.settings.title != blank %}
+                      <h4>{{ block.settings.title }}</h4>
+                    {% endif %}
+                    {% if block.settings.text != blank %}
+                      <div class="htr-item-rte">
+                        {{ block.settings.text }}
+                      </div>
+                    {% endif %}
+                    {% if block.settings.link_text != blank %}
+                      <a class="btn-link" href="{{ block.settings.link_url }}">
+                        <span>{{ block.settings.link_text }}</span>
+                        {% render 'button-arrow' %}
+                      </a>
+                    {% endif %}
+                  </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div> 
+      </div>
+      <div class="htr-content-right hide-mobile">
+          <div class="htr-image-wrapper">
+              <div class="htr-image-list">
+                {% for block in section.blocks %}  
+                  <div class="htr-item-image{% if forloop.first %} active{% endif %}" data-htr-img-item="{{ forloop.index }}">
+                      {%- if block.settings.image != blank -%}
+                        {%- render 'image-element',
+                          img: block.settings.image,
+                          widths: '200',
+                          sizeVariable: '200px',
+                          fallback: '200px'
+                          image_url: block.settings.link_url
+                        -%}
+                      {%- else -%}
+                        {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+                      {%- endif -%}
+                     <div class="htr-item-point">
+                       <a href="{% if block.settings.link_url != blank %}{{ block.settings.link_url }}{% else %}javascript:void(0);{% endif %}" class="htr-item-label">
+                         <span class="htr-item-count">{{ forloop.index }}</span>
+                         <h6>{{ block.settings.label_text }}</h6>
+                       </a>
+                     </div>
+                  </div>
+                {% endfor %}
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "How to Riddle",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_id",
+        "label": "Section Id"
+      },
+      {
+        "type": "text",
+        "id": "pre_text",
+        "label": "Pre Text",
+        "default":"THE ROUTINE"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default":"How To Riddle"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default":"<p>Every product stands on its own, but put together, they are a 3-step system specifically designed to amplify your signature scent and extend its duration.</p>"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Section Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#101820"
+      },
+      {
+        "type": "color",
+        "id": "item_color",
+        "label": "Item Background",
+        "default": "#F2EADF"
+      },
+      {
+       "type": "header",
+        "content": "section padding"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 54
+      },
+      {
+       "type": "range",
+        "id": "padding_bottom",
+        "label": "Paading bottom",
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "default": 54
+      }
+    ],
+    "blocks": [
+      {
+        "name":"Item",
+        "type": "text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "label_text",
+            "label": "Image Label Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          },
+          {
+            "type": "text",
+            "id": "pre_text",
+            "label": "Pre Text"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "text",
+            "id": "link_text",
+            "label": "Link text"
+          },
+          {
+            "type": "url",
+            "id": "link_url",
+            "label": "Link URL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "How to Riddle"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,182 @@
+{{ 'featured-ingredient-name.css' | asset_url | stylesheet_tag: preload: true }}
+
+<div id="{{ section.settings.section_id }}" class="featured-ingredient-section" style="background-color: {{ section.settings.bg_color }};">
+  <div class="page-width">
+    <div class="featured-ingredient-inner">
+      <div class="featured-ingredient-image">
+
+        {% assign featured_ingredient = product.metafields.custom.featured_ingredient.value %}
+        {% assign ingredient_image = featured_ingredient.ingredient_image.value %}
+        {% assign ingredient_image_mobile = featured_ingredient.ingredient_image_mobile.value %}
+
+        <div class="hide-mobile">
+          {%- if ingredient_image != blank -%}
+            {% assign classes = 'image-fit background-media-text__image background-media-text__image--' | append: section.id %}
+            {%- render 'image-element',
+              img: ingredient_image,
+              img_width: 2400,
+              loading: section.settings.lazyload_images,
+              classes: classes,
+            -%}
+          {%- else -%}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+  
+        <div class="hide-desktop">
+          {%- if ingredient_image_mobile != blank -%}
+            {% assign classes = 'image-fit background-media-text__image background-media-text__image--' | append: section.id %}
+            {%- render 'image-element',
+              img: ingredient_image_mobile,
+              img_width: 2400,
+              loading: section.settings.lazyload_images,
+              classes: classes,
+            -%}
+          {%- elsif ingredient_image != blank -%}
+            {% assign classes = 'image-fit background-media-text__image background-media-text__image--' | append: section.id %}
+            {%- render 'image-element',
+              img: ingredient_image,
+              img_width: 2400,
+              loading: section.settings.lazyload_images,
+              classes: classes,
+            -%}
+          {%- else -%}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+        
+      </div>
+      <div class="featured-ingredient-content">
+
+
+        {%- if featured_ingredient.ingredient_title.value != blank -%}
+          <h2 class="h2 heading">{{ featured_ingredient.ingredient_title.value }}</h2>
+        {%- elsif section.settings.title != blank -%}
+          <h2 class="h2 heading">{{ section.settings.title }}</h2>
+        {%- endif -%}
+
+        {%- if featured_ingredient.ingredient_description.value != blank -%}
+          <div class="rte">{{ featured_ingredient.ingredient_description.value }}</div>
+        {%- elsif section.settings.text != blank -%}
+          <div class="rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.placeholder-text != blank -%}
+          <div class="placeholder-text">
+            {{ section.settings.placeholder-text }}
+          </div>
+        {%- endif -%}
+
+        <div class="placeholder-callout-block">
+          <div class="placeholder-callout-text">Placeholder callout</div>
+          {% if section.settings.placeholder-image != blank %}
+            <div class="placeholder-callout-image small--hide">{{ section.settings.placeholder-image |image_url: width: 256, height: auto | image_tag }}</div>
+          {% endif %}
+          {% if section.settings.placeholder-image-mobile != blank %}
+            <div class="placeholder-callout-image medium-up--hide">{{ section.settings.placeholder-image-mobile |image_url: width: 183, height: auto | image_tag }}</div>
+          {% else %}
+            <div class="placeholder-callout-image medium-up--hide">{{ section.settings.placeholder-image |image_url: width: 183, height: auto | image_tag }}</div>
+          {% endif %}
+        </div>
+
+        {% if section.settings.tab_title != blank %}
+          <div class="collapsibles-wrapper collapsibles-wrapper--border-bottom">
+            <button type="button"
+              class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height " aria-controls="Product-content-{{ id }}"
+              aria-expanded="false">
+              {{ section.settings.tab_title }}
+              {%- render 'collapsible-icons' -%}
+            </button>
+            <div id="Product-content-{{ id }}"
+              class="collapsible-content collapsible-content--all">
+              <div class="collapsible-content__inner rte">
+                {% if featured_ingredient.ingredient_information.value != blank %}
+                  {{ featured_ingredient.ingredient_information.value }}
+                {% else %}
+                  {{ section.settings.tab_text }}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Ingredient Name",
+  "class": "index-section--flush",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section Id"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Ingredient Description Title",
+      "default": "Featured Ingredient Name"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Ingredient Description",
+      "default": "<p>Lorem ipsum dolor sit amet consectetur. Id malesuada ipsum facilisis odio arcu dignissim. Arcu pretium iaculis facilisi nibh purus amet nisl. Dolor purus eu at volutpat elementum vel dictumst. Fringilla quam in consequat sapien nunc at orci nibh.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "placeholder-text",
+      "label": "Placeholder text"
+    },
+    {
+      "type": "image_picker",
+      "id": "placeholder-image",
+      "label": "Placeholder Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "placeholder-image-mobile",
+      "label": "Placeholder Image Mobile"
+    },
+    {
+      "type": "text",
+      "id": "tab_title",
+      "label": "Ingredient Tab title",
+      "default": "All Ingredients"
+    },
+    {
+      "type": "richtext",
+      "id": "tab_text",
+      "label": "Ingredient Information",
+      "default": "<p>Lorem ipsum dolor sit amet consectetur. Id malesuada ipsum facilisis odio arcu dignissim. Arcu pretium iaculis facilisi nibh purus amet nisl. Dolor purus eu at volutpat elementum vel dictumst. Fringilla quam in consequat sapien nunc at orci nibh.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#F2EADF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#101820"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Ingredient Name"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

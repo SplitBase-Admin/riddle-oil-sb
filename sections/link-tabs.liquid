@@ -1,0 +1,108 @@
+{{ 'link-tabs.css' | asset_url | stylesheet_tag: preload: true }}
+
+
+{% assign scent_notes = product.metafields.custom.scent-notes.value %}
+{% assign top_notes = scent_notes.top_notes.value %}
+{% assign heart_notes = scent_notes.heart_notes.value %}
+{% assign base_notes = scent_notes.base_notes.value %}
+
+{% assign scent_notes = true %}
+{% if top_notes != blank or heart_notes != blank or base_notes != blank %}
+  {% assign scent_notes = true %}
+{% else %}
+   {% assign scent_notes = false %}
+{% endif %}
+
+
+<section class="link-tabs-section">
+  <div class="page-width">
+    <div class="link-tabs-inner">
+      <p>Jump to:</p>
+      {% if product.collections.size > 0 %}
+        {% assign hide_ingredients = false %}
+        {% for collection in product.collections %}
+          {% if collection.url contains "/collections/fragrance-oils" %}
+            {% assign hide_ingredients = true %}
+            
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      <div class="link-tabs-items">
+      {% for block in section.blocks %}
+        {% if block.settings.url != blank %}
+            {% if block.settings.title == "Scent Notes" %}
+              {% if scent_notes == true %}
+              <a href="{{ block.settings.url }}" class="{% if forloop.index == 1 %}active{% endif %} {% if block.settings.title == "Ingredients" and hide_ingredients %}hide{% endif %}">
+                {{ block.settings.title }}
+              </a>
+              {% endif %}
+            {% else %}
+              <a href="{{ block.settings.url }}" class="{% if forloop.index == 1 %}active{% endif %} {% if block.settings.title == "Ingredients" and hide_ingredients %}hide{% endif %}">
+                {{ block.settings.title }}
+              </a>
+            {% endif %}
+        {% endif %}
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const tabLinks = document.querySelectorAll('.link-tabs-items a[href*="#"]');
+    
+    tabLinks.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        console.log("Test");
+        
+        const targetElement = document.querySelector(this.hash);
+        if (targetElement) {
+          const offset = targetElement.offsetTop + 150;
+          window.scrollTo({
+            top: offset,
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+  });
+
+  
+</script>
+
+{% schema %}
+  {
+    "name": "Link Tabs",
+    "settings": [
+
+    ],
+    "blocks": [
+      {
+        "type": "tab",
+        "name": "Tab",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Tab Title",
+            "default": "Tab Title"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Tab URL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Link Tabs"
+      }
+    ]
+  }
+{% endschema %}

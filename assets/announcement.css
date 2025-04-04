@@ -1,0 +1,41 @@
+.announcement-text {
+  font-family: var(--typeBasePrimary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  text-align: center;
+  text-transform: initial;
+  letter-spacing: normal;
+  display: inline-block;
+}
+
+.announcement-text img {
+  float: left;
+  margin-right: 10px;
+}
+
+@media only screen and (min-width: 769px) {
+  
+  .announcement-slider[data-compact=true] .announcement-link-text, 
+  .announcement-slider[data-compact=true] .announcement-text {
+    display: inline-block;
+  }
+  
+}
+
+@media (max-width: 768px) {
+
+  .announcement-bar {
+    padding: 6.2px 0;
+  }
+
+  .announcement-text img {
+    margin-right: 6px;
+  }
+
+  .announcement-text {
+    font-size: 12px;
+    line-height: 17.6px;
+  }
+  
+}

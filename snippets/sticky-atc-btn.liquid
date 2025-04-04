@@ -1,0 +1,121 @@
+{{ 'sticky-atc-btn.css' | asset_url | stylesheet_tag: preload: true }}
+
+<div class="sticky-product-bar">
+  <div class="page-width">
+    <div class="sticky-product-bar-inner">
+      <div class="sticky-left">
+        <div class="sticky-product-title">
+          {{ product.title }}
+        </div>
+      </div>
+      <div class="sticky-right">
+        {% if disable_size_selector %}
+        <div class="sticky-option-selector">
+          {% assign variable_name = product.metafields.custom.product_group.value %}
+          {% assign product_list = variable_name.products.value %}
+          {% if product_list %}
+            <div class="product__groups">
+              <div class="product__group-dropdown">
+                <div class="product__group-toggle" type="button" id="productGroupButton">
+                  {% for group_product in variable_name.products.value %}
+                      {% if product.handle == group_product.handle %}
+                        <span>
+                        {% if group_product.metafields.custom.product_short_name != blank %}
+                          {{ group_product.metafields.custom.product_short_name }}
+                        {% else %}
+                          {{ group_product.title }}
+                        {% endif %}
+                        </span>
+                        {% render 'arrow-down' %}
+                     {% endif %}   
+                  {% endfor %}
+                </div>
+                <div class="product__group-dropdown--menu">
+                  {% for group_product in variable_name.products.value %}
+                    <a href="{{ group_product.url }}" class=" {% if product.handle == group_product.handle %} active{% endif %}">
+                      <span>{% if group_product.metafields.custom.product_short_name != blank %}
+                        {{ group_product.metafields.custom.product_short_name }}
+                      {% else %}
+                        {{ group_product.title }}
+                      {% endif %}
+                      </span>
+                    </a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+        {% endif %}
+        <div class="sticky-ATC-btn">
+          <button class="btn btn--full sticky-add-to-cart" {% unless product.selected_or_first_available_variant.available %} disabled=""{% endunless %}>{% if product.selected_or_first_available_variant.available %}Add to Bag{% else %}Sold Out{% endif %}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* Scroll to show Sticky -- Start */
+  const atcButton = document.querySelector("[data-product-blocks] [data-add-to-cart]");
+  const stickyDiv = document.querySelector(".sticky-product-bar");
+  const stickyHeader = document.querySelector(".site-header");
+
+  function updateStickyBarPosition() {    
+    const stickyHeaderHeight = stickyHeader.classList.contains("site-header--stuck") 
+      ? stickyHeader.clientHeight 
+      : 0;
+    
+    stickyDiv.style.top = `${stickyHeaderHeight}px`;
+  }
+
+  function handleScroll() {
+    if (!atcButton) {
+      console.error("ATC button not found.");
+      return;
+    }
+    updateStickyBarPosition(); // Adjust sticky bar position during scroll
+    const atcButtonRect = atcButton.getBoundingClientRect();
+    if (atcButtonRect.bottom < 0) {
+      stickyDiv.classList.add("sticky-active");
+    } else {
+      stickyDiv.classList.remove("sticky-active");
+    }
+  }
+
+  // Initial update of sticky bar position
+  updateStickyBarPosition();
+
+  // Monitor changes to the sticky header class
+  const observer = new MutationObserver(() => {
+    updateStickyBarPosition();
+  });
+  observer.observe(stickyHeader, { attributes: true, attributeFilter: ['class'] });
+
+  window.addEventListener("scroll", handleScroll);
+
+  stickyDiv.querySelector("button").addEventListener("click", () => {
+    if (atcButton) {
+      atcButton.click();
+    } else {
+      console.error("ATC button not found.");
+    }
+  });
+  /* Scroll to show Sticky -- End */
+
+  /* Sticky - Variant options Dropdown -- Start */
+  const dropdownToggle = document.querySelector('.product__group-dropdown .product__group-toggle');
+  const dropdown = document.querySelector('.product__group-dropdown');
+  
+  dropdownToggle.addEventListener('click', (button) => {
+    button.currentTarget.closest('.product__group-dropdown').classList.toggle('active');
+  });
+  
+  document.addEventListener('click', (event) => {
+    if (!dropdown.contains(event.target)) {
+      dropdown.classList.remove('active');
+    }
+  });
+  /* Sticky - Variant options Dropdown -- End */
+</script>
+

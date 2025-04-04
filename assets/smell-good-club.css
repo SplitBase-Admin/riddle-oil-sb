@@ -1,0 +1,222 @@
+.smell-good-club {
+  background: #F2EADF;
+}
+
+.smell-good-club .yotpo-text-on-background {
+  display: flex;
+  align-items: center;
+  min-height: auto;
+}
+
+.smell-good-club .yotpo-text-on-background .yotpo-text-container {
+  padding: 80px 64px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.smell-good-club .yotpo-widget-hero-section .yotpo-text-container {
+  top: 0;
+}
+
+.smell-good-club .yotpo-widget-hero-section .yotpo-text-container .yotpo-title {
+  line-height: 110%;
+  letter-spacing: -0.72px;
+  padding: 0;
+  max-width: 475px;
+  text-align: left;
+  position: relative;
+}
+
+.smell-good-club .yotpo-title:before {
+  content: "";
+  background: url(https://cdn.shopify.com/s/files/1/0892/0284/files/Group_1.svg?v=1741693716);
+  width: 136px;
+  height: 132px;
+  display: block;
+  position: absolute;
+  right: -36px;
+  bottom: -120px;
+}
+
+.smell-good-club .yotpo-description {
+  line-height: 140%;
+  text-align: left;
+  position: relative;
+}
+
+.smell-good-club .yotpo-widget-hero-section .yotpo-customer-logged-out-buttons .yotpo-action-button-widget .yotpo-button-standard-size {
+  width: auto !important;
+  height: auto;
+  min-width: auto;
+  border-radius: 2px;
+  display: block;
+}
+
+.smell-good-club .yotpo-action-button-text {
+  padding: 12px 14px;
+  font-size: 16px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  font-family: var(--body-font) !important;
+  display: block;
+}
+
+.smell-good-club .yotpo-widget-hero-section .yotpo-customer-logged-out-buttons {
+  padding-top: 40px;
+  padding-bottom: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.smell-good-club .yotpo-text-and-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 100% !important;
+}
+
+.smell-good-club .desc-button-wrapper {
+  text-align: left;
+  padding: 25px 0;
+  flex: 1;
+  max-width: 730px;
+}
+
+.smell-good-club .yotpo-widget-hero-section .yotpo-customer-logged-out-buttons .yotpo-register-link {
+  padding: 0 !important;
+}
+
+.smell-good-club .yotpo-action-button-widget {
+  width: auto;
+}
+
+.smell-good-club .yotpo-widget-hero-section .yotpo-text-on-background.yotpo-is-mobile .yotpo-background-text-mobile {
+  padding-top: 0;
+}
+
+.smell-good-club .yotpo-register-link,
+.smell-good-club .yotpo-login-link {
+  width: auto !important;
+}
+
+@media (min-width: 1024px) {
+
+  .smell-good-club .yotpo-title:before { 
+    display: none;
+  }
+
+}
+
+@media (max-width: 1023px) {
+
+  .smell-good-club .yotpo-text-and-buttons {
+    gap: 32px;
+    flex-direction: column;
+  }
+
+  .smell-good-club .yotpo-title:before {
+    right: 0;
+    bottom: -30px;
+    width: 116px;
+    height: 113px;
+    background-size: contain;
+  }
+
+  .smell-good-club .yotpo-widget-hero-section .yotpo-text-container .yotpo-title {
+    max-width: 100%;
+    padding-right: 136px;
+    font-size: 66px !important;
+    flex: 1;
+  }
+
+  .smell-good-club .desc-button-wrapper {
+    padding: 0;
+    padding-right: 116px;
+  }
+
+  .smell-good-club .yotpo-text-on-background .yotpo-text-container  {
+    padding: 64px;
+  }
+  
+}
+
+@media (max-width: 950px) {
+
+  .smell-good-club .yotpo-widget-hero-section .yotpo-text-container .yotpo-title {
+    font-size: 53px !important;
+  }
+  
+}
+
+@media (max-width: 767px) {
+
+  .smell-good-club .yotpo-widget-hero-section .yotpo-text-container .yotpo-title {
+    font-size: 42px !important;
+    line-height: 46.2px;
+    letter-spacing: -0.42px;
+  }
+
+  .smell-good-club .yotpo-text-on-background .yotpo-text-container {
+    padding: 40px 16px; 
+    min-height: 392px;
+  }
+
+  .smell-good-club .yotpo-widget-hero-section .yotpo-customer-logged-out-buttons {
+    padding: 40px 0 0 !important;
+  }
+
+  .yotpo-widget-hero-section .yotpo-text-on-background.yotpo-is-mobile .yotpo-customer-logged-out-buttons .yotpo-register-link {
+    padding: 0 0 20px;
+  }
+
+  .smell-good-club .yotpo-action-button-text {
+    padding: 13px 14px;
+  }
+
+  .smell-good-club .yotpo-title:before {
+    bottom: -44px;
+  }
+
+  .smell-good-club .yotpo-widget-hero-section .yotpo-text-on-background.yotpo-is-mobile .yotpo-background-text-mobile {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .smell-good-club .yotpo-text-container.yotpo-center-layout {
+    align-items: center;
+    display: flex;
+  }
+
+  
+}
+
+@media (max-width: 550px) {
+
+  .smell-good-club .yotpo-title:before {
+    bottom: 0;
+  }
+
+  .smell-good-club .yotpo-widget-hero-section .yotpo-customer-logged-out-buttons .yotpo-action-button-widget .yotpo-button-standard-size {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .smell-good-club .yotpo-widget-hero-section .yotpo-customer-logged-out-buttons {
+    flex-direction: column;
+  }
+
+  .smell-good-club .desc-button-wrapper {
+    padding: 0;
+  }
+
+  .smell-good-club .yotpo-widget-hero-section .yotpo-text-container .yotpo-title {
+    padding-right: 116px;
+  }
+  
+}

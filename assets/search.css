@@ -1,0 +1,21 @@
+.grid-search {
+  padding: 0;
+  margin: 0;
+}
+
+predictive-search form {
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  
+  .grid-search__page-content .h4 {
+    font-size: 14px;
+    letter-spacing: normal;
+  }
+
+  .grid-search__page-content {
+    font-size: 12px;
+  }
+
+}

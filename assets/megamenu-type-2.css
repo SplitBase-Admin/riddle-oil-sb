@@ -1,0 +1,299 @@
+.megamenu__type--two {
+  display: flex;
+}
+
+.megamenu__type--two .left__block {
+  flex: 0 1 29%;
+}
+
+.megamenu__type--two .right__block {
+  flex: 0 1 71%;
+}
+
+.megamenu__type--two .megamenu {
+  padding: 0;
+}
+
+.megamenu__type--two .left__block {
+  padding-right: 32px;
+  padding-left: var(--offset-left);
+}
+
+.megamenu__type--two .right__block {
+  padding-left: 60px;
+  padding-right: var(--offset-left);
+}
+
+.megamenu.megamenu-type-2 {
+  padding: 0;
+}
+
+.megamenu.megamenu-type-2 .page-width {
+  max-width: 100%;
+}
+
+.megamenu__type--two .block__items {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.left__block .title {
+  font-family: Heebo;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.8px;
+  letter-spacing: 0.24em;
+}
+
+.left__block .rte {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  color: #101820CC;
+}
+
+.product_title {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19.6px;
+  letter-spacing: 0.24em;
+}
+
+.product_text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  margin: 2px 0 0;
+}
+
+.product_link {
+  font-family: Heebo;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19.6px;
+  margin: 18px 0 0;
+}
+
+.right__block{
+  display: flex;
+  gap: 32px;
+}
+
+.step_item {
+  flex: 1;
+}
+
+a.product__block--wrapper {
+  background: transparent;
+}
+
+.step_item a {
+  background: transparent;
+}
+
+.step_item:hover .link__text:after,
+.product__block:hover .link__text:after {
+  right: 0;
+}
+
+.block__inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+.product__block {
+  display: flex;
+  background: #F7F2EC;
+  padding: 12px;
+  gap: 20px;
+  align-items: flex-start;
+  border-radius: 8px;
+}
+
+.product__image {
+  flex: 0 1 105px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.product__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.step_image {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.step_title {
+  text-align: center;
+  font-size: 16px;
+  line-height: 22.4px;
+  text-transform: capitalize;
+  padding: 10px;
+  background: #F2EADF;
+}
+
+.step_heading {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  margin: 18px 0 0;
+}
+
+.step_text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  margin: 8px 0 0;
+}
+
+.step_url {
+  margin: 20px 0 0;
+}
+
+@media (min-width: 769px) {
+    
+  .step_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .step_item a {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+@media (min-width: 1441px) {
+
+  .block__inner {
+    min-width: 322px;
+  }
+
+  .step_heading {
+    font-size: 19px;
+  }
+  
+}
+
+@media (max-width: 1310px) {
+
+  .megamenu__type--two .block__items {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .product__content {
+    flex: 0 1 100%;
+  }
+
+  .product__block {
+    gap: 10px;
+  }
+
+  .megamenu__type--two .right__block {
+    padding-left: 32px;
+    gap: 15px
+  }
+
+  .left__block .title {
+    font-size: 22px;
+    line-height: 26.8px;
+    letter-spacing: .20em;
+  }
+
+  .step_title {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .step_heading {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .step_text {
+    font-size: 14px;
+    line-height: 20.4px;
+  }
+  
+  .step_url {
+    margin: 10px 0 0;
+  }
+  
+  .left__block .product_title {
+    font-size: 12px;
+    line-height: 19.6px;
+    letter-spacing: .16em;
+  }
+
+  .left__block .product_text {
+    font-size: 12px;
+    line-height: 17.6px;
+    margin: 2px 0 0;
+  }
+
+  .left__block .product_link {
+    font-size: 12px;
+    line-height: 17.6px;
+    margin: 10px 0 0;
+  }
+
+}
+
+@media (max-width: 1024px) {
+
+  .left__block .title {
+    font-size: 18px;
+    line-height: 22.8px;
+    letter-spacing: .1em;
+    margin-bottom: 6px;
+  }
+
+  .left__block .rte {
+    font-size: 11px;
+    line-height: 15.6px;
+  }
+
+  .product__block {
+    margin-top: 10px;
+  }
+
+  .product__image {
+    display: none;
+  }
+  
+  .left__block .product_text {
+    font-size: 11px;
+    line-height: 15.6px;
+    margin: 2px 0 0;
+  }
+
+  .step_title {
+    font-size: 11px;
+    padding: 6px 10px;
+    line-height: 16px;
+  }
+
+  .step_heading {
+    font-size: 13px;
+    line-height: 17px;
+  }
+
+  .step_text {
+    font-size: 11px;
+    line-height: 16.4px;
+  }
+  
+}

@@ -1,0 +1,362 @@
+{% comment %}
+Snippet Arguments
+- collection: Liquid 'collection' or 'search' object
+- items: Paginated 'collection.products' or 'search.results' list. Cannot be pulled from the the 'collection' object passed in above
+- enable_sidebar: boolean
+- filter_style: 'sidebar' or 'drawer'
+- enable_sort: boolean
+- enable_collection_count
+- per_row
+- mobile_flush_grid
+- quick_shop_enable
+{% endcomment %}
+
+{% assign template_suffix = template.suffix %}
+{% if collection.handle == "fragrance-oils" or collection.handle == "the-pheromone-oils" or collection.handle == "perfume-oils"  %}
+  <script>
+    window.collCustomGroupProducts = window.collCustomGroupProducts || [];
+    {%- for item in items -%}
+      {% assign other_variants = null %}
+      {% if item.metafields.custom.product_group.value %}
+        {% assign other_variants = item.metafields.custom.product_group.value.products.value %}
+      {% endif %}
+      {% if other_variants %}
+        {% assign prod_hide = false %}
+        {% assign last_variant = item.metafields.custom.product_group.value.products.value | last %}
+        {% assign product_group = last_variant.handle %}
+        {% for mf_prod in item.metafields.custom.product_group.value.products.value %}
+          window.collCustomGroupProducts[`{{ product_group | append: '-' | append: mf_prod.id }}`] = {{ mf_prod | json }};
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </script>
+{% endif %}
+
+{% liquid
+  if collection.products
+    assign count = collection.products_count
+    assign count_label = 'collections.general.items_with_count'
+  endif
+
+  if collection.results
+    assign count = collection.results_count
+    assign count_label = 'general.search.result_count'
+  endif
+
+  assign filters = collection.filters
+  assign sort_by = collection.sort_by
+  assign default_sort_by = collection.default_sort_by
+  assign sort_options = collection.sort_options
+  assign current_filter_count = 0
+
+  for filter in filters
+     assign current_filter_count = current_filter_count | plus: filter.active_values.size 
+  endfor
+%}
+
+
+{% assign total_products = 0 %}
+{%- for item in items -%}
+  {%- if item.object_type == 'product' -%}
+    {% if true %}
+      {% assign other_variants = null %}
+      {% assign last_variant = null %}
+      {% if item.metafields.custom.product_group.value %}
+        {% assign other_variants = item.metafields.custom.product_group.value.products.value %}
+      {% endif %}
+      {% if other_variants %}
+        {% assign prod_hide = false %}
+        {% assign last_variant = item.metafields.custom.product_group.value.products.value | last %}
+        {% unless last_variant.id == item.id %}
+          {% assign total_products = total_products | plus: 1 %}
+        {% endunless %}          
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% assign updated_count = count | minus: total_products %}
+
+<div class="collection-grid__wrapper">
+  <div class="collection-filter {% if filter_layout == "custom-filter" %}custom-filter-enabled{% endif %}">
+
+    
+      
+    <div class="collection-filter__item collection-filter__item--drawer {{ filter_layout }}">
+
+      {% if filter_layout == "custom-filter" %}
+        {% if current_filter_count > 0 %}
+          <ul class="no-bullets tag-list tag-list--active-tags">
+          {%- for filter in filters -%}
+            {%- assign filter_index = forloop.index -%}
+            {%- assign current_filter_size = current_filter_size | plus: filter.active_values.size -%}
+    
+            {%- for filter_value in filter.active_values -%}
+              <li class="tag tag--remove">
+                <a class="btn btn--small" href="{{ filter_value.url_to_remove }}">
+                  {{ filter_value.label | escape }}
+                </a>
+                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><title>icon-X</title><path d="m19 17.61 27.12 27.13m0-27.12L19 44.74"/></svg>
+              </li>
+            {%- endfor -%}
+                  
+          {%- endfor -%}
+                  
+          {% if current_filter_size > 0 %} 
+            <li class="tag tag--remove">
+              <a href="{{ collection.url }}" class="btn btn--small btn--clear-filters">Remove All</a>
+              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><title>icon-X</title><path d="m19 17.61 27.12 27.13m0-27.12L19 44.74"/></svg>
+            </li>
+          {% endif %}
+          </ul>
+        {% endif %}
+      {% endif %}
+            
+      {% if filter_layout == "custom-filter" %}
+        <button
+          type="button"
+          class="custom-filter-button js-custom-drawer-open-collection-filters btn btn--tertiary{% unless current_filter_size == 0 %} btn--tertiary-active{% endunless %}"
+          aria-controls="FilterDrawer">
+            <span class="open">Refine By</span>
+            <span class="close">Close</span>
+            {% render 'arrow-down' %}
+        </button>
+      {% else %}
+       <button
+          type="button"
+          class="js-drawer-open-collection-filters btn btn--tertiary{% unless current_filter_size == 0 %} btn--tertiary-active{% endunless %}"
+          aria-controls="FilterDrawer">
+            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-filter" viewBox="0 0 64 64"><title>icon-filter</title><path d="M48 42h10m-10 0a5 5 0 1 1-5-5 5 5 0 0 1 5 5ZM7 42h31M16 22H6m10 0a5 5 0 1 1 5 5 5 5 0 0 1-5-5Zm41 0H26"/></svg>
+            {{ 'collections.filters.title_tags' | t }}
+            {%- if current_filter_size > 0 -%}
+                ({{ current_filter_size }})
+            {%- endif -%}
+        </button>
+      {% endif %}
+      <div class="filter__content--wrap top__filter--content hidden">
+        {%- render 'collection-grid-filters-form', location: 'TopDrawer', filters: collection.filters, collapsed: collapsed, enable_color_swatches: enable_color_swatches, filter_layout:filter_layout -%}
+      </div>
+    </div>
+
+    {%- if enable_collection_count -%}
+    <div class="collection-filter__item collection-filter__item--count small--hide">
+      {{ count_label | t: count: count }}
+    </div>
+    {%- endif -%}
+    
+
+    <div class="collection-filter__item collection-filter__item--sort">
+        <div class="collection-filter__sort-container">
+        {%- assign sort_by = sort_by | default: default_sort_by -%}
+        <label for="SortBy" class="hidden-label">{{ 'collections.sorting.title' | t }}</label>
+        <select name="SortBy" id="SortBy" data-default-sortby="{{ default_sort_by }}">
+          <option value="title-ascending"{% if sort_by == default_sort_by %} selected="selected"{% endif %}>{{ 'collections.sorting.title' | t }}</option>
+          {%- for option in sort_options -%}
+          <option value="{{ option.value }}"{% if option.value == sort_by %} selected="selected"{% endif %}>{{ option.name }}</option>
+          {%- endfor -%}
+        </select>
+        </div>
+    </div>
+
+  </div>
+
+  {% if template.name == "search" %}
+    {% assign grid-item = per_row %}
+  {% else %}
+    {% for block in section.blocks %}
+      {% assign grid-item = block.settings.per_row %}
+    {% endfor %}
+  {% endif %}
+
+  <div id="product-grid" class=" grid grid--item-{{ grid-item }} grid--uniform{% if mobile_flush_grid %} small--grid--flush{% endif %}"{% unless enable_collection_count %} data-scroll-to{% endunless %}>
+    {% assign custom_banner_counter = paginate.current_offset | plus: 1 %}
+    {% assign custom_banner_counter_mobile = paginate.current_offset | plus: 1 %}
+    {%- for item in items -%}      
+      {%- if item.object_type == 'product' -%}
+
+        {% if collection.handle == "fragrance-oils" or collection.handle == "the-pheromone-oils" or collection.handle == "perfume-oils"  %}
+          {% assign other_variants = null %}
+          {% assign last_variant = null %}
+          {% if item.metafields.custom.product_group.value %}
+            {% assign other_variants = item.metafields.custom.product_group.value.products.value %}
+          {% endif %}
+          {% if other_variants %}
+            {% assign prod_hide = false %}
+            {% assign last_variant = item.metafields.custom.product_group.value.products.value | last %}
+            {% assign product_group = last_variant.handle %}
+            {% unless last_variant.id == item.id %}
+              {% assign prod_hide = true %}
+            {% endunless %}          
+          {% endif %}
+        {% endif %}
+        
+        {% assign  show_custom_banner = true %}        
+        {% if show_custom_banner %}          
+          {% capture grid_view_banner %} 
+            {% render 'products_per_row', products_per_row: per_row, style: 'fractions' %}
+          {% endcapture %}
+          {% if shop.metaobjects.collection_banners %}
+            {% for i in (0..999) %}
+              {% for value in shop.metaobjects.collection_banners.values %}
+                {% if value.collection.value.handle == collection.handle %}
+                  {% if custom_banner_counter == value.index and custom_banner_counter >= paginate.current_offset %}
+                    <div class="{{ classes }} banner-mobile-hide promo-block-grid-item grid__item grid-product {{ grid_view_banner }} {% if quick_shop_enable %} grid-product__has-quick-shop{% endif %}" data-aos="row-of-{{ per_row }}">
+
+                      <div class="promo-block grid__item grid-product">
+                        <div class="promo-block-inner">
+                          <a href="{{ value.banner_button_link }}" class="promo-block--link"></a>
+                          <div class="promo-block-overlay">
+                          </div>
+                          <div class="promo-block-image">
+                          {%- if value.banner_image != blank -%}
+                            {% assign classes = 'promo-image' %}
+                            {%- render 'image-element',
+                              img: value.banner_image,
+                              img_width: 500,
+                              loading: section.settings.lazyload_images,
+                              classes: classes,
+                            -%}
+                          {%- else -%}
+                            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                          {%- endif -%}
+                          </div>
+                          <div class="promo-block-content">
+                            {%- if value.banner_title != blank -%}
+                              <h5 class="title">{{ value.banner_title }}</h5>
+                            {%- endif -%}
+                            <a href="{{ value.banner_button_link }}" class="btn btn--solid-border {{ button_style }}" aria-label="{{ button_text }}">
+                              <span>{{ value.button_text }}</span>
+                              {% render 'button-arrow' %}
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% assign custom_banner_counter = custom_banner_counter | plus: 1 %}
+                  {% elsif custom_banner_counter_mobile == value.mobile_index and custom_banner_counter_mobile >= paginate.current_offset %}
+
+                    <div class="{{ classes }} banner-desktop-hide promo-block-grid-item grid__item grid-product {{ grid_view_banner }} {% if quick_shop_enable %} grid-product__has-quick-shop{% endif %}" data-aos="row-of-{{ per_row }}">
+
+                      <div class="promo-block grid__item grid-product">
+                        <div class="promo-block-inner">
+                          <a href="{{ value.banner_button_link }}" class="promo-block--link"></a>
+                          <div class="promo-block-overlay">
+                          </div>
+                          <div class="promo-block-image">
+                          {%- if value.banner_image != blank -%}
+                            {% assign classes = 'promo-image' %}
+                            {%- render 'image-element',
+                              img: value.banner_image,
+                              img_width: 500,
+                              loading: section.settings.lazyload_images,
+                              classes: classes,
+                            -%}
+                          {%- else -%}
+                            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                          {%- endif -%}
+                          </div>
+                          <div class="promo-block-content">
+                            {%- if value.banner_title != blank -%}
+                              <h5 class="title">{{ value.banner_title }}</h5>
+                            {%- endif -%}
+                            <a href="{{ value.banner_button_link }}" class="btn btn--solid-border {{ button_style }}" aria-label="{{ button_text }}">
+                              <span>{{ value.button_text }}</span>
+                              {% render 'button-arrow' %}
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% assign custom_banner_counter_mobile = custom_banner_counter_mobile | plus: 1 %}
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          {% endif %}
+        {% endif %}        
+
+        {% if template.suffix == "fragrance-oils" %}
+        
+          {%- render 'fragrance-oils-grid-item',
+            product: item,
+            per_row: per_row,
+            quick_shop_enable: quick_shop_enable,
+            show_custom_banner: true,
+            other_variants: other_variants,
+            prod_hide: prod_hide,
+            product_group: product_group,
+            template_suffix: template_suffix,
+            last_variant: last_variant
+          -%}
+
+        {% else %}
+  
+          {%- render 'product-grid-item',
+            product: item,
+            per_row: per_row,
+            quick_shop_enable: quick_shop_enable,
+            show_custom_banner: true,
+            other_variants: other_variants,
+            prod_hide: prod_hide,
+            product_group: product_group,
+            template_suffix: template_suffix,
+            last_variant: last_variant
+          -%}
+
+        {% endif %}
+
+        
+        {% assign custom_banner_counter = custom_banner_counter | plus: 1 %}
+        {% assign custom_banner_counter_mobile = custom_banner_counter_mobile | plus: 1 %}
+      {%- else -%}
+        {%- render 'search-grid-item',
+          item: item,
+          per_row: per_row
+        %}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{%- if enable_sidebar and filter_style != 'drawer' and collection.filters.size > 0 -%}
+{% comment %}
+  Sidebar enabled but not in drawer mode, only show filter button on mobile
+{% endcomment %}
+{% style %}
+@media screen and (min-width: 769px) {
+  .collection-filter__item--drawer {
+    display: none;
+  }
+  .collection-filter__item--count {
+    text-align: left;
+  }
+  html[dir="rtl"] .collection-filter__item--count {
+    text-align: right;
+  }
+}
+{% endstyle %}
+{%- endif -%}
+
+{%- if enable_sidebar == false or collection.filters.size == 0 -%}
+{% comment %}
+    Disable sidebar & filter features
+{% endcomment %}
+{% style %}
+.collection-filter__item--drawer {
+  display: none;
+}
+.collection-filter__item--count {
+  text-align: left;
+}
+html[dir="rtl"] .collection-filter__item--count {
+  text-align: right;
+}
+{% endstyle %}
+{%- endif -%}
+
+{%- unless enable_sort -%}
+  {% style %}
+    .collection-filter__item--sort {
+      display: none;
+    }
+  {% endstyle %}
+{%- endunless -%}

@@ -1,0 +1,150 @@
+.earn-points-section .yotpo-widget-campaign-widget .yotpo-widget-campaign-widget-container {
+  padding: 88px 0 64px;
+  max-width: 100%;
+}
+
+.earn-points-section .yotpo-widget-campaign-widget .yotpo-container-headline {
+  line-height: 110%; 
+  letter-spacing: -0.4px;
+  padding-bottom: 56px;
+}
+
+.earn-points-section .yotpo-widget-campaign-widget-icon-container {
+  height: 56px;
+}
+
+.earn-points-section .yotpo-widget-campaign-widget .yotpo-title-text {
+  line-height: 110%;
+  letter-spacing: -0.32px;
+  margin: 0 0 16px;
+}
+
+.earn-points-section .yotpo-widget-campaign-widget .yotpo-outer-tile {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0 !important;
+  width: calc(33.33333% - 38px) !important;
+}
+
+.earn-points-section .yotpo-widget-campaign-widget .flexified-wrapper {
+  padding: 0;
+  gap: 56px;
+}
+
+.earn-points-section .yotpo-widget-campaign-widget :focus {
+  box-shadow: none;
+}
+
+.earn-points-section .yotpo-sign-up-button {
+  display: flex;
+  justify-content: center;
+}
+
+.earn-points-section .yotpo-tile .yotpo-description-text { 
+  opacity: 0.8;
+}
+
+.earn-points-section .yotpo-sign-up-button button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: auto;
+  width: auto !important;
+  padding: 9px 15px;
+  height: auto !important;
+  line-height: 140% !important;
+}
+
+.earn-points-section .yotpo-sign-up-button button:after {
+  content: "";
+  background: url(/cdn/shop/files/arrow-right-white.svg?v=1741109962);
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+@media (max-width: 1023px) {
+
+  .earn-points-section .yotpo-widget-campaign-widget .yotpo-outer-tile {
+    width: calc(33.33333% - 14px) !important;
+    margin: 0 !important;
+  }
+
+  .earn-points-section .yotpo-widget-campaign-widget .flexified-wrapper {
+    gap: 20px;
+  }
+  
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  
+  .earn-points-section .yotpo-widget-campaign-widget-icon-container {
+    height: 30px;
+    margin-bottom: 14px;
+  }
+
+  .earn-points-section .yotpo-widget-campaign-widget .yotpo-title-text {
+    margin: 0 0 10px;
+    font-size: 20px !important;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .earn-points-section .yotpo-widget-campaign-widget .yotpo-widget-campaign-widget-container {
+    padding: 32px 0;
+  }
+
+  .earn-points-section .yotpo-widget-campaign-widget .yotpo-container-headline {
+    padding-bottom: 32px;
+    font-size: 28px !important;
+    letter-spacing: -0.28px;
+  }
+
+  .earn-points-section .yotpo-widget-campaign-widget .flexified-wrapper {
+    gap: 16px;
+  }
+
+  .earn-points-section .yotpo-widget-campaign-widget .yotpo-outer-tile {
+    width: 100% !important;
+    margin: 0 !important;
+    height: auto;
+  }
+
+  .earn-points-section .yotpo-tile-wrapper,
+  .yotpo-widget-campaign-widget .yotpo-campaign-switcher-wrapper,
+  .earn-points-section .yotpo-widget-campaign-widget .yotpo-tile {
+    height: auto;
+    position: relative;
+  }
+
+  .earn-points-section .flexified-wrapper .flexified-child:before {
+    padding-top: 0;
+  }
+
+  .earn-points-section .yotpo-widget-campaign-widget .yotpo-tile {
+    padding: 16px;
+  }
+
+  .yotpo-widget-campaign-widget .yotpo-is-mobile .yotpo-widget-campaign-widget-icon-container {
+    height: 32px;
+  }
+
+  .earn-points-section .yotpo-widget-campaign-widget .yotpo-title-text {
+    font-size: 24px !important;
+    margin: 0 0 12px;
+    letter-spacing: -0.24px;
+  }
+
+  .earn-points-section .yotpo-tile .yotpo-description-text {
+    line-height: 140%;
+    font-size: 16px;
+  }
+
+  .earn-points-section .yotpo-widget-campaign-widget-icon-container {
+    height: 32px;
+  }
+  
+}

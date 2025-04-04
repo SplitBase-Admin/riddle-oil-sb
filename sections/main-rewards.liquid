@@ -1,0 +1,57 @@
+{{ 'smell-good-club.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'vip-tier-section.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'how-it-works.css' | asset_url | stylesheet_tag: preload: true }} 
+{{ 'earn-points.css' | asset_url | stylesheet_tag: preload: true }} 
+{{ 'how-to-use-points.css' | asset_url | stylesheet_tag: preload: true }} 
+{{ 'redeem-for-product.css' | asset_url | stylesheet_tag: preload: true }} 
+{{ 'yotpo-referrals.css' | asset_url | stylesheet_tag: preload: true }} 
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+      // Select the elements you want to wrap
+      const smellDesc = document.querySelector(".smell-good-club .yotpo-description");
+      const smellButton = document.querySelector(".smell-good-club .yotpo-customer-logged-out-buttons");
+  
+      // Check if elements exist
+      if (!smellDesc || !smellButton) {
+        console.warn("One or both elements not found!");
+        return;
+      }
+  
+      console.log("Elements found:", smellDesc, smellButton);
+  
+      // Create a new parent div
+      const wrapper = document.createElement("div");
+      wrapper.className = "desc-button-wrapper"; 
+  
+      // Get the parent node of the first div
+      const parent = smellDesc.parentNode;
+  
+      if (!parent) {
+        console.warn("Parent element not found!");
+        return;
+      }
+  
+      console.log("Parent found:", parent);
+  
+      // Insert the wrapper before smellDesc
+      parent.insertBefore(wrapper, smellDesc);
+  
+      // Move both elements inside the wrapper
+      wrapper.appendChild(smellDesc);
+      wrapper.appendChild(smellButton);
+  
+      console.log("Elements successfully wrapped inside:", wrapper);
+    }, 3000); // Delay for 2 seconds to allow elements to load
+  });
+</script>
+

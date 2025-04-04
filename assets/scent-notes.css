@@ -1,0 +1,228 @@
+.scent-notes-section {
+  padding: 64px 0 80px;
+  position: relative;
+}
+
+.scent-notes-section .left-pattern {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.scent-notes-section .right-pattern {
+  position: absolute;
+  right: 0;
+  top: 64px;
+}
+
+.scent-notes-section .right-pattern img{
+  width:312px;
+  height:297px;
+  object-fit: contain;
+}
+
+.scent-notes-section .left-pattern img{
+  width:329px;
+  height:338px;
+  object-fit: contain;
+}
+
+.scent-notes-section .page-width {
+  max-width: 920px;
+}
+
+.scent-notes-inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.scent-notes-image svg {
+  width: 100%;
+  height: 100%;
+  background: rgba(242, 234, 223, 0.24);
+}
+
+.scent-notes-section .heading {
+  font-family: Playfair Display;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 44px;
+  letter-spacing: -0.01em;
+  color: #101820;
+  margin: 0 0 20px;
+}
+
+.scent-notes-section .description {
+  font-family: var(--body-font);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  color: rgba(16, 24, 32, 0.8);
+}
+
+.ingredient-wrapper {
+  margin: 32px 0 0;
+}
+
+.scent-notes-image {
+  flex: 1;
+  max-width: 322px;
+  min-width: 322px;
+}
+  
+.scent-notes-content {
+  flex: 1;
+}
+
+.ingredient-wrapper {
+  margin: 32px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.ingredient-item {
+  display: flex;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: #FAF7F2;
+  padding: 16px 16px 36px;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.ingredient-item:hover {
+  border: 1px solid #D9CBBF;
+  background: #F2EADF;
+}
+
+.ingredient-list {
+  display: flex;
+  gap: 12px;
+  color: #735D49;
+  font-family: var(--body-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; 
+}
+
+.ingredient-heading {
+  color: #101820;
+  font-family: var(--body-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 3.36px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1199px) {
+
+  .scent-notes-section .left-pattern {
+    width: 20%;
+  }
+
+  .scent-notes-section .right-pattern {
+    width: 13%;
+    top: 0;
+  }
+  
+}
+
+@media (max-width: 768px) {
+
+  .scent-notes-inner {
+    gap: 23px;
+  }
+
+  .ingredient-wrapper {
+    margin-top: 9px;  
+  }
+
+  .scent-notes-header {
+    flex: 0 1 100%;
+  }
+
+  .scent-notes-image {
+    flex: 0 1 100%;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .ingredient-wrapper {
+    max-width: 438px;
+    margin: 0 auto;
+    gap: 15px;
+  }
+
+  .scent-notes-image img { 
+    margin: 0 auto;
+  }
+
+  .scent-notes-section .right-pattern img{
+    width:100px;
+    height:181px;
+  }
+  
+  .scent-notes-section .left-pattern img{
+    width:104px;
+    height:182px;
+  }  
+
+  .scent-notes-section {
+    padding: 32px 0;
+  }
+
+  .scent-notes-section .heading {
+    font-size: 28px;
+    line-height: 110%;
+    letter-spacing: -0.28px;
+    margin: 0 0 10px;
+  }
+
+  .scent-notes-section .description {
+    font-size: 14px;
+    line-height: 140%; 
+  }
+
+  .scent-notes-section .left-pattern {
+    left: -32px;
+    width: auto;
+  }
+
+  .scent-notes-section .right-pattern {
+    right: -32px;
+    top: 0;
+    width: auto;
+  }
+
+  .ingredient-item {
+    padding: 14px 16px;
+  }
+  
+}
+
+@media (max-width: 767px) {
+
+  .scent-notes-section .left-pattern {
+    left: -16px;
+  }
+
+  .scent-notes-section .right-pattern {
+    right: -16px;
+  }
+  
+}
+
+@media (max-width: 479px) {
+
+  .ingredient-item {
+    gap: 6px;
+    flex-direction: column;  
+  }
+  
+}
