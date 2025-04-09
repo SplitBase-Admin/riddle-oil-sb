@@ -1,1 +1,558 @@
-{"sections":{"main":{"type":"main-product","blocks":{"size_variant_MqrXeB":{"type":"size-variant","disabled":true,"settings":{"size_style":"dropdown"}},"variant_picker":{"type":"variant_picker","settings":{"variant_labels":true,"picker_type":"button","product_dynamic_variants_enable":true,"color_swatches":false}},"quantity_selector_Vn8NJM":{"type":"quantity_selector","settings":{}},"buy_buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":false,"surface_pickup_enable":true,"show_gift_card_recipient":false}},"value_props_zCVhfR":{"type":"value-props","settings":{"value_prop_image_1":"shopify:\/\/shop_images\/Skin-Safe.svg","value_prop_title_1":"Skin-Safe","value_prop_image_2":"shopify:\/\/shop_images\/Vegan.svg","value_prop_title_2":"Vegan","value_prop_image_3":"shopify:\/\/shop_images\/Long-Lasting.svg","value_prop_title_3":"Long-Lasting"}},"tab_3wPAx4":{"type":"tab","settings":{"title":"Scent Profile","content":"","multi-content":"<p>{{ product.metafields.custom.tab_scent_notes | metafield_tag }}<\/p>","page":""}},"tab_mzbyVX":{"type":"tab","settings":{"title":"What To Expect","content":"","multi-content":"<p>{{ product.metafields.custom.tab_what_to_expect | metafield_tag }}<\/p>","page":""}},"tab_a7g6aF":{"type":"tab","settings":{"title":"Details","content":"","multi-content":"<p>{{ product.metafields.custom.tab_product_details1 | metafield_tag }}<\/p>","page":""}},"description":{"type":"description","disabled":true,"settings":{"is_tab":true,"tab_description":""}},"tab_yX46bb":{"type":"tab","settings":{"title":"How To Use","content":"","multi-content":"<p>{{ product.metafields.custom.how_to_use | metafield_tag }}<\/p>","page":""}},"additional_product_rq6gCj":{"type":"additional_product","settings":{"product":"{{ product.metafields.custom.complementary_product.value }}"}}},"block_order":["size_variant_MqrXeB","variant_picker","quantity_selector_Vn8NJM","buy_buttons","value_props_zCVhfR","tab_3wPAx4","tab_mzbyVX","tab_a7g6aF","description","tab_yX46bb","additional_product_rq6gCj"],"settings":{"sku_enable":false,"image_position":"left","image_size":"medium","product_zoom_enable":false,"thumbnail_position":"below","thumbnail_height":"flexible","thumbnail_arrows":true,"mobile_layout":"full","enable_video_looping":true,"product_video_style":"muted","disable_size_selector":false}},"link_tabs_i8rgYN":{"type":"link-tabs","blocks":{"tab_Rim8Rr":{"type":"tab","settings":{"title":"Scent Notes","url":"#scent-notes"}},"tab_PqYxRx":{"type":"tab","settings":{"title":"Riddle Routine","url":"#how-to-riddle"}},"tab_8kD6VX":{"type":"tab","disabled":true,"settings":{"title":"Ingredients","url":"#featured-ingredient"}},"tab_6EpcJc":{"type":"tab","settings":{"title":"Reviews","url":"#okendo-reviews-section"}},"tab_TadVdH":{"type":"tab","settings":{"title":"Tab Title","url":""}},"tab_yf3xkA":{"type":"tab","settings":{"title":"Why Riddle","url":"#compare-section"}},"tab_hj7MxX":{"type":"tab","settings":{"title":"Bestsellers","url":"#featured-collection"}}},"block_order":["tab_Rim8Rr","tab_PqYxRx","tab_8kD6VX","tab_6EpcJc","tab_TadVdH","tab_yf3xkA","tab_hj7MxX"],"settings":{}},"scent_notes_zYcCb8":{"type":"scent-notes","settings":{"section_id":"scent-notes","image":"shopify:\/\/shop_images\/product-image.jpg","title":"Scent Notes","text":"<p><strong>Did you know<\/strong> - Most scents consist of top, middle, and base notes. What differentiates these notes is the density of their molecules. The top note is very light and is the first note you smell right out of the bottle. <\/p><p>Most people determine if they like a scent based on this information alone, but to truly understand the scent, you must wear it so that you give the middle and base notes a chance to come through.The middle note takes about 15 minutes to develop, while the base note takes up to 45 minutes.<\/p>","left_pattern":"{{ product.metafields.custom.scent_note_left_pattern_desktop.value }}","right_pattern":"{{ product.metafields.custom.scent_note_right_pattern_desktop.value }}","left_pattern_mobile":"{{ product.metafields.custom.scent_note_left_pattern_mobile.value }}","right_pattern_mobile":"{{ product.metafields.custom.scent_note_right_pattern_mobile.value }}"}},"sub":{"type":"product-full-width","disabled":true,"settings":{"max_width":true}},"product-recommendations":{"type":"product-recommendations","disabled":true,"settings":{"product_recommendations_heading":"You may also like","related_count":6,"products_per_row":3}},"recently-viewed":{"type":"recently-viewed","disabled":true,"settings":{"recent_count":5}},"collection-return":{"type":"collection-return","disabled":true,"settings":{}},"how_to_riddle_TTq6Bx":{"type":"how-to-riddle","blocks":{"text_CCE9Mc":{"type":"text","settings":{"label_text":"Cleanse","image":"shopify:\/\/shop_images\/Cleanse.png","icon":"shopify:\/\/shop_images\/Scent_Neutralizing_Cleanser.svg","pre_text":"Step One","title":"Skin Balancing Cleanser","text":"<p>That true head-turning scent begins here. Our Fraiche oil-to-milk cleanser will wash away any impurities without stripping you of your skin-protecting and nourishing oils and prepping you for a smooth, long-lasting Riddle scent application.<\/p>","link_text":"Shop Body Wash","link_url":"shopify:\/\/products\/fraiche-shower-oil-wash"}},"text_QBG3mm":{"type":"text","settings":{"label_text":"Moisturize","image":"shopify:\/\/shop_images\/Moisturize.png","icon":"shopify:\/\/shop_images\/Radiating_Moisturizer.svg","pre_text":"Step Two","title":"Rejuvenating Layering Products","text":"<p>Our best-selling Milky spray lotion, and Boujee body oil products are formulated to feed and protect your skin while laying the foundation for a buildable signature scent.<\/p>","link_text":"Shop Layering","link_url":"shopify:\/\/collections\/body-oils-and-lotions"}},"text_fKMYnW":{"type":"text","settings":{"label_text":"Enhance","image":"shopify:\/\/shop_images\/Enhance.png","icon":"shopify:\/\/shop_images\/Pheromone_and_Scent_Enhancers.svg","pre_text":"Step Three","title":"Pheromone and Scent Boosters","text":"<p>Choose between our two pheromone oils for that, can't get enough, you but better, scent. Then add on one of our beloved scented fragrance oils to truly make it unique to you.<\/p>","link_text":"Shop Roll-On Oils","link_url":"shopify:\/\/collections\/fragrance-oils"}}},"block_order":["text_CCE9Mc","text_QBG3mm","text_fKMYnW"],"settings":{"section_id":"how-to-riddle","pre_text":"THE ROUTINE","title":"How To Riddle","text":"<p>Every product stands on its own, but put together, they are a 3-step system specifically designed to amplify your signature scent and extend its duration.<\/p>","bg_color":"#ffffff","text_color":"#101820","item_color":"#f2eadf","padding_top":80,"padding_bottom":80}},"text_and_image_dURwfW":{"type":"text-and-image","disabled":true,"settings":{"image_mask":"none","image2_mask":"none","subtitle":"","title":"Image with text","text":"<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>","button_label":"","button_link":"","button_style":"primary","align_text":"left","image_width":"50","layout":"left","divider":false,"top_padding":true,"bottom_padding":true,"lazyload_images":true}},"featured_ingredient_name_RGPRtd":{"type":"featured-ingredient-name","disabled":true,"settings":{"section_id":"featured-ingredient","title":"Featured Ingredient Name","text":"<p>Lorem ipsum dolor sit amet consectetur. Id malesuada ipsum facilisis odio arcu dignissim. Arcu pretium iaculis facilisi nibh purus amet nisl. Dolor purus eu at volutpat elementum vel dictumst. Fringilla quam in consequat sapien nunc at orci nibh.<\/p>","placeholder-image":"shopify:\/\/shop_images\/placeholder-callout_2.png","placeholder-image-mobile":"shopify:\/\/shop_images\/placeholder-callout-mobile.png","tab_title":"All Ingredients","tab_text":"<p>Lorem ipsum dolor sit amet consectetur. Id malesuada ipsum facilisis odio arcu dignissim. Arcu pretium iaculis facilisi nibh purus amet nisl. Dolor purus eu at volutpat elementum vel dictumst. Fringilla quam in consequat sapien nunc at orci nibh.<\/p>","bg_color":"#f2eadf","text_color":"#101820"}},"value_props_jYYUxj":{"type":"value-props","blocks":{"text_UnwDeF":{"type":"text","settings":{"icon":"shopify:\/\/shop_images\/Non-Toxic_Skin-Safe_20c8ba0a-55aa-40b5-bbd1-e2c8bd41b243.svg","title":"Non-Toxic & Skin-Safe"}},"text_cY4r8P":{"type":"text","settings":{"icon":"shopify:\/\/shop_images\/Cruelty_Free_Vegan_f90f62cd-6f1c-454e-bba0-df2e65638657.svg","title":"Cruelty Free & Vegan"}},"text_HQjbg9":{"type":"text","settings":{"icon":"shopify:\/\/shop_images\/Concentrated_Long-Lasting_Formula_ab2614a3-acfc-4b03-85de-05d88f6af31d.svg","title":"Concentrated, Long-Lasting Formula"}},"text_qgfaHP":{"type":"text","settings":{"icon":"shopify:\/\/shop_images\/Completely_One-of-a-kind_10c5f972-cb41-4560-b0e7-4ae6e7232995.svg","title":"Completely One-of-a-kind"}}},"block_order":["text_UnwDeF","text_cY4r8P","text_HQjbg9","text_qgfaHP"],"settings":{"section_id":"value-props","section_overlaid":true,"bg_color":"#000000","text_color":"#ffffff","padding-top":20,"padding-bottom":20}},"1735216089b63bd11d":{"type":"apps","blocks":{"okendo_reviews_widget_nDQL4Q":{"type":"shopify:\/\/apps\/okendo\/blocks\/reviews-widget\/bb689e69-ea70-4661-8fb7-ad24a2e23c29","settings":{"product":"{{product}}","widget_type":"reviews_widget"}}},"block_order":["okendo_reviews_widget_nDQL4Q"],"settings":{"custom_class":"okendo-reviews-section","full_width":true,"space_around":false}},"comparison_section_3CWqaV":{"type":"comparison-section","blocks":{"icon_text_wejfqm":{"type":"icon-text","settings":{"icon":"shopify:\/\/shop_images\/Oil-based_roll-on_that_hydrates_skin..svg","text":"<p>Oil-based roll-on that hydrates skin.<\/p>","type":"tab-one","position":"left"}},"icon_text_Mkjrmx":{"type":"icon-text","settings":{"icon":"shopify:\/\/shop_images\/Oils_do_not_evaporate_ensuring_a_longer_lasting_scent..svg","text":"<p>Oils have a slower evaporation rate, ensuring a longer lasting scent.<\/p>","type":"tab-one","position":"left"}},"icon_text_KAWmY9":{"type":"icon-text","settings":{"icon":"shopify:\/\/shop_images\/Subtle_scent_enhancement_that_makes_your_natural_fragrance_shine_through..svg","text":"<p>Subtle scent enhancement that makes <br\/>your natural fragrance shine through.<\/p>","type":"tab-one","position":"left"}},"icon_text_y6CDxc":{"type":"icon-text","settings":{"icon":"shopify:\/\/shop_images\/The_price_reflects_the_ingredients._High-quality_ethically_sourced_long-lasting_and_completely_unique..svg","text":"<p>The price reflects the ingredients. <br\/>High-quality, ethically sourced, long-<br\/>lasting and completely unique.<\/p>","type":"tab-one","position":"right"}},"icon_text_NNJUna":{"type":"icon-text","settings":{"icon":"shopify:\/\/shop_images\/Hypoallergenic_skin-safe_and_a_possible_alternative_to_perfumes_for_those_who_are_susceptible_to_headaches_and_migraines..svg","text":"<p>Non-toxic, skin-safe, and a possible alternative to perfumes for those who are susceptible to headaches and migraines.<\/p>","type":"tab-one","position":"right"}},"icon_text_jFWTQP":{"type":"icon-text","settings":{"text":"<p>Alcohol-based spray that can <br\/>dry out skin.<\/p>","type":"tab-two","position":"left"}},"icon_text_yx3XL7":{"type":"icon-text","settings":{"text":"<p>Alcohols evaporate quickly over time, <br\/>leading to a scent that quickly fades.<\/p>","type":"tab-two","position":"left"}},"icon_text_GEHFdJ":{"type":"icon-text","settings":{"text":"<p>A strong fragrance that covers your <br\/>smell and can easily overwhelm people <br\/>in your environment.<\/p>","type":"tab-two","position":"left"}},"icon_text_enPQGx":{"type":"icon-text","settings":{"text":"<p>The price can quickly go up, but the <br\/>quality often remains unchanged. You are <br\/>paying for the marketing.<\/p>","type":"tab-two","position":"right"}},"icon_text_RVgtHc":{"type":"icon-text","settings":{"text":"<p>The alcohol can irritate skin, and the <br\/>strong fragrances can cause headaches <br\/>and migraines.<\/p>","type":"tab-two","position":"right"}}},"block_order":["icon_text_wejfqm","icon_text_Mkjrmx","icon_text_KAWmY9","icon_text_y6CDxc","icon_text_NNJUna","icon_text_jFWTQP","icon_text_yx3XL7","icon_text_GEHFdJ","icon_text_enPQGx","icon_text_RVgtHc"],"settings":{"section_id":"compare-section","title":"How is Riddle actually different?","caption":"compare","tab_one_title":"Riddle","riddle_oil_image":"shopify:\/\/shop_images\/riddle-oil.png","tab_two_title":"Traditional Perfume","traditional_perfume_image":"shopify:\/\/shop_images\/Generic.png","button_label":"Explore Roll-On Scents","button_link":"shopify:\/\/collections\/fragrance-oils","button_style":"btn--primary","text_color":"#101820","tab_color":"#101820","tab_text_color":"#ffffff","tab_one_border_color":"#735d49","tab_two_border_color":"#a50b00","button_color":"#101820","button_text_color":"#ffffff"}},"custom_featured_collection_B9jyU9":{"type":"custom-featured-collection","settings":{"section_id":"featured-collection","caption":"SHOP","title":"Best Sellers","home_featured_products":"best-seller","color_overlay":"#000000","color_overlay_gradient":"linear-gradient(0deg, rgba(16, 10, 9, 1), rgba(16, 10, 9, 1) 60%, rgba(0, 0, 0, 0.2) 100%)","overlay_opacity":47,"promo_image":"shopify:\/\/shop_images\/Try_The_Sample_Kit.jpg","mobile_promo_image":"shopify:\/\/shop_images\/Try_The_Sample_Kit_1.jpg","promo_title":"Discover Your Unique Scent","button_label":"Try The Sample Kit","button_link":"shopify:\/\/products\/the-sample-kit","button_style":"btn--secondary","button_color":"#ffffff","button_text_color":"#ffffff"}}},"order":["main","link_tabs_i8rgYN","scent_notes_zYcCb8","sub","product-recommendations","recently-viewed","collection-return","how_to_riddle_TTq6Bx","text_and_image_dURwfW","featured_ingredient_name_RGPRtd","value_props_jYYUxj","1735216089b63bd11d","comparison_section_3CWqaV","custom_featured_collection_B9jyU9"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "size_variant_MqrXeB": {
+          "type": "size-variant",
+          "disabled": true,
+          "settings": {
+            "size_style": "dropdown"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": false
+          }
+        },
+        "quantity_selector_Vn8NJM": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "value_props_zCVhfR": {
+          "type": "value-props",
+          "settings": {
+            "value_prop_image_1": "shopify://shop_images/Skin-Safe.svg",
+            "value_prop_title_1": "Skin-Safe",
+            "value_prop_image_2": "shopify://shop_images/Vegan.svg",
+            "value_prop_title_2": "Vegan",
+            "value_prop_image_3": "shopify://shop_images/Long-Lasting.svg",
+            "value_prop_title_3": "Long-Lasting"
+          }
+        },
+        "tab_3wPAx4": {
+          "type": "tab",
+          "settings": {
+            "title": "Scent Profile",
+            "content": "",
+            "multi-content": "<p>{{ product.metafields.custom.tab_scent_notes | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "tab_mzbyVX": {
+          "type": "tab",
+          "settings": {
+            "title": "What To Expect",
+            "content": "",
+            "multi-content": "<p>{{ product.metafields.custom.tab_what_to_expect | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "tab_a7g6aF": {
+          "type": "tab",
+          "settings": {
+            "title": "Details",
+            "content": "",
+            "multi-content": "<p>{{ product.metafields.custom.tab_product_details1 | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "is_tab": true,
+            "tab_description": ""
+          }
+        },
+        "tab_yX46bb": {
+          "type": "tab",
+          "settings": {
+            "title": "How To Use",
+            "content": "",
+            "multi-content": "<p>{{ product.metafields.custom.how_to_use | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "additional_product_rq6gCj": {
+          "type": "additional_product",
+          "settings": {
+            "product": "{{ product.metafields.custom.complementary_product.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "size_variant_MqrXeB",
+        "variant_picker",
+        "quantity_selector_Vn8NJM",
+        "buy_buttons",
+        "value_props_zCVhfR",
+        "tab_3wPAx4",
+        "tab_mzbyVX",
+        "tab_a7g6aF",
+        "description",
+        "tab_yX46bb",
+        "additional_product_rq6gCj"
+      ],
+      "settings": {
+        "sku_enable": false,
+        "image_position": "left",
+        "image_size": "medium",
+        "product_zoom_enable": false,
+        "thumbnail_position": "below",
+        "thumbnail_height": "flexible",
+        "thumbnail_arrows": true,
+        "mobile_layout": "full",
+        "enable_video_looping": true,
+        "product_video_style": "muted",
+        "disable_size_selector": false
+      }
+    },
+    "link_tabs_i8rgYN": {
+      "type": "link-tabs",
+      "blocks": {
+        "tab_Rim8Rr": {
+          "type": "tab",
+          "settings": {
+            "title": "Scent Notes",
+            "url": "#scent-notes"
+          }
+        },
+        "tab_PqYxRx": {
+          "type": "tab",
+          "settings": {
+            "title": "Riddle Routine",
+            "url": "#how-to-riddle"
+          }
+        },
+        "tab_8kD6VX": {
+          "type": "tab",
+          "settings": {
+            "title": "Ingredients",
+            "url": "#featured-ingredient"
+          }
+        },
+        "tab_6EpcJc": {
+          "type": "tab",
+          "settings": {
+            "title": "Reviews",
+            "url": "#okendo-reviews-section"
+          }
+        },
+        "tab_TadVdH": {
+          "type": "tab",
+          "settings": {
+            "title": "Tab Title",
+            "url": ""
+          }
+        },
+        "tab_yf3xkA": {
+          "type": "tab",
+          "settings": {
+            "title": "Why Riddle",
+            "url": "#compare-section"
+          }
+        },
+        "tab_hj7MxX": {
+          "type": "tab",
+          "settings": {
+            "title": "Bestsellers",
+            "url": "#featured-collection"
+          }
+        }
+      },
+      "block_order": [
+        "tab_Rim8Rr",
+        "tab_PqYxRx",
+        "tab_8kD6VX",
+        "tab_6EpcJc",
+        "tab_TadVdH",
+        "tab_yf3xkA",
+        "tab_hj7MxX"
+      ],
+      "settings": {}
+    },
+    "scent_notes_zYcCb8": {
+      "type": "scent-notes",
+      "settings": {
+        "section_id": "scent-notes",
+        "image": "shopify://shop_images/product-image.jpg",
+        "title": "Scent Notes",
+        "text": "<p><strong>Did you know</strong> - Most scents consist of top, middle, and base notes. What differentiates these notes is the density of their molecules. The top note is very light and is the first note you smell right out of the bottle. </p><p>Most people determine if they like a scent based on this information alone, but to truly understand the scent, you must wear it so that you give the middle and base notes a chance to come through.The middle note takes about 15 minutes to develop, while the base note takes up to 45 minutes.</p>",
+        "left_pattern": "{{ product.metafields.custom.scent_note_left_pattern_desktop.value }}",
+        "right_pattern": "{{ product.metafields.custom.scent_note_right_pattern_desktop.value }}",
+        "left_pattern_mobile": "{{ product.metafields.custom.scent_note_left_pattern_mobile.value }}",
+        "right_pattern_mobile": "{{ product.metafields.custom.scent_note_right_pattern_mobile.value }}"
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "product_recommendations_heading": "You may also like",
+        "related_count": 6,
+        "products_per_row": 3
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {
+        "recent_count": 5
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "disabled": true,
+      "settings": {}
+    },
+    "how_to_riddle_TTq6Bx": {
+      "type": "how-to-riddle",
+      "blocks": {
+        "text_CCE9Mc": {
+          "type": "text",
+          "settings": {
+            "label_text": "Cleanse",
+            "image": "shopify://shop_images/Cleanse.png",
+            "icon": "shopify://shop_images/Scent_Neutralizing_Cleanser.svg",
+            "pre_text": "Step One",
+            "title": "Skin Balancing Cleanser",
+            "text": "<p>That true head-turning scent begins here. Our Fraiche oil-to-milk cleanser will wash away any impurities without stripping you of your skin-protecting and nourishing oils and prepping you for a smooth, long-lasting Riddle scent application.</p>",
+            "link_text": "Shop Body Wash",
+            "link_url": "shopify://products/fraiche-shower-oil-wash"
+          }
+        },
+        "text_QBG3mm": {
+          "type": "text",
+          "settings": {
+            "label_text": "Moisturize",
+            "image": "shopify://shop_images/Moisturize.png",
+            "icon": "shopify://shop_images/Radiating_Moisturizer.svg",
+            "pre_text": "Step Two",
+            "title": "Rejuvenating Layering Products",
+            "text": "<p>Our best-selling Milky spray lotion, and Boujee body oil products are formulated to feed and protect your skin while laying the foundation for a buildable signature scent.</p>",
+            "link_text": "Shop Layering",
+            "link_url": "shopify://collections/body-oils-and-lotions"
+          }
+        },
+        "text_fKMYnW": {
+          "type": "text",
+          "settings": {
+            "label_text": "Enhance",
+            "image": "shopify://shop_images/Enhance.png",
+            "icon": "shopify://shop_images/Pheromone_and_Scent_Enhancers.svg",
+            "pre_text": "Step Three",
+            "title": "Pheromone and Scent Boosters",
+            "text": "<p>Choose between our two pheromone oils for that, can't get enough, you but better, scent. Then add on one of our beloved scented fragrance oils to truly make it unique to you.</p>",
+            "link_text": "Shop Roll-On Oils",
+            "link_url": "shopify://collections/fragrance-oils"
+          }
+        }
+      },
+      "block_order": [
+        "text_CCE9Mc",
+        "text_QBG3mm",
+        "text_fKMYnW"
+      ],
+      "settings": {
+        "section_id": "how-to-riddle",
+        "pre_text": "THE ROUTINE",
+        "title": "How To Riddle",
+        "text": "<p>Every product stands on its own, but put together, they are a 3-step system specifically designed to amplify your signature scent and extend its duration.</p>",
+        "bg_color": "#ffffff",
+        "text_color": "#101820",
+        "item_color": "#f2eadf",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "text_and_image_dURwfW": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Image with text",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "left",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "featured_ingredient_name_RGPRtd": {
+      "type": "featured-ingredient-name",
+      "settings": {
+        "section_id": "featured-ingredient",
+        "title": "Featured Ingredient Name",
+        "text": "<p>Lorem ipsum dolor sit amet consectetur. Id malesuada ipsum facilisis odio arcu dignissim. Arcu pretium iaculis facilisi nibh purus amet nisl. Dolor purus eu at volutpat elementum vel dictumst. Fringilla quam in consequat sapien nunc at orci nibh.</p>",
+        "ingredient-name": "",
+        "placeholder-image": "shopify://shop_images/placeholder-callout_2.png",
+        "placeholder-image-mobile": "shopify://shop_images/placeholder-callout-mobile.png",
+        "tab_title": "All Ingredients",
+        "tab_text": "<p>Lorem ipsum dolor sit amet consectetur. Id malesuada ipsum facilisis odio arcu dignissim. Arcu pretium iaculis facilisi nibh purus amet nisl. Dolor purus eu at volutpat elementum vel dictumst. Fringilla quam in consequat sapien nunc at orci nibh.</p>",
+        "bg_color": "#f2eadf",
+        "text_color": "#101820"
+      }
+    },
+    "value_props_jYYUxj": {
+      "type": "value-props",
+      "blocks": {
+        "text_UnwDeF": {
+          "type": "text",
+          "settings": {
+            "icon": "shopify://shop_images/Non-Toxic_Skin-Safe_20c8ba0a-55aa-40b5-bbd1-e2c8bd41b243.svg",
+            "title": "Non-Toxic & Skin-Safe"
+          }
+        },
+        "text_cY4r8P": {
+          "type": "text",
+          "settings": {
+            "icon": "shopify://shop_images/Cruelty_Free_Vegan_f90f62cd-6f1c-454e-bba0-df2e65638657.svg",
+            "title": "Cruelty Free & Vegan"
+          }
+        },
+        "text_HQjbg9": {
+          "type": "text",
+          "settings": {
+            "icon": "shopify://shop_images/Concentrated_Long-Lasting_Formula_ab2614a3-acfc-4b03-85de-05d88f6af31d.svg",
+            "title": "Concentrated, Long-Lasting Formula"
+          }
+        },
+        "text_qgfaHP": {
+          "type": "text",
+          "settings": {
+            "icon": "shopify://shop_images/Completely_One-of-a-kind_10c5f972-cb41-4560-b0e7-4ae6e7232995.svg",
+            "title": "Completely One-of-a-kind"
+          }
+        }
+      },
+      "block_order": [
+        "text_UnwDeF",
+        "text_cY4r8P",
+        "text_HQjbg9",
+        "text_qgfaHP"
+      ],
+      "settings": {
+        "section_id": "value-props",
+        "section_overlaid": true,
+        "bg_color": "#000000",
+        "text_color": "#ffffff",
+        "padding-top": 20,
+        "padding-bottom": 20
+      }
+    },
+    "1735216089b63bd11d": {
+      "type": "apps",
+      "blocks": {
+        "okendo_reviews_widget_nDQL4Q": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_nDQL4Q"
+      ],
+      "settings": {
+        "custom_class": "okendo-reviews-section",
+        "full_width": true,
+        "space_around": false
+      }
+    },
+    "comparison_section_3CWqaV": {
+      "type": "comparison-section",
+      "blocks": {
+        "icon_text_wejfqm": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/Oil-based_roll-on_that_hydrates_skin..svg",
+            "text": "<p>Oil-based roll-on that hydrates skin.</p>",
+            "type": "tab-one",
+            "position": "left"
+          }
+        },
+        "icon_text_Mkjrmx": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/Oils_do_not_evaporate_ensuring_a_longer_lasting_scent..svg",
+            "text": "<p>Oils have a slower evaporation rate, ensuring a longer lasting scent.</p>",
+            "type": "tab-one",
+            "position": "left"
+          }
+        },
+        "icon_text_KAWmY9": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/Subtle_scent_enhancement_that_makes_your_natural_fragrance_shine_through..svg",
+            "text": "<p>Subtle scent enhancement that makes <br/>your natural fragrance shine through.</p>",
+            "type": "tab-one",
+            "position": "left"
+          }
+        },
+        "icon_text_y6CDxc": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/The_price_reflects_the_ingredients._High-quality_ethically_sourced_long-lasting_and_completely_unique..svg",
+            "text": "<p>The price reflects the ingredients. <br/>High-quality, ethically sourced, long-<br/>lasting and completely unique.</p>",
+            "type": "tab-one",
+            "position": "right"
+          }
+        },
+        "icon_text_NNJUna": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/Hypoallergenic_skin-safe_and_a_possible_alternative_to_perfumes_for_those_who_are_susceptible_to_headaches_and_migraines..svg",
+            "text": "<p>Non-toxic, skin-safe, and a possible alternative to perfumes for those who are susceptible to headaches and migraines.</p>",
+            "type": "tab-one",
+            "position": "right"
+          }
+        },
+        "icon_text_jFWTQP": {
+          "type": "icon-text",
+          "settings": {
+            "text": "<p>Alcohol-based spray that can <br/>dry out skin.</p>",
+            "type": "tab-two",
+            "position": "left"
+          }
+        },
+        "icon_text_yx3XL7": {
+          "type": "icon-text",
+          "settings": {
+            "text": "<p>Alcohols evaporate quickly over time, <br/>leading to a scent that quickly fades.</p>",
+            "type": "tab-two",
+            "position": "left"
+          }
+        },
+        "icon_text_GEHFdJ": {
+          "type": "icon-text",
+          "settings": {
+            "text": "<p>A strong fragrance that covers your <br/>smell and can easily overwhelm people <br/>in your environment.</p>",
+            "type": "tab-two",
+            "position": "left"
+          }
+        },
+        "icon_text_enPQGx": {
+          "type": "icon-text",
+          "settings": {
+            "text": "<p>The price can quickly go up, but the <br/>quality often remains unchanged. You are <br/>paying for the marketing.</p>",
+            "type": "tab-two",
+            "position": "right"
+          }
+        },
+        "icon_text_RVgtHc": {
+          "type": "icon-text",
+          "settings": {
+            "text": "<p>The alcohol can irritate skin, and the <br/>strong fragrances can cause headaches <br/>and migraines.</p>",
+            "type": "tab-two",
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_wejfqm",
+        "icon_text_Mkjrmx",
+        "icon_text_KAWmY9",
+        "icon_text_y6CDxc",
+        "icon_text_NNJUna",
+        "icon_text_jFWTQP",
+        "icon_text_yx3XL7",
+        "icon_text_GEHFdJ",
+        "icon_text_enPQGx",
+        "icon_text_RVgtHc"
+      ],
+      "settings": {
+        "section_id": "compare-section",
+        "title": "How is Riddle actually different?",
+        "caption": "compare",
+        "tab_one_title": "Riddle",
+        "riddle_oil_image": "shopify://shop_images/riddle-oil.png",
+        "tab_two_title": "Traditional Perfume",
+        "traditional_perfume_image": "shopify://shop_images/Generic.png",
+        "button_label": "Explore Roll-On Scents",
+        "button_link": "shopify://collections/fragrance-oils",
+        "button_style": "btn--primary",
+        "text_color": "#101820",
+        "tab_color": "#101820",
+        "tab_text_color": "#ffffff",
+        "tab_one_border_color": "#735d49",
+        "tab_two_border_color": "#a50b00",
+        "button_color": "#101820",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "custom_featured_collection_B9jyU9": {
+      "type": "custom-featured-collection",
+      "settings": {
+        "section_id": "featured-collection",
+        "caption": "SHOP",
+        "title": "Best Sellers",
+        "home_featured_products": "best-seller",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "linear-gradient(0deg, rgba(16, 10, 9, 1), rgba(16, 10, 9, 1) 60%, rgba(0, 0, 0, 0.2) 100%)",
+        "overlay_opacity": 47,
+        "promo_image": "shopify://shop_images/Try_The_Sample_Kit.jpg",
+        "mobile_promo_image": "shopify://shop_images/Try_The_Sample_Kit_1.jpg",
+        "promo_title": "Discover Your Unique Scent",
+        "button_label": "Try The Sample Kit",
+        "button_link": "shopify://products/the-sample-kit",
+        "button_style": "btn--secondary",
+        "button_color": "#ffffff",
+        "button_text_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "link_tabs_i8rgYN",
+    "scent_notes_zYcCb8",
+    "sub",
+    "product-recommendations",
+    "recently-viewed",
+    "collection-return",
+    "how_to_riddle_TTq6Bx",
+    "text_and_image_dURwfW",
+    "featured_ingredient_name_RGPRtd",
+    "value_props_jYYUxj",
+    "1735216089b63bd11d",
+    "comparison_section_3CWqaV",
+    "custom_featured_collection_B9jyU9"
+  ]
+}

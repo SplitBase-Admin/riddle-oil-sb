@@ -1,11 +1,14 @@
 {{ 'featured-ingredient-name.css' | asset_url | stylesheet_tag: preload: true }}
 
-<div id="{{ section.settings.section_id }}" class="featured-ingredient-section" style="background-color: {{ section.settings.bg_color }};">
+{% assign featured_ingredient = product.metafields.custom.featured_ingredient.value %}
+
+{% if featured_ingredient %}
+  <div id="{{ section.settings.section_id }}" class="featured-ingredient-section" style="background-color: {{ section.settings.bg_color }};">
   <div class="page-width">
     <div class="featured-ingredient-inner">
       <div class="featured-ingredient-image">
 
-        {% assign featured_ingredient = product.metafields.custom.featured_ingredient.value %}
+
         {% assign ingredient_image = featured_ingredient.ingredient_image.value %}
         {% assign ingredient_image_mobile = featured_ingredient.ingredient_image_mobile.value %}
 
@@ -55,20 +58,29 @@
           <h2 class="h2 heading">{{ section.settings.title }}</h2>
         {%- endif -%}
 
-        {%- if featured_ingredient.ingredient_description.value != blank -%}
-          <div class="rte">{{ featured_ingredient.ingredient_description.value }}</div>
+        {%- if featured_ingredient.ingredient_description_text.value != blank -%}
+          <div class="rte">{{ featured_ingredient.ingredient_description_text | metafield_tag }}</div>
         {%- elsif section.settings.text != blank -%}
           <div class="rte">{{ section.settings.text }}</div>
         {%- endif -%}
 
-        {%- if section.settings.placeholder-text != blank -%}
-          <div class="placeholder-text">
-            {{ section.settings.placeholder-text }}
-          </div>
-        {%- endif -%}
-
         <div class="placeholder-callout-block">
-          <div class="placeholder-callout-text">Placeholder callout</div>
+          {% if featured_ingredient.ingredients_name.value != blank %}
+            <div class="placeholder-callout-text">{{ featured_ingredient.ingredients_name.value }}</div>
+          {% elsif section.settings.ingredient-name %}
+            <div class="placeholder-callout-text">{{ section.settings.ingredients_name }}</div>
+          {% endif %}
+          <div class="line-vector small--hide">
+            {% render 'line' %}
+          </div>
+          <div class="line-vector medium-up--hide">
+            {% render 'line-mobile' %}
+          </div>
+
+          {% if featured_ingredient.ingredient_item_image.value != blank %}
+            <div class="ingredient-item-image"> {{ featured_ingredient.ingredient_item_image.value |image_url: width: original, height: auto | image_tag }}</div>
+          {% endif %}
+          <!-- 
           {% if section.settings.placeholder-image != blank %}
             <div class="placeholder-callout-image small--hide">{{ section.settings.placeholder-image |image_url: width: 256, height: auto | image_tag }}</div>
           {% endif %}
@@ -76,7 +88,7 @@
             <div class="placeholder-callout-image medium-up--hide">{{ section.settings.placeholder-image-mobile |image_url: width: 183, height: auto | image_tag }}</div>
           {% else %}
             <div class="placeholder-callout-image medium-up--hide">{{ section.settings.placeholder-image |image_url: width: 183, height: auto | image_tag }}</div>
-          {% endif %}
+          {% endif %} -->
         </div>
 
         {% if section.settings.tab_title != blank %}
@@ -84,14 +96,18 @@
             <button type="button"
               class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height " aria-controls="Product-content-{{ id }}"
               aria-expanded="false">
-              {{ section.settings.tab_title }}
+              {% if featured_ingredient.ingredient_tab_title.value != blank %}
+                {{ featured_ingredient.ingredient_tab_title.value }}
+              {% else %}
+                {{ section.settings.tab_title }}
+              {% endif %}
               {%- render 'collapsible-icons' -%}
             </button>
             <div id="Product-content-{{ id }}"
               class="collapsible-content collapsible-content--all">
               <div class="collapsible-content__inner rte">
-                {% if featured_ingredient.ingredient_information.value != blank %}
-                  {{ featured_ingredient.ingredient_information.value }}
+                {% if featured_ingredient.ingredient_tab_details != blank %}
+                  {{ featured_ingredient.ingredient_tab_details | metafield_tag }}
                 {% else %}
                   {{ section.settings.tab_text }}
                 {% endif %}
@@ -103,7 +119,24 @@
     </div>
   </div>
 </div>
+{% endif %}
 
+{% style %}
+
+  {%  if featured_ingredient.ingredient_image_left_margin != blank or featured_ingredient.ingredient_image_bottom_margin != blank %}
+    .ingredient-item-image {
+      margin-left: {{ featured_ingredient.ingredient_image_left_margin }}px;
+      margin-bottom: {{ featured_ingredient.ingredient_image_bottom_margin }}px;
+    }
+  {% else %}
+    .ingredient-item-image {
+      margin-left: -80.5px;
+    }
+  {% endif %}
+    
+
+{% endstyle %}
+  
 {% schema %}
 {
   "name": "Featured Ingredient Name",
@@ -127,9 +160,9 @@
       "default": "<p>Lorem ipsum dolor sit amet consectetur. Id malesuada ipsum facilisis odio arcu dignissim. Arcu pretium iaculis facilisi nibh purus amet nisl. Dolor purus eu at volutpat elementum vel dictumst. Fringilla quam in consequat sapien nunc at orci nibh.</p>"
     },
     {
-      "type": "image_picker",
-      "id": "placeholder-text",
-      "label": "Placeholder text"
+      "type": "text",
+      "id": "ingredient-name",
+      "label": "Ingredient Name"
     },
     {
       "type": "image_picker",

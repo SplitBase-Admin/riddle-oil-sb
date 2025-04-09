@@ -708,3 +708,14 @@ document.querySelectorAll(".product__card--url").forEach(card => {
       }
   });
 });
+
+document.querySelectorAll('.link-tabs-items a[href^="#"]').forEach(link => {
+  const targetId = link.getAttribute('href').slice(1); // remove the '#' from href
+  const targetElement = document.getElementById(targetId);
+
+  if (!targetElement) {
+    // If the section doesn't exist, add a class to the link
+    link.classList.add('invalid-anchor');
+  }
+});
+

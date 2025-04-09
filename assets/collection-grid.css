@@ -232,6 +232,7 @@ ul.tag-list--active-tags li.tag {
   align-items: center;
   justify-content: center;
   gap: 2px;
+  position: unset;
 }
 
 .collection-grid__wrapper .grid-product__tag svg {
@@ -367,7 +368,7 @@ ul.tag-list--active-tags li.tag {
 @media (max-width: 767px) {
 
   .collection-grid__wrapper .grid {
-    row-gap: 35px;
+    row-gap: 24px;
     column-gap: 21px;
   }
 
@@ -397,7 +398,7 @@ ul.tag-list--active-tags li.tag {
   }
 
   .collection-content {
-    padding-top: 8px;
+    padding-top: 24px;
   }
 
   .custom-filter-enabled .collection-filter__item--drawer {
@@ -613,7 +614,7 @@ ul.tag-list--active-tags li.tag {
 @media only screen and (max-width: 768px) {
   
   .grid.grid--item-4 .small--one-half {
-    width: calc(50% - 10px);
+    width: calc(50% - 10.5px);
   }
 
   .product-grid-tags-main {

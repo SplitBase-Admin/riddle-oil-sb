@@ -18,27 +18,32 @@
   <div class="page-width">
     <div class="link-tabs-inner">
       <p>Jump to:</p>
+
+      {% comment %}
+      
       {% if product.collections.size > 0 %}
         {% assign hide_ingredients = false %}
         {% for collection in product.collections %}
           {% if collection.url contains "/collections/fragrance-oils" %}
             {% assign hide_ingredients = true %}
-            
+            {{ collection.url }}
           {% endif %}
         {% endfor %}
       {% endif %}
+
+      {% endcomment %}
 
       <div class="link-tabs-items">
       {% for block in section.blocks %}
         {% if block.settings.url != blank %}
             {% if block.settings.title == "Scent Notes" %}
               {% if scent_notes == true %}
-              <a href="{{ block.settings.url }}" class="{% if forloop.index == 1 %}active{% endif %} {% if block.settings.title == "Ingredients" and hide_ingredients %}hide{% endif %}">
+              <a href="{{ block.settings.url }}" class="{% if forloop.index == 1 %}active{% endif %} {% if hide_ingredients %}hide{% endif %}">
                 {{ block.settings.title }}
               </a>
               {% endif %}
             {% else %}
-              <a href="{{ block.settings.url }}" class="{% if forloop.index == 1 %}active{% endif %} {% if block.settings.title == "Ingredients" and hide_ingredients %}hide{% endif %}">
+              <a href="{{ block.settings.url }}" class="{% if forloop.index == 1 %}active{% endif %} {% if hide_ingredients %}hide{% endif %}">
                 {{ block.settings.title }}
               </a>
             {% endif %}
