@@ -234,6 +234,21 @@
       "disabled": true,
       "settings": {}
     },
+    "featured_ingredient_name_RGPRtd": {
+      "type": "featured-ingredient-name",
+      "settings": {
+        "section_id": "featured-ingredient",
+        "title": "Featured Ingredient Name",
+        "text": "<p>Lorem ipsum dolor sit amet consectetur. Id malesuada ipsum facilisis odio arcu dignissim. Arcu pretium iaculis facilisi nibh purus amet nisl. Dolor purus eu at volutpat elementum vel dictumst. Fringilla quam in consequat sapien nunc at orci nibh.</p>",
+        "ingredient-name": "",
+        "placeholder-image": "shopify://shop_images/placeholder-callout_2.png",
+        "placeholder-image-mobile": "shopify://shop_images/placeholder-callout-mobile.png",
+        "tab_title": "All Ingredients",
+        "tab_text": "<p>Lorem ipsum dolor sit amet consectetur. Id malesuada ipsum facilisis odio arcu dignissim. Arcu pretium iaculis facilisi nibh purus amet nisl. Dolor purus eu at volutpat elementum vel dictumst. Fringilla quam in consequat sapien nunc at orci nibh.</p>",
+        "bg_color": "#f2eadf",
+        "text_color": "#101820"
+      }
+    },
     "how_to_riddle_TTq6Bx": {
       "type": "how-to-riddle",
       "blocks": {
@@ -313,21 +328,6 @@
         "top_padding": true,
         "bottom_padding": true,
         "lazyload_images": true
-      }
-    },
-    "featured_ingredient_name_RGPRtd": {
-      "type": "featured-ingredient-name",
-      "settings": {
-        "section_id": "featured-ingredient",
-        "title": "Featured Ingredient Name",
-        "text": "<p>Lorem ipsum dolor sit amet consectetur. Id malesuada ipsum facilisis odio arcu dignissim. Arcu pretium iaculis facilisi nibh purus amet nisl. Dolor purus eu at volutpat elementum vel dictumst. Fringilla quam in consequat sapien nunc at orci nibh.</p>",
-        "ingredient-name": "",
-        "placeholder-image": "shopify://shop_images/placeholder-callout_2.png",
-        "placeholder-image-mobile": "shopify://shop_images/placeholder-callout-mobile.png",
-        "tab_title": "All Ingredients",
-        "tab_text": "<p>Lorem ipsum dolor sit amet consectetur. Id malesuada ipsum facilisis odio arcu dignissim. Arcu pretium iaculis facilisi nibh purus amet nisl. Dolor purus eu at volutpat elementum vel dictumst. Fringilla quam in consequat sapien nunc at orci nibh.</p>",
-        "bg_color": "#f2eadf",
-        "text_color": "#101820"
       }
     },
     "value_props_jYYUxj": {
@@ -547,9 +547,9 @@
     "product-recommendations",
     "recently-viewed",
     "collection-return",
+    "featured_ingredient_name_RGPRtd",
     "how_to_riddle_TTq6Bx",
     "text_and_image_dURwfW",
-    "featured_ingredient_name_RGPRtd",
     "value_props_jYYUxj",
     "1735216089b63bd11d",
     "comparison_section_3CWqaV",

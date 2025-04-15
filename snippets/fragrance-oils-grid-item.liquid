@@ -424,7 +424,10 @@ Arguments
           window.collCustomGroupProductsImages[{{ product.id }}] = {
             'custom_image': `{{ imageInner }}`,
             'url': `{{ product.url }}`,
-            'product_tags': `{{ product_tags_var }}`
+            'product_tags': `{{ product_tags_var }}`,
+            'sku_id': `{{ product.sku | default: product.id }}`,
+            'name': `{{ product.title }}`,
+            'price': `{{ product.price | money_without_currency }}`
           }
         </script>
       

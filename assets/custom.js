@@ -153,6 +153,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
           appendType: "attribute",
           attribute_name: "data-url",
         },
+        {
+          element: closestDiv.querySelector(".product__card--url"),
+          content: window.collCustomGroupProductsImages[selectedVariant.id]?.sku_id || "",
+          appendType: "attribute",
+          attribute_name: "data-sku",
+        },
+        {
+          element: closestDiv.querySelector(".product__card--url"),
+          content: window.collCustomGroupProductsImages[selectedVariant.id]?.name || "",
+          appendType: "attribute",
+          attribute_name: "data-name",
+        },
+        {
+          element: closestDiv.querySelector(".product__card--url"),
+          content: window.collCustomGroupProductsImages[selectedVariant.id]?.price || "",
+          appendType: "attribute",
+          attribute_name: "data-price",
+        },
       ];
     } catch (error) {
       console.error("Error generating elementsToRender array:", error);
@@ -702,10 +720,24 @@ window.collectionPageCustomFilters = function(){
 
 document.querySelectorAll(".product__card--url").forEach(card => {
   card.addEventListener("click", function(event) {
-      // Prevent navigation when clicking on a variant button
-      if (!event.target.closest(".custom-variant-options")) {
-          window.location.href = this.getAttribute("data-url");
-      }
+
+    let closestCvo = event.currentTarget;
+
+    gtag("event", "select_item", {
+      item_list_name: "Product Grid",
+      items: [
+        {
+          item_id: `${ closestCvo.dataset.sku ? closestCvo.dataset.sku : '' }`,
+          item_name: `${ closestCvo.dataset.name ? closestCvo.dataset.name : '' }`,
+          price: `${ closestCvo.dataset.price ? closestCvo.dataset.price : '' }`
+        }
+      ]
+    });
+    
+    // Prevent navigation when clicking on a variant button
+    if (!event.target.closest(".custom-variant-options")) {
+        window.location.href = this.getAttribute("data-url");
+    }
   });
 });
 

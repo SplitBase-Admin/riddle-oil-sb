@@ -54,7 +54,7 @@
   data-product-handle="{{ product.handle }}"
   data-product-id="{{ product.id }}"
 >
-  <div data-url="{{ product.url }}" class="product__card--url">
+  <div data-url="{{ product.url }}" class="product__card--url" data-sku="{{ product.sku |  default: product.id }}" data-name="{{ product.title }}" data-price="{{ product.price | money_without_currency }}">
     {%- if product.metafields.custom.product_label != blank -%}
       <span class="product--label {{ template.name }}">{{ product.metafields.custom.product_label }}</span>
     {%- endif -%}
@@ -417,7 +417,10 @@
           window.collCustomGroupProductsImages[{{ product.id }}] = {
             'custom_image': `{{ imageInner }}`,
             'url': `{{ product.url }}`,
-            'product_tags': `{{ product_tags_var }}`
+            'product_tags': `{{ product_tags_var }}`,
+            'sku_id': `{{ product.sku | default: product.id }}`,
+            'name': `{{ product.title }}`,
+            'price': `{{ product.price | money_without_currency }}`
           }
           </script>
 
