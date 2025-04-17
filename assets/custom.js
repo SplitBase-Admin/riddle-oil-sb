@@ -725,6 +725,7 @@ document.querySelectorAll(".product__card--url").forEach(card => {
 
     gtag("event", "select_item", {
       item_list_name: "Product Grid",
+      send_to: ["G-0GD84Z6336", "MC-20KHS0MSN5"],
       items: [
         {
           item_id: `${ closestCvo.dataset.sku ? closestCvo.dataset.sku : '' }`,
@@ -733,7 +734,21 @@ document.querySelectorAll(".product__card--url").forEach(card => {
         }
       ]
     });
-    
+
+    dataLayer.push({
+      event: "select_item",
+      item_list_name: "Product Grid",
+      ecommerce: {
+        items: [
+          {
+            item_id: `${ closestCvo.dataset.sku ? closestCvo.dataset.sku : '' }`,
+            item_name: `${ closestCvo.dataset.name ? closestCvo.dataset.name : '' }`,
+            price: `${ closestCvo.dataset.price ? closestCvo.dataset.price : '' }`
+          }
+        ]
+      },
+    });
+   
     // Prevent navigation when clicking on a variant button
     if (!event.target.closest(".custom-variant-options")) {
         window.location.href = this.getAttribute("data-url");
