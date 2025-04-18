@@ -1,5 +1,124 @@
-{%- form 'product', product, id: form_id, class: 'product-single__form' -%}
+<style>
+  .second_prod_v2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8px;
+  }
 
+  .hidden {
+    display: none !important;
+  }
+
+  .second_product_atc_v2 {
+    display: flex;
+    padding: 0px 12px 6px 12px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    cursor: pointer;
+    margin: 8px auto;
+  }
+  .second_prod_v2 img {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid rgba(16, 24, 32, 0.22);
+  }
+
+  .second_product_atc_v2 p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .second-toggle-wrapper {
+    margin-left: auto;
+    padding-left: 12px;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: '';
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .slider {
+    background-color: #000;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+
+  .second_prod_atc_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8px;
+  }
+  .second_product_atc {
+    display: flex;
+    padding: 0px 12px 6px 12px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.64);
+    cursor: pointer;
+    margin: 8px auto;
+    width: 70%;
+  }
+
+  .second_product_atc p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+</style>
+
+{% assign second_product_variant = second_product.variants.first %}
+
+{%- form 'product', product, id: form_id, class: 'product-single__form' -%}
   {%- liquid
     assign gift_card_recipient_feature_active = false
     if block.settings.show_gift_card_recipient and product.gift_card?
@@ -20,64 +139,115 @@
     <div class="payment-buttons">
   {%- endif -%}
 
-    {%- liquid
-      assign default_text = 'products.product.add_to_bag' | t
-      assign button_text = 'products.product.add_to_bag' | t
-      if template contains 'preorder'
-        assign default_text = 'products.product.preorder' | t
-        assign button_text = 'products.product.preorder' | t
-      endif
-      unless current_variant.available
-        assign button_text = 'products.product.sold_out' | t
-      endunless
-    -%}
+  {%- liquid
+    assign default_text = 'products.product.add_to_bag' | t
+    assign button_text = 'products.product.add_to_bag' | t
+    if template contains 'preorder'
+      assign default_text = 'products.product.preorder' | t
+      assign button_text = 'products.product.preorder' | t
+    endif
+    unless current_variant.available
+      assign button_text = 'products.product.sold_out' | t
+    endunless
+  -%}
 
-    {% assign box_product = null %}
-    {% for variant in product.variants %}
-      {% assign variant_title_downcase = variant.title | downcase %}
-      {% if variant_title_downcase contains "with gift box" %}
-        {% assign box_product = variant %}
-      {% endif %}
-    {% endfor %}
-    {% if box_product and current_variant.available %}      
-      <div class="gift-box-product">
-        <div class="gift-box-details">
-          {% if box_product.featured_media != blank %}
-            <div class="gift-box-image">{{ box_product.featured_media | image_url: width: original, height: auto | image_tag  }}</div>
-          {% endif %}
-          <div class="gift-box-form">
-            <input type="checkbox" id="gift-box-product" name="gift-box-product" value="gift-box-product">
-            <label for="gift-box-product" class="gift-box-text">Add Gift Box</label>
+  {% assign box_product = null %}
+  {% for variant in product.variants %}
+    {% assign variant_title_downcase = variant.title | downcase %}
+    {% if variant_title_downcase contains 'with gift box' %}
+      {% assign box_product = variant %}
+    {% endif %}
+  {% endfor %}
+  {% if box_product and current_variant.available %}
+    <div class="gift-box-product">
+      <div class="gift-box-details">
+        {% if box_product.featured_media != blank %}
+          <div class="gift-box-image">
+            {{ box_product.featured_media | image_url: width: original, height: auto | image_tag }}
           </div>
-          </div>
-        <div class="gift-box-price">+{{ box_product.price | minus: product.price | money | remove: ' ' }}</div>
+        {% endif %}
+        <div class="gift-box-form">
+          <input type="checkbox" id="gift-box-product" name="gift-box-product" value="gift-box-product">
+          <label for="gift-box-product" class="gift-box-text">Add Gift Box</label>
+        </div>
+      </div>
+      <div class="gift-box-price">+{{ box_product.price | minus: product.price | money | remove: ' ' }}</div>
+    </div>
+  {% endif %}
+
+  <div class="hidden second_prod_atc_container">
+    <div class="second_product_atc" data-variant-id="{{ second_product_variant.id }}">
+      {{ second_product.images[0] | image_url: height: 25 | image_tag }}
+      {% assign price_per_ml_old = product.price | divided_by: 8 %}
+      {% assign price_per_ml_new = second_product.price | divided_by: 20 %}
+
+      {% assign save = price_per_ml_old | minus: price_per_ml_new %}
+      <p>
+        Size up to 20ml & <b>Save ${{ save | money_without_currency }}/ml</b>
+      </p>
+
+      {% assign extra_price = second_product.price | minus: product.price %}
+      <p>+ {{ extra_price | money | remove: ' ' }}</p>
+    </div>
+  </div>
+
+  <div class="second_prod_v2 hidden">
+    <div class="second_product_atc_v2" data-variant-id="{{ second_product_variant.id }}">
+      {{ second_product.images[0] | image_url: height: 60 | image_tag }}
+      {% assign price_per_ml_old = product.price | divided_by: 8 %}
+      {% assign price_per_ml_new = second_product.price | divided_by: 20 %}
+      {% assign save = price_per_ml_old | minus: price_per_ml_new %}
+      <p>
+        Size up to 20ml & <b>Save ${{ save | money_without_currency }}/ml</b>
+      </p>
+      {% assign extra_price = second_product.price | minus: product.price %}
+      <p>+ {{ extra_price | money | remove: ' ' }}</p>
+
+      <!-- Toggle Switch -->
+      <div class="second-toggle-wrapper">
+        <label class="switch">
+          <input type="checkbox" id="second-toggle">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="qty-cta-wrapper {% unless current_variant.available %} no__buttons {% endunless %}">
+    {% if current_variant.available %}
+      <div class="product__quantity">
+        {% assign qty_id = section_id | append: product.id %}
+        {%- render 'quantity-input-dropdown', form_id: form_id, id: qty_id, qty: 1, min: 1 -%}
       </div>
     {% endif %}
 
-    <div class="qty-cta-wrapper {% unless current_variant.available %} no__buttons {% endunless %}">
-
-      {% if current_variant.available %}      
-        <div class="product__quantity">
-          {% assign qty_id = section_id | append: product.id %}
-          {%- render 'quantity-input-dropdown', form_id: form_id, id: qty_id, qty: 1, min: 1 -%}
-        </div>
+    <button
+      {% if product.empty? %}
+        type="button"
+      {% else %}
+        type="submit"
       {% endif %}
-  
-      <button
-        {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
-        name="add"
-        data-add-to-cart
-        class="btn btn--full add-to-cart{% if enable_dynamic_buttons and product.selling_plan_groups == empty %} btn--secondary{% endif %}"
-        {% unless current_variant.available %} disabled="disabled"{% endunless %}>
-        <span data-add-to-cart-text data-default-text="{{ default_text }}">
-          {{ button_text }}&nbsp;&nbsp;|&nbsp;&nbsp;{% if product.metafields.custom.gift_card_default_variant_title %}{{ product.metafields.custom.gift_card_default_variant_title | money }}{% else %}{{ product.price | money | remove: ' ' }}{% endif %}
-        </span>
-      </button>
-    </div>
+      name="add"
+      data-add-to-cart
+      class="btn btn--full add-to-cart{% if enable_dynamic_buttons and product.selling_plan_groups == empty %} btn--secondary{% endif %}"
+      {% unless current_variant.available %}
+        disabled="disabled"
+      {% endunless %}
+    >
+      <span data-add-to-cart-text data-default-text="{{ default_text }}">
+        {{ button_text }}&nbsp;&nbsp;|&nbsp;&nbsp;
+        {%- if product.metafields.custom.gift_card_default_variant_title -%}
+          {{- product.metafields.custom.gift_card_default_variant_title | money -}}
+        {%- else -%}
+          {{- product.price | money | remove: ' ' -}}
+        {%- endif %}
+      </span>
+    </button>
+  </div>
 
-    {%- if enable_dynamic_buttons -%}
-      {{ form | payment_button }}
-    {%- endif -%}
+  {%- if enable_dynamic_buttons -%}
+    {{ form | payment_button }}
+  {%- endif -%}
 
   {%- if enable_dynamic_buttons -%}
     </div>
@@ -88,16 +258,77 @@
   <select name="id" data-product-select class="product-single__variants no-js">
     {%- for variant in product.variants -%}
       {%- if variant.available -%}
-        <option {% if variant == product.selected_or_first_available_variant %}
-          selected="selected"{% endif %}
-          value="{{ variant.id }}">
+        <option
+          {% if variant == product.selected_or_first_available_variant %}
+            selected="selected"
+          {% endif %}
+          value="{{ variant.id }}"
+        >
           {{ variant.title }} - {{ variant.price | money_with_currency }}
         </option>
       {%- else -%}
-        <option disabled="disabled">
-          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
-        </option>
+        <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
       {%- endif -%}
     {%- endfor -%}
   </select>
 {%- endform -%}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('second-toggle');
+    const variantSelect = document.querySelector('select[name="id"]');
+    const secondVariantId = '{{ second_product_variant.id }}';
+
+    if (!toggle || !variantSelect) return;
+
+    // Save the original options once
+    const originalOptions = Array.from(variantSelect.options).map((opt) => opt.cloneNode(true));
+
+    toggle.addEventListener('change', function () {
+      if (this.checked) {
+        console.log('Checked!');
+        variantSelect.innerHTML = '';
+        const secondOption = document.createElement('option');
+        secondOption.value = secondVariantId;
+        secondOption.selected = true;
+        secondOption.textContent = 'Second Product';
+        variantSelect.appendChild(secondOption);
+      } else {
+        console.log('Unchecked!');
+        // Restore original product variants
+        variantSelect.innerHTML = '';
+        originalOptions.forEach((opt) => variantSelect.appendChild(opt.cloneNode(true)));
+      }
+    });
+  });
+</script>
+
+{% comment %} for variant 1 {% endcomment %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const secondATC = document.querySelector('.second_product_atc');
+    if (secondATC) {
+      secondATC.addEventListener('click', function () {
+        const variantId = this.dataset.variantId;
+
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            id: variantId,
+            quantity: 1,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log('Added to cart:', data);
+            // Optional: Trigger cart drawer update or notification here
+          })
+          .catch((err) => console.error('Add to cart failed:', err));
+      });
+    }
+  });
+</script>
