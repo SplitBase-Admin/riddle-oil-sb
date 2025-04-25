@@ -147,16 +147,7 @@
                 {% if product.metafields.custom.product_label != blank %}
                   <div class="product-label">{{ product.metafields.custom.product_label }}</div>
                 {% endif %}
-                <div
-                  class="product-review-label-review"
-                  data-oke-badge
-                  data-oke-layout="minimal"
-                  data-oke-star-background-color="#FFFFFF"
-                  data-oke-star-height-px="15"
-                  data-oke-star-border-enabled="false"
-                  data-oke-star-border-color="#2C3E50"
-                  data-oke-star-foreground-color="#000000"
-                ></div>
+                {% render 'okendo-reviews-product-rating-summary', product: product %}
               </div>
 
               {% if product.metafields.custom.short_description_pdp != blank %}

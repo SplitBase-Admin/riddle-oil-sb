@@ -115,8 +115,28 @@
     line-height: 140%;
   }
 </style>
-
 {% assign second_product_variant = second_product.variants.first %}
+
+{% assign selling_plan_ids = '' %}
+{% for allocation in second_product_variant.selling_plan_allocations %}
+  {% assign selling_plan_ids = selling_plan_ids | append: allocation.selling_plan.id | append: ',' %}
+{% endfor %}
+
+{% assign box_product_main = null %}
+{% for variant in product.variants %}
+  {% assign variant_title_downcase = variant.title | downcase %}
+  {% if variant_title_downcase contains 'with gift box' %}
+    {% assign box_product_main = variant %}
+  {% endif %}
+{% endfor %}
+
+{% assign box_product_second = null %}
+{% for variant in second_product.variants %}
+  {% assign variant_title_downcase = variant.title | downcase %}
+  {% if variant_title_downcase contains 'with gift box' %}
+    {% assign box_product_second = variant %}
+  {% endif %}
+{% endfor %}
 
 {%- form 'product', product, id: form_id, class: 'product-single__form' -%}
   {%- liquid
@@ -175,7 +195,7 @@
     </div>
   {% endif %}
 
-  <div class="hidden second_prod_atc_container">
+  <div class=" second_prod_atc_container hidden">
     <div class="second_product_atc" data-variant-id="{{ second_product_variant.id }}">
       {{ second_product.images[0] | image_url: height: 25 | image_tag }}
       {% assign price_per_ml_old = product.price | divided_by: 8 %}
@@ -330,5 +350,211 @@
           .catch((err) => console.error('Add to cart failed:', err));
       });
     }
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('second-toggle');
+    const variantSelect = document.querySelector('select[name="id"]');
+    const addToCartButton = document.querySelector('button[data-add-to-cart]');
+    const giftBoxCheckbox = document.getElementById('gift-box-product');
+
+    // Store references to both products' variants
+    const mainProductId = '{{ product.selected_or_first_available_variant.id }}';
+    const secondProductId = '{{ second_product_variant.id }}';
+    const mainProductGiftBoxId = '{{ box_product_main.id }}';
+    const secondProductGiftBoxId = '{{ box_product_second.id }}';
+
+    if (!toggle || !variantSelect) return;
+
+    // Save the original options once
+    const originalOptions = Array.from(variantSelect.options).map((opt) => opt.cloneNode(true));
+
+    // Function to update the price display in the add to cart button
+    const updatePriceDisplay = function (variantId) {
+      let price;
+
+      // Determine which price to show based on the selected variant
+      if (variantId == secondProductId) {
+        price = '{{ second_product.price | money | remove: " " }}';
+      } else if (variantId == secondProductGiftBoxId) {
+        price = '{{ box_product_second.price | money | remove: " " }}';
+      } else if (variantId == mainProductGiftBoxId) {
+        price = '{{ box_product_main.price | money | remove: " " }}';
+      } else {
+        price = '{{ product.price | money | remove: " " }}';
+      }
+
+      // Update the price in the add to cart button text
+      const buttonTextSpan = addToCartButton.querySelector('[data-add-to-cart-text]');
+      if (buttonTextSpan) {
+        const buttonText = buttonTextSpan.getAttribute('data-default-text');
+        buttonTextSpan.innerHTML = `${buttonText}&nbsp;&nbsp;|&nbsp;&nbsp;${price}`;
+      }
+    };
+
+    // Handle the toggle switch for second product
+    toggle.addEventListener('change', function () {
+      if (this.checked) {
+        console.log('Switching to second product');
+
+        // Determine which variant to use based on gift box status
+        const targetVariantId = giftBoxCheckbox && giftBoxCheckbox.checked ? secondProductGiftBoxId : secondProductId;
+
+        // Clear and update the variant select
+        variantSelect.innerHTML = '';
+        const newOption = document.createElement('option');
+        newOption.value = targetVariantId;
+        newOption.selected = true;
+        newOption.textContent =
+          giftBoxCheckbox && giftBoxCheckbox.checked ? 'Second Product with Gift Box' : 'Second Product';
+        variantSelect.appendChild(newOption);
+
+        // Update the displayed price
+        updatePriceDisplay(targetVariantId);
+      } else {
+        console.log('Switching back to main product');
+
+        // Restore original product variants
+        variantSelect.innerHTML = '';
+        originalOptions.forEach((opt) => variantSelect.appendChild(opt.cloneNode(true)));
+
+        // Determine which main product variant to select (with or without gift box)
+        const targetVariantId = giftBoxCheckbox && giftBoxCheckbox.checked ? mainProductGiftBoxId : mainProductId;
+
+        // Select the appropriate variant
+        for (let i = 0; i < variantSelect.options.length; i++) {
+          if (variantSelect.options[i].value === targetVariantId) {
+            variantSelect.selectedIndex = i;
+            break;
+          }
+        }
+
+        // Update the displayed price
+        updatePriceDisplay(targetVariantId);
+      }
+
+      // Trigger a change event on the select to ensure Shopify's handlers are called
+      variantSelect.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+
+    // Handle the gift box checkbox changes
+    if (giftBoxCheckbox) {
+      giftBoxCheckbox.addEventListener('change', function () {
+        if (toggle.checked) {
+          // Second product is selected - update to appropriate second product variant
+          const targetVariantId = this.checked ? secondProductGiftBoxId : secondProductId;
+
+          // Update the variant select
+          variantSelect.innerHTML = '';
+          const newOption = document.createElement('option');
+          newOption.value = targetVariantId;
+          newOption.selected = true;
+          newOption.textContent = this.checked ? 'Second Product with Gift Box' : 'Second Product';
+          variantSelect.appendChild(newOption);
+        } else {
+          // Main product is selected - find appropriate main product variant
+          const targetVariantId = this.checked ? mainProductGiftBoxId : mainProductId;
+
+          // Find and select the appropriate main product variant
+          for (let i = 0; i < variantSelect.options.length; i++) {
+            if (variantSelect.options[i].value === targetVariantId) {
+              variantSelect.selectedIndex = i;
+              break;
+            }
+          }
+        }
+
+        // Update price display and trigger change event
+        updatePriceDisplay(variantSelect.value);
+        variantSelect.dispatchEvent(new Event('change', { bubbles: true }));
+      });
+    }
+
+    // Selling plan IDs handling for subscription options
+    const sellingPlanIds = '{{ selling_plan_ids }}';
+    const idArr = sellingPlanIds.split(',').filter(Boolean);
+
+    // Create a non-recursive waitForElement function using setInterval instead
+    function waitForElement(selector, timeout = 10000, interval = 100) {
+      return new Promise((resolve, reject) => {
+        const startTime = Date.now();
+
+        // Use setInterval instead of recursive setTimeout
+        const checkInterval = setInterval(() => {
+          const element = document.querySelector(selector);
+
+          if (element) {
+            clearInterval(checkInterval);
+            resolve(element);
+            return;
+          }
+
+          if (Date.now() - startTime > timeout) {
+            clearInterval(checkInterval);
+            reject(new Error(`Element ${selector} not found after ${timeout}ms`));
+            return;
+          }
+        }, interval);
+      });
+    }
+
+    // Function to handle RC options
+    function setupRcOptions() {
+      // Store original values when first found
+      waitForElement('.rc-radio select option', 20000)
+        .then((firstOption) => {
+          console.log('RC options found, setting up...');
+
+          document.querySelector('.rc-radio select').addEventListener('change', () => {
+            if (toggle.checked) {
+              const rcOptions = document.querySelectorAll('.rc-radio select option');
+              rcOptions.forEach((option, index) => {
+                if (idArr[index]) {
+                  option.value = idArr[index];
+                }
+              });
+            }
+          });
+
+          const options = document.querySelectorAll('.rc-radio select option');
+          const originalValues = Array.from(options).map((option) => option.value);
+
+          // Function to update options based on toggle state
+          function updateRcOptions(isSecondProduct) {
+            const rcOptions = document.querySelectorAll('.rc-radio select option');
+
+            if (isSecondProduct) {
+              // Replace with selling plan IDs for second product
+              rcOptions.forEach((option, index) => {
+                if (idArr[index]) {
+                  option.value = idArr[index];
+                }
+              });
+            } else {
+              // Restore original values
+              rcOptions.forEach((option, index) => {
+                if (originalValues[index]) {
+                  option.value = originalValues[index];
+                }
+              });
+            }
+          }
+
+          // Set initial state and add listener for changes
+          updateRcOptions(toggle.checked);
+
+          toggle.addEventListener('change', function () {
+            updateRcOptions(this.checked);
+          });
+        })
+        .catch((error) => {
+          console.warn('RC options not found:', error);
+        });
+    }
+
+    // Start watching for RC options
+    setupRcOptions();
   });
 </script>
