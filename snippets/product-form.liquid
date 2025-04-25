@@ -245,7 +245,7 @@
     </div>
   </div>
 
-  <div class="second_prod_v2">
+  <div class="second_prod_v2 hidden">
     <div class="second_product_atc_v2" data-variant-id="{{ second_product_variant.id }}">
       {{ second_product.images[0] | image_url: height: 60 | image_tag }}
       {% assign price_per_ml_old = product.price | divided_by: 8 %}
