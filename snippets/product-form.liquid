@@ -171,6 +171,27 @@
   {% endif %}
 {% endfor %}
 
+{% assign selling_plan_ids = '' %}
+{% for allocation in second_product_variant.selling_plan_allocations %}
+  {% assign selling_plan_ids = selling_plan_ids | append: allocation.selling_plan.id | append: ',' %}
+{% endfor %}
+
+{% assign box_product_main = null %}
+{% for variant in product.variants %}
+  {% assign variant_title_downcase = variant.title | downcase %}
+  {% if variant_title_downcase contains 'with gift box' %}
+    {% assign box_product_main = variant %}
+  {% endif %}
+{% endfor %}
+
+{% assign box_product_second = null %}
+{% for variant in second_product.variants %}
+  {% assign variant_title_downcase = variant.title | downcase %}
+  {% if variant_title_downcase contains 'with gift box' %}
+    {% assign box_product_second = variant %}
+  {% endif %}
+{% endfor %}
+
 {%- form 'product', product, id: form_id, class: 'product-single__form' -%}
   {%- liquid
     assign gift_card_recipient_feature_active = false

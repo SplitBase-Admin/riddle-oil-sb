@@ -79,6 +79,29 @@
 
 }
 
+@media (min-width: 768px) and (max-width: 1439px) {
+
+  .collection-banner-section .collection-banner__content {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .collection-banner-image {
+    align-items: stretch;
+  }
+
+  /* .collection-banner-image-inner image-element {
+    height: 100%;
+    display: block;
+  } */
+
+  .collection-banner-image-inner image-element img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+}
+
 @media (min-width: 1440px) {
 
   .collection-banner-section .collection-banner__content {

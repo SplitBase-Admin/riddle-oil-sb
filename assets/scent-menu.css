@@ -26,12 +26,14 @@ header.section-header {
   border-radius: 8px;
   width: 100%;
   padding: 16px;    
-  background: url(https://cdn.shopify.com/s/files/1/0892/0284/files/original-scent.png?v=1741983024) no-repeat top right;
+  /* background: url(https://cdn.shopify.com/s/files/1/0892/0284/files/original-scent.png?v=1741983024) no-repeat top right; */
   background-color: rgba(242, 234, 223, 0.40);  
   background-size:235px 202px;
+  background-repeat: no-repeat;
+  background-position: top right;
 }
 
-.scent-menu-items:nth-of-type(2){
+/* .scent-menu-items:nth-of-type(2){
   background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/desktop-santal.png?v=1741984797);
 }
 
@@ -54,6 +56,11 @@ header.section-header {
 .scent-menu-items:nth-of-type(7){
   background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/desktop-voyeur.png?v=1741984673);
 }
+
+.scent-menu-items:nth-of-type(8){
+  background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/nude-beach.png?v=1745510297);
+} */
+
 
 .scent-menu-inner {
   display: flex;  
@@ -191,12 +198,12 @@ header.section-header {
 
   .scent-menu-items {
     padding: 10px;
-    background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/mobile-original.png?v=1741986022);
+    /* background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/mobile-original.png?v=1741986022); */
     background-position:bottom right;
     background-size:172px 92px;
     padding-bottom: 40px;
   }
-  .scent-menu-items:nth-of-type(2){
+  /* .scent-menu-items:nth-of-type(2){
     background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/mobile-santal.png?v=1741986022);
   }
   .scent-menu-items:nth-of-type(3){
@@ -213,7 +220,11 @@ header.section-header {
   }
   .scent-menu-items:nth-of-type(7){
     background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/mobile-voyeur.png?v=1741986022);
-  }      
+  }    
+  .scent-menu-items:nth-of-type(8){
+    background-image:url(https://cdn.shopify.com/s/files/1/0892/0284/files/nude-beach-mobile.png?v=1745510410);
+     */
+  }
   .scent-item-wrap {
     align-items: flex-start;
     flex-direction: column;

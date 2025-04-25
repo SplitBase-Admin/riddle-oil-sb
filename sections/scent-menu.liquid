@@ -14,7 +14,18 @@
         {% endif %}
         <div class="scent-menu-wrap">
           {% for block in section.blocks %}
-            <div class="scent-menu-items">
+
+            <style>
+              #block--{{ block.id }} {
+                background-image: url({{ block.settings.image_desktop | image_url: width: auto, height: auto }});
+              }
+              @media screen and (max-width: 767px) {
+                #block--{{ block.id }} {
+                  background-image: url({{ block.settings.image_mobile | image_url: width: auto, height: auto }}); 
+                }
+              }
+            </style>
+            <div class="scent-menu-items" id="block--{{ block.id }}">
               {% if block.settings.menu_heading != blank %}
               <div class="scent-menu-heading">
                 <h3>{{ block.settings.menu_heading }}</h3>
@@ -89,6 +100,16 @@
             "type": "url",
             "id": "menu_url",
             "label": "Menu URL",
+          },
+          {
+            "type": "image_picker",
+            "id": "image_desktop",
+            "label": "Image Desktop",
+          },
+          {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "Image Mobile",
           }
         ]
       }

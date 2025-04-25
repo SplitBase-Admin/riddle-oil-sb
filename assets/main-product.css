@@ -76,6 +76,7 @@
   gap: 2px;
 }
 
+.product-block--header .oke-sr-count-number,
 .product-review-label .oke-minimalBadge-count {
   color: #101820;
   font-family: var(--body-font);
@@ -87,20 +88,27 @@
   position: relative;
 }
 
+.product-block--header .oke-sr-count-number:before,
 .product-review-label .oke-minimalBadge-count:before {
   content: '(';
   position: absolute;
   left: 0;
 }
 
+.product-block--header .oke-sr-count-number:after,
 .product-review-label .oke-minimalBadge-count:after {
   content: ')';
   position: absolute;
   right: 0;
 }
 
+.product-block--header .oke-sr-count .oke-sr-label-text,
 .product-review-label .oke-minimalBadge-count span {
   display: none;
+}
+
+.product-block--header .oke-sr-stars {
+  margin-right: 3px;
 }
 
 [data-product-blocks] .product-block {

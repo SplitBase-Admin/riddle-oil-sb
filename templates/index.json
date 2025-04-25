@@ -1,1 +1,899 @@
-{"sections":{"hero_banner_wE9YVM":{"type":"hero-banner","settings":{"banner":"shopify:\/\/shop_images\/Riddle_Roll-On_Banner-_1_of_1.jpg","pre_text":"Prepare to be complimented.","title":"One-of-a-kind scents designed to be unique on every body","text":"<p>Ditch your old-fashioned alcohol-based perfume for complex, long lasting, and skin-friendly fragrance and pheromone oils that create a one-of-a-kind scent just for you.<\/p>","button_text1":"Discover Your Unique Scent","button_link1":"shopify:\/\/collections\/fragrance-oils","button_style1":"btn--primary","show_button_arrow":false,"button_text2":"Try The Sample Kit","button_link2":"shopify:\/\/products\/the-sample-kit","button_style2":"btn--secondary","bg_color":"#fcfbfb","text_color":"#101820"}},"value_props_LHiHNa":{"type":"value-props","blocks":{"text_jHtXfF":{"type":"text","settings":{"icon":"shopify:\/\/shop_images\/Non-Toxic_Skin-Safe.svg","title":"Non-Toxic & Skin-Safe"}},"text_aW4mPM":{"type":"text","settings":{"icon":"shopify:\/\/shop_images\/Cruelty_Free_Vegan.svg","title":"Cruelty Free & Vegan"}},"text_K9hxMR":{"type":"text","settings":{"icon":"shopify:\/\/shop_images\/Concentrated_Long-Lasting_Formula.svg","title":"Concentrated, Long-Lasting Formula"}},"text_cKh4Mm":{"type":"text","settings":{"icon":"shopify:\/\/shop_images\/Completely_One-of-a-kind.svg","title":"Completely One-of-a-kind"}}},"block_order":["text_jHtXfF","text_aW4mPM","text_K9hxMR","text_cKh4Mm"],"settings":{"section_id":"","section_overlaid":true,"bg_color":"#fcfaf7","text_color":"#101820","padding-top":20,"padding-bottom":20}},"custom_featured_collection_B9jyU9":{"type":"custom-featured-collection","settings":{"section_id":"","caption":"SHOP","title":"Best Sellers","home_featured_products":"best-seller","color_overlay":"#000000","color_overlay_gradient":"linear-gradient(0deg, rgba(16, 10, 9, 1), rgba(16, 10, 9, 1) 60%, rgba(0, 0, 0, 0.2) 100%)","overlay_opacity":21,"promo_image":"shopify:\/\/shop_images\/RIDDLE_OIL_SAMPLE_KIT.png","mobile_promo_image":"shopify:\/\/shop_images\/RIDDLE_OIL_SAMPLE_KIT.png","promo_title":"Discover Your Unique Scent","button_label":"Try The Sample Kit","button_link":"shopify:\/\/products\/the-sample-kit","button_style":"btn--secondary","button_color":"#ffffff","button_text_color":"#ffffff"}},"custom_featured_collection_2_bddpHn":{"type":"custom-featured-collection-2","disabled":true,"settings":{"section_id":"","caption":"OUR ALL-TIME","title":"Best Sellers","home_featured_products":"best-seller","color_overlay":"#000000","color_overlay_gradient":"","overlay_opacity":0,"promo_image":"shopify:\/\/shop_images\/fd9ffd9dbb233a4553a7eb034efd3026.png"}},"video_with_text_azpAdH":{"type":"video-with-text","settings":{"caption":"What’s your Riddle?","title":"The Scent Menu","subtitle":"Seven Signature Scents","video_url":"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c3d1cbaed315485e8aefd03ffe1d2499.mov","section_height":"480px","mobile_height":"auto","button_label":"Learn","button_link":"shopify:\/\/pages\/scent-menu","button_style":"btn--primary","text_color":"#101820","bg_color":"#f2eadf","background_opacity":50,"button_color":"#101820","button_text_color":"#ffffff"}},"how_to_riddle_kbawqG":{"type":"how-to-riddle","blocks":{"text_y6Q9qn":{"type":"text","settings":{"label_text":"Cleanse","image":"shopify:\/\/shop_images\/Cleanse.png","icon":"shopify:\/\/shop_images\/Scent_Neutralizing_Cleanser.svg","pre_text":"Step One","title":"Skin Balancing Cleanser","text":"<p>That true head-turning scent begins here. Our Fraiche oil-to-milk cleanser will wash away any impurities without stripping you of your skin-protecting and nourishing oils and prepping you for a smooth, long-lasting Riddle scent application.<\/p>","link_text":"Shop Body Wash","link_url":"shopify:\/\/products\/fraiche-shower-oil-wash"}},"text_wpiUL3":{"type":"text","settings":{"label_text":"Moisturize","image":"shopify:\/\/shop_images\/Moisturize.png","icon":"shopify:\/\/shop_images\/Radiating_Moisturizer.svg","pre_text":"Step Two","title":"Rejuvenating Layering Products","text":"<p>Our best-selling Milky spray lotion, and Boujee body oil products are formulated to feed and protect your skin while laying the foundation for a buildable signature scent.<\/p>","link_text":"Shop Layering","link_url":"shopify:\/\/collections\/body-oils-and-lotions"}},"text_FKpbW4":{"type":"text","settings":{"label_text":"Enhance","image":"shopify:\/\/shop_images\/Enhance.png","icon":"shopify:\/\/shop_images\/Pheromone_and_Scent_Enhancers.svg","pre_text":"Step Three","title":"Pheromone and Scent Boosters","text":"<p>Choose between our two pheromone oils for that, can't get enough, you but better, scent. Then add on one of our beloved scented fragrance oils to truly make it unique to you.<\/p><p><br\/><\/p>","link_text":"Shop Roll-Ons","link_url":"shopify:\/\/collections\/fragrance-oils"}}},"block_order":["text_y6Q9qn","text_wpiUL3","text_FKpbW4"],"settings":{"section_id":"","pre_text":"THE ROUTINE","title":"How To Riddle","text":"<p>Every product stands on its own, but put together, they are a 3-step system specifically designed to amplify your signature scent and extend its duration.<\/p>","bg_color":"#ffffff","text_color":"#101820","item_color":"#f2eadf","padding_top":54,"padding_bottom":54}},"slideshow":{"type":"slideshow","blocks":{"slideshow-0":{"type":"image","settings":{"top_subheading":"","title":"Two line\ntitle slide.","title_size":80,"subheading":"And optional subtext","link":"shopify:\/\/collections\/all","link_text":"Shop this","link_2":"shopify:\/\/collections\/all","link_text_2":"Shop all","color_accent":"#000000","text_align":"vertical-center horizontal-center","parallax_direction":"top","overlay_opacity":0}},"slideshow-1":{"type":"image","settings":{"top_subheading":"","title":"Two line\ntitle slide.","title_size":80,"subheading":"And optional subtext","link":"shopify:\/\/collections\/all","link_text":"Shop all","link_2":"shopify:\/\/collections\/all","link_text_2":"Shop all","color_accent":"#000000","text_align":"vertical-bottom horizontal-left","parallax_direction":"top","overlay_opacity":0}}},"block_order":["slideshow-0","slideshow-1"],"disabled":true,"settings":{"section_height":"750px","mobile_height":"auto","parallax":true,"style":"bars","autoplay":true,"autoplay_speed":7,"lazyload_images":true}},"rich-text":{"type":"rich-text","blocks":{"heading":{"type":"heading","settings":{"title":"Rich text"}},"text":{"type":"text","settings":{"enlarge_text":true,"text":"<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"}}},"block_order":["heading","text"],"disabled":true,"settings":{"align_text":"center","narrow_column":true,"divider":false}},"promo-grid":{"type":"promo-grid","blocks":{"promo-0":{"type":"advanced","settings":{"subheading":"Limited time","heading":"Announce your promotion","textarea":"Include the smaller details of your promotion in text below the title.","cta_text1":"Shop This","cta_link1":"shopify:\/\/collections\/all","cta_text2":"Shop All","cta_link2":"","video_url":"","width":"50","height":800,"text_size":100,"text_align":"vertical-center horizontal-center","color_accent":"rgba(0,0,0,0)","boxed":false,"framed":true}},"promo-1":{"type":"advanced","settings":{"subheading":"Limited time","heading":"Announce your promotion","textarea":"Include the smaller details of your promotion in text below the title.","cta_text1":"Shop This","cta_link1":"shopify:\/\/collections\/all","cta_text2":"Shop All","cta_link2":"","video_url":"","width":"50","height":500,"text_size":100,"text_align":"vertical-bottom horizontal-center","color_accent":"rgba(0,0,0,0)","boxed":true,"framed":false}}},"block_order":["promo-0","promo-1"],"disabled":true,"settings":{"full_width":true,"gutter_size":20,"space_above":false,"space_below":false,"lazyload_images":true}},"featured-collections":{"type":"featured-collections","blocks":{"featured-collections-0":{"type":"collection","settings":{"collection":"","title":"","focal_point":"center center"}},"featured-collections-1":{"type":"collection","settings":{"collection":"","title":"","focal_point":"center center"}},"featured-collections-2":{"type":"collection","settings":{"collection":"","title":"","focal_point":"center center"}},"featured-collections-3":{"type":"collection","settings":{"collection":"","title":"","focal_point":"center center"}}},"block_order":["featured-collections-0","featured-collections-1","featured-collections-2","featured-collections-3"],"disabled":true,"settings":{"title":"Shop by category","divider":false,"per_row":4,"enable_gutter":true}},"promo-grid2":{"type":"promo-grid","blocks":{"promo2-0":{"type":"advanced","settings":{"subheading":"Limited time","heading":"Announce your promotion","textarea":"Include the smaller details of your promotion in text below the title.","cta_text1":"Shop This","cta_link1":"shopify:\/\/collections\/all","cta_text2":"Shop All","cta_link2":"","video_url":"","width":"100","height":720,"text_size":120,"text_align":"vertical-center horizontal-center","color_accent":"rgba(0,0,0,0)","boxed":false,"framed":false}},"promo2-1":{"type":"sale_collection","settings":{"sale_collection":"","top_text":"Up to","middle_text":"50% off","bottom_text":"Select products","width":"50","color_tint":"#000000","color_tint_opacity":0,"boxed":false,"framed":true}},"promo2-2":{"type":"sale_collection","settings":{"sale_collection":"","top_text":"Up to","middle_text":"50% off","bottom_text":"Select products","width":"50","color_tint":"#000000","color_tint_opacity":0,"boxed":false,"framed":true}}},"block_order":["promo2-0","promo2-1","promo2-2"],"disabled":true,"settings":{"full_width":false,"gutter_size":20,"space_above":false,"space_below":false,"lazyload_images":true}},"featured-collection":{"type":"featured-collection","disabled":true,"settings":{"title":"Featured collection","home_featured_products":"","per_row":4,"rows":1,"mobile_scrollable":true,"view_all":true,"divider":false}},"background-image-text":{"type":"background-image-text","disabled":true,"settings":{"subtitle":"Impressive","title":"Large image with text box","text":"<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>","button_label":"","button_link":"shopify:\/\/collections\/all","layout":"left","height":750,"framed":false,"parallax":true,"parallax_direction":"top","lazyload_images":true}},"blog-posts":{"type":"blog-posts","disabled":true,"settings":{"title":"From the journal","blog":"news","post_limit":3,"blog_show_tags":false,"blog_show_date":true,"blog_show_comments":false,"blog_show_author":false,"view_all":true,"blog_image_size":"wide","divider":false}},"map":{"type":"map","disabled":true,"settings":{"map_title":"Our retail store","address":"<p>301 Front St W<br\/>Toronto, Canada<\/p><p>Mon - Fri, 8:30am - 10:30pm<br\/>Saturday, 8:30am - 10:30pm<br\/>Sunday, 8:30am - 10:30pm<\/p>","map_address":"301 Front St W, Toronto, ON M5V 2T6","api_key":"","show_button":true,"lazyload_images":true}},"section_community_6yMDWT":{"type":"section-community","blocks":{"block_wwcrEq":{"type":"block","settings":{"image":"shopify:\/\/shop_images\/LEAH_P.webp","product_image":"shopify:\/\/shop_images\/Shop_Original_Roll-On_Oil_1.png","content":"<p>“I should be an influencer for how many people stop me to ask what my scent is. I can name at least 15 people who purchase this after smelling it on me. I’ll never wear anything else!“<\/p>","name":"LEAH P.","product_name":"Shop Original Milky Spray Lotion","product_link":"shopify:\/\/products\/riddle-oil-4oz-summer-spray-lotion"}},"block_7FfqeN":{"type":"block","settings":{"image":"shopify:\/\/shop_images\/MADISON_R.webp","product_image":"shopify:\/\/shop_images\/Shop_Original_Roll-On_Oil_2_5d510216-688a-4b4f-81ce-d8e0681d66f1.png","content":"<p>“Truly The Best. The original is hands down my scent ever. I want every body product in this scent. I get bad headaches triggered by smells and this does not effect me at allllll“<\/p>","name":"MADISON R.","product_name":"Shop Original Roll-On Oil","product_link":"shopify:\/\/products\/original-8-ml"}},"block_xK7z3Y":{"type":"block","settings":{"image":"shopify:\/\/shop_images\/EVANYA_S.webp","product_image":"shopify:\/\/shop_images\/Shop_Original_Boujee_Body_Oil.png","content":"<p>“I smell gooooood. Love the feel and smell of my Boujee body oil! Went through some serious withdrawal when it was out of stock!“<\/p>","name":"EVANYA S.","product_name":"Shop Original Boujee Body Oil","product_link":"shopify:\/\/products\/riddle-oil-original-8-oz-body-oil"}}},"block_order":["block_wwcrEq","block_7FfqeN","block_xK7z3Y"],"settings":{"title":"Customer Love","caption":"REVIEWS","text_color":"#101820","block_bg_color":"#d9cbbf"}},"banner_text_6KAtYL":{"type":"banner-text","settings":{"title":"Indulge in your natural essence. Delightfully subtle and rich, this is a feel-good, smell-good system that you will cherish.","image":"shopify:\/\/shop_images\/DSC09554_1.jpg","mobile_image":"shopify:\/\/shop_images\/DSC09554_1.jpg","height":320,"mobile_height":230,"button_label":"Discover Your Unique Scent","button_link":"shopify:\/\/collections\/best-seller","button_style":"btn--primary","text_color":"#ffffff","button_color":"#ffffff","button_text_color":"#101820"}},"comparison_section_3CWqaV":{"type":"comparison-section","blocks":{"icon_text_wejfqm":{"type":"icon-text","settings":{"icon":"shopify:\/\/shop_images\/Oil-based_roll-on_that_hydrates_skin..svg","text":"<p>Oil-based roll-on that hydrates skin.<\/p>","type":"tab-one","position":"left"}},"icon_text_Mkjrmx":{"type":"icon-text","settings":{"icon":"shopify:\/\/shop_images\/Oils_do_not_evaporate_ensuring_a_longer_lasting_scent..svg","text":"<p>Oils have a slower evaporation rate, ensuring a longer lasting scent.<\/p>","type":"tab-one","position":"left"}},"icon_text_KAWmY9":{"type":"icon-text","settings":{"icon":"shopify:\/\/shop_images\/Subtle_scent_enhancement_that_makes_your_natural_fragrance_shine_through..svg","text":"<p>Subtle scent enhancement that makes <br\/>your natural fragrance shine through.<\/p>","type":"tab-one","position":"left"}},"icon_text_y6CDxc":{"type":"icon-text","settings":{"icon":"shopify:\/\/shop_images\/The_price_reflects_the_ingredients._High-quality_ethically_sourced_long-lasting_and_completely_unique..svg","text":"<p>The price reflects the ingredients. <br\/>High-quality, ethically sourced, long-<br\/>lasting and completely unique.<\/p>","type":"tab-one","position":"right"}},"icon_text_NNJUna":{"type":"icon-text","settings":{"icon":"shopify:\/\/shop_images\/Hypoallergenic_skin-safe_and_a_possible_alternative_to_perfumes_for_those_who_are_susceptible_to_headaches_and_migraines..svg","text":"<p>Non-toxic, skin-safe, and a possible alternative to perfumes for those who are susceptible to headaches and migraines.<\/p>","type":"tab-one","position":"right"}},"icon_text_jFWTQP":{"type":"icon-text","settings":{"text":"<p>Alcohol-based spray that can <br\/>dry out skin.<\/p>","type":"tab-two","position":"left"}},"icon_text_yx3XL7":{"type":"icon-text","settings":{"text":"<p>Alcohols evaporate quickly over time, <br\/>leading to a scent that quickly fades.<\/p>","type":"tab-two","position":"left"}},"icon_text_GEHFdJ":{"type":"icon-text","settings":{"text":"<p>A strong fragrance that covers your <br\/>smell and can easily overwhelm people <br\/>in your environment.<\/p>","type":"tab-two","position":"left"}},"icon_text_enPQGx":{"type":"icon-text","settings":{"text":"<p>The price can quickly go up, but the <br\/>quality often remains unchanged. You are <br\/>paying for the marketing.<\/p>","type":"tab-two","position":"right"}},"icon_text_RVgtHc":{"type":"icon-text","settings":{"text":"<p>The alcohol can irritate skin, and the <br\/>strong fragrances can cause headaches <br\/>and migraines.<\/p>","type":"tab-two","position":"right"}}},"block_order":["icon_text_wejfqm","icon_text_Mkjrmx","icon_text_KAWmY9","icon_text_y6CDxc","icon_text_NNJUna","icon_text_jFWTQP","icon_text_yx3XL7","icon_text_GEHFdJ","icon_text_enPQGx","icon_text_RVgtHc"],"settings":{"section_id":"","title":"How is Riddle actually different?","caption":"compare","tab_one_title":"Riddle","riddle_oil_image":"shopify:\/\/shop_images\/riddle-oil.png","tab_two_title":"Traditional Perfume","traditional_perfume_image":"shopify:\/\/shop_images\/Generic.png","button_label":"Explore Roll-On Scents","button_link":"shopify:\/\/collections\/fragrance-oils","button_style":"btn--primary","text_color":"#101820","tab_color":"#101820","tab_text_color":"#ffffff","tab_one_border_color":"#735d49","tab_two_border_color":"#a50b00","button_color":"#101820","button_text_color":"#ffffff"}},"press_section_BKNbML":{"type":"press-section","blocks":{"text_fTqGea":{"type":"text","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/boxycharm.png","title":"","text":"<p>‘Ditch your old-fashioned alcohol-based perfume for complex, long lasting, and skin-friendly fragrance and pheromone oils that create a one-of-a-kind scent just for you.’<\/p>"}},"text_7efktB":{"type":"text","disabled":true,"settings":{"title":"Molly Sims","text":"<p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. <\/p>"}},"text_WDDtGV":{"type":"text","settings":{"image":"shopify:\/\/shop_images\/forbes.png","title":"","text":"<p>“So refreshing to lather all over after a long warm shower.”<\/p>"}},"text_URWwwp":{"type":"text","disabled":true,"settings":{"title":"Allegra Shaw","text":"<p>‘Ditch your old-fashioned alcohol-based perfume for complex, long lasting, and skin-friendly fragrance and pheromone oils that create a one-of-a-kind scent just for you.’<\/p>"}},"text_6X9zBn":{"type":"text","settings":{"title":"Kristen Bell","text":"<p>“My favorite scent.”<\/p>"}},"text_qprCfn":{"type":"text","settings":{"image":"shopify:\/\/shop_images\/fabfitfun.png","title":"","text":"<p>“The easiest way to smell good all day.”<\/p>"}},"text_t6FdaL":{"type":"text","settings":{"title":"SHAWN MENDES","text":"<p>'Mmmmmmmm'<\/p>"}},"text_zGLUBb":{"type":"text","settings":{"image":"shopify:\/\/shop_images\/buzzfeed-logo-black-transparent-1_25d786d4-656c-4fe5-ad6b-b06588e07a05.png","title":"","text":"<p>“Life changing beauty products you need to try ASAP.”<\/p>"}},"text_jGBTR7":{"type":"text","settings":{"image":"shopify:\/\/shop_images\/1544px-VOGUE_LOGO.svg_5b6397f7-49fa-4c5d-be23-bc2c612e2df7.png","title":"","text":"<p>“Long lasting and very delicate.”<\/p>"}},"text_VRGLnJ":{"type":"text","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/1544px-VOGUE_LOGO.svg_5b6397f7-49fa-4c5d-be23-bc2c612e2df7.png","title":"","text":"<p>“Long lasting and very delicate.”<\/p>"}}},"block_order":["text_fTqGea","text_7efktB","text_WDDtGV","text_URWwwp","text_6X9zBn","text_qprCfn","text_t6FdaL","text_zGLUBb","text_jGBTR7","text_VRGLnJ"],"settings":{"bg_color":"#ffffff","text_color":"#101820","padding-top":120,"padding-bottom":64}},"our_story_jyWK4r":{"type":"our-story","settings":{"image":"shopify:\/\/shop_images\/Chelsea_Voge_Riddle.jpg","pre_text":"OUR STORY","title":"How Riddle Came to Be","text":"","quote":"<p>\"I was 26 when I created our first scent, <em>Original<\/em>. The moment I smelled it, I thought, <em>This is the best scent in the world.<\/em> And to this day, I still believe that.\"<\/p>","sign":"shopify:\/\/shop_images\/8d4832d1-a83f-4adb-88d8-b7f4e275bfc8.png","button_text":"Riddle Story","button_link":"shopify:\/\/pages\/allow-philosophy","button_style":"btn--primary","bg_color":"#ffffff","text_color":"#101820","padding_top":54,"padding_bottom":54}},"join_the_club_dir3RP":{"type":"join-the-club","settings":{"image":"shopify:\/\/shop_images\/JoinTheClub.svg","title":"The Smell Good Club","text":"<p>We invite you to join our loyalty program, The Smell Good Club.<br\/><br\/>1. Earn back 10% on every dollar you spend.<br\/>2. Get early access to new product launches.<br\/>3. Redeem points for discounts on future orders.<br\/><br\/>See you there. Xx<\/p>","button_text1":"Learn More","button_link1":"shopify:\/\/pages\/riddle-rewards","button_style1":"btn--primary","show_button_arrow":false,"button_text2":"Sign Up Now","button_link2":"\/account\/register","button_style2":"btn--secondary","bg_color":"#f2eadf","text_color":"#101820","padding_top":80,"padding_bottom":80}},"scents_section_B4EeQ4":{"type":"scents-section","blocks":{"iconlist_9U6XKC":{"type":"iconlist","settings":{"title":"Truly Unique Scents","icon":"shopify:\/\/shop_images\/Truly_Unique_Scents.svg"}},"iconlist_YLdzhb":{"type":"iconlist","settings":{"title":"Skinsafe, Non-toxic","icon":"shopify:\/\/shop_images\/Skinsafe_Non-toxic_and_Hypoallergenic.svg"}},"iconlist_qXVKmF":{"type":"iconlist","settings":{"title":"Vegan, Cruelty-free","icon":"shopify:\/\/shop_images\/Vegan_cruelty_free_1.svg"}},"iconlist_nPDXRk":{"type":"iconlist","settings":{"title":"Concentrated and Long-lasting","icon":"shopify:\/\/shop_images\/Oil-based_and_long-lasting.svg"}}},"block_order":["iconlist_9U6XKC","iconlist_YLdzhb","iconlist_qXVKmF","iconlist_nPDXRk"],"settings":{"desktop_image":"shopify:\/\/shop_images\/Riddle_2025_Homepage_Desktop_Banner_Image_1080x852px_v2.1.jpg","mobile_image":"shopify:\/\/shop_images\/Riddle_2025_Homepage_Desktop_Banner_Image_1346x720px_v2.1.png","right_content":"","link_text":"Modern Fragrance For A Modern World","link":"shopify:\/\/collections\/fragrance-oils"}}},"order":["hero_banner_wE9YVM","value_props_LHiHNa","custom_featured_collection_B9jyU9","custom_featured_collection_2_bddpHn","video_with_text_azpAdH","how_to_riddle_kbawqG","slideshow","rich-text","promo-grid","featured-collections","promo-grid2","featured-collection","background-image-text","blog-posts","map","section_community_6yMDWT","banner_text_6KAtYL","comparison_section_3CWqaV","press_section_BKNbML","our_story_jyWK4r","join_the_club_dir3RP","scents_section_B4EeQ4"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_banner_wE9YVM": {
+      "type": "hero-banner",
+      "settings": {
+        "banner": "shopify://shop_images/Riddle_Roll-On_Banner-_1_of_1.jpg",
+        "pre_text": "Prepare to be complimented.",
+        "title": "One-of-a-kind scents designed to be unique on every body",
+        "text": "<p>Ditch your old-fashioned alcohol-based perfume for complex, long lasting, and skin-friendly fragrance and pheromone oils that create a one-of-a-kind scent just for you.</p>",
+        "button_text1": "Discover Your Unique Scent",
+        "button_link1": "shopify://collections/fragrance-oils",
+        "button_style1": "btn--primary",
+        "show_button_arrow": false,
+        "button_text2": "Try The Sample Kit",
+        "button_link2": "shopify://products/the-sample-kit",
+        "button_style2": "btn--secondary",
+        "bg_color": "#fcfbfb",
+        "text_color": "#101820"
+      }
+    },
+    "value_props_LHiHNa": {
+      "type": "value-props",
+      "blocks": {
+        "text_jHtXfF": {
+          "type": "text",
+          "settings": {
+            "icon": "shopify://shop_images/Non-Toxic_Skin-Safe.svg",
+            "title": "Non-Toxic & Skin-Safe"
+          }
+        },
+        "text_aW4mPM": {
+          "type": "text",
+          "settings": {
+            "icon": "shopify://shop_images/Cruelty_Free_Vegan.svg",
+            "title": "Cruelty Free & Vegan"
+          }
+        },
+        "text_K9hxMR": {
+          "type": "text",
+          "settings": {
+            "icon": "shopify://shop_images/Concentrated_Long-Lasting_Formula.svg",
+            "title": "Concentrated, Long-Lasting Formula"
+          }
+        },
+        "text_cKh4Mm": {
+          "type": "text",
+          "settings": {
+            "icon": "shopify://shop_images/Completely_One-of-a-kind.svg",
+            "title": "Completely One-of-a-kind"
+          }
+        }
+      },
+      "block_order": [
+        "text_jHtXfF",
+        "text_aW4mPM",
+        "text_K9hxMR",
+        "text_cKh4Mm"
+      ],
+      "settings": {
+        "section_id": "",
+        "section_overlaid": true,
+        "bg_color": "#fcfaf7",
+        "text_color": "#101820",
+        "padding-top": 20,
+        "padding-bottom": 20
+      }
+    },
+    "custom_featured_collection_B9jyU9": {
+      "type": "custom-featured-collection",
+      "settings": {
+        "section_id": "",
+        "caption": "SHOP",
+        "title": "Best Sellers",
+        "home_featured_products": "best-seller",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "linear-gradient(0deg, rgba(16, 10, 9, 1), rgba(16, 10, 9, 1) 60%, rgba(0, 0, 0, 0.2) 100%)",
+        "overlay_opacity": 21,
+        "promo_image": "shopify://shop_images/RIDDLE_OIL_SAMPLE_KIT.png",
+        "mobile_promo_image": "shopify://shop_images/RIDDLE_OIL_SAMPLE_KIT.png",
+        "promo_title": "Discover Your Unique Scent",
+        "button_label": "Try The Sample Kit",
+        "button_link": "shopify://products/the-sample-kit",
+        "button_style": "btn--secondary",
+        "button_color": "#ffffff",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "custom_featured_collection_2_bddpHn": {
+      "type": "custom-featured-collection-2",
+      "disabled": true,
+      "settings": {
+        "section_id": "",
+        "caption": "OUR ALL-TIME",
+        "title": "Best Sellers",
+        "home_featured_products": "best-seller",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "promo_image": "shopify://shop_images/fd9ffd9dbb233a4553a7eb034efd3026.png"
+      }
+    },
+    "video_with_text_azpAdH": {
+      "type": "video-with-text",
+      "settings": {
+        "caption": "What’s your Riddle?",
+        "title": "The Scent Menu",
+        "subtitle": "Seven Signature Scents",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/c3d1cbaed315485e8aefd03ffe1d2499.mov",
+        "section_height": "480px",
+        "mobile_height": "auto",
+        "button_label": "Learn",
+        "button_link": "shopify://pages/scent-menu",
+        "button_style": "btn--primary",
+        "text_color": "#101820",
+        "bg_color": "#f2eadf",
+        "background_opacity": 50,
+        "button_color": "#101820",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "how_to_riddle_kbawqG": {
+      "type": "how-to-riddle",
+      "blocks": {
+        "text_y6Q9qn": {
+          "type": "text",
+          "settings": {
+            "label_text": "Cleanse",
+            "image": "shopify://shop_images/Cleanse.png",
+            "icon": "shopify://shop_images/Scent_Neutralizing_Cleanser.svg",
+            "pre_text": "Step One",
+            "title": "Skin Balancing Cleanser",
+            "text": "<p>That true head-turning scent begins here. Our Fraiche oil-to-milk cleanser will wash away any impurities without stripping you of your skin-protecting and nourishing oils and prepping you for a smooth, long-lasting Riddle scent application.</p>",
+            "link_text": "Shop Body Wash",
+            "link_url": "shopify://products/fraiche-shower-oil-wash"
+          }
+        },
+        "text_wpiUL3": {
+          "type": "text",
+          "settings": {
+            "label_text": "Moisturize",
+            "image": "shopify://shop_images/Moisturize.png",
+            "icon": "shopify://shop_images/Radiating_Moisturizer.svg",
+            "pre_text": "Step Two",
+            "title": "Rejuvenating Layering Products",
+            "text": "<p>Our best-selling Milky spray lotion, and Boujee body oil products are formulated to feed and protect your skin while laying the foundation for a buildable signature scent.</p>",
+            "link_text": "Shop Layering",
+            "link_url": "shopify://collections/body-oils-and-lotions"
+          }
+        },
+        "text_FKpbW4": {
+          "type": "text",
+          "settings": {
+            "label_text": "Enhance",
+            "image": "shopify://shop_images/Enhance.png",
+            "icon": "shopify://shop_images/Pheromone_and_Scent_Enhancers.svg",
+            "pre_text": "Step Three",
+            "title": "Pheromone and Scent Boosters",
+            "text": "<p>Choose between our two pheromone oils for that, can't get enough, you but better, scent. Then add on one of our beloved scented fragrance oils to truly make it unique to you.</p><p><br/></p>",
+            "link_text": "Shop Roll-Ons",
+            "link_url": "shopify://collections/fragrance-oils"
+          }
+        }
+      },
+      "block_order": [
+        "text_y6Q9qn",
+        "text_wpiUL3",
+        "text_FKpbW4"
+      ],
+      "settings": {
+        "section_id": "",
+        "pre_text": "THE ROUTINE",
+        "title": "How To Riddle",
+        "text": "<p>Every product stands on its own, but put together, they are a 3-step system specifically designed to amplify your signature scent and extend its duration.</p>",
+        "bg_color": "#ffffff",
+        "text_color": "#101820",
+        "item_color": "#f2eadf",
+        "padding_top": 54,
+        "padding_bottom": 54
+      }
+    },
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slideshow-0": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "Two line\ntitle slide.",
+            "title_size": 80,
+            "subheading": "And optional subtext",
+            "link": "shopify://collections/all",
+            "link_text": "Shop this",
+            "link_2": "shopify://collections/all",
+            "link_text_2": "Shop all",
+            "color_accent": "#000000",
+            "text_align": "vertical-center horizontal-center",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "slideshow-1": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "Two line\ntitle slide.",
+            "title_size": 80,
+            "subheading": "And optional subtext",
+            "link": "shopify://collections/all",
+            "link_text": "Shop all",
+            "link_2": "shopify://collections/all",
+            "link_text_2": "Shop all",
+            "color_accent": "#000000",
+            "text_align": "vertical-bottom horizontal-left",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "slideshow-0",
+        "slideshow-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_height": "750px",
+        "mobile_height": "auto",
+        "parallax": true,
+        "style": "bars",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "lazyload_images": true
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "Rich text"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "promo-grid": {
+      "type": "promo-grid",
+      "blocks": {
+        "promo-0": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "Limited time",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "shopify://collections/all",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "50",
+            "height": 800,
+            "text_size": 100,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": true
+          }
+        },
+        "promo-1": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "Limited time",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "shopify://collections/all",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_size": 100,
+            "text_align": "vertical-bottom horizontal-center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": true,
+            "framed": false
+          }
+        }
+      },
+      "block_order": [
+        "promo-0",
+        "promo-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "gutter_size": 20,
+        "space_above": false,
+        "space_below": false,
+        "lazyload_images": true
+      }
+    },
+    "featured-collections": {
+      "type": "featured-collections",
+      "blocks": {
+        "featured-collections-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "featured-collections-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "featured-collections-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "featured-collections-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "featured-collections-0",
+        "featured-collections-1",
+        "featured-collections-2",
+        "featured-collections-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Shop by category",
+        "divider": false,
+        "per_row": 4,
+        "enable_gutter": true
+      }
+    },
+    "promo-grid2": {
+      "type": "promo-grid",
+      "blocks": {
+        "promo2-0": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "Limited time",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "shopify://collections/all",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "100",
+            "height": 720,
+            "text_size": 120,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        },
+        "promo2-1": {
+          "type": "sale_collection",
+          "settings": {
+            "sale_collection": "",
+            "top_text": "Up to",
+            "middle_text": "50% off",
+            "bottom_text": "Select products",
+            "width": "50",
+            "color_tint": "#000000",
+            "color_tint_opacity": 0,
+            "boxed": false,
+            "framed": true
+          }
+        },
+        "promo2-2": {
+          "type": "sale_collection",
+          "settings": {
+            "sale_collection": "",
+            "top_text": "Up to",
+            "middle_text": "50% off",
+            "bottom_text": "Select products",
+            "width": "50",
+            "color_tint": "#000000",
+            "color_tint_opacity": 0,
+            "boxed": false,
+            "framed": true
+          }
+        }
+      },
+      "block_order": [
+        "promo2-0",
+        "promo2-1",
+        "promo2-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": false,
+        "space_below": false,
+        "lazyload_images": true
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured collection",
+        "home_featured_products": "",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "background-image-text": {
+      "type": "background-image-text",
+      "disabled": true,
+      "settings": {
+        "subtitle": "Impressive",
+        "title": "Large image with text box",
+        "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.</p>",
+        "button_label": "",
+        "button_link": "shopify://collections/all",
+        "layout": "left",
+        "height": 750,
+        "framed": false,
+        "parallax": true,
+        "parallax_direction": "top",
+        "lazyload_images": true
+      }
+    },
+    "blog-posts": {
+      "type": "blog-posts",
+      "disabled": true,
+      "settings": {
+        "title": "From the journal",
+        "blog": "news",
+        "post_limit": 3,
+        "blog_show_tags": false,
+        "blog_show_date": true,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "view_all": true,
+        "blog_image_size": "wide",
+        "divider": false
+      }
+    },
+    "map": {
+      "type": "map",
+      "disabled": true,
+      "settings": {
+        "map_title": "Our retail store",
+        "address": "<p>301 Front St W<br/>Toronto, Canada</p><p>Mon - Fri, 8:30am - 10:30pm<br/>Saturday, 8:30am - 10:30pm<br/>Sunday, 8:30am - 10:30pm</p>",
+        "map_address": "301 Front St W, Toronto, ON M5V 2T6",
+        "api_key": "",
+        "show_button": true,
+        "lazyload_images": true
+      }
+    },
+    "section_community_6yMDWT": {
+      "type": "section-community",
+      "blocks": {
+        "block_wwcrEq": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/LEAH_P.webp",
+            "product_image": "shopify://shop_images/Shop_Original_Roll-On_Oil_1.png",
+            "content": "<p>“I should be an influencer for how many people stop me to ask what my scent is. I can name at least 15 people who purchase this after smelling it on me. I’ll never wear anything else!“</p>",
+            "name": "LEAH P.",
+            "product_name": "Shop Original Milky Spray Lotion",
+            "product_link": "shopify://products/riddle-oil-4oz-summer-spray-lotion"
+          }
+        },
+        "block_7FfqeN": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/MADISON_R.webp",
+            "product_image": "shopify://shop_images/Shop_Original_Roll-On_Oil_2_5d510216-688a-4b4f-81ce-d8e0681d66f1.png",
+            "content": "<p>“Truly The Best. The original is hands down my scent ever. I want every body product in this scent. I get bad headaches triggered by smells and this does not effect me at allllll“</p>",
+            "name": "MADISON R.",
+            "product_name": "Shop Original Roll-On Oil",
+            "product_link": "shopify://products/original-8-ml"
+          }
+        },
+        "block_xK7z3Y": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/EVANYA_S.webp",
+            "product_image": "shopify://shop_images/Shop_Original_Boujee_Body_Oil.png",
+            "content": "<p>“I smell gooooood. Love the feel and smell of my Boujee body oil! Went through some serious withdrawal when it was out of stock!“</p>",
+            "name": "EVANYA S.",
+            "product_name": "Shop Original Boujee Body Oil",
+            "product_link": "shopify://products/riddle-oil-original-8-oz-body-oil"
+          }
+        }
+      },
+      "block_order": [
+        "block_wwcrEq",
+        "block_7FfqeN",
+        "block_xK7z3Y"
+      ],
+      "settings": {
+        "title": "Customer Love",
+        "caption": "REVIEWS",
+        "text_color": "#101820",
+        "block_bg_color": "#d9cbbf"
+      }
+    },
+    "banner_text_6KAtYL": {
+      "type": "banner-text",
+      "settings": {
+        "title": "Indulge in your natural essence. Delightfully subtle and rich, this is a feel-good, smell-good system that you will cherish.",
+        "image": "shopify://shop_images/DSC09554_1.jpg",
+        "mobile_image": "shopify://shop_images/DSC09554_1.jpg",
+        "height": 320,
+        "mobile_height": 230,
+        "button_label": "Discover Your Unique Scent",
+        "button_link": "shopify://collections/best-seller",
+        "button_style": "btn--primary",
+        "text_color": "#ffffff",
+        "button_color": "#ffffff",
+        "button_text_color": "#101820"
+      }
+    },
+    "comparison_section_3CWqaV": {
+      "type": "comparison-section",
+      "blocks": {
+        "icon_text_wejfqm": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/Oil-based_roll-on_that_hydrates_skin..svg",
+            "text": "<p>Oil-based roll-on that hydrates skin.</p>",
+            "type": "tab-one",
+            "position": "left"
+          }
+        },
+        "icon_text_Mkjrmx": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/Oils_do_not_evaporate_ensuring_a_longer_lasting_scent..svg",
+            "text": "<p>Oils have a slower evaporation rate, ensuring a longer lasting scent.</p>",
+            "type": "tab-one",
+            "position": "left"
+          }
+        },
+        "icon_text_KAWmY9": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/Subtle_scent_enhancement_that_makes_your_natural_fragrance_shine_through..svg",
+            "text": "<p>Subtle scent enhancement that makes <br/>your natural fragrance shine through.</p>",
+            "type": "tab-one",
+            "position": "left"
+          }
+        },
+        "icon_text_y6CDxc": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/The_price_reflects_the_ingredients._High-quality_ethically_sourced_long-lasting_and_completely_unique..svg",
+            "text": "<p>The price reflects the ingredients. <br/>High-quality, ethically sourced, long-<br/>lasting and completely unique.</p>",
+            "type": "tab-one",
+            "position": "right"
+          }
+        },
+        "icon_text_NNJUna": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/Hypoallergenic_skin-safe_and_a_possible_alternative_to_perfumes_for_those_who_are_susceptible_to_headaches_and_migraines..svg",
+            "text": "<p>Non-toxic, skin-safe, and a possible alternative to perfumes for those who are susceptible to headaches and migraines.</p>",
+            "type": "tab-one",
+            "position": "right"
+          }
+        },
+        "icon_text_jFWTQP": {
+          "type": "icon-text",
+          "settings": {
+            "text": "<p>Alcohol-based spray that can <br/>dry out skin.</p>",
+            "type": "tab-two",
+            "position": "left"
+          }
+        },
+        "icon_text_yx3XL7": {
+          "type": "icon-text",
+          "settings": {
+            "text": "<p>Alcohols evaporate quickly over time, <br/>leading to a scent that quickly fades.</p>",
+            "type": "tab-two",
+            "position": "left"
+          }
+        },
+        "icon_text_GEHFdJ": {
+          "type": "icon-text",
+          "settings": {
+            "text": "<p>A strong fragrance that covers your <br/>smell and can easily overwhelm people <br/>in your environment.</p>",
+            "type": "tab-two",
+            "position": "left"
+          }
+        },
+        "icon_text_enPQGx": {
+          "type": "icon-text",
+          "settings": {
+            "text": "<p>The price can quickly go up, but the <br/>quality often remains unchanged. You are <br/>paying for the marketing.</p>",
+            "type": "tab-two",
+            "position": "right"
+          }
+        },
+        "icon_text_RVgtHc": {
+          "type": "icon-text",
+          "settings": {
+            "text": "<p>The alcohol can irritate skin, and the <br/>strong fragrances can cause headaches <br/>and migraines.</p>",
+            "type": "tab-two",
+            "position": "right"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_wejfqm",
+        "icon_text_Mkjrmx",
+        "icon_text_KAWmY9",
+        "icon_text_y6CDxc",
+        "icon_text_NNJUna",
+        "icon_text_jFWTQP",
+        "icon_text_yx3XL7",
+        "icon_text_GEHFdJ",
+        "icon_text_enPQGx",
+        "icon_text_RVgtHc"
+      ],
+      "settings": {
+        "section_id": "",
+        "title": "How is Riddle actually different?",
+        "caption": "compare",
+        "tab_one_title": "Riddle",
+        "riddle_oil_image": "shopify://shop_images/riddle-oil.png",
+        "tab_two_title": "Traditional Perfume",
+        "traditional_perfume_image": "shopify://shop_images/Generic.png",
+        "button_label": "Explore Roll-On Scents",
+        "button_link": "shopify://collections/fragrance-oils",
+        "button_style": "btn--primary",
+        "text_color": "#101820",
+        "tab_color": "#101820",
+        "tab_text_color": "#ffffff",
+        "tab_one_border_color": "#735d49",
+        "tab_two_border_color": "#a50b00",
+        "button_color": "#101820",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "press_section_BKNbML": {
+      "type": "press-section",
+      "blocks": {
+        "text_fTqGea": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/boxycharm.png",
+            "title": "",
+            "text": "<p>‘Ditch your old-fashioned alcohol-based perfume for complex, long lasting, and skin-friendly fragrance and pheromone oils that create a one-of-a-kind scent just for you.’</p>"
+          }
+        },
+        "text_7efktB": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "Molly Sims",
+            "text": "<p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>"
+          }
+        },
+        "text_WDDtGV": {
+          "type": "text",
+          "settings": {
+            "image": "shopify://shop_images/forbes.png",
+            "title": "",
+            "text": "<p>“So refreshing to lather all over after a long warm shower.”</p>"
+          }
+        },
+        "text_URWwwp": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "Allegra Shaw",
+            "text": "<p>‘Ditch your old-fashioned alcohol-based perfume for complex, long lasting, and skin-friendly fragrance and pheromone oils that create a one-of-a-kind scent just for you.’</p>"
+          }
+        },
+        "text_6X9zBn": {
+          "type": "text",
+          "settings": {
+            "title": "Kristen Bell",
+            "text": "<p>“My favorite scent.”</p>"
+          }
+        },
+        "text_qprCfn": {
+          "type": "text",
+          "settings": {
+            "image": "shopify://shop_images/fabfitfun.png",
+            "title": "",
+            "text": "<p>“The easiest way to smell good all day.”</p>"
+          }
+        },
+        "text_t6FdaL": {
+          "type": "text",
+          "settings": {
+            "title": "SHAWN MENDES",
+            "text": "<p>'Mmmmmmmm'</p>"
+          }
+        },
+        "text_zGLUBb": {
+          "type": "text",
+          "settings": {
+            "image": "shopify://shop_images/buzzfeed-logo-black-transparent-1_25d786d4-656c-4fe5-ad6b-b06588e07a05.png",
+            "title": "",
+            "text": "<p>“Life changing beauty products you need to try ASAP.”</p>"
+          }
+        },
+        "text_jGBTR7": {
+          "type": "text",
+          "settings": {
+            "image": "shopify://shop_images/1544px-VOGUE_LOGO.svg_5b6397f7-49fa-4c5d-be23-bc2c612e2df7.png",
+            "title": "",
+            "text": "<p>“Long lasting and very delicate.”</p>"
+          }
+        },
+        "text_VRGLnJ": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/1544px-VOGUE_LOGO.svg_5b6397f7-49fa-4c5d-be23-bc2c612e2df7.png",
+            "title": "",
+            "text": "<p>“Long lasting and very delicate.”</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_fTqGea",
+        "text_7efktB",
+        "text_WDDtGV",
+        "text_URWwwp",
+        "text_6X9zBn",
+        "text_qprCfn",
+        "text_t6FdaL",
+        "text_zGLUBb",
+        "text_jGBTR7",
+        "text_VRGLnJ"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#101820",
+        "padding-top": 120,
+        "padding-bottom": 64
+      }
+    },
+    "our_story_jyWK4r": {
+      "type": "our-story",
+      "settings": {
+        "image": "shopify://shop_images/Chelsea_Voge_Founder_of_Riddle-_1_of_1.jpg",
+        "pre_text": "OUR STORY",
+        "title": "How Riddle Came to Be",
+        "text": "",
+        "quote": "<p>\"I was 26 when I created our first scent, <em>Original</em>. The moment I smelled it, I thought, <em>This is the best scent in the world.</em> And to this day, I still believe that.\"</p>",
+        "sign": "shopify://shop_images/8d4832d1-a83f-4adb-88d8-b7f4e275bfc8.png",
+        "button_text": "Riddle Story",
+        "button_link": "shopify://pages/allow-philosophy",
+        "button_style": "btn--primary",
+        "bg_color": "#ffffff",
+        "text_color": "#101820",
+        "padding_top": 54,
+        "padding_bottom": 54
+      }
+    },
+    "join_the_club_dir3RP": {
+      "type": "join-the-club",
+      "settings": {
+        "image": "shopify://shop_images/JoinTheClub.svg",
+        "title": "The Smell Good Club",
+        "text": "<p>We invite you to join our loyalty program, The Smell Good Club.<br/><br/>1. Earn back 10% on every dollar you spend.<br/>2. Get early access to new product launches.<br/>3. Redeem points for discounts on future orders.<br/><br/>See you there. Xx</p>",
+        "button_text1": "Learn More",
+        "button_link1": "shopify://pages/riddle-rewards",
+        "button_style1": "btn--primary",
+        "show_button_arrow": false,
+        "button_text2": "Sign Up Now",
+        "button_link2": "/account/register",
+        "button_style2": "btn--secondary",
+        "bg_color": "#f2eadf",
+        "text_color": "#101820",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "scents_section_B4EeQ4": {
+      "type": "scents-section",
+      "blocks": {
+        "iconlist_9U6XKC": {
+          "type": "iconlist",
+          "settings": {
+            "title": "Truly Unique Scents",
+            "icon": "shopify://shop_images/Truly_Unique_Scents.svg"
+          }
+        },
+        "iconlist_YLdzhb": {
+          "type": "iconlist",
+          "settings": {
+            "title": "Skinsafe, Non-toxic",
+            "icon": "shopify://shop_images/Skinsafe_Non-toxic_and_Hypoallergenic.svg"
+          }
+        },
+        "iconlist_qXVKmF": {
+          "type": "iconlist",
+          "settings": {
+            "title": "Vegan, Cruelty-free",
+            "icon": "shopify://shop_images/Vegan_cruelty_free_1.svg"
+          }
+        },
+        "iconlist_nPDXRk": {
+          "type": "iconlist",
+          "settings": {
+            "title": "Concentrated and Long-lasting",
+            "icon": "shopify://shop_images/Oil-based_and_long-lasting.svg"
+          }
+        }
+      },
+      "block_order": [
+        "iconlist_9U6XKC",
+        "iconlist_YLdzhb",
+        "iconlist_qXVKmF",
+        "iconlist_nPDXRk"
+      ],
+      "settings": {
+        "desktop_image": "shopify://shop_images/Riddle_2025_Homepage_Desktop_Banner_Image_1080x852px_v2.1.jpg",
+        "mobile_image": "shopify://shop_images/Riddle_2025_Homepage_Desktop_Banner_Image_1346x720px_v2.1.png",
+        "right_content": "",
+        "link_text": "Modern Fragrance For A Modern World",
+        "link": "shopify://collections/fragrance-oils"
+      }
+    }
+  },
+  "order": [
+    "hero_banner_wE9YVM",
+    "value_props_LHiHNa",
+    "custom_featured_collection_B9jyU9",
+    "custom_featured_collection_2_bddpHn",
+    "video_with_text_azpAdH",
+    "how_to_riddle_kbawqG",
+    "slideshow",
+    "rich-text",
+    "promo-grid",
+    "featured-collections",
+    "promo-grid2",
+    "featured-collection",
+    "background-image-text",
+    "blog-posts",
+    "map",
+    "section_community_6yMDWT",
+    "banner_text_6KAtYL",
+    "comparison_section_3CWqaV",
+    "press_section_BKNbML",
+    "our_story_jyWK4r",
+    "join_the_club_dir3RP",
+    "scents_section_B4EeQ4"
+  ]
+}
