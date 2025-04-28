@@ -262,7 +262,7 @@
 
       {% assign save = price_per_ml_old | minus: price_per_ml_new %}
       <p>
-        <b>20ml </b>& Save <b>${{ save | money_without_currency }}/ml </b>
+        <b>20ml </b>· Save <b>${{ save | money_without_currency }}/ml </b>
       </p>
 
       {% assign extra_price = second_product.price | minus: product.price %}
