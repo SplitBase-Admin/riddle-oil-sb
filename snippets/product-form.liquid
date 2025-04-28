@@ -107,6 +107,12 @@
     width: 70%;
   }
 
+  @media screen and (max-width: 1023px) {
+    .second_product_atc {
+      width: 100%;
+    }
+  }
+
   .second_product_atc p {
     margin: 0;
     padding: 0;
@@ -145,7 +151,6 @@
     .second_product_atc_v2 p > span {
       display: block;
     }
-
   }
 </style>
 {% assign second_product_variant = second_product.variants.first %}
@@ -257,12 +262,11 @@
 
       {% assign save = price_per_ml_old | minus: price_per_ml_new %}
       <p>
-        Size up to 20ml &
-        <b>Save ${{ save | money_without_currency }}/ml </b>
+        <b>20ml </b>& Save <b>${{ save | money_without_currency }}/ml </b>
       </p>
 
       {% assign extra_price = second_product.price | minus: product.price %}
-      <p>"+ {{ extra_price | money | remove: ' ' }}</p>
+      <p>+ {{ extra_price | money | remove: ' ' }}</p>
     </div>
   </div>
 
