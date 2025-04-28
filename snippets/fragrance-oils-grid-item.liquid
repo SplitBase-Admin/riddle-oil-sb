@@ -382,8 +382,9 @@
               {% if product.tags.size > 0 and show_tags %}
                 <div class="product-grid-tags-main">
                   <div class="product-grid-tags">
-                    {% for tag in product.tags %}
-                      <span>{{ tag }}</span>
+                    {% assign sorted_tags = product.tags | sort | reverse %}
+                    {% for tag in sorted_tags %}
+                      <span>{{ tag | sort | reverse }}</span>
                     {% endfor %}
                   </div>
                 </div>

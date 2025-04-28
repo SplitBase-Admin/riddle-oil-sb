@@ -82,8 +82,8 @@
 @media (min-width: 768px) and (max-width: 1439px) {
 
   .collection-banner-section .collection-banner__content {
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding-top: 36px;
+    padding-bottom: 36px;
   }
 
   .collection-banner-image {

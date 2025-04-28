@@ -338,9 +338,10 @@
               {% if product.tags.size > 0 %}
                 <div class="product-grid-tags-main">
                   <div class="product-grid-tags">
-                    {% for tag in product.tags %}
+                    {% assign sorted_tags = product.tags | sort | reverse %}
+                    {% for tag in sorted_tags %}
                       {% unless tag contains '_label_' %}
-                        <span>{{ tag }}</span>
+                        <span>{{ tag | sort | reverse }}</span>
                       {% endunless %}
                     {% endfor %}
                   </div>
@@ -500,7 +501,7 @@
                 display: none;
               }
             {%- endstyle -%}
-          {%- endif -%}
+          {%- endif -%} 
         {%- endif -%}
       {%- endfor -%}
     {%- endif -%}

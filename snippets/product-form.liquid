@@ -273,10 +273,10 @@
       {% assign price_per_ml_new = second_product.price | divided_by: 20 %}
       {% assign save = price_per_ml_old | minus: price_per_ml_new %}
       <p>
-        <b>20ml</b> · Save ${{ save | money_without_currency }}/ml
+        <b>20ml</b> · Save <b>${{ save | money_without_currency }}/ml</b>
       </p>
       {% assign extra_price = second_product.price | minus: product.price %}
-      <p class="extra_price"><b>+{{ extra_price | money | remove: ' ' }}</b></p>
+      <p class="extra_price">+{{ extra_price | money | remove: ' ' }}</p>
 
       <!-- Toggle Switch -->
       <div class="second-toggle-wrapper">
