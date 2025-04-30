@@ -48,6 +48,7 @@
   .second-toggle-wrapper {
     margin-left: 0;
     padding-left: 0px;
+    margin-bottom: -8px;
   }
 
   .switch {
@@ -110,6 +111,24 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.64);
     cursor: pointer;
     margin: 8px auto;
+  }
+  .second_product_atc img {
+    margin-bottom: 2px;
+  }
+  @media screen and (min-width: 1024px) {
+    .second_product_atc {
+      width: 51%;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    .second_product_atc {
+      max-width: 285px;
+    }
+  }
+
+  .extra_price-v1 {
+    padding-right: 5px;
   }
 
   .second_product_atc p {
@@ -265,7 +284,7 @@
       </p>
 
       {% assign extra_price = second_product.price | minus: product.price %}
-      <p>+ {{ extra_price | money | remove: ' ' }}</p>
+      <p class="extra_price-v1">+ {{ extra_price | money | remove: ' ' }}</p>
     </div>
   </div>
 
