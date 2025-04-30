@@ -104,20 +104,12 @@
   }
   .second_product_atc {
     display: flex;
-    padding: 0px 12px 0px 12px;
     align-items: center;
     justify-content: center;
     gap: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.64);
     cursor: pointer;
     margin: 8px auto;
-    width: 55%;
-  }
-
-  @media screen and (max-width: 1023px) {
-    .second_product_atc {
-      width: 100%;
-    }
   }
 
   .second_product_atc p {
@@ -428,8 +420,6 @@
 
     toggle.addEventListener('change', function () {
       if (this.checked) {
-        console.log('Toggle checked - adding second product to cart');
-
         // Add the second product directly to cart
         fetch('/cart/add.js', {
           method: 'POST',
@@ -449,7 +439,24 @@
           })
           .catch((err) => console.error('Add to cart failed:', err));
       } else {
-        console.log('Toggle unchecked - no action needed');
+        // Remove the second product from cart
+        fetch('/cart/change.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            id: secondProductVariantId,
+            quantity: 0,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log('Second product removed from cart:', data);
+            // Optional: update cart UI
+          })
+          .catch((err) => console.error('Remove from cart failed:', err));
       }
     });
   });
