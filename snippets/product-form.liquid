@@ -370,7 +370,7 @@
   </select>
 {%- endform -%}
 
-<script>
+{% comment %} <script>
   document.addEventListener('DOMContentLoaded', function () {
     const toggle = document.getElementById('second-toggle');
     const variantSelect = document.querySelector('select[name="id"]');
@@ -398,7 +398,7 @@
       }
     });
   });
-</script>
+</script> {% endcomment %}
 
 {% comment %} for variant 1 {% endcomment %}
 <script>
@@ -439,7 +439,6 @@
 
     toggle.addEventListener('change', function () {
       if (this.checked) {
-        // Add the second product directly to cart
         fetch('/cart/add.js', {
           method: 'POST',
           headers: {
