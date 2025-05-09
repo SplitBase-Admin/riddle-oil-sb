@@ -1,1 +1,168 @@
-{"type":"header","name":"t:sections.header-group.name","sections":{"announcement":{"type":"announcement","blocks":{"announcement-0":{"type":"announcement","settings":{"shipping_icon":"shopify:\/\/shop_images\/material-symbols_local-shipping-outline.svg","text":"Free Domestic Shipping on Orders Over $85","link_text":"","link":""}},"announcement_4A6KrW":{"type":"announcement","disabled":true,"settings":{"text":"Hassle-free returns","link_text":"30-day postage paid returns","link":""}}},"block_order":["announcement-0","announcement_4A6KrW"],"settings":{"announcement_compact":true}},"header":{"type":"header","blocks":{"header-0":{"type":"logo","settings":{"logo":"shopify:\/\/shop_images\/riddle-logo.svg","desktop_logo_width":150,"mobile_logo_width":125}},"megamenu_type_1_ccx7xh":{"type":"megamenu-type-1","settings":{"menu_title":"shop","image":"shopify:\/\/shop_images\/DSC00007_2.png","title":"New to Riddle?","text":"Find your new signature scent.","button_text":"Try The Sample Kit","button_url":"shopify:\/\/products\/the-sample-kit"}},"megamenu_type_2_zWTUgp":{"type":"megamenu-type-2","settings":{"menu_title":"routine","bg_color":"#f2eadf","title":"How To Riddle","text":"Every product stands on its own, but put together, they are a 3-step system specifically designed to amplify your signature scent and extend its duration.","product_image":"shopify:\/\/shop_images\/GET_THE_ROUTINE.png","product_title":"GET THE ROUTINE","product_text":"Discover the perfect 3-step layering routine to craft your signature scent.","product_link_text":"Layering Gift Set","product_link":"shopify:\/\/products\/the-gift-set","step_image_1":"shopify:\/\/shop_images\/Step_One_Fraiche_by_Riddle-_1_of_1.jpg","step_title_1":"step <strong>one<\/strong>","step_heading_1":"Skin Balancing Cleanser","step_text_1":"That true head-turning scent begins here. Our Fraiche oil-to-milk cleanser will wash away any impurities without stripping you of your skin-protecting and nourishing oils and prepping you for a smooth, long-lasting Riddle scent application.","step_text_mobile_1":"That true head-turning scent begins here. Our Fraiche oil-to-milk cleanser will wash away any impurities without stripping you of your skin-protecting and nourishing oils and prepping you for a smooth, long-lasting Riddle scent application.","step_link_text_1":"Shop Body Wash","step_link_1":"shopify:\/\/products\/fraiche-shower-oil-wash","step_image_2":"shopify:\/\/shop_images\/Step_Two_Moisturize_by_Riddle-_1_of_1.jpg","step_title_2":"step <strong>two<\/strong>","step_heading_2":"Rejuvenating Layering Products","step_text_2":"Our best-selling Milky spray lotion, and Boujee body oil products are formulated to feed and protect your skin while laying the foundation for a buildable signature scent.","step_text_mobile_2":"Our best-selling Milky spray lotion, and Boujee body oil products are formulated to feed and protect your skin while laying the foundation for a buildable signature scent.","step_link_text_2":"Shop Layering","step_link_2":"shopify:\/\/collections\/body-oils-and-lotions","step_image_3":"shopify:\/\/shop_images\/Step_Three_Roll-on_by_Riddle-_1_of_1.jpg","step_title_3":"step <strong>three<\/strong>","step_heading_3":"Pheromone and Scent Boosters","step_text_3":"Choose between our two pheromone oils for that \"can't get enough\" you but better scent.Then add on one of our beloved scented fragrance oils to truly make it unique to you.","step_text_mobile_3":"Choose between our two pheromone oils for that \"can't get enough\" you but better scent.Then add on one of our beloved scented fragrance oils to truly make it unique to you.","step_link_text_3":"Shop Roll-Ons","step_link_3":"shopify:\/\/collections\/fragrance-oils"}},"megamenu_type_3_TpW6NP":{"type":"megamenu-type-3","settings":{"menu_title":"best sellers","collection":"best-seller","button_text":"Shop Best Sellers","button_url":"shopify:\/\/collections\/best-seller"}},"megamenu_type_4_C6tYha":{"type":"megamenu-type-4","settings":{"menu_title":"learn","image_1":"shopify:\/\/shop_images\/Learn_About.png","link_text_1":"About Riddle","link_url_1":"shopify:\/\/pages\/allow-philosophy","image_2":"shopify:\/\/shop_images\/Learn_Scent_Menu.png","link_text_2":"Scent Menu","link_url_2":"shopify:\/\/pages\/scent-menu","image_3":"shopify:\/\/shop_images\/Learn_Reviews.png","link_text_3":"Reviews","link_url_3":"shopify:\/\/pages\/reviews-questions","image_4":"shopify:\/\/shop_images\/Learn_Give_10_Get_10.png","link_text_4":"Give $10, Get $10","link_url_4":"shopify:\/\/pages\/vip-referral","image_5":"shopify:\/\/shop_images\/learn-the-smell-good-club.png","link_text_5":"The Smell Good Club","link_url_5":"shopify:\/\/pages\/riddle-rewards"}}},"block_order":["header-0","megamenu_type_1_ccx7xh","megamenu_type_2_zWTUgp","megamenu_type_3_TpW6NP","megamenu_type_4_C6tYha"],"settings":{"main_menu_link_list":"new-main-menu","hover_menu":true,"mega_menu_images":true,"main_menu_alignment":"center-split","header_style":"sticky","sticky_index":false,"sticky_collection":false,"toolbar_menu":"","toolbar_social":false,"toolbar_social_mobile":false,"show_locale_selector":false,"show_currency_selector":false,"show_currency_flags":false}}},"order":["announcement","header"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "t:sections.header-group.name",
+  "sections": {
+    "announcement": {
+      "type": "announcement",
+      "blocks": {
+        "announcement-0": {
+          "type": "announcement",
+          "settings": {
+            "shipping_icon": "shopify://shop_images/material-symbols_local-shipping-outline.svg",
+            "text": "Free Domestic Shipping on Orders Over $85",
+            "link_text": "",
+            "link": ""
+          }
+        },
+        "announcement_4A6KrW": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "Hassle-free returns",
+            "link_text": "30-day postage paid returns",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-0",
+        "announcement_4A6KrW"
+      ],
+      "settings": {
+        "announcement_compact": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "header-0": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/riddle-logo.svg",
+            "desktop_logo_width": 150,
+            "mobile_logo_width": 125
+          }
+        },
+        "megamenu_type_1_ccx7xh": {
+          "type": "megamenu-type-1",
+          "settings": {
+            "menu_title": "shop",
+            "image": "shopify://shop_images/DSC00007_2.png",
+            "title": "New to Riddle?",
+            "text": "Find your new signature scent.",
+            "button_text": "Try The Sample Kit",
+            "button_url": "shopify://products/the-sample-kit"
+          }
+        },
+        "megamenu_type_2_zWTUgp": {
+          "type": "megamenu-type-2",
+          "settings": {
+            "menu_title": "routine",
+            "bg_color": "#f2eadf",
+            "title": "How To Riddle",
+            "text": "Every product stands on its own, but put together, they are a 3-step system specifically designed to amplify your signature scent and extend its duration.",
+            "product_image": "shopify://shop_images/GET_THE_ROUTINE.png",
+            "product_title": "GET THE ROUTINE",
+            "product_text": "Discover the perfect 3-step layering routine to craft your signature scent.",
+            "product_link_text": "Layering Gift Set",
+            "product_link": "shopify://products/the-gift-set",
+            "step_image_1": "shopify://shop_images/Step_One_Fraiche_by_Riddle-_1_of_1.jpg",
+            "step_title_1": "step <strong>one</strong>",
+            "step_heading_1": "Skin Balancing Cleanser",
+            "step_text_1": "That true head-turning scent begins here. Our Fraiche oil-to-milk cleanser will wash away any impurities without stripping you of your skin-protecting and nourishing oils and prepping you for a smooth, long-lasting Riddle scent application.",
+            "step_text_mobile_1": "That true head-turning scent begins here. Our Fraiche oil-to-milk cleanser will wash away any impurities without stripping you of your skin-protecting and nourishing oils and prepping you for a smooth, long-lasting Riddle scent application.",
+            "step_link_text_1": "Shop Body Wash",
+            "step_link_1": "shopify://products/fraiche-shower-oil-wash",
+            "step_image_2": "shopify://shop_images/Step_Two_Moisturize_by_Riddle-_1_of_1.jpg",
+            "step_title_2": "step <strong>two</strong>",
+            "step_heading_2": "Rejuvenating Layering Products",
+            "step_text_2": "Our best-selling Milky spray lotion, and Boujee body oil products are formulated to feed and protect your skin while laying the foundation for a buildable signature scent.",
+            "step_text_mobile_2": "Our best-selling Milky spray lotion, and Boujee body oil products are formulated to feed and protect your skin while laying the foundation for a buildable signature scent.",
+            "step_link_text_2": "Shop Layering",
+            "step_link_2": "shopify://collections/body-oils-and-lotions",
+            "step_image_3": "shopify://shop_images/Step_Three_Roll-on_by_Riddle-_1_of_1.jpg",
+            "step_title_3": "step <strong>three</strong>",
+            "step_heading_3": "Pheromone and Scent Boosters",
+            "step_text_3": "Choose between our two pheromone oils for that \"can't get enough\" you but better scent.Then add on one of our beloved scented fragrance oils to truly make it unique to you.",
+            "step_text_mobile_3": "Choose between our two pheromone oils for that \"can't get enough\" you but better scent.Then add on one of our beloved scented fragrance oils to truly make it unique to you.",
+            "step_link_text_3": "Shop Roll-Ons",
+            "step_link_3": "shopify://collections/fragrance-oils"
+          }
+        },
+        "megamenu_type_3_TpW6NP": {
+          "type": "megamenu-type-3",
+          "settings": {
+            "menu_title": "best sellers",
+            "collection": "best-seller",
+            "button_text": "Shop Best Sellers",
+            "button_url": "shopify://collections/best-seller"
+          }
+        },
+        "megamenu_type_4_C6tYha": {
+          "type": "megamenu-type-4",
+          "settings": {
+            "menu_title": "learn",
+            "image_1": "shopify://shop_images/Learn_About.png",
+            "link_text_1": "About Riddle",
+            "link_url_1": "shopify://pages/allow-philosophy",
+            "image_2": "shopify://shop_images/Learn_Scent_Menu.png",
+            "link_text_2": "Scent Menu",
+            "link_url_2": "shopify://pages/scent-menu",
+            "image_3": "shopify://shop_images/Learn_Reviews.png",
+            "link_text_3": "Reviews",
+            "link_url_3": "shopify://pages/reviews-questions",
+            "image_4": "shopify://shop_images/Learn_Give_10_Get_10.png",
+            "link_text_4": "Give $10, Get $10",
+            "link_url_4": "shopify://pages/vip-referral",
+            "image_5": "shopify://shop_images/learn-the-smell-good-club.png",
+            "link_text_5": "The Smell Good Club",
+            "link_url_5": "shopify://pages/riddle-rewards"
+          }
+        }
+      },
+      "block_order": [
+        "header-0",
+        "megamenu_type_1_ccx7xh",
+        "megamenu_type_2_zWTUgp",
+        "megamenu_type_3_TpW6NP",
+        "megamenu_type_4_C6tYha"
+      ],
+      "settings": {
+        "main_menu_link_list": "new-main-menu",
+        "hover_menu": true,
+        "mega_menu_images": true,
+        "main_menu_alignment": "center-split",
+        "header_style": "sticky",
+        "sticky_index": false,
+        "sticky_collection": false,
+        "toolbar_menu": "",
+        "toolbar_social": false,
+        "toolbar_social_mobile": false,
+        "show_locale_selector": false,
+        "show_currency_selector": false,
+        "show_currency_flags": false
+      }
+    },
+    "quick_navigation_jadAhU": {
+      "type": "quick-navigation",
+      "name": "Quick Navigation",
+      "settings": {
+        "quick_navigation": "quick-navigation"
+      }
+    }
+  },
+  "order": [
+    "announcement",
+    "header",
+    "quick_navigation_jadAhU"
+  ]
+}

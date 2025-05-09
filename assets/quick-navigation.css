@@ -1,0 +1,72 @@
+.quick__navigation--list {
+  padding: 12px 16px;
+  background: #fff;
+  overflow: auto;
+  list-style-type: none;
+  margin: 0 -3px;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.quick__navigation--list::-webkit-scrollbar {
+  display: none;
+}
+
+.quick__navigation--sticky {
+  position: sticky;
+  z-index: 111;
+  top: 0;
+}
+
+.quick__navigation--list a::after {
+  content: '';
+  border: 1px solid rgba(16, 24, 32, .12);
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 32px;
+}
+
+.quick__navigation--list a {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  font-family: 'Heebo';
+  white-space: nowrap;
+  padding: 9px 16px;
+  border-radius: 32px;
+  display: inline-block;
+  position: relative;
+}
+
+.quick__navigation--list a.selected::after {
+  border: 1px solid #D9CBBF;
+}
+
+.quick__navigation--list a.selected {
+  background: #F2EADF;
+}
+
+.quick__navigation {
+  overflow: hidden;
+}
+
+.quick__navigation--link {
+  margin: 0 3px;
+  display: inline-block;
+}
+
+.drawer--is-open .quick__navigation--sticky,
+.predictive-overflow-hidden .quick__navigation--sticky {
+  z-index: 0;
+}

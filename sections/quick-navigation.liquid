@@ -1,0 +1,40 @@
+{{ 'quick-navigation.css' | asset_url | stylesheet_tag }}
+
+{% if request.page_type == 'index' or request.page_type == 'collection' %}
+  {%- if section.settings.quick_navigation != blank -%}                  
+    <div class="quick__navigation medium-up--hide">
+    {% assign quick_nav = linklists[section.settings.quick_navigation].links %}
+      <ul class="quick__navigation--list">
+        {% for link in quick_nav %}
+          {% assign is_active = false %}
+          {% if link.url == request.path %}
+            {% assign is_active = true %}
+          {% endif %}
+          <li class="quick__navigation--link"><a class="{% if is_active %} selected{% endif %}" href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Quick Navigation",
+    "class": "quick__navigation--sticky",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "quick_navigation",
+        "label": "Quick Navigation"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Quick Navigation"
+      }
+    ],
+    "enabled_on": {
+      "groups": ["header"]
+    }
+  }
+{% endschema %}
