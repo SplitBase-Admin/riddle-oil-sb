@@ -55,8 +55,17 @@
   endfor
 -%}
 
+<script>
+  const productTitle = '{{ product.title }}';
+
+  if (productTitle && /roll[\s\-]?on/i.test(productTitle)) {
+    window.rollOn = true;
+  }
+</script>
+
 <div
   id="ProductSection-{{ section_id }}-{{ product.id }}"
+  data-sb="true"
   class="product-section"
   data-section-id="{{ section_id }}"
   data-product-id="{{ product.id }}"
@@ -102,14 +111,11 @@
 
         <div class="grid__item {{ product_description_width }} product-info__wrap">
           <div class="product-single__meta" sbkey="true">
-
             {% for second_product in product.metafields.custom.product_group.value.products.value %}
-              {%  if product.id != second_product.id %}
-
-                {%  assign secondProduct  = second_product%}
+              {% if product.id != second_product.id %}
+                {% assign secondProduct = second_product %}
               {% endif %}
             {% endfor %}
-
 
             <div class="product-block product-block--header">
               {%- if settings.show_breadcrumbs and isModal != true -%}
@@ -494,7 +500,7 @@
                           current_variant: current_variant,
                           block: block,
                           section_id: section_id,
-                          second_product: secondProduct,
+                          second_product: secondProduct
                         -%}
                       {%- endunless -%}
 
