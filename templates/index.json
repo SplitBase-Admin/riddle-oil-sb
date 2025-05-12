@@ -21,7 +21,7 @@
         "button_style1": "btn--primary",
         "show_button_arrow": false,
         "button_text2": "Try The Sample Kit",
-        "button_link2": "shopify://products/the-sample-kit",
+        "button_link2": "shopify://products/the-sample-kit-nude-beach",
         "button_style2": "btn--secondary",
         "bg_color": "#fcfbfb",
         "text_color": "#101820"
@@ -88,7 +88,7 @@
         "mobile_promo_image": "shopify://shop_images/RIDDLE_OIL_SAMPLE_KIT.png",
         "promo_title": "Discover Your Unique Scent",
         "button_label": "Try The Sample Kit",
-        "button_link": "shopify://products/the-sample-kit",
+        "button_link": "shopify://products/the-sample-kit-nude-beach",
         "button_style": "btn--secondary",
         "button_color": "#ffffff",
         "button_text_color": "#ffffff"
