@@ -7,7 +7,30 @@
   endif
 -%}
 
-<predictive-search data-context="{{ context }}" data-enabled="{{ settings.predictive_search_enabled }}" data-dark="{{ dark_search_bg }}">
+{%- style -%}
+  .default__results {
+    padding: 0 20px;
+  }
+
+  .default__results ul {
+    margin-left: 8px;
+  }
+
+  .default__results li {
+    list-style-type: none;
+    padding: 8px 0;
+  }
+
+  .default__results li:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+{%- endstyle -%}
+
+<predictive-search
+  data-context="{{ context }}"
+  data-enabled="{{ settings.predictive_search_enabled }}"
+  data-dark="{{ dark_search_bg }}"
+>
   <div class="predictive__screen" data-screen></div>
   <form action="{{ routes.search_url }}" method="get" role="search">
     <label for="Search" class="hidden-label">Search</label>
@@ -33,14 +56,20 @@
       >
       <input name="options[prefix]" type="hidden" value="last">
       <button class="btn--search" type="submit">
-        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}</style></defs><path class="cls-1" d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"/></svg>
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64">
+          <defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}</style></defs><path class="cls-1" d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"/>
+        </svg>
         <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
       </button>
     </div>
 
     <button class="btn--close-search">
-      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}</style></defs><path class="cls-1" d="M19 17.61l27.12 27.13m0-27.13L19 44.74"/></svg>
+      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64">
+        <defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}</style></defs><path class="cls-1" d="M19 17.61l27.12 27.13m0-27.13L19 44.74"/>
+      </svg>
     </button>
-    <div id="predictive-search" class="search__results" tabindex="-1"></div>
+    <div id="predictive-search" class="search__results" tabindex="-1">
+      
+    </div>
   </form>
 </predictive-search>

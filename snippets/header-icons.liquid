@@ -18,7 +18,10 @@
     {%- endif -%}
 
     {%- if settings.search_enable -%}
-      <a href="{{ routes.search_url }}" class="site-nav__link site-nav__link--icon js-search-header{% if section.settings.main_menu_alignment == 'center' %} medium-up--hide{% endif %}">
+      <a
+        href="{{ routes.search_url }}"
+        class="site-nav__link site-nav__link--icon js-search-header{% if section.settings.main_menu_alignment == 'center' %} medium-up--hide{% endif %}"
+      >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M17.3299 15.952L21.125 19.7462L19.8712 21L16.077 17.2049C14.6652 18.3366 12.9092 18.9522 11.0998 18.9496C6.69771 18.9496 3.125 15.3769 3.125 10.9748C3.125 6.57271 6.69771 3 11.0998 3C15.5019 3 19.0746 6.57271 19.0746 10.9748C19.0772 12.7842 18.4616 14.5402 17.3299 15.952ZM15.5524 15.2945C16.6767 14.1379 17.3047 12.5878 17.3024 10.9748C17.3024 7.54829 14.5263 4.77218 11.0998 4.77218C7.67329 4.77218 4.89718 7.54829 4.89718 10.9748C4.89718 14.4013 7.67329 17.1774 11.0998 17.1774C12.7128 17.1797 14.2629 16.5517 15.4195 15.4274L15.5524 15.2945Z" fill="#101820"/>
         </svg>
@@ -26,30 +29,85 @@
       </a>
     {%- endif -%}
 
-    {%- if section.settings.main_menu_alignment == 'left' or section.settings.main_menu_alignment == 'left-center' or section.settings.main_menu_alignment == 'left-drawer' -%}
+    {%- if section.settings.main_menu_alignment == 'left'
+      or section.settings.main_menu_alignment == 'left-center'
+      or section.settings.main_menu_alignment == 'left-drawer'
+    -%}
       <button
         type="button"
         class="site-nav__link site-nav__link--icon js-drawer-open-nav{% if section.settings.main_menu_alignment == 'left' or section.settings.main_menu_alignment == 'left-center' %} medium-up--hide{% endif %}"
-        aria-controls="NavDrawer">
-        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-hamburger" viewBox="0 0 64 64"><title>icon-hamburger</title><path d="M7 15h51M7 32h43M7 49h51"/></svg>
+        aria-controls="NavDrawer"
+      >
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-hamburger" viewBox="0 0 64 64">
+          <title>icon-hamburger</title><path d="M7 15h51M7 32h43M7 49h51"/>
+        </svg>
         <span class="icon__fallback-text">{{ 'general.drawers.navigation' | t }}</span>
       </button>
     {%- endif -%}
 
-    <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon js-drawer-open-cart" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
+    <a
+      href="{{ routes.cart_url }}"
+      class="site-nav__link site-nav__link--icon js-drawer-open-cart"
+      aria-controls="CartDrawer"
+      data-icon="{{ settings.cart_icon }}"
+    >
       <span class="cart-link">
         {%- if settings.cart_icon == 'cart' -%}
-          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 64 64"><path style="stroke-miterlimit:10" d="M14 17.44h46.79l-7.94 25.61H20.96l-9.65-35.1H3"/><circle cx="27" cy="53" r="2"/><circle cx="47" cy="53" r="2"/></svg>
+          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 64 64">
+            <path style="stroke-miterlimit:10" d="M14 17.44h46.79l-7.94 25.61H20.96l-9.65-35.1H3"/><circle cx="27" cy="53" r="2"/><circle cx="47" cy="53" r="2"/>
+          </svg>
         {%- elsif settings.cart_icon == 'bag-minimal' -%}
-          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-bag-minimal" viewBox="0 0 64 64"><title>icon-bag-minimal</title><path stroke="null" fill-opacity="null" stroke-opacity="null" fill="null" d="M11.375 17.863h41.25v36.75h-41.25z"/><path stroke="null" d="M22.25 18c0-7.105 4.35-9 9.75-9s9.75 1.895 9.75 9"/></svg>
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            role="presentation"
+            class="icon icon-bag-minimal"
+            viewBox="0 0 64 64"
+          >
+            <title>icon-bag-minimal</title><path stroke="null" fill-opacity="null" stroke-opacity="null" fill="null" d="M11.375 17.863h41.25v36.75h-41.25z"/><path stroke="null" d="M22.25 18c0-7.105 4.35-9 9.75-9s9.75 1.895 9.75 9"/>
+          </svg>
         {%- else -%}
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16.9844 7.875V7.35938C16.9834 6.0591 16.4748 4.81058 15.5671 3.87962C14.6593 2.94867 13.424 2.40881 12.1242 2.375H11.8758C10.576 2.40881 9.34069 2.94867 8.43293 3.87962C7.52516 4.81058 7.01664 6.0591 7.01562 7.35938V7.875H3.23438C3.18879 7.875 3.14507 7.89311 3.11284 7.92534C3.08061 7.95757 3.0625 8.00129 3.0625 8.04688V20.9375C3.0625 21.1198 3.13493 21.2947 3.26386 21.4236C3.3928 21.5526 3.56766 21.625 3.75 21.625H20.25C20.4323 21.625 20.6072 21.5526 20.7361 21.4236C20.8651 21.2947 20.9375 21.1198 20.9375 20.9375V8.04688C20.9375 8.00129 20.9194 7.95757 20.8872 7.92534C20.8549 7.89311 20.8112 7.875 20.7656 7.875H16.9844ZM15.2656 7.875H8.73438V7.40234C8.73438 5.60453 10.17 4.11266 11.9678 4.09375C12.3992 4.08995 12.8271 4.17159 13.2268 4.33396C13.6266 4.49633 13.9902 4.73621 14.2968 5.03979C14.6033 5.34336 14.8468 5.70462 15.0131 6.10273C15.1794 6.50084 15.2652 6.92793 15.2656 7.35938V7.875Z" fill="#101820"/>
           </svg>
         {%- endif -%}
         <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
-        <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %} visually-hidden">{{ cart.item_count }}</span>
+        <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %} visually-hidden">
+          {{- cart.item_count -}}
+        </span>
       </span>
     </a>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const searchIcon = document.querySelector('.js-search-header');
+
+    console.log('SB search icon:', searchIcon);
+
+    searchIcon.addEventListener('click', function () {
+      console.log('SB search icon clicked');
+      const searchResults = document.querySelector('#predictive-search.search__results');
+      if (!searchResults.querySelector('.default__results')) {
+        searchResults.insertAdjacentHTML(
+          'beforeend',
+          `
+            <div class="default__results predictive-search-results">
+              <div class="results__group-1">
+                <div class="results results--queries"></div>
+                <h3 class="h4" id="predictive-search-suggestions">Suggestions</h3>
+                <ul role="listbox">
+                  <li role="option"><a href="/search?q=original">Original</a></li>
+                  <li role="option"><a href="/search?q=best-sellers">Best Sellers</a></li>
+                  <li role="option"><a href="/search?q=men">Men</a></li>
+                  <li role="option"><a href="/search?q=women">Women</a></li>
+                </ul>
+              </div>
+            </div>
+          `
+        );
+      }
+    });
+  });
+</script>
