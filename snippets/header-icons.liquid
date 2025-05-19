@@ -84,8 +84,6 @@
   document.addEventListener('DOMContentLoaded', function () {
     const searchIcon = document.querySelector('.js-search-header');
 
-    console.log('SB search icon:', searchIcon);
-
     searchIcon.addEventListener('click', function () {
       console.log('SB search icon clicked');
       const searchResults = document.querySelector('#predictive-search.search__results');
@@ -98,10 +96,11 @@
                 <div class="results results--queries"></div>
                 <h3 class="h4" id="predictive-search-suggestions">Suggestions</h3>
                 <ul role="listbox">
-                  <li role="option"><a href="/search?q=original">Original</a></li>
-                  <li role="option"><a href="/search?q=best-sellers">Best Sellers</a></li>
-                  <li role="option"><a href="/search?q=men">Men</a></li>
-                  <li role="option"><a href="/search?q=women">Women</a></li>
+                  <li role="option"><a href="/search?q=sample+kit">Sample Kit</a></li>
+                  <li role="option"><a href="/search?q=roll-on+oils">Roll-On Oils</a></li>
+                  <li role="option"><a href="/search?q=body+oils+%26+lotions">Body Oils & Lotions</a></li>
+                  <li role="option"><a href="/search?q=body+wash">Body Wash</a></li>
+                  <li role="option"><a href="/search?q=sets+%26+gifts">Sets & Gifts</a></li>
                 </ul>
               </div>
             </div>
