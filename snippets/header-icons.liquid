@@ -85,7 +85,6 @@
     const searchIcon = document.querySelector('.js-search-header');
 
     searchIcon.addEventListener('click', function () {
-      console.log('SB search icon clicked');
       const searchResults = document.querySelector('#predictive-search.search__results');
       if (!searchResults.querySelector('.default__results')) {
         searchResults.insertAdjacentHTML(
