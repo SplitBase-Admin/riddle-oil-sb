@@ -242,7 +242,7 @@
   line-height: 140%;
 }
 
-.product-single__form .rc_widget__option--subsave:after {
+/* .product-single__form .rc_widget__option--subsave:after {
   content: 'Best Value';
   position: absolute;
   color: #101820;
@@ -256,7 +256,7 @@
   padding: 2px 12px;
   right: 32px;
   top: -13px;
-}
+} */
 
 .product-single__form .rc-template__legacy-radio {
   display: flex;
