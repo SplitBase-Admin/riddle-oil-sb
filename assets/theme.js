@@ -4120,7 +4120,7 @@ theme.recentlyViewed = {
     }
   
     close() {
-      this.predictiveSearchResults.style.display = 'none';
+      // this.predictiveSearchResults.style.display = 'none';
       this.predictiveSearchResults.innerHTML = '';
       this.classList.remove('is-active');
       document.body.classList.remove('predictive-overflow-hidden');
