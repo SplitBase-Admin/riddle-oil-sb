@@ -637,6 +637,12 @@
         "default": false
       },
       {
+        "type": "checkbox",
+        "id": "collection_product_hover_image",
+        "label": "Hover to reveal second image for collection pages",
+        "default": false
+      },
+      {
         "type": "header",
         "content": "t:settings_schema.product_tiles.settings.header_color_swatches"
       },

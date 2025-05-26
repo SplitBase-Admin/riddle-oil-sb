@@ -183,25 +183,29 @@
           </div>
         {%- endif -%} {% endcomment %}
 
-        {%- for media in product.images -%}
-          {% if forloop.index == 3 %}
-            {% assign second_image = media %}
-          {% endif %} 
-        {%- endfor -%}
+        {%- assign hover_enabled = false -%}
+        {%- if template.name == "collection" and settings.collection_product_hover_image -%}
+          {%- assign hover_enabled = true -%}
+        {%- elsif settings.product_hover_image -%}
+          {%- assign hover_enabled = true -%}
+        {%- endif -%}
         
-        <div class="grid-product__secondary-image small--hide hidden">
-          {%- capture image_classes -%}
-            image-style--{{ image_style }}
-          {%- endcapture -%}
-          {%- render 'image-element',
-            img: second_image,
-            classes: image_classes,
-            sizes: sizes,
-            sizeVariable: sizeVariable,
-            fallback: fallback,
-            widths: '360, 540, 720, 1000',
-          -%}
-        </div> 
+        {%- if hover_enabled and product.media.size > 1 -%}
+          {%- assign second_image = product.media[1].preview_image -%}
+          <div class="grid-product__secondary-image small--hide{% if template.name == 'collection' %} A-B-image-hover{% endif %}">
+            {%- capture image_classes -%}
+              image-style--{{ image_style }}
+            {%- endcapture -%}
+            {%- render 'image-element',
+              img: second_image,
+              classes: image_classes,
+              sizes: sizes,
+              sizeVariable: sizeVariable,
+              fallback: fallback,
+              widths: '360, 540, 720, 1000',
+            -%}
+          </div>
+        {%- endif -%}
 
         {%- if settings.enable_swatches -%}
           {%- assign swatch_trigger = 'products.general.color_swatch_trigger' | t | downcase -%}

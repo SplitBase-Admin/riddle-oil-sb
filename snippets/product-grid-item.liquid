@@ -117,71 +117,75 @@
 
       <div class="grid__item-image-wrapper">
         <div class="grid-product__image-mask">
-          {% capture imageInner %}
-        {%- if fixed_aspect_ratio -%}
-          <div
-            class="grid__image-ratio grid__image-ratio--{% if image_style == 'circle' %}square{% else %}{{ settings.product_grid_image_size }}{% endif %}">
-            {%- capture image_classes -%}
-              {% unless settings.product_grid_image_fill %} grid__image-contain{% endunless %} image-style--{{ image_style }}
-            {%- endcapture -%}
-            {%- if preview_image != blank -%}
-              {%- render 'image-element',
-                img: preview_image,
-                classes: image_classes,
-                sizes: sizes,
-                sizeVariable: sizeVariable,
-                fallback: fallback,
-                widths: '360, 540, 720, 900, 1080',
-              -%}
-            {%- else -%}
-              {%- capture placeholder -%}product-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
-              <div class="product-image--placeholder">{{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}</div>
-            {%- endif -%}
-          </div>
-        {%- else -%}
-          <div class="image-wrap"
-            {% if preview_image != blank %}
-              style="height: 0; padding-bottom: {{ 100 | divided_by: preview_image.aspect_ratio }}%;"
-            {% endif %}
-          >
-            {%- if preview_image != blank -%}
+        {% capture imageInner %}
+          {%- if fixed_aspect_ratio -%}
+            <div
+              class="grid__image-ratio grid__image-ratio--{% if image_style == 'circle' %}square{% else %}{{ settings.product_grid_image_size }}{% endif %}">
               {%- capture image_classes -%}
-                grid-product__image image-style--{{ image_style }}
+                {% unless settings.product_grid_image_fill %} grid__image-contain{% endunless %} image-style--{{ image_style }}
               {%- endcapture -%}
-              {%- render 'image-element',
-                img: preview_image,
-                classes: image_classes,
-                sizes: sizes,
-                sizeVariable: sizeVariable,
-                fallback: fallback,
-                widths: '360, 540, 720, 900, 1080',
-              -%}
-            {%- else -%}
-              {%- capture placeholder -%}product-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
-              <div class="product-image--placeholder">{{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}</div>
-            {%- endif -%}
-          </div>
-        {%- endif -%}
+              {%- if preview_image != blank -%}
+                {%- render 'image-element',
+                  img: preview_image,
+                  classes: image_classes,
+                  sizes: sizes,
+                  sizeVariable: sizeVariable,
+                  fallback: fallback,
+                  widths: '360, 540, 720, 900, 1080',
+                -%}
+              {%- else -%}
+                {%- capture placeholder -%}product-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
+                <div class="product-image--placeholder">{{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}</div>
+              {%- endif -%}
+            </div>
+          {%- else -%}
+            <div class="image-wrap"
+              {% if preview_image != blank %}
+                style="height: 0; padding-bottom: {{ 100 | divided_by: preview_image.aspect_ratio }}%;"
+              {% endif %}
+            >
+              {%- if preview_image != blank -%}
+                {%- capture image_classes -%}
+                  grid-product__image image-style--{{ image_style }}
+                {%- endcapture -%}
+                {%- render 'image-element',
+                  img: preview_image,
+                  classes: image_classes,
+                  sizes: sizes,
+                  sizeVariable: sizeVariable,
+                  fallback: fallback,
+                  widths: '360, 540, 720, 900, 1080',
+                -%}
+              {%- else -%}
+                {%- capture placeholder -%}product-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
+                <div class="product-image--placeholder">{{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}</div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
 
-          {%- for media in product.images -%}
-            {% if forloop.index == 3 %}
-              {% assign second_image = media %}
-            {% endif %} 
-          {%- endfor -%}
-          
-          <div class="grid-product__secondary-image small--hide hidden">
-            {%- capture image_classes -%}
-              image-style--{{ image_style }}
-            {%- endcapture -%}
-            {%- render 'image-element',
-              img: second_image,
-              classes: image_classes,
-              sizes: sizes,
-              sizeVariable: sizeVariable,
-              fallback: fallback,
-              widths: '360, 540, 720, 1000',
-            -%}
-          </div> 
+          {%- assign hover_enabled = false -%}
+            {%- if template.name == "collection" and settings.collection_product_hover_image -%}
+              {%- assign hover_enabled = true -%}
+            {%- elsif settings.product_hover_image -%}
+              {%- assign hover_enabled = true -%}
+            {%- endif -%}
+            
+            {%- if hover_enabled and product.media.size > 1 -%}
+              {%- assign second_image = product.media[1].preview_image -%}
+              <div class="grid-product__secondary-image small--hide{% if template.name == 'collection' %} A-B-image-hover{% endif %}">
+                {%- capture image_classes -%}
+                  image-style--{{ image_style }}
+                {%- endcapture -%}
+                {%- render 'image-element',
+                  img: second_image,
+                  classes: image_classes,
+                  sizes: sizes,
+                  sizeVariable: sizeVariable,
+                  fallback: fallback,
+                  widths: '360, 540, 720, 1000',
+                -%}
+              </div>
+            {%- endif -%}
 
         {%- if settings.enable_swatches -%}
           {%- assign swatch_trigger = 'products.general.color_swatch_trigger' | t | downcase -%}
