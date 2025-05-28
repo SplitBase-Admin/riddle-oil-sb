@@ -90,22 +90,23 @@
         searchResults.insertAdjacentHTML(
           'beforeend',
           `
-            <div class="default__results predictive-search-results">
-              <div class="results__group-1">
-                <div class="results results--queries"></div>
-                <h3 class="h4" id="predictive-search-suggestions">Suggestions</h3>
-                <ul role="listbox">
-                  <li role="option"><a href="/products/the-sample-kit-nude-beach">Sample Kit</a></li>
-                  <li role="option"><a href="/collections/fragrance-oils">Roll-On Oils</a></li>
-                  <li role="option"><a href="/collections/body-oils-and-lotions">Body Oils & Lotions</a></li>
-                  <li role="option"><a href="/products/fraiche-shower-oil-wash">Body Wash</a></li>
-                  <li role="option"><a href="/collections/sample-kits">Sets & Gifts</a></li>
-                </ul>
+              <div class="default__results predictive-search-results">
+                <div class="results__group-1">
+                  <div class="results results--queries"></div>
+                  <h3 class="h4" id="predictive-search-suggestions">Suggestions</h3>
+                  <ul role="listbox">
+                    <a href="/products/the-sample-kit-nude-beach"><li role="option">Sample Kit</li></a>
+                    <a href="/collections/fragrance-oils"><li role="option">Roll-On Oils</li></a>
+                    <a href="/collections/body-oils-and-lotions"><li role="option">Body Oils & Lotions</li></a>
+                    <a href="/products/fraiche-shower-oil-wash"><li role="option">Body Wash</li></a>
+                    <a href="/collections/sample-kits"><li role="option">Sets & Gifts</li></a>
+                  </ul>
+                </div>
               </div>
-            </div>
-          `
+            `
         );
       }
     });
   });
 </script>
+
