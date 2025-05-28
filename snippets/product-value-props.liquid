@@ -1,0 +1,23 @@
+<div class="value-props-block">
+  {% if product.metafields.custom.value_props.value != blank and block.settings.hide_metafield_values == false %}
+    {% for valueProps in product.metafields.custom.value_props.value %}
+      <div class="value-prop-item">
+        <div class="value-prop-image">{{ valueProps.value_prop_image | image_url: width: 32, height: 32 | image_tag  }}</div>
+        <div class="value-prop-title">{{ valueProps.value_prop_title }}</div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="value-prop-item">
+      {% if block.settings.value_prop_image_1 != blank %}<div class="value-prop-image">{{ block.settings.value_prop_image_1 | image_url: width: 32, height: 32 | image_tag  }}</div>{% endif %}
+      <div class="value-prop-title">{{ block.settings.value_prop_title_1 }}</div>
+    </div>
+    <div class="value-prop-item">
+      {% if block.settings.value_prop_image_2 != blank %}<div class="value-prop-image">{{ block.settings.value_prop_image_2 | image_url: width: 32, height: 32 | image_tag  }}</div>{% endif %}
+      <div class="value-prop-title">{{ block.settings.value_prop_title_2 }}</div>
+    </div>
+    <div class="value-prop-item">
+      {% if block.settings.value_prop_image_3 != blank %}<div class="value-prop-image">{{ block.settings.value_prop_image_3 | image_url: width: 32, height: 32 | image_tag  }}</div>{% endif %}
+      <div class="value-prop-title">{{ block.settings.value_prop_title_3 }}</div>
+    </div>
+  {% endif %}
+</div>

@@ -32,6 +32,21 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "value_props_hover_JLjP3G": {
+          "type": "value-props-hover",
+          "settings": {
+            "hide_metafield_values": false,
+            "value_prop_image_1": "shopify://shop_images/Try_All.svg",
+            "value_prop_title_1": "Try All",
+            "value_prop_hover_text_1": "Experience every scent before committing.",
+            "value_prop_image_2": "shopify://shop_images/Fan_Favorite.svg",
+            "value_prop_title_2": "Fan Favorite",
+            "value_prop_hover_text_2": "Loved by thousands.",
+            "value_prop_image_3": "shopify://shop_images/Gift-Ready.svg",
+            "value_prop_title_3": "Gift-Ready",
+            "value_prop_hover_text_3": "Luxe presentation, perfect for giving."
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -106,6 +121,7 @@
         "size_variant_MqrXeB",
         "variant_picker",
         "quantity_selector_Vn8NJM",
+        "value_props_hover_JLjP3G",
         "buy_buttons",
         "value_props_zCVhfR",
         "tab_3wPAx4",

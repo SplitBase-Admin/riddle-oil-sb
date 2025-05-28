@@ -513,43 +513,9 @@
                       {%- endif -%}
                     </div>
                   {%- when 'value-props' -%}
-                    <div class="value-props-block">
-                      {% if product.metafields.custom.value_props.value != blank %}
-                        {% for valueProps in product.metafields.custom.value_props.value %}
-                          <div class="value-prop-item">
-                            <div class="value-prop-image">
-                              {{ valueProps.value_prop_image | image_url: width: 32, height: 32 | image_tag }}
-                            </div>
-                            <div class="value-prop-title">{{ valueProps.value_prop_title }}</div>
-                          </div>
-                        {% endfor %}
-                      {% else %}
-                        <div class="value-prop-item">
-                          {% if block.settings.value_prop_image_1 != blank %}
-                            <div class="value-prop-image">
-                              {{ block.settings.value_prop_image_1 | image_url: width: 32, height: 32 | image_tag }}
-                            </div>
-                          {% endif %}
-                          <div class="value-prop-title">{{ block.settings.value_prop_title_1 }}</div>
-                        </div>
-                        <div class="value-prop-item">
-                          {% if block.settings.value_prop_image_2 != blank %}
-                            <div class="value-prop-image">
-                              {{ block.settings.value_prop_image_2 | image_url: width: 32, height: 32 | image_tag }}
-                            </div>
-                          {% endif %}
-                          <div class="value-prop-title">{{ block.settings.value_prop_title_2 }}</div>
-                        </div>
-                        <div class="value-prop-item">
-                          {% if block.settings.value_prop_image_3 != blank %}
-                            <div class="value-prop-image">
-                              {{ block.settings.value_prop_image_3 | image_url: width: 32, height: 32 | image_tag }}
-                            </div>
-                          {% endif %}
-                          <div class="value-prop-title">{{ block.settings.value_prop_title_3 }}</div>
-                        </div>
-                      {% endif %}
-                    </div>
+                    {% render 'product-value-props', block: block %}
+                  {%- when 'value-props-hover' -%}
+                    {% render 'product-value-props-with-hover', block: block %}
                   {%- when 'sales_point' -%}
                     {%- unless block.settings.text == blank -%}
                       <div class="product-block product-block--sales-point" {{ block.shopify_attributes }}>

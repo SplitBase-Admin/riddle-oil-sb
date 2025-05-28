@@ -1429,4 +1429,78 @@ body.predictive-overflow-hidden .drawer {
   display: none;
 }
 
+.toogle__switch {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 16px;
+  margin: 0;
+  flex: none;
+}
+
+.toogle__switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toogle__switch .toggle__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: .4s;
+  transition: .4s;
+  background: #F2EADF;
+  border: 1px solid #101820;
+}
+
+.gift__box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #101820;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.toogle__switch .toggle__slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 1px !important;
+  background-color: #101820;
+  -webkit-transition: .4s;
+  transition: .4s;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.toggle-active .toogle__switch .toggle__slider:before {
+  left: 3px !important;
+}
+
+.toogle__switch input:checked + .toggle__slider:before {
+  -webkit-transform: translateX(10px) translateY(-50%);
+  -ms-transform: translateX(10px) translateY(-50%);
+  transform: translateX(10px) translateY(-50%);
+}
+
+.toogle__switch * {
+  display: inline-block !important;
+}
+
+.toogle__switch .toggle__slider.round {
+  border-radius: 34px;
+}
+
+.toogle__switch .toggle__slider.round:before {
+  border-radius: 50%;
+}
 

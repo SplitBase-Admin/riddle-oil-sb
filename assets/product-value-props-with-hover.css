@@ -1,0 +1,168 @@
+.value-props-with-hover .value-prop-title {
+  color: #101820;
+  font-family: var(--body-font);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.value-hover-text {
+  border-radius: 2px;
+  background: #F2EADF;
+  padding: 10px;
+  color: #101820;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+  position: absolute;
+  display: none;
+  min-width: 199px;
+  left: -42px;
+  top: 45px;
+  text-align: center;
+  z-index: 1;
+}
+
+.value-props-with-hover .value-prop-item {
+  position: relative;
+  margin: 0 16px;
+}
+
+.value-hover-text {
+  display: none;
+}
+.value-prop-item.active .value-hover-text {
+  display: block;
+}
+
+.value-hover-text:before {
+  width: 14px;
+  height: 14px;
+  aspect-ratio: 1/1;
+  content: '';
+  display: block;
+  background: #F2EADF;
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.value-hover-text-close {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  height: 14px;
+}
+
+.value-props-with-hover.value-props-block {
+  gap: 0;
+  margin: 0 0 -16px;
+}
+
+.value-prop-item-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.value-props-with-hover .value-prop-image {
+  width: 32px;
+  height: 32px;
+}
+
+.value-props-with-hover .value-prop-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.value-hover-text-close.touch-only {
+  display: none;
+}
+
+.value-props-with-hover .value-prop-item.active .value-hover-text {
+  display: block;
+}
+
+@media (hover: hover) {
+
+  .value-props-with-hover .value-prop-item-inner:hover + .value-hover-text {
+    display: block;
+  }
+  
+}
+
+@media (pointer: coarse) {
+  
+  .value-hover-text-close.touch-only {
+    display: block;
+  }
+
+  .value-hover-text {
+    padding: 8px 16px;
+  }
+  
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+  .value-props-with-hover.value-props-block {
+    margin: 0 -5px;
+  }
+  
+  .value-props-with-hover .value-prop-item {
+    margin: 0 5px;
+  }
+  
+}
+
+@media (max-width: 1199px) {
+
+  .value-props-with-hover .value-prop-title {
+    font-size: 14px;
+  }
+  
+}
+
+@media (max-width: 768px) {
+
+  .value-props-with-hover.value-props-block {
+    margin: 0 -11.5px;
+  }
+
+  .value-props-with-hover .value-prop-item {
+    margin: 0 11.5px;
+  }
+
+  .value-hover-text {
+    left: 0;
+    top: 30px;
+    min-width: 184px;
+  }
+  
+  .value-props-with-hover .value-prop-image {
+    width: 24px;
+    height: 24px;
+  }
+
+  .value-prop-item:last-child .value-hover-text {
+    right: 0;
+    left: initial;
+  }
+
+  .value-hover-text:before {
+    left: 44px;
+    transform: translate(0) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    top: -6px;
+  }
+
+  .value-prop-item:last-child .value-hover-text:before {
+    left: initial;
+    right: 23px;
+  }
+  
+}

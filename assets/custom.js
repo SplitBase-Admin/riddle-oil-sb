@@ -551,6 +551,49 @@ document.addEventListener("DOMContentLoaded", (event) => {
   } catch (error) {
     console.error("An error occurred:", error.message);
   }
+
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    const propItems = document.querySelectorAll('.value-prop-item');
+  
+    console.log(propItems);
+  
+    propItems.forEach(item => {
+      const inner = item.querySelector('.value-prop-item-inner');
+      const closeBtn = item.querySelector('.value-hover-text-close');
+  
+      inner?.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const isActive = item.classList.contains('active');
+        hideAllHoverTexts();
+        if (!isActive) {
+          hideAllHoverTexts();
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+  
+      if (closeBtn) {
+        closeBtn?.addEventListener('click', function (e) {
+          e.stopPropagation();
+          item.classList.remove('active');
+        });
+      }
+    });
+  
+    function hideAllHoverTexts() {
+      propItems.forEach(item => item.classList.remove('active'));
+    }
+  }
+
+  document.addEventListener('click', function (e) {
+    const isInsideHoverText = e.target.closest('.value-hover-text');
+    const isInsideValuePropItem = e.target.closest('.value-prop-item');
+
+    if (!isInsideHoverText && !isInsideValuePropItem) {
+      document.querySelector('.value-prop-item.active')?.classList.remove('active');
+    }
+  });
 });
 
 /* Load more -- Start */
@@ -768,3 +811,118 @@ document.querySelectorAll('.link-tabs-items a[href^="#"]').forEach(link => {
   }
 });
 
+/* Upgrade/Downgrade to/from Gift Variant -- Start */
+
+  window.handleGiftBoxToggle = function(event, item, currentItemKey, newVariantId) {
+    event.target.disabled = true;
+    const isChecked = event.target.checked;
+  
+    // Show loading UI if Rebuy Smart Cart is present
+    if (window.rebuy && window.rebuy.smartCart) {
+      window.rebuy.smartCart.ui.showLoading();
+    }
+  
+    // Fetch current cart data
+    fetch('/cart.json').then(response => {
+      if (!response.ok) {
+        throw new Error(`Failed to fetch cart. Status: ${response.status}`);
+      }
+      return response.json();
+    }).then(cartData => {
+      // Find current cart item by its key
+      const currentItem = cartData.items.find(cartItem => cartItem.key === currentItemKey);
+      if (!currentItem) {
+        throw new Error(`Item with key ${currentItemKey} not found in cart`);
+      }
+  
+      const quantity = currentItem.quantity;
+      const sellingPlanId = currentItem.selling_plan_allocation?.selling_plan.id;
+  
+      // Remove the current item from cart
+      return fetch('/cart/change.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          id: currentItemKey,
+          quantity: 0
+        })
+      }).then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to remove item. Status: ${response.status}`);
+        }
+        return response.json();
+      }).then(() => {
+        if (!newVariantId) {
+          throw new Error('New variant ID is missing or invalid');
+        }
+  
+        // Prepare payload for new variant
+        const newItemData = {
+          items: [{
+            id: newVariantId,
+            quantity: quantity
+          }]
+        };
+  
+        // Preserve subscription if applicable
+        if (sellingPlanId) {
+          newItemData.items[0].selling_plan = sellingPlanId;
+        }
+  
+        // Add the new item to cart
+        return fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(newItemData)
+        });
+      }).then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to add new item. Status: ${response.status}`);
+        }
+        return response.json();
+      });
+    }).then(() => {
+      // Refresh cart after successful update
+      if (window.rebuy && window.rebuy.smartCart) {
+        window.rebuy.smartCart.refresh();
+      }
+      // console.log(`Gift box option ${isChecked ? 'added' : 'removed'} successfully`);
+    }).catch(error => {
+      // On error, revert checkbox state and show error
+      event.target.checked = !isChecked;
+      if (window.rebuy && window.rebuy.smartCart) {
+        window.rebuy.smartCart.ui.showError('Failed to update gift box option. Please try again.');
+      }
+    }).finally(() => {
+      // Always re-enable toggle and hide loader
+      event.target.disabled = false;
+      if (window.rebuy && window.rebuy.smartCart) {
+        window.rebuy.smartCart.ui.hideLoading();
+      }
+    });
+  };
+  
+  // Check if variant title contains 'gift box'
+  window.isGiftBoxVariant = function(item) {
+    return item.title.toLowerCase().includes('gift box');
+  };
+  
+  // Get the ID of the gift box variant from product
+  window.getGiftBoxVariantId = function(item) {
+    if (!item || !item.product || !item.product.variants) return null;
+    const variant = item.product.variants.find(v => v.title.toLowerCase().includes('gift box'));
+    return variant ? variant.id : null;
+  };
+  
+  // Get the ID of the non-gift box (regular) variant
+  window.getRegularVariantId = function(item) {
+    if (!item || !item.product || !item.product.variants) return null;
+    const variant = item.product.variants.find(v => !v.title.toLowerCase().includes('gift box'));
+    return variant ? variant.id : null;
+  };
+
+/* Upgrade/Downgrade to/from Gift Variant -- End */

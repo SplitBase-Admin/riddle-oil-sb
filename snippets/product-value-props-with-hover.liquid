@@ -1,0 +1,63 @@
+{{ 'product-value-props-with-hover.css' | asset_url | stylesheet_tag }}
+
+{% assign value_props = product.metafields.custom.value_props_with_hover.value %}
+
+{% if value_props %}
+  <div class="value-props-block value-props-with-hover product-block">
+    {% assign value_props = product.metafields.custom.value_props_with_hover.value %}
+  
+  
+    {% if block.settings.hide_metafield_values == false %}
+      {% for item in value_props %}
+        <div class="value-prop-item">
+          <div class="value-prop-item-inner">
+            {% if item.value_prop_image != blank %}
+              <div class="value-prop-image">
+                <img src="{{ item.value_prop_image | image_url: width: 32, height: 32 }}" alt="{{ item.value_prop_title | escape }}" width="32" height="32">
+              </div>
+            {% endif %}
+            {% if item.value_prop_title != blank %}
+              <div class="value-prop-title">{{ item.value_prop_title }}</div>
+            {% endif %}
+          </div>
+          {% if item.value_prop_hover_text != blank %}
+            <div class="value-hover-text">
+              {{ item.value_prop_hover_text }}
+              <div class="value-hover-text-close touch-only">{% render 'value-props-icon-close' %}</div>
+            </div>
+            
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% else %}
+      {% for i in (1..3) %}
+        {% assign img_key = "value_prop_image_" | append: i %}
+        {% assign title_key = "value_prop_title_" | append: i %}
+        {% assign hover_key = "value_prop_hover_text_" | append: i %}
+  
+        {% assign img = block.settings[img_key] %}
+        {% assign title = block.settings[title_key] %}
+        {% assign hover = block.settings[hover_key] %}
+  
+        <div class="value-prop-item">
+          <div class="value-prop-item-inner">
+            {% if img != blank %}
+              <div class="value-prop-image">
+                <img src="{{ img | image_url: width: 32, height: 32 }}" alt="{{ title | escape }}" >
+              </div>
+            {% endif %}
+            {% if title != blank %}
+              <div class="value-prop-title">{{ title }}</div>
+            {% endif %}
+          </div>
+          {% if hover != blank %}
+            <div class="value-hover-text">
+              {{ hover }}
+              <div class="value-hover-text-close touch-only">{% render 'value-props-icon-close' %}</div>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% endif %}  
+  </div>
+{% endif %}  

@@ -385,6 +385,22 @@
                   </optgroup>
                 </select>
               </div>
+
+              <div class="gift__box "  :class="{ 'toggle-active': isGiftBoxVariant(item) }" v-if="item.product.variants.find(variant => variant.title.includes('gift box'))">
+                <div class="giftBox_image"><img width="31" src="https://cdn.shopify.com/s/files/1/0892/0284/files/v1.png?v=1745073781"></div>
+                <span>Add Gift Box</span> 
+                <span>+$7.50</span>
+                <label class="toogle__switch" data-gift-box-switch>
+                 <input type="checkbox" data-gift-box-input 
+                   v-bind:checked="window.isGiftBoxVariant(item)"
+                   v-bind:data-current-key="item.key" 
+                   v-bind:data-giftProd-variant="window.getGiftBoxVariantId(item)"
+                   v-bind:data-regular-variant="window.getRegularVariantId(item)"
+                   @change="window.handleGiftBoxToggle($event, item, item.key, $event.target.checked ? window.getGiftBoxVariantId(item) : window.getRegularVariantId(item))">
+                  <span class="round toggle__slider"></span>
+                </label>
+              </div>
+  
             </div>
 
             <div
