@@ -84,6 +84,20 @@
             {%- endif -%}
           </div>
         {% endif %}
+
+        <div class="active-members-wrapper">
+          {% if section.settings.active_members_image != blank %}
+            <div class="active-members-image">
+              {{ section.settings.active_members_image | image_url: width: auto, height: auto | image_tag: alt: section.settings.active_members_image.alt | default: 'Active Members', loading: 'lazy' }}
+            </div>
+          {% endif %}
+          {% if section.settings.active_members_text != blank %}
+            <div class="active-members-text">
+              {{ section.settings.active_members_text }}
+            </div>
+          {% endif %}
+        </div>
+                
       </div>
     </div> 
     <div class="hero-banner-image">
@@ -168,6 +182,20 @@
           { "label": "Primary", "value": "btn--primary" },
           { "label": "Secondary", "value": "btn--secondary" }
         ]
+      },
+      {
+        "type": "header",
+        "content": "Active Members"
+      },
+      {
+        "type":"image_picker",
+        "id":"active_members_image",
+        "label":"Active Members image"
+      },
+      {
+        "type":"richtext",
+        "id":"active_members_text",
+        "label":"Active Members Text"
       },
       {
         "type": "header",

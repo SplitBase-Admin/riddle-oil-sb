@@ -103,6 +103,27 @@
   color: inherit;
 }
 
+.active-members-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.active-members-text,
+.active-members-text * {
+  color: #000;
+  font-size: 16px !important;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 140%;
+  text-transform: capitalize;
+}
+
+.active-members-text strong {
+  font-weight: 700;
+}
+
 @media screen and (min-width: 1400px) {
   
   .hero-banner-wrapper .hero-banner-text {

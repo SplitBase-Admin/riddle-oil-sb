@@ -926,3 +926,30 @@ document.querySelectorAll('.link-tabs-items a[href^="#"]').forEach(link => {
   };
 
 /* Upgrade/Downgrade to/from Gift Variant -- End */
+
+document.addEventListener('DOMContentLoaded', function () {
+  const secondaryATC = document.querySelector('.custom-secondary-product-button');
+  
+  if (secondaryATC) {
+    secondaryATC.addEventListener('click', function () {
+      const variantId = this.dataset.variantId;
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          id: variantId,
+          quantity: 1,
+        }),
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Added to cart:', data);
+      })
+      .catch((err) => console.error('Add to cart failed:', err));
+    });
+  }
+});

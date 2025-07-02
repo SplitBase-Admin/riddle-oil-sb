@@ -22,20 +22,10 @@
             "link_text": "",
             "link": ""
           }
-        },
-        "announcement_4A6KrW": {
-          "type": "announcement",
-          "disabled": true,
-          "settings": {
-            "text": "Hassle-free returns",
-            "link_text": "30-day postage paid returns",
-            "link": ""
-          }
         }
       },
       "block_order": [
-        "announcement-0",
-        "announcement_4A6KrW"
+        "announcement-0"
       ],
       "settings": {
         "announcement_compact": true
@@ -56,11 +46,12 @@
           "type": "megamenu-type-1",
           "settings": {
             "menu_title": "shop",
-            "image": "shopify://shop_images/DSC00007_2.png",
-            "title": "New to Riddle?",
-            "text": "Find your new signature scent.",
-            "button_text": "Try The Sample Kit",
-            "button_url": "shopify://products/the-sample-kit-nude-beach"
+            "image": "shopify://shop_images/Nude_Beach_Milky_Spray_Lotion_by_Riddle-_1_of_1.jpg",
+            "subtext": "LIMITED RUN SUMMER SCENT",
+            "title": "nude beach",
+            "text": "Summertime, Anytime.",
+            "button_text": "Nude Beach Collection",
+            "button_url": "shopify://collections/nude-beach-1"
           }
         },
         "megamenu_type_2_zWTUgp": {

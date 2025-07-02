@@ -310,6 +310,23 @@
     </div>
   </div>
 
+  {% assign secondary_product_obj = product.metafields.custom.secondary_product.value %}
+  {% assign secondary_product = all_products[secondary_product_obj.select_product] %}
+  
+  {% if secondary_product_obj %}
+    <div class="custom-secondary-product-container">
+      <div class="custom-secondary-product-button" data-variant-id="{{ secondary_product.selected_or_first_available_variant.id }}">
+        {{ secondary_product.featured_media | image_url: width: 25, height: 25 | image_tag }}
+        {{ secondary_product_obj.text_to_display | metafield_tag }}
+  
+        {% assign main_product_price = product.price %}
+        {% assign secondary_product_price = secondary_product.price %}
+        {% assign price_difference = secondary_product_price | minus: main_product_price %}
+        <p class="custom-extra-price">+{{ price_difference | money }}</p>
+      </div>
+    </div>
+  {% endif %}
+
   <div class="qty-cta-wrapper {% unless current_variant.available %} no__buttons {% endunless %}">
     {% if current_variant.available %}
       <div class="product__quantity">

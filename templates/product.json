@@ -59,7 +59,7 @@
           "type": "value-props",
           "settings": {
             "value_prop_image_1": "shopify://shop_images/Skin-Safe.svg",
-            "value_prop_title_1": "Skin-Safe",
+            "value_prop_title_1": "Non-Toxic",
             "value_prop_image_2": "shopify://shop_images/Vegan.svg",
             "value_prop_title_2": "Vegan",
             "value_prop_image_3": "shopify://shop_images/Long-Lasting.svg",
@@ -112,6 +112,7 @@
         },
         "additional_product_rq6gCj": {
           "type": "additional_product",
+          "disabled": true,
           "settings": {
             "product": "{{ product.metafields.custom.complementary_product.value }}"
           }
