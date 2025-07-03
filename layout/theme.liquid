@@ -150,6 +150,25 @@
     ></iframe
   ></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
+  <script>
+    function getDeviceType() {
+      const userAgent = navigator.userAgent.toLowerCase();
+      const isTablet =
+        /ipad|tablet|playbook|silk/.test(userAgent) ||
+        (navigator.maxTouchPoints > 1 &&
+        window.screen.width >= 768 &&
+        window.screen.width <= 1024);
+
+      const isMobile =
+        /mobile|iphone|ipod|android/.test(userAgent) &&
+        !isTablet;
+
+      if (isTablet) return 'tablet';
+      if (isMobile) return 'mobile';
+      return 'desktop';
+    }
+  </script>
   
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
