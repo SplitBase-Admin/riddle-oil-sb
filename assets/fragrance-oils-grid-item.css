@@ -7,7 +7,9 @@
 }
 
 @media (max-width: 767px) {
-    .template--fragrance-oils .collection-grid__wrapper .grid-product__meta {
-        padding: 8px 0 0;
-    }
+  
+  .template--fragrance-oils .collection-grid__wrapper .grid-product__meta {
+    padding: 8px 0;
+  }
+  
 }
