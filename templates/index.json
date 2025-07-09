@@ -76,6 +76,25 @@
         "padding-bottom": 20
       }
     },
+    "background_image_text_DyUdJp": {
+      "type": "background-image-text",
+      "disabled": true,
+      "name": "t:sections.background-image-text.presets.large_image_with_text_box.name",
+      "settings": {
+        "subtitle": "SALE EVENT | 7/3-7/5",
+        "title": "NUDE BEACH ON SALE!",
+        "text": "<p></p><p>TAKE 15% OFF ONE PRODUCT</p><p>TAKE 20% OFF TWO PRODUCTS</p><p>TAKE 25% OFF THREE PRODUCTS</p>",
+        "button_label": "NUDE BEACH COLLECTION",
+        "button_link": "shopify://collections/nude-beach-1",
+        "image": "shopify://shop_images/IMG_7515.jpg",
+        "layout": "left",
+        "height": 550,
+        "framed": false,
+        "parallax": true,
+        "parallax_direction": "top",
+        "lazyload_images": true
+      }
+    },
     "custom_featured_collection_B9jyU9": {
       "type": "custom-featured-collection",
       "settings": {
@@ -88,7 +107,7 @@
         "overlay_opacity": 21,
         "promo_image": "shopify://shop_images/GWP_Travel_Bag_2025_1x1_Carousel_5.png",
         "mobile_promo_image": "shopify://shop_images/GWP_Travel_Bag_2025_1x1_Carousel_5.png",
-        "promo_title": "free makeup bag at $150",
+        "promo_title": "",
         "button_label": "Try The Sample Kit",
         "button_link": "shopify://products/the-sample-kit-nude-beach",
         "button_style": "btn--secondary",
@@ -877,6 +896,7 @@
   "order": [
     "hero_banner_wE9YVM",
     "value_props_LHiHNa",
+    "background_image_text_DyUdJp",
     "custom_featured_collection_B9jyU9",
     "custom_featured_collection_2_bddpHn",
     "video_with_text_azpAdH",

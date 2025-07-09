@@ -22,10 +22,20 @@
             "link_text": "",
             "link": ""
           }
+        },
+        "announcement_mifzM9": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "Free Riddle Travel Bag with orders $150+",
+            "link_text": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "announcement-0"
+        "announcement-0",
+        "announcement_mifzM9"
       ],
       "settings": {
         "announcement_compact": true
