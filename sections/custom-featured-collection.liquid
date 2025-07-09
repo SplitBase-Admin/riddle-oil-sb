@@ -1,5 +1,5 @@
 {{ 'custom-featured-collection.css' | asset_url | stylesheet_tag: preload: true }}
-
+fdsaf
 {% liquid
   assign button_text = section.settings.button_label
   assign button_link = section.settings.button_link
@@ -15,7 +15,7 @@
     --color-text: {{ section.settings.text_color }};
     --color-button-text: {{ section.settings.button_text_color }};
     --color-button-bg: {{ section.settings.button_color }};
-    
+
     --PT: 80px;
     --PB: 75px;
 
@@ -24,9 +24,9 @@
     {% if section.settings.color_overlay_gradient != blank %}
       --overlay-background-gradient: {{ section.settings.color_overlay_gradient }};
     {% endif %}
-    
+
     --overlay-opacity: {{ overlay_opacity }};
-    
+
     @media screen and (max-width: 767px) {
       --PT: 40px;
       --PB: 40px;
@@ -38,15 +38,16 @@
   id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% else %}CollectionSection-{{ section.id }}{% endif %}"
   data-section-id="{{ section.id }}"
   data-section-type="collection-grid"
-  data-context="featured-collection" class="custom-featured-collection">
-
+  data-context="featured-collection"
+  class="custom-featured-collection"
+>
   <div class="custom-featured-collection-container page-width">
     {%- if section.settings.title != blank or section.settings.view_all -%}
       <div class="section-header{% if section.settings.view_all %}{% unless settings.type_headers_align_text %} section-header--with-link{% endunless %}{% endif %}">
         {% if section.settings.caption != blank %}
           <p class="sh2">{{ section.settings.caption }}</p>
         {% endif %}
-        
+
         <h2 class="section-heading">
           {{ section.settings.title }}
           <div class="custom-featured-slider-arrows">
@@ -60,11 +61,13 @@
         </h2>
       </div>
     {%- endif -%}
-    
+
     <div class="featured-collection-slider swiper">
       <div class="grid grid--uniform swiper-wrapper">
-  
-        {%- if section.settings.home_featured_products == blank or collections[section.settings.home_featured_products].empty? or collections[section.settings.home_featured_products].products_count == 0 -%}
+        {%- if section.settings.home_featured_products == blank
+          or collections[section.settings.home_featured_products].empty?
+          or collections[section.settings.home_featured_products].products_count == 0
+        -%}
           {%- unless emptyState -%}
             {%- assign emptyState = true -%}
           {%- endunless -%}
@@ -78,7 +81,7 @@
                       img: section.settings.promo_image,
                       img_width: 500,
                       loading: section.settings.lazyload_images,
-                      classes: classes,
+                      classes: classes
                     -%}
                   {%- endif -%}
                 </div>
@@ -89,7 +92,9 @@
                     <a href="{{ product.url | within: collection }}" class="grid-product__link">
                       <div class="grid-product__image-mask">
                         {%- capture current -%}{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
-                        <div class="image-wrap">{{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}</div>
+                        <div class="image-wrap">
+                          {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                        </div>
                       </div>
                       <div class="grid-product__meta">
                         <div class="grid-product__title">{{ 'home_page.onboarding.product_title' | t }}</div>
@@ -105,37 +110,41 @@
           <div class="swiper-slide hide-mobile promo-block grid__item grid-product">
             <div class="promo-block-inner">
               <a href="{{ button_link }}" class="promo-block--link"></a>
-              <div class="promo-block-overlay">
-              </div>
+              <div class="promo-block-overlay"></div>
               <div class="promo-block-image">
-              {%- if section.settings.promo_image != blank -%}
-                {% assign classes = 'promo-image' %}
-                {%- render 'image-element',
-                  img: section.settings.promo_image,
-                  img_width: 500,
-                  loading: section.settings.lazyload_images,
-                  classes: classes,
-                -%}
-              {%- else -%}
-                {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
-              {%- endif -%}
+                {%- if section.settings.promo_image != blank -%}
+                  {% assign classes = 'promo-image' %}
+                  {%- render 'image-element',
+                    img: section.settings.promo_image,
+                    img_width: 500,
+                    loading: section.settings.lazyload_images,
+                    classes: classes
+                  -%}
+                {%- else -%}
+                  {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                {%- endif -%}
               </div>
               <div class="promo-block-content">
                 {%- if section.settings.promo_title != blank -%}
                   <h5>{{ section.settings.promo_title }}</h5>
                 {%- endif -%}
-                <a href="{{ button_link }}" class="btn btn--solid-border {{ button_style }}" aria-label="{{ button_text }}">
+                <a
+                  href="{{ button_link }}"
+                  class="btn btn--solid-border {{ button_style }}"
+                  aria-label="{{ button_text }}"
+                >
                   <span>{{ button_text }}</span>
                   {% render 'button-arrow' %}
                 </a>
               </div>
             </div>
           </div>
+          {{ settings.quick_shop_enable }}
           {%- for product in collections[section.settings.home_featured_products].products limit: 10 -%}
             {%- render 'product-grid-item',
               product: product,
               collection: collection,
-              quick_shop_enable: settings.quick_shop_enable,
+              quick_shop_enable: true,
               fallback: fallback,
               classes: 'swiper-slide'
             -%}
@@ -147,8 +156,7 @@
   </div>
   <div class="promo-block-mobile hide-desktop">
     <div class="promo-block-inner">
-      <div class="promo-block-overlay">
-      </div>
+      <div class="promo-block-overlay"></div>
       <div class="promo-block-image">
         {%- if section.settings.mobile_promo_image != blank -%}
           {% assign classes = 'promo-image hide-desktop' %}
@@ -156,7 +164,7 @@
             img: section.settings.mobile_promo_image,
             img_width: 500,
             loading: section.settings.lazyload_images,
-            classes: classes,
+            classes: classes
           -%}
         {%- else -%}
           {% assign classes = 'promo-image hide-desktop' %}
@@ -164,8 +172,8 @@
             img: section.settings.promo_image,
             img_width: 500,
             loading: section.settings.lazyload_images,
-            classes: classes,
-          -%}                   
+            classes: classes
+          -%}
         {%- endif -%}
       </div>
       <div class="promo-block-content">
@@ -194,36 +202,36 @@
     },
     pagination: {
       el: '.swiper-pagination',
-      clickable: true
+      clickable: true,
     },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    breakpoints: {  
-      '768': {
+    breakpoints: {
+      768: {
         slidesPerView: 1.8,
         spaceBetween: 40,
-        spaceBetween: 32
+        spaceBetween: 32,
       },
-      '1024': {
+      1024: {
         slidesPerView: 2.5,
-        spaceBetween: 32
+        spaceBetween: 32,
       },
-      '1200': {
+      1200: {
         slidesPerView: 3.5,
-        spaceBetween: 32
+        spaceBetween: 32,
       },
-      '1921': {
+      1921: {
         slidesPerView: 4,
-        spaceBetween: 32
-      }
-    }
+        spaceBetween: 32,
+      },
+    },
   });
 
   // document.addEventListener("DOMContentLoaded", (event) => {
   //   initSwiper();
-  // });  
+  // });
 </script>
 
 {% schema %}

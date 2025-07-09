@@ -253,6 +253,7 @@
           <div class="custom-variant-selector-wrapper">
             {% for mf_prod in other_variants %}
               <button
+                data-product-handle="{{ mf_prod.handle }}"
                 type="button"
                 class="custom-variant-options {% if last_variant.id == mf_prod.id %} active {% endif %} {% unless mf_prod.available %} variant-out-of-stock{% endunless %}"
                 name="{{ product_group }}"

@@ -79,7 +79,7 @@
 {% assign updated_count = count | minus: total_products %}
 
 <div class="collection-grid__wrapper">
-  <div class="collection-filter {% if filter_layout == "custom-filter" %}custom-filter-enabled{% endif %}" >
+  <div class="collection-filter {% if filter_layout == "custom-filter" %}custom-filter-enabled{% endif %}">
     <div class="collection-filter__item collection-filter__item--drawer {{ filter_layout }}">
       {% if filter_layout == 'custom-filter' %}
         {% if current_filter_count > 0 %}
@@ -204,7 +204,7 @@
 
   <div
     id="product-grid"
-    sbkey= "sb-collection-grid"
+    sbkey="sb-collection-grid"
     class=" grid grid--item-{{ grid-item }} grid--uniform{% if mobile_flush_grid %} small--grid--flush{% endif %}"
     {% unless enable_collection_count %}
       data-scroll-to

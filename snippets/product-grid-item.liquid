@@ -48,13 +48,31 @@
   endif
 -%}
 
+test {{ quick_shop_enable }}
 <div
   class="{{ classes }} grid__item grid-product {{ gridView }} {% if quick_shop_enable %} grid-product__has-quick-shop{% endif %} {% if prod_hide %} hidden {% endif %}"
   data-aos="row-of-{{ per_row }}"
   data-product-handle="{{ product.handle }}"
   data-product-id="{{ product.id }}"
 >
-  <div data-url="{{ product.url }}" class="product__card--url" data-sku="{{ product.sku |  default: product.id }}" data-name="{{ product.title }}" data-price="{{ product.price | money_without_currency }}">
+  {% form 'product', product %}
+    <!-- form content -->
+    <select name="id">
+      {% for variant in product.variants %}
+        <option value="{{ variant.id }}">{{ variant.title }}</option>
+      {% endfor %}
+    </select>
+    <input type="text" name="quantity" min="1" value="1">
+    <input type="submit" value="Add to cart">
+  {% endform %}
+
+  <div
+    data-url="{{ product.url }}"
+    class="product__card--url"
+    data-sku="{{ product.sku |  default: product.id }}"
+    data-name="{{ product.title }}"
+    data-price="{{ product.price | money_without_currency }}"
+  >
     {%- if product.metafields.custom.product_label != blank -%}
       <span class="product--label {{ template.name }}">{{ product.metafields.custom.product_label }}</span>
     {%- endif -%}
@@ -117,7 +135,7 @@
 
       <div class="grid__item-image-wrapper">
         <div class="grid-product__image-mask">
-        {% capture imageInner %}
+          {% capture imageInner %}
           {%- if fixed_aspect_ratio -%}
             <div
               class="grid__image-ratio grid__image-ratio--{% if image_style == 'circle' %}square{% else %}{{ settings.product_grid_image_size }}{% endif %}">
@@ -505,7 +523,7 @@
                 display: none;
               }
             {%- endstyle -%}
-          {%- endif -%} 
+          {%- endif -%}
         {%- endif -%}
       {%- endfor -%}
     {%- endif -%}
