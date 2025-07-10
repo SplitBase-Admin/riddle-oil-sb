@@ -7,7 +7,34 @@
 {% endcomment %}
 
 {{ 'product-grid-item.css' | asset_url | stylesheet_tag: preload: true }}
+<style>
+  .sb_quick_add {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    opacity: 0;
+    display: none;
+  }
 
+  .sb_quick_add * {
+    display: none;
+  }
+
+  .sb_quick_add input[type='submit'] {
+    display: block;
+    width: 100%;
+  }
+
+  .grid__item:hover .sb_quick_add {
+    opacity: 1;
+  }
+
+  .sb_quick_add {
+    display: block;
+  }
+</style>
 {%- liquid
   unless per_row
     assign per_row = 4
@@ -54,7 +81,13 @@
   data-product-handle="{{ product.handle }}"
   data-product-id="{{ product.id }}"
 >
-  <div data-url="{{ product.url }}" class="product__card--url" data-sku="{{ product.sku |  default: product.id }}" data-name="{{ product.title }}" data-price="{{ product.price | money_without_currency }}">
+  <div
+    data-url="{{ product.url }}"
+    class="product__card--url"
+    data-sku="{{ product.sku |  default: product.id }}"
+    data-name="{{ product.title }}"
+    data-price="{{ product.price | money_without_currency }}"
+  >
     {%- if product.metafields.custom.product_label != blank -%}
       <span class="product--label {{ template.name }}">{{ product.metafields.custom.product_label }}</span>
     {%- endif -%}
@@ -117,7 +150,18 @@
 
       <div class="grid__item-image-wrapper">
         <div class="grid-product__image-mask">
-        {% capture imageInner %}
+          {% form 'product', product, class: 'sb_quick_add' %}
+            <!-- form content -->
+            <select name="id">
+              {% for variant in product.variants %}
+                <option value="{{ variant.id }}">{{ variant.title }}</option>
+              {% endfor %}
+            </select>
+            <input type="text" name="quantity" min="1" value="1">
+            <input class="btn btn--full" onclick="event.stopPropagation()" type="submit" value="Add to cart">
+          {% endform %}
+
+          {% capture imageInner %}
           {%- if fixed_aspect_ratio -%}
             <div
               class="grid__image-ratio grid__image-ratio--{% if image_style == 'circle' %}square{% else %}{{ settings.product_grid_image_size }}{% endif %}">
@@ -505,7 +549,7 @@
                 display: none;
               }
             {%- endstyle -%}
-          {%- endif -%} 
+          {%- endif -%}
         {%- endif -%}
       {%- endfor -%}
     {%- endif -%}
