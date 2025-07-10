@@ -10,7 +10,7 @@
     // Page has loaded and theme assets are ready
   });
 */
-console.log('===here');
+//console.log('===here');
 window.theme = window.theme || {};
 window.Shopify = window.Shopify || {};
 
@@ -2793,14 +2793,14 @@ theme.recentlyViewed = {
   })();
 
   theme.AjaxProduct = (function () {
-    console.log('=========here')
+    //console.log('=========here')
 
     var status = {
       loading: false
     };
 
     function ProductForm(form, submit, args) {
-      console.log('=========here')
+      //console.log('=========here')
       this.form = form;
       this.args = args;
 
