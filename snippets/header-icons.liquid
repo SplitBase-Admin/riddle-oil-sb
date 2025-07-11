@@ -1,6 +1,6 @@
 <div class="site-nav">
   <div class="site-nav__icons">
-    {%- if shop.customer_accounts_enabled -%}
+    {% comment %} {%- if shop.customer_accounts_enabled -%}
       <a class="site-nav__link site-nav__link--icon small--hide" href="{{ routes.account_url }}">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4 21V20C4 16.69 6.69 14 10 14H14C17.31 14 20 16.69 20 20V21" stroke="#101820" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="round"/>
@@ -15,7 +15,7 @@
           {%- endif -%}
         </span>
       </a>
-    {%- endif -%}
+    {%- endif -%} {% endcomment %}
 
     {%- if settings.search_enable -%}
       <a
