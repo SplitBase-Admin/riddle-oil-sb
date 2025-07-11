@@ -18,11 +18,11 @@
     display: none;
   }
 
-  .sb_quick_add * {
+  .sb_quick_add > * {
     display: none;
   }
 
-  .sb_quick_add input[type='submit'] {
+  .sb_quick_add [type='submit'] {
     display: block;
     width: 100%;
   }
@@ -79,6 +79,9 @@
   data-aos="row-of-{{ per_row }}"
   data-product-handle="{{ product.handle }}"
   data-product-id="{{ product.id }}"
+  data-section-type="product"
+  data-section-id="hp-{{ product.id }}"
+  data-quick-atc-btn
 >
   <div
     data-url="{{ product.url }}"
@@ -149,7 +152,7 @@
 
       <div class="grid__item-image-wrapper">
         <div class="grid-product__image-mask">
-          {% form 'product', product, class: 'sb_quick_add' %}
+          {% form 'product', product, class: 'sb_quick_add product-single__form' %}
             <!-- form content -->
             <select name="id">
               {% for variant in product.variants %}
@@ -157,7 +160,16 @@
               {% endfor %}
             </select>
             <input type="text" name="quantity" min="1" value="1">
-            <input class="btn btn--full" onclick="event.stopPropagation()" type="submit" value="Add to cart">
+            <button
+              onclick="event.stopPropagation()"
+              type="submit"
+              name="add"
+              data-add-to-cart
+              class="btn btn--full add-to-cart"
+            >
+              <span data-add-to-cart-text data-default-text="Add to Bag"> Add to Bag </span>
+            </button>
+            {% comment %} <input class="btn btn--full" onclick="event.stopPropagation()" type="submit" value="Add to cart"> {% endcomment %}
           {% endform %}
 
           {% capture imageInner %}
