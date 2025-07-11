@@ -312,13 +312,16 @@
 
   {% assign secondary_product_obj = product.metafields.custom.secondary_product.value %}
   {% assign secondary_product = all_products[secondary_product_obj.select_product] %}
-  
+
   {% if secondary_product_obj %}
     <div class="custom-secondary-product-container">
-      <div class="custom-secondary-product-button" data-variant-id="{{ secondary_product.selected_or_first_available_variant.id }}">
+      <div
+        class="custom-secondary-product-button"
+        data-variant-id="{{ secondary_product.selected_or_first_available_variant.id }}"
+      >
         {{ secondary_product.featured_media | image_url: width: 25, height: 25 | image_tag }}
         {{ secondary_product_obj.text_to_display | metafield_tag }}
-  
+
         {% assign main_product_price = product.price %}
         {% assign secondary_product_price = secondary_product.price %}
         {% assign price_difference = secondary_product_price | minus: main_product_price %}
@@ -387,115 +390,39 @@
   </select>
 {%- endform -%}
 
-{% comment %} <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggle = document.getElementById('second-toggle');
-    const variantSelect = document.querySelector('select[name="id"]');
-    const secondVariantId = '{{ second_product_variant.id }}';
+{% comment %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.getElementById('second-toggle');
+      const variantSelect = document.querySelector('select[name="id"]');
+      const secondVariantId = '{{ second_product_variant.id }}';
 
-    if (!toggle || !variantSelect) return;
+      if (!toggle || !variantSelect) return;
 
-    // Save the original options once
-    const originalOptions = Array.from(variantSelect.options).map((opt) => opt.cloneNode(true));
+      // Save the original options once
+      const originalOptions = Array.from(variantSelect.options).map((opt) => opt.cloneNode(true));
 
-    toggle.addEventListener('change', function () {
-      if (this.checked) {
-        console.log('Checked!');
-        variantSelect.innerHTML = '';
-        const secondOption = document.createElement('option');
-        secondOption.value = secondVariantId;
-        secondOption.selected = true;
-        secondOption.textContent = 'Second Product';
-        variantSelect.appendChild(secondOption);
-      } else {
-        console.log('Unchecked!');
-        // Restore original product variants
-        variantSelect.innerHTML = '';
-        originalOptions.forEach((opt) => variantSelect.appendChild(opt.cloneNode(true)));
-      }
+      toggle.addEventListener('change', function () {
+        if (this.checked) {
+          console.log('Checked!');
+          variantSelect.innerHTML = '';
+          const secondOption = document.createElement('option');
+          secondOption.value = secondVariantId;
+          secondOption.selected = true;
+          secondOption.textContent = 'Second Product';
+          variantSelect.appendChild(secondOption);
+        } else {
+          console.log('Unchecked!');
+          // Restore original product variants
+          variantSelect.innerHTML = '';
+          originalOptions.forEach((opt) => variantSelect.appendChild(opt.cloneNode(true)));
+        }
+      });
     });
-  });
-</script> {% endcomment %}
+  </script>
+{% endcomment %}
 
 {% comment %} for variant 1 {% endcomment %}
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const secondATC = document.querySelector('.second_product_atc');
-    if (secondATC) {
-      secondATC.addEventListener('click', function () {
-        const variantId = this.dataset.variantId;
-
-        fetch('/cart/add.js', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-          body: JSON.stringify({
-            id: variantId,
-            quantity: 1,
-          }),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log('Added to cart:', data);
-            // Optional: Trigger cart drawer update or notification here
-          })
-          .catch((err) => console.error('Add to cart failed:', err));
-      });
-    }
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggle = document.getElementById('second-toggle');
-    const secondProductVariantId = '{{ second_product_variant.id }}';
-
-    if (!toggle) return;
-
-    toggle.addEventListener('change', function () {
-      if (this.checked) {
-        fetch('/cart/add.js', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-          body: JSON.stringify({
-            id: secondProductVariantId,
-            quantity: 1,
-          }),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log('Second product added to cart:', data);
-            // Optional: Trigger cart drawer update or show notification
-          })
-          .catch((err) => console.error('Add to cart failed:', err));
-      } else {
-        // Remove the second product from cart
-        fetch('/cart/change.js', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-          body: JSON.stringify({
-            id: secondProductVariantId,
-            quantity: 0,
-          }),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log('Second product removed from cart:', data);
-            // Optional: update cart UI
-          })
-          .catch((err) => console.error('Remove from cart failed:', err));
-      }
-    });
-  });
-</script>
 
 {% comment %}
   Keep this incase if selling plan subscription or Gift Box functionality needed in future.

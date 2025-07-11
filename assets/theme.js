@@ -10,7 +10,7 @@
     // Page has loaded and theme assets are ready
   });
 */
-//console.log('===here');
+console.log('===load 2');
 window.theme = window.theme || {};
 window.Shopify = window.Shopify || {};
 
@@ -2793,14 +2793,14 @@ theme.recentlyViewed = {
   })();
 
   theme.AjaxProduct = (function () {
-    //console.log('=========here')
+    console.log('=========AjaxProduct')
 
     var status = {
       loading: false
     };
 
     function ProductForm(form, submit, args) {
-      //console.log('=========here')
+      console.log('=========ProductForm')
       this.form = form;
       this.args = args;
 
@@ -2819,6 +2819,8 @@ theme.recentlyViewed = {
         if (status.loading) {
           return;
         }
+
+        console.log('=========here')
 
         // Loading indicator on add to cart button
         this.addToCart.classList.add('btn--loading');
@@ -6875,6 +6877,8 @@ theme.recentlyViewed = {
   })();
 
   theme.Product = (function () {
+
+    console.log("theme.product =============")
     var videoObjects = {};
 
     var classes = {
@@ -6972,6 +6976,10 @@ theme.recentlyViewed = {
 
       this.cacheElements();
 
+      this.formSetup();
+
+      return;
+
       this.firstProductImage = this.cache.mainSlider.querySelector('img');
 
       if (!this.firstProductImage) {
@@ -6982,12 +6990,14 @@ theme.recentlyViewed = {
       if (dataSetEl) {
         this.settings.imageSetName = dataSetEl.dataset.setName;
       }
+      console.log('=========Product init fun call');
 
       this.init();
     }
 
     Product.prototype = Object.assign({}, Product.prototype, {
       init: function () {
+        console.log('=========Product init');
         if (this.inModal) {
           this.container.classList.add(classes.isModal);
           document.addEventListener('modalOpen.QuickShopModal-' + this.productId, this.openModalProduct.bind(this));
@@ -7023,6 +7033,7 @@ theme.recentlyViewed = {
       },
 
       formSetup: function () {
+        console.log('=========formSetup');
         this.initQtySelector();
         this.initAjaxProductForm();
         this.availabilitySetup();
@@ -8395,6 +8406,28 @@ theme.recentlyViewed = {
     }
 
     document.dispatchEvent(new CustomEvent('page:loaded'));
+
+    setTimeout(() => {
+      console.log('Product len ==========',
+        document.querySelectorAll('[data-section-type="product"]:not([data-product-initialized])').length);
+
+      document.querySelectorAll('[data-section-type="product"]:not([data-product-initialized])').forEach(container => {
+        try {
+          new theme.Product(container);
+          container.setAttribute('data-product-initialized', 'true');
+        } catch (err) {
+          console.error('Failed to init product:', err, container);
+        }
+      });
+    }, 500);
+
+
+    // console.log('ajax product 3==========');
+    // const forms = document.querySelectorAll('form.product-form');
+
+    // forms.forEach(form => {
+    //   new theme.AjaxProduct(form);
+    // })
   });
 
 })();
