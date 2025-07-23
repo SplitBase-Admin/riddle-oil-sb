@@ -260,6 +260,7 @@
                 data-current-value="{{ product_group | append: '-' | append: mf_prod.id }}"
                 data-variant-price="{{ mf_prod.price | money_without_currency }}"
                 data-variant-compare-price="{{ mf_prod.compare_at_price | money_without_currency }}"
+                data-variant-image="{{ mf_prod.featured_media.preview_image | img_url: '400x' }}"
                 {% if mf_prod.id == product.id %}
                   checked
                 {% endif %}
