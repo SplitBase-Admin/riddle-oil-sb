@@ -138,7 +138,7 @@
         "megamenu_type_4_C6tYha"
       ],
       "settings": {
-        "main_menu_link_list": "new-main-menu",
+        "main_menu_link_list": "main-menu-with-member-login",
         "hover_menu": true,
         "mega_menu_images": true,
         "main_menu_alignment": "center-split",

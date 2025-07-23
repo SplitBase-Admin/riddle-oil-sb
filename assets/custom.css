@@ -170,6 +170,7 @@ p:last-child {
   align-items: flex-start;
   column-gap: 20px;
   justify-content: space-between;
+  margin-bottom: 6px;
 }
 
 .grid-short-description {

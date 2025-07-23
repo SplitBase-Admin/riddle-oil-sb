@@ -7,6 +7,7 @@
 {% endcomment %}
 
 {{ 'product-grid-item.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'fragrance-oils-grid-item.css' | asset_url | stylesheet_tag: preload: true }}
 
 {%- liquid
   unless per_row
@@ -229,23 +230,47 @@
           {{ imageInner }}
         </div>
 
+                {% if true %}
+          <script>
+          window.collCustomGroupProductsImages = window.collCustomGroupProductsImages || [];
+          window.collCustomGroupProductsImages[{{ product.id }}] = {
+            'custom_image': `{{ imageInner }}`,
+            'url': `{{ product.url }}`,
+            'product_tags': `{{ product_tags_var }}`,
+            'sku_id': `{{ product.sku | default: product.id }}`,
+            'name': `{{ product.title }}`,
+            'price': `{{ product.price | money_without_currency }}`
+          }
+          </script>
+
+          {% if other_variants %}
+            <div class="custom-variant-selector-wrapper">
+              {% for mf_prod in other_variants %}
+                <button
+                  type="button"
+                  class="custom-variant-options {% if last_variant.id == mf_prod.id %} active {% endif %} {% unless mf_prod.available %} variant-out-of-stock{% endunless %}"
+                  name="{{ product_group }}"
+                  data-product-group="{{ product_group }}"
+                  data-current-value="{{ product_group | append: '-' | append: mf_prod.id }}"
+                  {% if mf_prod.id == product.id %}
+                    checked
+                  {% endif %}
+                  custom-variant-change
+                >
+                  {{ mf_prod.metafields.custom.product_short_name }}
+                </button>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endif %}
+
         <a href="{{ product.url | within: collection }}" class="grid-product__link">
           <div class="grid-product__meta">
             <div class="grid-product__title grid-product__title--{{ settings.type_product_style }} bestseller-product__title">
               {{ product.title }}
             </div>
 
-            <div class="grid-data-container-review">
-              {% if reviews == false %}
-                {% assign review = false %}
-              {% else %}
-                {% assign review = true %}
-              {% endif %}
-
-              {% if review %}
-                {% render 'okendo-reviews-product-rating-summary', product: product %}
-              {% endif %}
-            </div>
+            
             <div class="grid-meta-container">
               <div class="grid-data-container">
                 {% if product.metafields.custom.product_name_on_menu != blank %}
@@ -317,6 +342,18 @@
                     </div>
                   {%- endif -%}
                 </div>
+              {% endif %}
+            </div>
+
+            <div class="grid-data-container-review">
+              {% if reviews == false %}
+                {% assign review = false %}
+              {% else %}
+                {% assign review = true %}
+              {% endif %}
+
+              {% if review %}
+                {% render 'okendo-reviews-product-rating-summary', product: product %}
               {% endif %}
             </div>
 
@@ -416,39 +453,7 @@
           </div>
         </a>
 
-        {% if true %}
-          <script>
-          window.collCustomGroupProductsImages = window.collCustomGroupProductsImages || [];
-          window.collCustomGroupProductsImages[{{ product.id }}] = {
-            'custom_image': `{{ imageInner }}`,
-            'url': `{{ product.url }}`,
-            'product_tags': `{{ product_tags_var }}`,
-            'sku_id': `{{ product.sku | default: product.id }}`,
-            'name': `{{ product.title }}`,
-            'price': `{{ product.price | money_without_currency }}`
-          }
-          </script>
 
-          {% if other_variants %}
-            <div class="custom-variant-selector-wrapper">
-              {% for mf_prod in other_variants %}
-                <button
-                  type="button"
-                  class="custom-variant-options {% if last_variant.id == mf_prod.id %} active {% endif %} {% unless mf_prod.available %} variant-out-of-stock{% endunless %}"
-                  name="{{ product_group }}"
-                  data-product-group="{{ product_group }}"
-                  data-current-value="{{ product_group | append: '-' | append: mf_prod.id }}"
-                  {% if mf_prod.id == product.id %}
-                    checked
-                  {% endif %}
-                  custom-variant-change
-                >
-                  {{ mf_prod.metafields.custom.product_short_name }}
-                </button>
-              {% endfor %}
-            </div>
-          {% endif %}
-        {% endif %}
       </div>
     </div>
     {%- if settings.enable_swatches and type == blank -%}

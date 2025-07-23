@@ -58,3 +58,19 @@
 #product-grid .grid-product__secondary-image {
   background-color: transparent;
 }
+
+.grid-meta-container {
+  margin-bottom: 6px;  
+}
+
+.try-now-button {
+  margin: 2px 0 16px;  
+}
+
+@media (max-width: 767px) {
+  
+  .collection-grid__wrapper .grid-product__meta {
+    padding: 8px 0;
+  }
+  
+}
