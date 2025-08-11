@@ -6969,6 +6969,12 @@ theme.recentlyViewed = {
       };
   
       this.cacheElements();
+
+      if (container.hasAttribute('data-quick-atc-btn')) {
+        // only get the add to cart funtionality in collection product box
+        this.formSetup();
+        return;
+      }
   
       this.firstProductImage = this.cache.mainSlider.querySelector('img');
   
@@ -8393,6 +8399,21 @@ theme.recentlyViewed = {
     }
 
     document.dispatchEvent(new CustomEvent('page:loaded'));
+    // console.log('page loaded=========');
+    const quickATCbtns = document.querySelectorAll('[data-quick-atc-btn]:not([data-quick-atc-initialized])');
+    // console.log(quickATCbtns.length, 'quick atc btns found');
+    if (quickATCbtns.length > 0) {
+      quickATCbtns.forEach(container => {
+        try {
+          new theme.Product(container);
+          container.setAttribute('data-quick-atc-initialized', 'true');
+        } catch (err) {
+          console.error('Failed to init product:', err, container);
+        }
+      });
+    }
+
+
   });
 
 })();
