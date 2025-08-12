@@ -9,6 +9,26 @@
 {{ 'product-grid-item.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'fragrance-oils-grid-item.css' | asset_url | stylesheet_tag: preload: true }}
 
+<style>
+  .sb_quick_add {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: none;
+  }
+  .sb_quick_add > * {
+  }
+  .sb_quick_add [type='submit'] {
+    display: block;
+    width: 100%;
+  }
+  
+  .sb_quick_add {
+  }
+</style>
+
 {%- liquid
   unless per_row
     assign per_row = 4
@@ -54,6 +74,9 @@
   data-aos="row-of-{{ per_row }}"
   data-product-handle="{{ product.handle }}"
   data-product-id="{{ product.id }}"
+  data-section-type="product"
+  data-section-id="hp-{{ product.id }}"
+  data-quick-atc-btn
 >
   <div data-url="{{ product.url }}" class="product__card--url" data-sku="{{ product.sku |  default: product.id }}" data-name="{{ product.title }}" data-price="{{ product.price | money_without_currency }}">
     {%- if product.metafields.custom.product_label != blank -%}
@@ -119,6 +142,31 @@
       <div class="grid__item-image-wrapper">
         <div class="grid-product__image-mask">
         {% capture imageInner %}
+
+          {% if quick_atc_btn %}
+            {% form 'product', product, class: 'sb_quick_add product-single__form' %}
+              <!-- form content -->
+              <select name="id" onclick="event.stopPropagation()" hidden>
+                {% for variant in product.variants %}
+                  <option value="{{ variant.id }}">{{ variant.title }}</option>
+                {% endfor %}
+              </select>
+              <input hidden type="text" name="quantity" min="1" value="1">
+              <button
+                {% if product.available %} onclick="event.stopPropagation()" {% else %} onclick="event.preventDefault()" {% endif %}
+                  
+                {% unless product.available %} disabled {% endunless %}
+                type="submit"
+                name="add"
+                data-add-to-cart
+                class="btn btn--full add-to-cart"
+              >
+                <span data-add-to-cart-text data-default-text="Add to Bag"> {%if product.available%} Add to Bag {% else %} Sold Out {% endif %}</span>
+              </button>
+              {% comment %} <input class="btn btn--full" onclick="event.stopPropagation()" type="submit" value="Add to cart"> {% endcomment %}
+            {% endform %}
+          {% endif %}
+
           {%- if fixed_aspect_ratio -%}
             <div
               class="grid__image-ratio grid__image-ratio--{% if image_style == 'circle' %}square{% else %}{{ settings.product_grid_image_size }}{% endif %}">
