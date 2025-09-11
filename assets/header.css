@@ -72,11 +72,12 @@
 }
 
 .cart-link {
+
   display: flex;
   justify-content: center;
 }
 
-.cart-link__bubble--visible {
+.site-nav__link.site-nav__link--icon .cart-link__bubble--visible {
   border-radius: 50%;
   display: block;
   position: absolute;
@@ -206,17 +207,18 @@
   }
 
   .site-nav__icons svg {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
   }
 
   .site-nav__link {
     font-size: 14px !important;
   }
 
-  .cart-link__bubble--visible {
+  .site-nav__link.site-nav__link--icon .cart-link__bubble--visible {
     font-size: 10px;
     line-height: 14px;
+    bottom: 0;
   }
 
   .link__text {
@@ -251,9 +253,10 @@
     height: 24px;
   }
 
-  .cart-link__bubble--visible {
-    font-size: 12px;
+  .site-nav__link.site-nav__link--icon .cart-link__bubble--visible {
+    font-size: 10px;
     line-height: 21px;
+    bottom: -2px;
   }
   
   .site-nav__icons {
