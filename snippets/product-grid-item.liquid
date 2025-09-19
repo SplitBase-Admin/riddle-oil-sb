@@ -27,6 +27,43 @@
   
   .sb_quick_add {
   }
+
+  .sb_quick_add button.btn.btn--full.add-to-cart{
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0;
+    min-width: inherit;
+    min-height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: auto;
+  }
+
+  .sb_quick_add button.btn.btn--full.add-to-cart span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--colorBtnPrimary);
+    margin-top: 4px;
+  }
+
+  .sb_quick_add button.btn.btn--full.add-to-cart:disabled{
+    background-color: var(--colorBtnPrimary);
+    opacity: 0.5;
+
+  }
+
+  .sb_quick_add button.btn.btn--full.add-to-cart svg{
+    max-height: max-content;
+  }
+
+  .sb_quick_add button.btn.btn--full.add-to-cart.btn--loading svg{
+    display: none;
+  }
 </style>
 
 {%- liquid
@@ -155,13 +192,16 @@
               <button
                 {% if product.available %} onclick="event.stopPropagation()" {% else %} onclick="event.preventDefault()" {% endif %}
                   
-                {% unless product.available %} disabled {% endunless %}
+                {% unless product.available %} disabled title="Sold Out" {% endunless %}
                 type="submit"
                 name="add"
                 data-add-to-cart
                 class="btn btn--full add-to-cart"
               >
-                <span data-add-to-cart-text data-default-text="Add to Bag"> {%if product.available%} Add to Bag {% else %} Sold Out {% endif %}</span>
+                <span data-add-to-cart-text data-default-text="Add to Bag"> {%if product.available%} + {% else %} + {% endif %}</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.9844 7.875V7.35938C16.9834 6.0591 16.4748 4.81058 15.5671 3.87962C14.6593 2.94867 13.424 2.40881 12.1242 2.375H11.8758C10.576 2.40881 9.34069 2.94867 8.43293 3.87962C7.52516 4.81058 7.01664 6.0591 7.01562 7.35938V7.875H3.23438C3.18879 7.875 3.14507 7.89311 3.11284 7.92534C3.08061 7.95757 3.0625 8.00129 3.0625 8.04688V20.9375C3.0625 21.1198 3.13493 21.2947 3.26386 21.4236C3.3928 21.5526 3.56766 21.625 3.75 21.625H20.25C20.4323 21.625 20.6072 21.5526 20.7361 21.4236C20.8651 21.2947 20.9375 21.1198 20.9375 20.9375V8.04688C20.9375 8.00129 20.9194 7.95757 20.8872 7.92534C20.8549 7.89311 20.8112 7.875 20.7656 7.875H16.9844ZM15.2656 7.875H8.73438V7.40234C8.73438 5.60453 10.17 4.11266 11.9678 4.09375C12.3992 4.08995 12.8271 4.17159 13.2268 4.33396C13.6266 4.49633 13.9902 4.73621 14.2968 5.03979C14.6033 5.34336 14.8468 5.70462 15.0131 6.10273C15.1794 6.50084 15.2652 6.92793 15.2656 7.35938V7.875Z" fill="#fcfaf7"></path>
+                </svg>
               </button>
               {% comment %} <input class="btn btn--full" onclick="event.stopPropagation()" type="submit" value="Add to cart"> {% endcomment %}
             {% endform %}
