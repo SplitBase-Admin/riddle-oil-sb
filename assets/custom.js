@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   
       el.classList.add("event-added");
       
-      el.addEventListener("click", function (e) {
+      el.addEventListener("mouseover", function (e) {
         try {
           const selectedVariant = window.collCustomGroupProducts[e.currentTarget.dataset.currentValue];
           if (!selectedVariant) {
@@ -208,18 +208,28 @@ document.addEventListener("DOMContentLoaded", (event) => {
     
           // Find the closest parent container
           const closestDiv = e.currentTarget.closest(".grid__item");
+
+          closestDiv.classList.add("grid-hover");
+
           if (!closestDiv) {
             console.error("Closest .grid__item not found for the clicked element!");
             return;
           }
-    
+          
           // Update elements based on appendType
           elementsToRender(selectedVariant, closestDiv).forEach(({ element, content, appendType, attribute_name }) => {
             if (element) {
               try {
                 switch (appendType) {
                   case "innerHTML":
-                    element.innerHTML = content; // Update innerHTML
+                    const newElement2 = document.createElement('div');
+                    newElement2.innerHTML = content;
+                    if(newElement2.querySelectorAll("image-element") && newElement2.querySelectorAll("image-element").length > 0) {
+                      newElement2.querySelectorAll("image-element").forEach(element2 => {
+                        element2.className = "aos-init aos-animate";
+                      });
+                    }
+                    element.innerHTML = newElement2.innerHTML; // Update innerHTML
                     break;
                   case "href":
                     element.setAttribute("href", content); // Update href attribute
@@ -256,6 +266,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         } catch (error) {
           console.error("Error in click event handler:", error);
         }
+      });
+      el.addEventListener("mouseout", function (e) {
+        const closestDiv = e.currentTarget.closest(".grid__item");
+        e.currentTarget.classList.remove("active");
+        closestDiv.classList.remove("grid-hover");
+      });
+      el.addEventListener("click", function (e) {
+        window.location.href = e.target.getAttribute("data-product-url");
       });
     });
   }

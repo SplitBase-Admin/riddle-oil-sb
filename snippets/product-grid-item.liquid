@@ -296,13 +296,14 @@
               {% for mf_prod in other_variants %}
                 <button
                   type="button"
-                  class="custom-variant-options {% if last_variant.id == mf_prod.id %} active {% endif %} {% unless mf_prod.available %} variant-out-of-stock{% endunless %}"
+                  class="custom-variant-options {% unless mf_prod.available %} variant-out-of-stock{% endunless %}"
                   name="{{ product_group }}"
                   data-product-group="{{ product_group }}"
                   data-current-value="{{ product_group | append: '-' | append: mf_prod.id }}"
                   data-variant-price="{{ mf_prod.price | money_without_currency }}"
                   data-variant-compare-price="{{ mf_prod.compare_at_price | money_without_currency }}"
                   data-variant-image="{{ mf_prod.featured_media.preview_image | img_url: '400x' }}"
+                  data-product-url="{{ mf_prod.url }}"
                   {% if mf_prod.id == product.id %}
                     checked
                   {% endif %}
@@ -503,8 +504,9 @@
             {%- endif -%}
           </div>
         </a>
-
-
+        {% unless other_variants %}
+          <a href="{{ product.url | within: collection }}" class="btn btn--solid-border btn--secondary view-product">{{ 'products.general.view_product' | t }}</a>
+        {% endunless %}
       </div>
     </div>
     {%- if settings.enable_swatches and type == blank -%}

@@ -12,28 +12,23 @@
 {% endcomment %}
 
 {% assign template_suffix = template.suffix %}
-{% if collection.handle == 'fragrance-oils'
-  or collection.handle == 'the-pheromone-oils'
-  or collection.handle == 'perfume-oils'
-%}
-  <script>
-    window.collCustomGroupProducts = window.collCustomGroupProducts || [];
-    {%- for item in items -%}
-      {% assign other_variants = null %}
-      {% if item.metafields.custom.product_group.value %}
-        {% assign other_variants = item.metafields.custom.product_group.value.products.value %}
-      {% endif %}
-      {% if other_variants %}
-        {% assign prod_hide = false %}
-        {% assign last_variant = item.metafields.custom.product_group.value.products.value | last %}
-        {% assign product_group = last_variant.handle %}
-        {% for mf_prod in item.metafields.custom.product_group.value.products.value %}
-          window.collCustomGroupProducts[`{{ product_group | append: '-' | append: mf_prod.id }}`] = {{ mf_prod | json }};
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
-  </script>
-{% endif %}
+<script>
+  window.collCustomGroupProducts = window.collCustomGroupProducts || [];
+  {%- for item in items -%}
+    {% assign other_variants = null %}
+    {% if item.metafields.custom.product_group.value %}
+      {% assign other_variants = item.metafields.custom.product_group.value.products.value %}
+    {% endif %}
+    {% if other_variants %}
+      {% assign prod_hide = false %}
+      {% assign last_variant = item.metafields.custom.product_group.value.products.value | last %}
+      {% assign product_group = last_variant.handle %}
+      {% for mf_prod in item.metafields.custom.product_group.value.products.value %}
+        window.collCustomGroupProducts[`{{ product_group | append: '-' | append: mf_prod.id }}`] = {{ mf_prod | json }};
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+</script>
 
 {% liquid
   if collection.products
@@ -214,23 +209,18 @@
     {% assign custom_banner_counter_mobile = paginate.current_offset | plus: 1 %}
     {%- for item in items -%}
       {%- if item.object_type == 'product' -%}
-        {% if collection.handle == 'fragrance-oils'
-          or collection.handle == 'the-pheromone-oils'
-          or collection.handle == 'perfume-oils'
-        %}
-          {% assign other_variants = null %}
-          {% assign last_variant = null %}
-          {% if item.metafields.custom.product_group.value %}
-            {% assign other_variants = item.metafields.custom.product_group.value.products.value %}
-          {% endif %}
-          {% if other_variants %}
-            {% assign prod_hide = false %}
-            {% assign last_variant = item.metafields.custom.product_group.value.products.value | last %}
-            {% assign product_group = last_variant.handle %}
-            {% unless last_variant.id == item.id %}
-              {% assign prod_hide = true %}
-            {% endunless %}
-          {% endif %}
+        {% assign other_variants = null %}
+        {% assign last_variant = null %}
+        {% if item.metafields.custom.product_group.value %}
+          {% assign other_variants = item.metafields.custom.product_group.value.products.value %}
+        {% endif %}
+        {% if other_variants %}
+          {% assign prod_hide = false %}
+          {% assign last_variant = item.metafields.custom.product_group.value.products.value | last %}
+          {% assign product_group = last_variant.handle %}
+          {% unless last_variant.id == item.id %}
+            {% assign prod_hide = true %}
+          {% endunless %}
         {% endif %}
 
         {% assign show_custom_banner = true %}

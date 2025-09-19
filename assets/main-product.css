@@ -896,3 +896,12 @@
   }
   
 }
+
+.qty-cta-wrapper + #appikon-bis-inline-form-wrapper {
+  margin: 16px 0 0;
+}
+
+
+#klaviyo-bis-button-container {
+  margin: 20px 0 0 !important;
+}

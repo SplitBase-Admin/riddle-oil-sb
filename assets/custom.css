@@ -313,7 +313,7 @@ p:last-child {
   background: rgba(0, 0, 0, 0.16);
 }
 
-.custom-featured-collection .btn--secondary:hover {
+.custom-featured-collection .btn--secondary:not(.view-product):hover {
   background: rgba(0, 0, 0, 0.16);
 }
 
