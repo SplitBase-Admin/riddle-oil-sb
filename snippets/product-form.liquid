@@ -367,6 +367,9 @@
     </div>
   {%- endif -%}
 
+  {%- if settings.enable_milestone -%}
+    {% render 'milestone-progress-bar' %}
+  {%- endif -%}
   <div class="shopify-payment-terms product__policies">{{ form | payment_terms }}</div>
 
   <div class="klaviyo-bis-trigger"></div>

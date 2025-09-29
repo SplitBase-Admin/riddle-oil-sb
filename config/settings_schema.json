@@ -213,6 +213,65 @@
     ]
   },
   {
+    "name": "Milestone Progress Bar",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_milestone",
+        "label": "Enable Milestone Progress Bar",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "default_message",
+        "label": "Default message",
+        "default": "You are [X] away from your [reward]"
+      },
+      {
+        "type": "text",
+        "id": "milestone1_label",
+        "label": "Milestone 1 Label",
+        "default": "Free Shipping"
+      },
+      {
+        "type": "number",
+        "id": "milestone1_amount",
+        "label": "Milestone 1 Amount",
+        "default": 75
+      },
+      {
+        "type": "text",
+        "id": "milestone2_label",
+        "label": "Milestone 2 Label",
+        "default": "Free Gift"
+      },
+      {
+        "type": "number",
+        "id": "milestone2_amount",
+        "label": "Milestone 2 Amount",
+        "default": 100
+      },
+      {
+        "type": "text",
+        "id": "milestone3_label",
+        "label": "Milestone 3 Label",
+        "default": "Free Gift"
+      },
+      {
+        "type": "number",
+        "id": "milestone3_amount",
+        "label": "Milestone 3 Amount",
+        "default": 100
+      },
+      {
+        "type": "textarea",
+        "id": "success_message",
+        "label": "Success message",
+        "default": "You've unlocked all rewards 🎉"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.typography.name",
     "settings": [
       {

@@ -217,10 +217,10 @@
         "image": "shopify://shop_images/product-image.jpg",
         "title": "Scent Notes",
         "text": "<p><strong>Did you know</strong> - Most scents consist of top, middle, and base notes. What differentiates these notes is the density of their molecules. The top note is very light and is the first note you smell right out of the bottle. </p><p>Most people determine if they like a scent based on this information alone, but to truly understand the scent, you must wear it so that you give the middle and base notes a chance to come through.The middle note takes about 15 minutes to develop, while the base note takes up to 45 minutes.</p>",
-        "left_pattern": "{{ product.metafields.custom.scent_note_left_pattern_desktop.value }}",
-        "right_pattern": "{{ product.metafields.custom.scent_note_right_pattern_desktop.value }}",
-        "left_pattern_mobile": "{{ product.metafields.custom.scent_note_left_pattern_mobile.value }}",
-        "right_pattern_mobile": "{{ product.metafields.custom.scent_note_right_pattern_mobile.value }}"
+        "left_pattern": "shopify://shop_images/cocoa-desktop.png",
+        "right_pattern": "shopify://shop_images/lilly-desktop.png",
+        "left_pattern_mobile": "shopify://shop_images/cocoa-mobile.png",
+        "right_pattern_mobile": "shopify://shop_images/lilly-mobile.png"
       }
     },
     "sub": {
