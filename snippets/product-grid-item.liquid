@@ -27,6 +27,63 @@
   
   .sb_quick_add {
   }
+
+  .sb_quick_add button.btn.btn--full.add-to-cart{
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0;
+    min-width: inherit;
+    min-height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: auto;
+  }
+
+  .sb_quick_add button.btn.btn--full.add-to-cart span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--colorBtnPrimary);
+    margin-top: 4px;
+  }
+
+  .sb_quick_add button.btn.btn--full.add-to-cart:disabled{
+    background-color: var(--colorBtnPrimary);
+    opacity: 0.5;
+
+  }
+
+  .sb_quick_add button.btn.btn--full.add-to-cart svg{
+    max-height: max-content;
+  }
+
+  .sb_quick_add button.btn.btn--full.add-to-cart .plus-icon{
+    width: 24px;
+    position: relative;
+    top: -1px;
+  }
+
+  .sb_quick_add button.btn.btn--full.add-to-cart.btn--loading svg{
+    display: none;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .sb_quick_add button.btn.btn--full.add-to-cart{
+      width: 32px;
+      height: 32px;
+    }
+    .sb_quick_add button.btn.btn--full.add-to-cart svg{
+      width: 19px;
+    }
+
+    .sb_quick_add button.btn.btn--full.add-to-cart .plus-icon{
+      width: 20px;
+    }
+  }
 </style>
 
 {%- liquid
@@ -156,13 +213,14 @@
               <button
                 {% if product.available %} onclick="event.stopPropagation()" {% else %} onclick="event.preventDefault()" {% endif %}
                   
-                {% unless product.available %} disabled {% endunless %}
+                {% unless product.available %} disabled title="Sold Out" {% endunless %}
                 type="submit"
                 name="add"
                 data-add-to-cart
                 class="btn btn--full add-to-cart"
               >
-                <span data-add-to-cart-text data-default-text="Add to Bag"> {%if product.available%} Add to Bag {% else %} Sold Out {% endif %}</span>
+                {% comment %} <span data-add-to-cart-text data-default-text="Add to Bag"> {%if product.available%} + {% else %} + {% endif %}</span> {% endcomment %}
+                <img class="plus-icon" src="https://cdn.shopify.com/s/files/1/0892/0284/files/ion_bag-sharp.svg?v=1759140649" />
               </button>
               {% comment %} <input class="btn btn--full" onclick="event.stopPropagation()" type="submit" value="Add to cart"> {% endcomment %}
             {% endform %}
