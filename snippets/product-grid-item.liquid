@@ -30,6 +30,7 @@
 </style>
 
 {%- liquid
+  
   unless per_row
     assign per_row = 4
   endunless
@@ -315,7 +316,6 @@
             </div>
           {% endif %}
         {% endif %}
-
         <a href="{{ product.url | within: collection }}" class="grid-product__link">
           <div class="grid-product__meta">
             <div class="grid-product__title grid-product__title--{{ settings.type_product_style }} bestseller-product__title">
@@ -325,18 +325,18 @@
             
             <div class="grid-meta-container">
               <div class="grid-data-container">
-                {% if product.metafields.custom.product_name_on_menu != blank %}
+                {% comment %} {% if product.metafields.custom.product_name_on_menu != blank %}
                   <div class="grid-product__title grid-product__title--{{ settings.type_product_style }}">
                     {{ product.metafields.custom.product_name_on_menu }}
                   </div>
-                {% else %}
+                {% else %} {% endcomment %}
                   <div class="grid-product__title grid-product__title--{{ settings.type_product_style }}">
                     {{ product.title }}
                     {% comment %}
                       {% if product.metafields.custom.product_short_name != blank %}<span class="product-variants">{{ product.metafields.custom.product_short_name }}</span>{% endif %}
                     {% endcomment %}
                   </div>
-                {%- endif -%}
+                {% comment %} {%- endif -%} {% endcomment %}
 
                 {% comment %}
                   {%- if product.metafields.custom.short_description != blank -%}

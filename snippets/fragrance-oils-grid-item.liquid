@@ -8,7 +8,6 @@
 
 {{ 'product-grid-item.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'fragrance-oils-grid-item.css' | asset_url | stylesheet_tag: preload: true }}
-
 {%- liquid
   unless per_row
     assign per_row = 4
@@ -272,7 +271,7 @@
             {% endfor %}
           </div>
         {% endif %}
-
+        <div class="hidden">{{ mf_prod_first | json }}</div>
         <a
           href="{{ product.url | within: collection }}"
           class="grid-product__link {% if product.id == 5314854551715 %} try__now--link {% endif %}"
@@ -288,18 +287,18 @@
 
             <div class="grid-meta-container">
               <div class="grid-data-container">
-                {% if product.metafields.custom.product_name_on_menu != blank %}
+                {% comment %} {% if product.metafields.custom.product_name_on_menu != blank %}
                   <div class="grid-product__title grid-product__title--{{ settings.type_product_style }}">
                     {{ product.metafields.custom.product_name_on_menu }}
                   </div>
-                {% else %}
+                {% else %} {% endcomment %}
                   <div class="grid-product__title grid-product__title--{{ settings.type_product_style }}">
                     {{ product.title }}
                     {% comment %}
                       {% if product.metafields.custom.product_short_name != blank %}<span class="product-variants">{{ product.metafields.custom.product_short_name }}</span>{% endif %}
                     {% endcomment %}
                   </div>
-                {%- endif -%}
+                {% comment %} {%- endif -%} {% endcomment %}
 
                 {% comment %}
                   {%- if product.metafields.custom.short_description != blank -%}

@@ -1,0 +1,58 @@
+{{ 'milestone-progress-bar.css' | asset_url | stylesheet_tag }}
+{% liquid
+  if settings.default_message != blank
+    assign default_message = settings.default_message
+  else
+    assign default_message = "You are [X] away from your [reward]"
+  endif
+  if settings.success_message != blank
+    assign success_message = settings.success_message
+  else
+    assign success_message = "You've unlocked all rewards 🎉"
+  endif
+  assign initial_amount = settings.milestone1_amount | times: 100 | money
+%}
+
+<div data-rebuy-component="progress-bar" class="hidden milestone-progress-bar-wrapper" data-milestones='[
+    {"label": "{{ settings.milestone1_label }}", "amount": {{ settings.milestone1_amount }}},
+    {"label": "{{ settings.milestone2_label }}", "amount": {{ settings.milestone2_amount }}},
+    {"label": "{{ settings.milestone3_label }}", "amount": {{ settings.milestone3_amount }}}
+  ]' data-rebuy-component-id="tiered_progress_bar" data-success-message="{{ success_message | escape }}" data-default-message="{{ default_message }}">
+
+  <div class="rebuy-cart__progress-bar-wrapper">
+    <div id="rebuy-cart__progress-bar-meter-label" class="rebuy-cart__progress-bar-prompt">{{ default_message | replace: "[X]", initial_amount | replace: "[reward]", settings.milestone1_label }}</div>
+    <div class="rebuy-cart__progress-bar-wrapper">
+      <div class="rebuy-cart__progress-bar-meter has-progress">
+        <div role="progressbar" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="18" aria-labelledby="rebuy-cart__progress-bar-meter-label" class="rebuy-cart__progress-bar-meter-fill" style="width: 18.6041%;"><span class="sr-only">Progress: 18%</span></div>
+      </div>
+    </div>
+    <div class="rebuy-cart__progress-step-wrapper count-3">
+      {% if settings.milestone1_amount != blank %}
+        <div class="rebuy-cart__progress-step">
+          <div class="rebuy-cart__progress-step-icon">
+          </div>
+          <span class="rebuy-cart__progress-step-label">{{ settings.milestone1_label }} 
+            {% if settings.milestone1_amount > 0 %}
+            ${{ settings.milestone1_amount }}
+            {% endif %}</span>
+        </div>
+      {% endif %}
+      {% if settings.milestone2_amount != blank and settings.milestone2_amount > 0 %}
+        <div class="rebuy-cart__progress-step">
+          <div class="rebuy-cart__progress-step-icon">
+          </div>
+          <span class="rebuy-cart__progress-step-label">{{ settings.milestone2_label }} ${{ settings.milestone2_amount }}</span>
+        </div>
+      {% endif %}
+      {% if settings.milestone3_amount != blank and settings.milestone3_amount > 0 %}
+        <div class="rebuy-cart__progress-step">
+          <div class="rebuy-cart__progress-step-icon">
+          </div>
+          <span class="rebuy-cart__progress-step-label">{{ settings.milestone3_label }} ${{ settings.milestone3_amount }}</span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  <!---->
+</div>
+<script src="{{ 'milestone-progress-bar.js' | asset_url }}" defer="defer"></script>

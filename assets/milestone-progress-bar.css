@@ -1,0 +1,216 @@
+.milestone-wrapper {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 14px 0 12px;
+}
+
+.milestone-bar {
+  position: relative;
+  height: 10px;
+  background: #F2EADF;
+  border-radius: 5px;
+  margin: 19px 0 12px;
+}
+
+.milestone-progress {
+  height: 100%;
+  background: #101820; 
+  border-radius: 5px;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.milestone-markers {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  transform: translateY(-50%);
+}
+
+.milestone-marker {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(calc(-50% - 42px), -50%);
+}
+
+.milestone-marker::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #000;
+}
+
+.milestone-label {
+  font-size: 12px;
+  margin-top: 42px;
+  white-space: nowrap;
+  width: auto;
+}
+
+/* .milestone-progress-bar-wrapper .rebuy-cart__progress-step.complete {
+  opacity: 0;
+  cursor: default;
+} */
+
+/* new */
+
+.milestone-bar-wrapper {
+  position: relative;
+}
+
+
+.milestone-bar-wrapper .milestone-markers-icon .icon {
+  width: 16px;
+  height: 16px;
+  background: #101820;
+  display: flex;
+  justify-self: center;
+  border-radius: 50%;
+}
+
+/* .milestone-bar-wrapper .milestone-label .label.completed,
+.milestone-bar-wrapper .milestone-markers-icon .icon.completed {
+  display: none;
+} */
+
+.milestone-bar-wrapper .milestone-progress {
+  width: 200px;
+}
+
+.milestone-bar-wrapper .milestone-label .label {
+  max-width: 150px;
+  flex: 1;
+  position: absolute;
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  text-transform: capitalize;
+  max-width: 25%;
+  white-space: normal;
+}
+
+.milestone-bar-wrapper .milestone-label .label:last-child {
+  left: initial !important;
+  transform: none !important;
+  right: 0;
+}
+
+.milestone-bar-wrapper .milestone-label {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.milestone-bar-wrapper .milestone-markers-icon {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: -3px;
+    width: 100%;
+}
+
+.milestone-markers-icon .icon-wrapper:last-child {
+  right:28px;
+  left: initial !important;
+}
+
+#milestone-message {
+  margin: 0;
+  color: #000000; 
+}
+
+@media (max-width: 767px) {
+
+  .milestone-markers-icon .icon-wrapper:last-child {
+    right: 6px;
+  }
+
+  .milestone-bar {
+    margin: 13px 0 12px;
+  }
+
+  .milestone-wrapper {
+    margin: 14px 0 20px;
+  }
+
+}
+
+.product-single__form .milestone-progress-bar-wrapper .rebuy-cart__progress-bar-meter-fill {
+  padding: 0 !important;
+}
+
+.milestone-progress-bar-wrapper .rebuy-cart__progress-bar-prompt {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: normal;
+  text-align: center;
+  margin: 14px 0 0;
+}
+
+.milestone-progress-bar-wrapper .rebuy-cart__progress-bar-meter {
+  margin: 19px 0 0;
+}
+
+.milestone-progress-bar-wrapper .rebuy-cart__progress-bar-meter {
+  background: #F2EADF;
+}
+
+.milestone-progress-bar-wrapper .rebuy-cart__progress-bar-meter-fill {
+  background: #101820;
+}
+
+.milestone-progress-bar-wrapper .rebuy-cart__progress-step-icon {
+  width: 16px;
+  height: 16px;
+  background: #101820;
+}
+
+.milestone-progress-bar-wrapper .rebuy-cart__progress-step-wrapper {
+  margin-top: -13px;
+  position: relative;
+}
+
+.milestone-progress-bar-wrapper .rebuy-cart__progress-step-label {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.milestone-progress-bar-wrapper .rebuy-cart__progress-step {
+  width: 50%;
+}
+
+.milestone-progress-bar-wrapper {
+  padding: 0;
+}
+
+@media (max-width: 767px) {
+
+  .milestone-progress-bar-wrapper .rebuy-cart__progress-step-label {
+    margin: 9px 0 0;
+  }
+
+  .milestone-progress-bar-wrapper .rebuy-cart__progress-step-label {
+    text-overflow: initial;
+    max-width: 90px;
+    white-space: normal;
+  }
+
+  .milestone-progress-bar-wrapper .rebuy-cart__progress-bar-meter {
+    margin: 13px 0 0;
+  }
+
+}

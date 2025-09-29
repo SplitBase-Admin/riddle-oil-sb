@@ -276,6 +276,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
         window.location.href = e.target.getAttribute("data-product-url");
       });
     });
+    document.querySelectorAll(".grid__item").forEach((el) => {
+      let firstButton = el.querySelectorAll("[custom-variant-change]")[0];
+      if(firstButton) {
+        firstButton.dispatchEvent(new MouseEvent('mouseover',{bubbles: true}));
+        firstButton.classList.remove("active");
+      }
+    });
   }
   window.applyVariantChangeEvent();
 
