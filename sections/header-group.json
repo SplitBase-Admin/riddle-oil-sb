@@ -25,9 +25,8 @@
         },
         "announcement_mifzM9": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "Free Riddle Travel Bag with orders $150+",
+            "text": "Try our newest scent - Every order will receive a free KISMET sample!",
             "link_text": "",
             "link": ""
           }
@@ -56,12 +55,12 @@
           "type": "megamenu-type-1",
           "settings": {
             "menu_title": "shop",
-            "image": "shopify://shop_images/Nude_Beach_Milky_Spray_Lotion_by_Riddle-_1_of_1.jpg",
-            "subtext": "LIMITED RUN SUMMER SCENT",
-            "title": "nude beach",
-            "text": "Summertime, Anytime.",
-            "button_text": "Nude Beach Collection",
-            "button_url": "shopify://collections/nude-beach-1"
+            "image": "shopify://shop_images/Kismet_by_Riddle-_1_of_1.jpg",
+            "subtext": "Coming soon..",
+            "title": "Kismet",
+            "text": "It was meant to be.",
+            "button_text": "Join Waitlist",
+            "button_url": "https://manage.kmail-lists.com/subscriptions/subscribe?a=JVWXpu&g=YmEsKU"
           }
         },
         "megamenu_type_2_zWTUgp": {

@@ -30,7 +30,11 @@
   text-transform: uppercase;
   border-radius: 2px;
   align-self: self-start;
-  margin: 16px 0;
+  margin: 8px 0;  
+}
+
+.try-now-button.below__product--meta {
+  margin: 8px 0;  
 }
 
 .grid-product__link.try__now--link {
@@ -63,10 +67,6 @@
   margin-bottom: 6px;  
 }
 
-.try-now-button {
-  margin: 2px 0 16px;  
-}
-
 .grid-product__image-mask:hover .grid-product__secondary-image{
   animation:fade-in 0.2s cubic-bezier(0.26, 0.54, 0.32, 1) 0s forwards;
 }
@@ -96,4 +96,16 @@
     min-height: auto;
     margin: 0;
   }
+
+  .try-now-button {
+    font-size: 16px;
+    padding: 10px;
+    line-height: 1;
+    margin: 8px 0 !important;
+  }
+
+  .try-now-button.below__product--meta {
+    margin: 8px 0;  
+  }
+  
 }

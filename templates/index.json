@@ -17,7 +17,7 @@
         "title": "One-of-a-kind scents designed to be unique on every body",
         "text": "<p>Ditch your old-fashioned alcohol-based perfume for complex, long lasting, and skin-friendly fragrance and pheromone oils that create a one-of-a-kind scent just for you.</p>",
         "button_text1": "Try The Sample Kit",
-        "button_link1": "shopify://products/the-sample-kit-nude-beach",
+        "button_link1": "shopify://products/the-sample-kit",
         "button_style1": "btn--primary",
         "show_button_arrow": false,
         "button_text2": "",
@@ -109,7 +109,7 @@
         "mobile_promo_image": "shopify://shop_images/GWP_Travel_Bag_2025_1x1_Carousel_5.png",
         "promo_title": "",
         "button_label": "Try The Sample Kit",
-        "button_link": "shopify://products/the-sample-kit-nude-beach",
+        "button_link": "shopify://products/the-sample-kit",
         "button_style": "btn--secondary",
         "button_color": "#ffffff",
         "button_text_color": "#ffffff"
@@ -132,20 +132,20 @@
     "video_with_text_azpAdH": {
       "type": "video-with-text",
       "settings": {
-        "caption": "Limited Run Summer Scent",
-        "title": "Nude Beach",
-        "subtitle": "Summertime, Anytime.",
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/6a612feff8b541e3baf3112a5277d5de.mov",
+        "caption": "Coming soon..",
+        "title": "Kismet",
+        "subtitle": "It was meant to be.",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/cc61f71b136347618fdc1185701a21ca.mp4",
         "section_height": "480px",
         "mobile_height": "auto",
-        "button_label": "Nude Beach Collection",
-        "button_link": "shopify://collections/nude-beach-1",
+        "button_label": "Sign up for the waitlist",
+        "button_link": "https://manage.kmail-lists.com/subscriptions/subscribe?a=JVWXpu&g=YmEsKU",
         "button_style": "btn--primary",
-        "text_color": "#101820",
-        "bg_color": "#f2eadf",
-        "background_opacity": 50,
-        "button_color": "#101820",
-        "button_text_color": "#ffffff"
+        "text_color": "#000000",
+        "bg_color": "#efe2ff",
+        "background_opacity": 52,
+        "button_color": "#ffffff",
+        "button_text_color": "#000000"
       }
     },
     "how_to_riddle_kbawqG": {
