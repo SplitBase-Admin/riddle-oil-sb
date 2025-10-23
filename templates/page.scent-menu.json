@@ -21,6 +21,7 @@
           "type": "tab",
           "settings": {
             "menu_heading": "Original",
+            "menu_text": "",
             "profile": "Subtle and Clean",
             "notes": "Amber and Musk",
             "menu_url": "shopify://collections/original",
@@ -32,6 +33,7 @@
           "type": "tab",
           "settings": {
             "menu_heading": "Santal",
+            "menu_text": "",
             "profile": "Spicy and Woody",
             "notes": "Cardamom, Amber, Sandalwood, Orchid, Cassis",
             "menu_url": "shopify://collections/riddle-santal",
@@ -43,6 +45,7 @@
           "type": "tab",
           "settings": {
             "menu_heading": "Muse",
+            "menu_text": "",
             "profile": "Sweet and Floral",
             "notes": "Coconut, Peony, Magnolia, Bergamot, Sandalwood, and Amber",
             "menu_url": "shopify://collections/muse",
@@ -54,6 +57,7 @@
           "type": "tab",
           "settings": {
             "menu_heading": "Poppy",
+            "menu_text": "",
             "profile": "Citrus and Floral",
             "notes": "Orange Blossom, Lemon, Rose, and Ylang Ylang",
             "menu_url": "shopify://collections/poppy",
@@ -65,6 +69,7 @@
           "type": "tab",
           "settings": {
             "menu_heading": "Ex",
+            "menu_text": "",
             "profile": "Deep and Green",
             "notes": "Cardamom, Sandalwood, Rose, Violet, Jasmine, Moss, and Musk",
             "menu_url": "shopify://collections/last-petal",
@@ -76,6 +81,7 @@
           "type": "tab",
           "settings": {
             "menu_heading": "Sphinx",
+            "menu_text": "",
             "profile": "Woody and Light",
             "notes": "Egyptian Musk and Sandalwood",
             "menu_url": "shopify://collections/sphinx",
@@ -87,6 +93,7 @@
           "type": "tab",
           "settings": {
             "menu_heading": "Voyeur",
+            "menu_text": "",
             "profile": "Soft and Warm",
             "notes": "Vanilla, Sandalwood, and Musk",
             "menu_url": "shopify://collections/voyeur",
@@ -98,6 +105,7 @@
           "type": "tab",
           "settings": {
             "menu_heading": "Nude Beach",
+            "menu_text": "Limited-run scent. Coming back Summer 2026.",
             "profile": "Aquatic and Floral",
             "notes": "Bergamot, Mandarin, Jasmine, Neroli, Coconut, and Amber",
             "menu_url": "shopify://collections/nude-beach-1",

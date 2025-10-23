@@ -6965,7 +6965,9 @@ theme.recentlyViewed = {
         variantColorSwatch: '.variant__input--color-swatch',
         dynamicVariantsEnabled: '[data-dynamic-variants-enabled]',
   
-        availabilityContainer: '[data-store-availability-holder]'
+        availabilityContainer: '[data-store-availability-holder]',
+        quantitySelector: ".qty-cta-wrapper",
+        bisButton: '#custom-klaviyo-bis-button-container'
       };
   
       this.cacheElements();
@@ -7200,11 +7202,12 @@ theme.recentlyViewed = {
         this.container.querySelector(this.selectors.colorLabel + `[data-index="${index}"`).textContent = color;
       },
   
-      updateCartButton: function(evt) {
+      updateCartButton: async function(evt) {
         var variant = evt.detail.variant;
         var cartBtn = this.container.querySelector(this.selectors.addToCart);
         var cartBtnText = this.container.querySelector(this.selectors.addToCartText);
-  
+        var BISbutton = this.container.querySelector(this.selectors.bisButton);
+        var quantitySelector = this.container.querySelector(this.selectors.quantitySelector);
         if (!cartBtn) return;
   
         if (variant) {
@@ -7213,11 +7216,15 @@ theme.recentlyViewed = {
             cartBtn.classList.remove(classes.disabled);
             cartBtn.disabled = false;
             var defaultText = cartBtnText.dataset.defaultText;
-            cartBtnText.textContent = defaultText + "  |  " + theme.Currency.formatMoney(variant.price, theme.settings.moneyFormat);;
+            cartBtnText.textContent = defaultText + "  |  " + theme.Currency.formatMoney(variant.price, theme.settings.moneyFormat);
+            if(BISbutton) BISbutton.classList.add("hidden");
+            if(quantitySelector) quantitySelector.classList.remove("hidden");
           } else {
             // Sold out, disable the submit button and change text
             cartBtn.classList.add(classes.disabled);
             cartBtn.disabled = true;
+            if(BISbutton) BISbutton.classList.remove("hidden");
+            if(quantitySelector) quantitySelector.classList.add("hidden");
             cartBtnText.textContent = theme.strings.soldOut;
           }
         } else {

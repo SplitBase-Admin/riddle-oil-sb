@@ -106,13 +106,14 @@
   /* Sticky - Variant options Dropdown -- Start */
   const dropdownToggle = document.querySelector('.product__group-dropdown .product__group-toggle');
   const dropdown = document.querySelector('.product__group-dropdown');
-  
-  dropdownToggle.addEventListener('click', (button) => {
-    button.currentTarget.closest('.product__group-dropdown').classList.toggle('active');
-  });
+  if(dropdownToggle) {
+    dropdownToggle.addEventListener('click', (button) => {
+      button.currentTarget.closest('.product__group-dropdown').classList.toggle('active');
+    });
+  }
   
   document.addEventListener('click', (event) => {
-    if (!dropdown.contains(event.target)) {
+    if (dropdown && !dropdown.contains(event.target)) {
       dropdown.classList.remove('active');
     }
   });

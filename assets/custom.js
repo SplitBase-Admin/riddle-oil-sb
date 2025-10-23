@@ -383,7 +383,7 @@ window.fetchShopPayCartWidget = function() {
       if(document.querySelector(".rebuy-cart__flyout [shopify-payment-terms-rebuy-smartcart] shopify-payment-terms")){
         document.querySelector(".rebuy-cart__flyout [shopify-payment-terms-rebuy-smartcart]").innerHTML = ""
       }
-      document.querySelector(".rebuy-cart__flyout [shopify-payment-terms-rebuy-smartcart]").innerHTML = shopPayWidget.innerHTML;
+      if(document.querySelector(".rebuy-cart__flyout [shopify-payment-terms-rebuy-smartcart]")) document.querySelector(".rebuy-cart__flyout [shopify-payment-terms-rebuy-smartcart]").innerHTML = shopPayWidget.innerHTML;
 
       // document.querySelector('div[shopify-payment-terms-rebuy-smartcart] shopify-payment-terms')?.shadowRoot?.querySelector('shop-pay-installments-banner')?.shadowRoot?.querySelector('.shopify-installments')?.style?.fontSize = '13px';
       // document.querySelector('div[shopify-payment-terms-rebuy-smartcart] shopify-payment-terms')?.shadowRoot?.querySelector('shop-pay-installments-banner')?.shadowRoot?.querySelector('.shopify-installments')?.style?.letterSpacing = '-0.02em';
@@ -978,3 +978,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+if(document.querySelector("#custom-klaviyo-bis-button-container button")) {
+  document.querySelector("#custom-klaviyo-bis-button-container button").addEventListener("click", function (e) {
+    klaviyo.openForm("WwkNej");
+  })
+}

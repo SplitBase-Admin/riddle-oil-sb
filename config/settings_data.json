@@ -170,6 +170,11 @@
         "type": "shopify://apps/appikon-back-in-stock/blocks/subscribe_it_helper/eb949c69-b3e6-4216-a322-1cd63915d46d",
         "disabled": true,
         "settings": {}
+      },
+      "2786716548061469553": {
+        "type": "shopify://apps/axon/blocks/app-embed/baa0f014-62ea-462f-a8aa-a94befb1cbad",
+        "disabled": false,
+        "settings": {}
       }
     }
   },

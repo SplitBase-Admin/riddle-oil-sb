@@ -380,7 +380,6 @@
               {{ product.title }}
             </div>
 
-            
             <div class="grid-meta-container">
               <div class="grid-data-container">
                 {% comment %} {% if product.metafields.custom.product_name_on_menu != blank %}
@@ -476,7 +475,8 @@
             {% endunless %}
 
             {% if product.id == 5314854551715 %}
-              <a href="{{ product.url }}" type="button" class="try-now-button">try now</a>
+              
+              <button class="try-now-button below__product--meta" onclick="window.location.href='{{ product.url }}'">try now</button>
             {% endif %}
 
             {% if true %}

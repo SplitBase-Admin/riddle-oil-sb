@@ -703,3 +703,43 @@
 ]
 }
 {% endschema %}
+
+{% comment %} 
+
+<script>
+(function() {
+  var btn = document.querySelector('#klaviyo-bis-btn-{{ section.id }}');
+  function applyBIS(variant){
+    if (!btn || !variant) return;
+    btn.setAttribute('data-variant-id', variant.id);
+    if (variant.available === false) {
+      btn.style.display = '';
+      if (window.KlaviyoSubscribe && typeof window.KlaviyoSubscribe.attachToBackInStock === 'function') {
+        window.KlaviyoSubscribe.attachToBackInStock(btn);
+      }
+    } else {
+      btn.style.display = 'none';
+    }
+  }
+  // Initial bind once the DOM & product JSON are ready
+  document.addEventListener('DOMContentLoaded', function(){
+    try {
+      applyBIS({{ product.selected_or_first_available_variant | json }});
+    } catch (_) {}
+  });
+  // Listen for theme variant changes (common in Online Store 2.0 themes)
+  document.addEventListener('variant:changed', function(e){
+    applyBIS(e.detail && e.detail.variant);
+  });
+  // Fallback: watch the variant <select> if present
+  var select = document.querySelector('form[action^="/cart/add"] select[name="id"]');
+  if (select) {
+    select.addEventListener('change', function(){
+      var id = Number(this.value);
+      var variants = (window.product && window.product.variants) || [];
+      var v = variants.find(function(x){ return x.id === id; });
+      if (v) applyBIS(v);
+    });
+  }
+})();
+</script> {% endcomment %}

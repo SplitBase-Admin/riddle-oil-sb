@@ -12,11 +12,10 @@
   endif
   assign initial_amount = settings.milestone1_amount | times: 100 | money
 %}
-
+ 
 <div data-rebuy-component="progress-bar" class="hidden milestone-progress-bar-wrapper" data-milestones='[
     {"label": "{{ settings.milestone1_label }}", "amount": {{ settings.milestone1_amount }}},
-    {"label": "{{ settings.milestone2_label }}", "amount": {{ settings.milestone2_amount }}},
-    {"label": "{{ settings.milestone3_label }}", "amount": {{ settings.milestone3_amount }}}
+    {"label": "{{ settings.milestone2_label }}", "amount": {{ settings.milestone2_amount }}}
   ]' data-rebuy-component-id="tiered_progress_bar" data-success-message="{{ success_message | escape }}" data-default-message="{{ default_message }}">
 
   <div class="rebuy-cart__progress-bar-wrapper">
@@ -44,13 +43,7 @@
           <span class="rebuy-cart__progress-step-label">{{ settings.milestone2_label }} ${{ settings.milestone2_amount }}</span>
         </div>
       {% endif %}
-      {% if settings.milestone3_amount != blank and settings.milestone3_amount > 0 %}
-        <div class="rebuy-cart__progress-step">
-          <div class="rebuy-cart__progress-step-icon">
-          </div>
-          <span class="rebuy-cart__progress-step-label">{{ settings.milestone3_label }} ${{ settings.milestone3_amount }}</span>
-        </div>
-      {% endif %}
+    
     </div>
   </div>
   <!---->

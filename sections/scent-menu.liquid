@@ -26,9 +26,11 @@
               }
             </style>
             <div class="scent-menu-items" id="block--{{ block.id }}">
-              {% if block.settings.menu_heading != blank %}
-              <div class="scent-menu-heading">
+              {% if block.settings.menu_heading != blank or block.settings.menu_text != blank %}
+              <div class="scent-menu-heading-wrapper">
                 <h3>{{ block.settings.menu_heading }}</h3>
+
+                <p>{{ block.settings.menu_text }}</p>
               </div>
               {% endif %}
               <div class="scent-item-wrap">
@@ -85,6 +87,11 @@
             "type": "text",
             "id": "menu_heading",
             "label": "Menu Heading",
+          },
+          {
+            "type": "text",
+            "id": "menu_text",
+            "label": "Menu Text",
           },
           {
             "type": "text",

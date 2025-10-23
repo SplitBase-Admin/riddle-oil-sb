@@ -1,0 +1,164 @@
+{{ 'scrolling-announcement-bar.css' | asset_url | stylesheet_tag: preload: true }}
+
+<div class="announcement-bar hide-desktop section--{{ section.id }}" id="announcementBar" style="background: {{ section.settings.background_color }};">
+  <div class="announcement-wrapper">
+    <div class="announcement-track">
+      {% assign item_count = section.blocks | size %}
+
+      {% if item_count < 4 %}
+        {% for i in (1..30) %}
+          {% for block in section.blocks %}
+            <div class="announcement-item"><a href="{{ block.settings.url }}">{{ block.settings.text }}</a></div>
+          {% endfor %}
+        {% endfor %}
+      {% endif %}
+      
+    </div>
+  </div>
+</div>
+
+
+{% style %}
+
+.section--{{ section.id }} .announcement-item * {
+    color: {{ section.settings.text_color }} !important;
+}
+
+{% endstyle %}
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const bar = document.getElementById("announcementBar");
+  const track = bar.querySelector(".announcement-track");
+  const wrapper = bar.querySelector(".announcement-wrapper");
+  let isDown = false;
+  let startX;
+  let currentTranslate = 0;
+  let rafId = null;
+
+  const duration = 15000; 
+  let speed = 0;
+
+  // Duplicate items until track width > container width * 2
+  function duplicateItems() {
+    const containerWidth = wrapper.offsetWidth;
+    let trackWidth = track.scrollWidth;
+    while (trackWidth < containerWidth * 2) {
+      track.innerHTML += track.innerHTML;
+      trackWidth = track.scrollWidth;
+    }
+  }
+
+  duplicateItems();
+
+  function updateSpeed() {
+    const fps = 60; // frames per second
+    const containerWidth = wrapper.offsetWidth;
+    speed = containerWidth / duration * (1000 / fps);
+  }
+
+  updateSpeed();
+
+  // Animation loop
+  function animate() {
+    currentTranslate -= speed;
+    if (Math.abs(currentTranslate) >= track.scrollWidth / 2) {
+      currentTranslate = 0;
+    }
+    track.style.transform = `translateX(${currentTranslate}px)`;
+    rafId = requestAnimationFrame(animate);
+  }
+
+  if (!rafId) animate();
+
+  // Pause on hover
+  bar.addEventListener("mouseenter", () => {
+    cancelAnimationFrame(rafId);
+    rafId = null;
+  });
+  bar.addEventListener("mouseleave", () => {
+    if (!rafId) animate();
+  });
+
+  // --- Drag & Touch ---
+  function startDrag(x) {
+    isDown = true;
+    startX = x - currentTranslate;
+    bar.style.cursor = "grabbing";
+    cancelAnimationFrame(rafId);
+    rafId = null;
+  }
+
+  function moveDrag(x) {
+    if (!isDown) return;
+    currentTranslate = x - startX;
+    track.style.transform = `translateX(${currentTranslate}px)`;
+  }
+
+  function endDrag() {
+    isDown = false;
+    bar.style.cursor = "grab";
+    if (!rafId) animate();
+  }
+
+  // Mouse events
+  bar.addEventListener("mousedown", (e) => startDrag(e.pageX));
+  window.addEventListener("mousemove", (e) => moveDrag(e.pageX));
+  window.addEventListener("mouseup", endDrag);
+
+  // Touch events
+  bar.addEventListener("touchstart", (e) => startDrag(e.touches[0].pageX));
+  window.addEventListener("touchmove", (e) => moveDrag(e.touches[0].pageX));
+  window.addEventListener("touchend", endDrag);
+
+  // Recalculate speed on window resize
+  window.addEventListener("resize", updateSpeed);
+});
+
+
+</script>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#e5d6c7"
+    },
+    {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#101820"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Announcement Item",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>✨ Not Sure Where To Start? Sample All 7 Scents!</p>"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Scrolling Announcement Bar"
+    }
+  ]
+}
+{% endschema %}

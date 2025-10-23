@@ -326,7 +326,9 @@
       </div>
     </div>
   {% endif %}
-
+  <div id="custom-klaviyo-bis-button-container" style="margin-bottom: 10px; flex: 1 1 0%;" class="{% if product.selected_or_first_available_variant.available %}hidden{% endif %}">
+    <button type="button" class="back-in-stock-button" type="button">Notify me of fresh batch</button>
+  </div>
   <div class="qty-cta-wrapper {% unless current_variant.available %} no__buttons {% endunless %}">
     {% if current_variant.available %}
       <div class="product__quantity">
@@ -359,6 +361,22 @@
     </button>
   </div>
 
+      {% comment %} <div class="klaviyo-bis-trigger"></div>
+      <button
+      id="klaviyo-bis-btn-{{ section.id }}"
+      class="klaviyo-bis-button"
+      style="display:none"
+      data-klaviyo-back-in-stock
+      data-product-id="{{ product.id }}"
+      data-product-title="{{ product.title | escape }}"
+      data-product-url="{{ shop.url }}{{ product.url }}"
+      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+    >
+      Notify me when available
+    </button> 
+    
+    {% endcomment %}
+
   {%- if enable_dynamic_buttons -%}
     {{ form | payment_button }}
   {%- endif -%}
@@ -371,8 +389,6 @@
     {% render 'milestone-progress-bar' %}
   {%- endif -%}
   <div class="shopify-payment-terms product__policies">{{ form | payment_terms }}</div>
-
-  <div class="klaviyo-bis-trigger"></div>
 
   <select name="id" data-product-select class="product-single__variants no-js">
     {%- for variant in product.variants -%}

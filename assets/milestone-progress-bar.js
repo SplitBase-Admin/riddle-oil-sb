@@ -13,6 +13,8 @@ function updateText(str) {
   const fromMatch = str.match(/from\s+(.*)/);
   const afterFrom = fromMatch ? fromMatch[1] : null;
   rebuyMilestones.forEach((milestone, index) => {
+    if(!pdpMilestones[index]) return;
+    
     if(milestone.classList.contains("complete")) {
       pdpMilestones[index].classList.add("complete")
       passedMilestone++;
@@ -32,15 +34,21 @@ function updateText(str) {
 }
 
 document.addEventListener('rebuy:smartcart.ready', (event) => {
+  // console.log("rebuy:smartcart.ready ============");
   const pdpProgressBar = document.querySelector(".product-single__form .milestone-progress-bar-wrapper"), rebuyMessage = document.querySelector("#rebuy-cart .rebuy-cart__progress-bar-prompt"), rebuyProgress = document.querySelector("#rebuy-cart .rebuy-cart__progress-bar-meter-fill");
   if(rebuyMessage) {
     pdpProgressBar.classList.remove("hidden");
+    console.log("rebuyMessage here 1 =============");
     pdpProgressBar.querySelector(".milestone-progress-bar-wrapper .rebuy-cart__progress-bar-meter-fill").setAttribute("style", rebuyProgress.getAttribute("style"));
+    console.log("rebuyMessage here 2 =============");
+
     updateText(rebuyMessage.textContent);
     
+    console.log("before mutation");
     const observer = new MutationObserver((mutationsList) => {
       for (const mutation of mutationsList) {
         if (mutation.type === "attributes" && mutation.attributeName === "style") {
+          console.log("mutation", mutation);
           pdpProgressBar.querySelector(".milestone-progress-bar-wrapper .rebuy-cart__progress-bar-meter-fill").setAttribute("style", rebuyProgress.getAttribute("style"));
           updateText(rebuyMessage.textContent);
         }

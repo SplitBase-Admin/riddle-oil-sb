@@ -25,9 +25,8 @@
         },
         "announcement_mifzM9": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
-            "text": "Free Riddle Travel Bag with orders $150+",
+            "text": "Try our newest scent - Every order will receive a free KISMET sample!",
             "link_text": "",
             "link": ""
           }
@@ -56,12 +55,12 @@
           "type": "megamenu-type-1",
           "settings": {
             "menu_title": "shop",
-            "image": "shopify://shop_images/Nude_Beach_Milky_Spray_Lotion_by_Riddle-_1_of_1.jpg",
-            "subtext": "LIMITED RUN SUMMER SCENT",
-            "title": "nude beach",
-            "text": "Summertime, Anytime.",
-            "button_text": "Nude Beach Collection",
-            "button_url": "shopify://collections/nude-beach-1"
+            "image": "shopify://shop_images/Kismet_by_Riddle-_1_of_1.jpg",
+            "subtext": "Coming 10/20 @ 7:30am pst",
+            "title": "Kismet",
+            "text": "It was meant to be.",
+            "button_text": "Go to collection",
+            "button_url": "shopify://collections/kismet"
           }
         },
         "megamenu_type_2_zWTUgp": {
@@ -153,6 +152,34 @@
         "show_currency_flags": false
       }
     },
+    "scrolling_announcement_bar_g3K47j": {
+      "type": "scrolling-announcement-bar",
+      "blocks": {
+        "text_Y4ewXP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Not sure where to start? <strong>Sample all 7 scents</strong> ✨</p>",
+            "url": ""
+          }
+        },
+        "text_ARaJFz": {
+          "type": "text",
+          "settings": {
+            "text": "<p><a href=\"/products/the-sample-kit\" title=\"The Sample Kit\"><em>Try Sample Kit</em></a></p>",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_Y4ewXP",
+        "text_ARaJFz"
+      ],
+      "name": "Scrolling Announcement Bar",
+      "settings": {
+        "background_color": "#e5d6c7",
+        "text_color": "#101820"
+      }
+    },
     "quick_navigation_jadAhU": {
       "type": "quick-navigation",
       "name": "Quick Navigation",
@@ -164,6 +191,7 @@
   "order": [
     "announcement",
     "header",
+    "scrolling_announcement_bar_g3K47j",
     "quick_navigation_jadAhU"
   ]
 }

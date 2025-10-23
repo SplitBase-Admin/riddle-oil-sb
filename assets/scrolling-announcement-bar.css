@@ -1,0 +1,48 @@
+.announcement-bar {
+    padding: 10px 0;
+    overflow: hidden;
+    cursor: grab;
+    user-select: none;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    white-space: nowrap;
+}
+
+.announcement-wrapper {
+    display: flex;
+}
+
+.announcement-track {
+    display: inline-flex;
+    will-change: transform;
+}
+
+.announcement-bar.paused .announcement-track {
+    animation-play-state: paused;
+}
+
+.announcement-item {
+    margin-right: 12px;
+}
+
+.announcement-item {
+    display: inline-block;
+    margin-right: 12px;
+    font-family: Heebo;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    text-decoration: none;
+}
+
+.announcement-item em {
+    text-decoration: underline;
+    font-style: normal;
+}
+
+.announcement-item strong {
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
