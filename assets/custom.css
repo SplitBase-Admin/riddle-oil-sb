@@ -1566,3 +1566,7 @@ body.predictive-overflow-hidden .drawer {
 .rebuy-cart__flyout-subtotal-compare-amount {
   display: none;
 }
+
+[data-rebuy-component="cross-sell-widget"]:has([data-rebuy-id="245980"]){
+  display: none;
+}
